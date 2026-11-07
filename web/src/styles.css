@@ -440,3 +440,6 @@ blockquote { margin: 4px 0; padding-left: 8px; border-left: 3px solid var(--bord
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .overall-bar span { --pcv: color-mix(in srgb, var(--pc, var(--muted)) 62%, white); }
 }
+
+.badge-tip-start { left: 0; transform: none; }
+.badge-tip-end { left: auto; right: 0; transform: none; }

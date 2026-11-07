@@ -231,6 +231,7 @@ function Row({ score, parties, highlightId, original, weight, onWeight }: {
                   detail={fmt(p.value)}
                   highlight={p.id === highlightId}
                   size={BADGE}
+                  align={p.left < 50 ? "start" : p.left > width - 80 ? "end" : "center"}
                   style={{ position: "absolute", left: p.left, top: p.lane * LANE_H + 6 }}
                 />
               </div>
