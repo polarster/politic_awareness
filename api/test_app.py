@@ -7,7 +7,7 @@ from fastapi.testclient import TestClient
 
 import app as app_module
 from prompt import TOOLS, build_system_prompt
-from usage import TokenBudget
+from usage import UsageBudget, cost_from_usage, load_prices
 
 
 @pytest.fixture
@@ -15,7 +15,7 @@ def client(tmp_path, monkeypatch):
     monkeypatch.setattr(app_module, "LOG_DB_PATH", tmp_path / "t.sqlite3")
     monkeypatch.setattr(app_module, "chat_limiter", app_module.RateLimiter(100, 60))
     monkeypatch.setattr(app_module, "log_limiter", app_module.RateLimiter(100, 60))
-    monkeypatch.setattr(app_module, "token_budget", TokenBudget(1000, 3600))
+    monkeypatch.setattr(app_module, "token_budget", UsageBudget(1.0, 3600))
     return TestClient(app_module.app)
 
 
@@ -39,7 +39,7 @@ class FakeClient:
         usage = SimpleNamespace(input_tokens=100, output_tokens=50,
                                 cache_creation_input_tokens=0, cache_read_input_tokens=100)
         return SimpleNamespace(stop_reason=self.stop_reason, content=[FakeBlock(c) for c in self.content],
-                               usage=usage)
+                               usage=usage, model="claude-sonnet-5-5")
 
 
 def test_system_prompt_includes_questions_and_rules():
@@ -140,30 +140,43 @@ def test_log_rejects_invalid(client, override):
     assert r.status_code in (400, 422)
 
 
-def test_chat_records_usage_and_reports_percent(client, monkeypatch):
+def test_cost_from_usage():
+    u = SimpleNamespace(input_tokens=1_000_000, output_tokens=1_000_000,
+                        cache_creation_input_tokens=1_000_000, cache_read_input_tokens=1_000_000)
+    p = load_prices(None)
+    assert cost_from_usage(u, "claude-sonnet-5-5", p) == pytest.approx(2 + 10 + 2.5 + 0.2)
+    # 未知模型以最貴的價格計
+    assert cost_from_usage(u, "unknown", p) == pytest.approx(4 + 20 + 5 + 0.2)
+    p2 = load_prices('{"claude-sonnet-5-5": {"output": 15}}')
+    assert p2["claude-sonnet-5-5"]["output"] == 15 and p2["claude-sonnet-5-5"]["input"] == 2
+
+
+def test_chat_records_cost_and_reports_percent(client, monkeypatch):
     monkeypatch.setattr(app_module, "get_client", lambda: FakeClient())
+    monkeypatch.setattr(app_module, "token_budget", UsageBudget(0.001, 3600))
     r = client.post("/api/chat", json={"messages": [{"role": "user", "content": "嗨"}]})
-    assert r.json()["usage_percent"] == 25  # 250 / 1000
-    assert client.get("/api/usage").json() == {"percent": 25}
+    # 100*2 + 100*0.2 + 50*10 = 720 / 1e6 = $0.00072 → 72%
+    assert r.json()["usage_percent"] == 72
+    assert client.get("/api/usage").json() == {"percent": 72}
 
 
 def test_chat_blocked_when_budget_exhausted(client, monkeypatch):
     fake = FakeClient()
     monkeypatch.setattr(app_module, "get_client", lambda: fake)
-    app_module.token_budget.record(1000)
+    app_module.token_budget.record(1.0)
     r = client.post("/api/chat", json={"messages": [{"role": "user", "content": "嗨"}]})
     assert r.status_code == 429
     assert fake.calls == []
     assert client.get("/api/usage").json() == {"percent": 100}
 
 
-def test_token_budget_window_and_persistence(tmp_path):
+def test_usage_budget_window_and_persistence(tmp_path):
     db = tmp_path / "u.sqlite3"
-    b = TokenBudget(100, 3600, db)
-    b.record(30, now=1000.0)
-    b.record(50, now=2000.0)
-    assert b.used(now=2000.0) == 80
+    b = UsageBudget(1.0, 3600, db)
+    b.record(0.3, now=1000.0)
+    b.record(0.5, now=2000.0)
+    assert b.used(now=2000.0) == pytest.approx(0.8)
     assert b.percent(now=2000.0) == 80
-    assert b.used(now=1000.0 + 3601) == 50  # 第一筆滑出視窗
-    b2 = TokenBudget(100, 10**12, db)  # 重啟後從 SQLite 讀回
-    assert b2.used() == 80
+    assert b.used(now=1000.0 + 3601) == pytest.approx(0.5)  # 第一筆滑出視窗
+    b2 = UsageBudget(1.0, 10**12, db)  # 重啟後從 SQLite 讀回
+    assert b2.used() == pytest.approx(0.8)

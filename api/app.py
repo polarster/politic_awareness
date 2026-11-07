@@ -21,11 +21,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 from prompt import TOOLS, build_system_prompt
-from usage import TokenBudget, tokens_from_usage
+from usage import UsageBudget, cost_from_usage, load_prices
 
 HERE = Path(__file__).resolve().parent
 
-MODEL = os.environ.get("CLAUDE_MODEL", "claude-opus-5-5")
+MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-5-5")
 EFFORT = os.environ.get("CLAUDE_EFFORT", "low")
 DATA_PATH = Path(os.environ.get("DATA_PATH", HERE.parent / "web" / "src" / "generated" / "data.json"))
 LOG_DB_PATH = Path(os.environ.get("LOG_DB_PATH", HERE / "answers.sqlite3"))
@@ -38,8 +38,9 @@ MAX_TOKENS = int(os.environ.get("MAX_TOKENS", "8000"))
 CHAT_RATE = (int(os.environ.get("CHAT_RATE_COUNT", "30")), int(os.environ.get("CHAT_RATE_WINDOW", "600")))
 LOG_RATE = (5, 3600)
 
-# 全站共用的 Claude 用量上限：USAGE_WINDOW_SECONDS 內的總 token 數（輸入 + 快取 + 輸出）
-TOKEN_BUDGET = int(os.environ.get("TOKEN_BUDGET", "2000000"))
+# 全站共用的 Claude 用量上限：USAGE_WINDOW_SECONDS 內的總花費（美元），依 PRICE_TABLE 換算
+USD_BUDGET = float(os.environ.get("USD_BUDGET", "1.0"))
+PRICES = load_prices(os.environ.get("PRICE_TABLE"))
 USAGE_WINDOW_SECONDS = int(os.environ.get("USAGE_WINDOW_SECONDS", str(5 * 3600)))
 USAGE_DB_PATH = Path(os.environ.get("USAGE_DB_PATH", HERE / "usage.sqlite3"))
 
@@ -88,7 +89,7 @@ class RateLimiter:
 
 chat_limiter = RateLimiter(*CHAT_RATE)
 log_limiter = RateLimiter(*LOG_RATE)
-token_budget = TokenBudget(TOKEN_BUDGET, USAGE_WINDOW_SECONDS, USAGE_DB_PATH)
+token_budget = UsageBudget(USD_BUDGET, USAGE_WINDOW_SECONDS, USAGE_DB_PATH)
 
 
 def client_key(request: Request) -> str:
@@ -152,7 +153,8 @@ def chat(req: ChatRequest, request: Request):
     except anthropic.APIConnectionError:
         raise HTTPException(502, "無法連線到 Claude，請稍後再試。")
 
-    token_budget.record(tokens_from_usage(resp.usage))
+    # 若觸發 refusal fallback，resp.model 是實際服務的模型
+    token_budget.record(cost_from_usage(resp.usage, getattr(resp, "model", None) or MODEL, PRICES))
 
     if resp.stop_reason == "refusal":
         raise HTTPException(409, "Claude 無法回應這則訊息，請換個方式說說看。")
