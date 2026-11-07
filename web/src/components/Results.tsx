@@ -8,7 +8,8 @@ import { AxisBars } from "./AxisBars";
 import { Chat } from "./Chat";
 import { FeedbackLink } from "./FeedbackLink";
 import { MatchRings } from "./MatchRings";
-import { Radar } from "./Radar";
+import { PoliticalMap } from "./PoliticalMap";
+import { Spectrum } from "./Spectrum";
 
 interface Props {
   answers: Answers;
@@ -70,19 +71,37 @@ export function Results(p: Props) {
             ))}
           </div>
         )}
-        <div className="radar-pair">
-          <div>
-            <h3>全國議題</h3>
-            <Radar title="全國議題" you={nat} compare={compareFor("national", natOrig)} />
-          </div>
-          <div>
-            <h3>{cityName ?? "雙北"}市政</h3>
-            {mun.filter((x) => x.value !== null).length >= 3
-              ? <Radar title="市政" you={mun} compare={compareFor("municipal", munOrig)} />
-              : <AxisBars scores={mun} original={adjusted ? munOrig : undefined} />}
+        <div className="viz-option">
+          <span className="tag">呈現方式 A：光譜滑桿</span>
+          <div className="radar-pair">
+            <div>
+              <h3>全國議題</h3>
+              <Spectrum you={nat} compare={compareFor("national", natOrig)} />
+            </div>
+            <div>
+              <h3>{cityName ?? "雙北"}市政</h3>
+              <Spectrum you={mun} compare={compareFor("municipal", munOrig)} />
+            </div>
           </div>
         </div>
-        <p className="muted small">政黨的位置依它在各題的立場（附出處）計算；沒有立場資料的軸以中間（0）表示。</p>
+        <div className="viz-option">
+          <span className="tag">呈現方式 B：政治地圖</span>
+          <h3>全國議題</h3>
+          <PoliticalMap
+            defaultX="economy"
+            defaultY="identity"
+            points={[
+              { id: "you", label: "你", scores: nat, kind: "you" },
+              ...partiesWithData.map((e) => ({
+                id: e.id,
+                label: e.short ?? e.name,
+                scores: entityAxisScores(data, e, "national"),
+                kind: (compareId === e.id ? "highlight" : "party") as "highlight" | "party",
+              })),
+            ]}
+          />
+        </div>
+        <p className="muted small">兩端都是一種價值取向，沒有好壞之分；越靠某一端，代表越傾向那一端。政黨的位置依它在各題有出處的立場計算。</p>
         <button className="link small" onClick={() => setShowNumbers((v) => !v)} aria-expanded={showNumbers}>
           {showNumbers ? "收起詳細數值" : "看詳細數值"}
         </button>

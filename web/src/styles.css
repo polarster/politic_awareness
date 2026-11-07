@@ -278,3 +278,48 @@ blockquote { margin: 4px 0; padding-left: 8px; border-left: 3px solid var(--bord
 .ring-detail { margin-top: 12px; }
 .ring-text-sm { font-size: 14px; }
 .radar svg { max-width: 460px; }
+
+/* ── 光譜滑桿 ── */
+.viz-option { border-top: 1px dashed var(--border); margin-top: 16px; padding-top: 12px; }
+.spectrum { display: grid; gap: 22px; margin: 12px 0 8px; }
+.spec-head { display: flex; justify-content: space-between; align-items: baseline; }
+.spec-name { font-weight: 600; }
+.spec-poles { display: flex; justify-content: space-between; color: var(--muted); margin: 2px 0 6px; }
+.spec-track {
+  position: relative; height: 12px; border-radius: 6px; margin: 30px 8px 28px;
+  /* 中間淡、兩端稍深的灰階：只表示「傾向程度」，不用任何政黨色 */
+  background: linear-gradient(90deg,
+    color-mix(in srgb, var(--muted) 45%, var(--track)) 0%,
+    var(--track) 50%,
+    color-mix(in srgb, var(--muted) 45%, var(--track)) 100%);
+}
+.spec-mid { position: absolute; left: 50%; top: -4px; bottom: -4px; width: 2px; margin-left: -1px; background: var(--muted); border-radius: 1px; }
+.spec-pin { position: absolute; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; }
+.spec-pin span {
+  font-size: 0.75rem; font-weight: 700; white-space: nowrap; border-radius: 999px; padding: 1px 8px;
+  border: 2px solid var(--surface);
+}
+.spec-you { bottom: 50%; }
+.spec-you span { background: var(--series-1); color: #fff; transform: translateY(-2px); }
+.spec-you::after { content: ""; width: 14px; height: 14px; border-radius: 50%; background: var(--series-1); border: 2px solid var(--surface); margin-bottom: -7px; }
+.spec-compare { top: 50%; flex-direction: column-reverse; }
+.spec-compare span { background: var(--series-2); color: #fff; transform: translateY(2px); }
+.spec-compare::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--series-2); border: 2px solid var(--surface); margin-top: -5px; }
+.spec-dashed span { background: var(--surface); color: var(--muted); border: 2px dashed var(--muted); }
+.spec-dashed::after { background: var(--surface); border: 2px dashed var(--muted); }
+.spec-nodata { margin: -18px 0 0; }
+
+/* ── 政治地圖 ── */
+.pmap { margin: 0; }
+.pmap svg { width: 100%; max-width: 420px; height: auto; display: block; margin: 0 auto; }
+.pmap-controls { display: flex; gap: 16px; flex-wrap: wrap; margin: 4px 0 8px; }
+.pmap-controls select { font: inherit; margin-left: 6px; background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 6px; }
+.pmap-bg { fill: color-mix(in srgb, var(--track) 60%, var(--surface)); }
+.pmap-grid { stroke: var(--border); stroke-width: 1; stroke-dasharray: 2 4; }
+.pmap-axis { stroke: var(--muted); stroke-width: 1.5; }
+.pmap-pole { font-size: 12px; fill: var(--muted); }
+.pmap-label { font-size: 13px; font-weight: 700; fill: var(--text); paint-order: stroke; stroke: var(--surface); stroke-width: 3px; }
+.pmap-pt circle { stroke: var(--surface); stroke-width: 2; }
+.pmap-you circle { fill: var(--series-1); }
+.pmap-party circle { fill: var(--muted); }
+.pmap-highlight circle { fill: var(--series-2); }
