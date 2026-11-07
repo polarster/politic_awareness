@@ -124,7 +124,7 @@
 - 限制每次對話的回合數和 token 數，以及每個 IP 的請求頻率。
 - 全站共用的 5 小時用量上限：以每次問答的實際花費（美元，依價格表換算）累計，預設每 5 小時 $1，可在設定中調整（`USD_BUDGET`、`PRICE_TABLE`）。畫面上即時顯示「目前 5 小時用量 / 5 小時總量」的百分比，不顯示實際數量；達到上限時停用對答。
 - 在 Anthropic Console 設定每月預算上限。
-- 模型：預設 `claude-sonnet-5-5`、effort `low`，可用環境變數調整。已啟用伺服器端 refusal fallback。
+- 模型：預設 `claude-sonnet-5-5`、effort `medium`，可用環境變數調整。已啟用伺服器端 refusal fallback。
 
 ## 9. 技術
 

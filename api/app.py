@@ -26,7 +26,7 @@ from usage import UsageBudget, cost_from_usage, load_prices
 HERE = Path(__file__).resolve().parent
 
 MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-5-5")
-EFFORT = os.environ.get("CLAUDE_EFFORT", "low")
+EFFORT = os.environ.get("CLAUDE_EFFORT", "medium")
 DATA_PATH = Path(os.environ.get("DATA_PATH", HERE.parent / "web" / "src" / "generated" / "data.json"))
 LOG_DB_PATH = Path(os.environ.get("LOG_DB_PATH", HERE / "answers.sqlite3"))
 ALLOWED_ORIGINS = [o for o in os.environ.get("ALLOWED_ORIGINS", "http://localhost:5173").split(",") if o]

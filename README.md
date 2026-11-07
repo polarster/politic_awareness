@@ -62,7 +62,7 @@ python3 scripts/build_data.py
 
 ## Claude 設定
 
-- 模型預設 `claude-sonnet-5-5`，effort 預設 `low`；可用 `CLAUDE_MODEL`、`CLAUDE_EFFORT` 調整。
+- 模型預設 `claude-sonnet-5-5`，effort 預設 `medium`；可用 `CLAUDE_MODEL`、`CLAUDE_EFFORT` 調整。
 - 已啟用伺服器端 refusal fallback（`fallbacks: "default"`）。
 - **全站用量上限**：`USD_BUDGET`（預設 $1）是 `USAGE_WINDOW_SECONDS`（預設 5 小時）滾動視窗內的總花費。每次問答依實際 token 用量與價格表（`PRICE_TABLE`，預設值在 `api/usage.py`）換算成美元。達到上限後 `/api/chat` 回 429。前端只顯示百分比（`GET /api/usage`），每 10 秒更新一次，每次對答回覆後也會立即更新。用量紀錄（只有時間戳 + 金額）存在 `api/usage.sqlite3`，重啟後延續。後端請用單一 worker 執行。
 - 請在 Anthropic Console 設定每月預算上限。
