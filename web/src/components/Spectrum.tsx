@@ -1,11 +1,14 @@
 import type React from "react";
 import { useLayoutEffect, useRef, useState } from "react";
 import type { AxisScore } from "../lib/scoring";
+import { PartyBadge } from "./PartyBadge";
 
 export interface SpectrumParty {
   id: string;
   label: string;
   color?: string;
+  badge?: string;
+  logo?: string;
   scores: AxisScore[];
 }
 
@@ -35,8 +38,9 @@ interface Props {
   original?: AxisScore[] | null;
 }
 
-const LANE_H = 24;
-const GAP = 6;
+const LANE_H = 28;
+const GAP = 4;
+const BADGE = 24;
 
 function pct(v: number) {
   return ((v + 2) / 4) * 100;
@@ -62,13 +66,17 @@ interface Placed {
 }
 
 /** 依位置由左到右，把標籤放進第一個不重疊的排，避免互相遮住 */
-export function placeLabels(items: { id: string; label: string; color?: string; value: number }[], width: number): Placed[] {
+export function placeLabels(
+  items: { id: string; label: string; color?: string; value: number }[],
+  width: number,
+  itemWidth: (label: string) => number = labelWidth,
+): Placed[] {
   const lanes: number[] = [];
   return [...items]
     .sort((a, b) => a.value - b.value)
     .map((it) => {
       const x = (pct(it.value) / 100) * width;
-      const w = labelWidth(it.label);
+      const w = itemWidth(it.label);
       const left = Math.min(Math.max(x - w / 2, 0), Math.max(width - w, 0));
       let lane = lanes.findIndex((right) => left >= right + GAP);
       if (lane === -1) {
@@ -103,7 +111,8 @@ function Row({ score, parties, highlightId, original }: {
     .map((p) => ({ id: p.id, label: p.label, color: p.color, value: p.scores.find((s) => s.axis.id === axisId)?.value ?? null }))
     .filter((p): p is { id: string; label: string; color: string | undefined; value: number } => p.value !== null);
   const noData = parties.filter((p) => !withValue.some((w) => w.id === p.id)).map((p) => p.label);
-  const placed = width ? placeLabels(withValue, width) : [];
+  const placed = width ? placeLabels(withValue, width, () => BADGE) : [];
+  const info = new Map(parties.map((p) => [p.id, p]));
   const lanes = placed.reduce((m, p) => Math.max(m, p.lane + 1), 0);
   const you = score.value!;
   const youShift = pct(you) < 10 ? "35%" : pct(you) > 90 ? "-35%" : "0";
@@ -138,20 +147,22 @@ function Row({ score, parties, highlightId, original }: {
           </div>
         </div>
         <div className="spec-labels" style={{ height: lanes * LANE_H + (lanes ? 6 : 0) }}>
-          {placed.map((p) => (
-            <div key={p.id}>
-              <span className={`spec-leader ${p.id === highlightId ? "hl" : ""}`}
-                style={{ left: p.x, height: p.lane * LANE_H + 6, ...pc(p.color) }} />
-              <span className={`spec-tag ${p.id === highlightId ? "hl" : ""}`}
-                style={{
-                  left: p.left, top: p.lane * LANE_H + 6, ...pc(p.color),
-                }}
-                title={`${p.label}：${fmt(p.value)}`}>
-                {p.color && p.id !== highlightId && <i className="spec-swatch" />}
-                {p.label}
-              </span>
-            </div>
-          ))}
+          {placed.map((p) => {
+            const party = info.get(p.id)!;
+            return (
+              <div key={p.id}>
+                <span className={`spec-leader ${p.id === highlightId ? "hl" : ""}`}
+                  style={{ left: p.x, height: p.lane * LANE_H + 6, ...pc(p.color) }} />
+                <PartyBadge
+                  info={{ name: party.label, color: party.color, badge: party.badge, logo: party.logo }}
+                  detail={fmt(p.value)}
+                  highlight={p.id === highlightId}
+                  size={BADGE}
+                  style={{ position: "absolute", left: p.left, top: p.lane * LANE_H + 6 }}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
       {noData.length > 0 && <p className="muted small spec-nodata">無資料：{noData.join("、")}</p>}

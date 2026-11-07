@@ -3,6 +3,8 @@ type: party
 name: 小民參政歐巴桑聯盟
 short: 小民參
 color: "#F6A1B4"   # 代表色（可調整）
+badge: "參"      # 沒有黨徽圖檔時，圓徽上顯示的字
+# logo: logos/obasan.svg   # 黨徽圖檔（放在 web/public/logos/），有的話優先使用
 inclusion_reason: 待核對（不分區政黨票 ≥1% 或雙北有現任議員）
 inclusion_verified: false
 links: {}

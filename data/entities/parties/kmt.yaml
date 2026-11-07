@@ -3,6 +3,11 @@ type: party
 name: 中國國民黨
 short: 國民黨
 color: "#000095"   # 代表色（可調整）
+badge: "國"      # 沒有黨徽圖檔時，圓徽上顯示的字
+logo: logos/kmt.svg   # 黨徽圖檔（web/public/logos/）
+logo_source: https://commons.wikimedia.org/wiki/File:Kuomintang_Emblem.svg
+logo_license: "Public domain"
+logo_author: "Sarang"
 inclusion_reason: 立法院有席次
 inclusion_verified: false
 links:

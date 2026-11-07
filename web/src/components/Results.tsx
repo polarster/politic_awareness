@@ -50,7 +50,7 @@ export function Results(p: Props) {
   const partiesWithData = data.entities.filter((e) => (data.stances[e.id] ?? []).length > 0);
   const spectrumParties = (layer: "national" | "municipal") =>
     showParties
-      ? partiesWithData.map((e) => ({ id: e.id, label: e.short ?? e.name, color: e.color, scores: entityAxisScores(data, e, layer) }))
+      ? partiesWithData.map((e) => ({ id: e.id, label: e.short ?? e.name, color: e.color, badge: e.badge, logo: e.logo, scores: entityAxisScores(data, e, layer) }))
       : [];
 
   return (
@@ -78,6 +78,7 @@ export function Results(p: Props) {
               <button key={e.id} className={compareId === e.id ? "chip-btn on" : "chip-btn"}
                 style={pc(e.color)}
                 onClick={() => setCompareId(compareId === e.id ? null : e.id)}>
+                <i className="chip-badge">{e.badge ?? (e.short ?? e.name).slice(0, 1)}</i>
                 {e.short ?? e.name}
               </button>
             ))}
@@ -108,6 +109,8 @@ export function Results(p: Props) {
                 id: e.id,
                 label: e.short ?? e.name,
                 color: e.color,
+                badge: e.badge,
+                logo: e.logo,
                 scores: entityAxisScores(data, e, "national"),
                 kind: (compareId === e.id ? "highlight" : "party") as "highlight" | "party",
               })),

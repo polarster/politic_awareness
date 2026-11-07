@@ -6,6 +6,8 @@ interface Point {
   id: string;
   label: string;
   color?: string;
+  badge?: string;
+  logo?: string;
   scores: AxisScore[];
   kind: "you" | "party" | "highlight";
 }
@@ -28,6 +30,7 @@ export function PoliticalMap({ points, defaultX, defaultY }: Props) {
   const axes = points.find((p) => p.kind === "you")!.scores.filter((s) => s.value !== null).map((s) => s.axis);
   const [xId, setX] = useState(axes.some((a) => a.id === defaultX) ? defaultX : axes[0]?.id);
   const [yId, setY] = useState(axes.some((a) => a.id === defaultY) ? defaultY : axes[1]?.id);
+  const [tip, setTip] = useState<string | null>(null);
   if (axes.length < 2 || !xId || !yId) return null;
   const xa = axes.find((a) => a.id === xId)!;
   const ya = axes.find((a) => a.id === yId)!;
@@ -74,15 +77,41 @@ export function PoliticalMap({ points, defaultX, defaultY }: Props) {
           .map(({ p, x, y }) => {
             const cx = coord(x!);
             const cy = coord(-y!); // 直軸 +2 在上方
+            const text = `${p.label}：${xa.name} ${x!.toFixed(1)}，${ya.name} ${y!.toFixed(1)}`;
+            if (p.kind === "you") {
+              return (
+                <g key={p.id} className="pmap-pt pmap-you">
+                  <title>{text}</title>
+                  <circle cx={cx} cy={cy} r={9} />
+                  <text x={cx} y={cy - 14} textAnchor="middle" className="pmap-label">你</text>
+                </g>
+              );
+            }
+            const r = p.kind === "highlight" ? 14 : 12;
             return (
-              <g key={p.id} className={`pmap-pt pmap-${p.kind}`} style={p.kind !== "you" ? pc(p.color) : undefined}>
-                <title>{`${p.label}：${xa.name} ${x!.toFixed(1)}，${ya.name} ${y!.toFixed(1)}`}</title>
-                <circle cx={cx} cy={cy} r={p.kind === "you" ? 9 : p.kind === "highlight" ? 8 : 6} />
-                <text x={cx} y={cy - (p.kind === "you" ? 14 : 11)} textAnchor="middle" className="pmap-label">{p.label}</text>
+              <g key={p.id} className={`pmap-pt pmap-${p.kind}`} style={pc(p.color)} tabIndex={0} role="button"
+                aria-label={text}
+                onMouseEnter={() => setTip(p.id)} onMouseLeave={() => setTip(null)}
+                onFocus={() => setTip(p.id)} onBlur={() => setTip(null)}
+                onClick={() => setTip(tip === p.id ? null : p.id)}>
+                <circle cx={cx} cy={cy} r={r} />
+                {p.logo
+                  ? <image href={`${import.meta.env.BASE_URL}${p.logo}`} x={cx - r + 2} y={cy - r + 2} width={2 * r - 4} height={2 * r - 4} />
+                  : <text x={cx} y={cy + 4.5} textAnchor="middle" className="pmap-badge-text">{p.badge ?? p.label.slice(0, 1)}</text>}
               </g>
             );
           })}
       </svg>
+      {tip && (() => {
+        const d = plotted.find((q) => q.p.id === tip);
+        if (!d || d.x === null || d.y === null) return null;
+        return (
+          <span className="badge-tip pmap-tip" role="tooltip"
+            style={{ left: `${(coord(d.x) / W) * 100}%`, top: `${(coord(-d.y) / (W + 8)) * 100}%` }}>
+            {d.p.label}：{xa.name} {d.x.toFixed(1)}，{ya.name} {d.y.toFixed(1)}
+          </span>
+        );
+      })()}
       {missing.length > 0 && (
         <figcaption className="muted small">{missing.join("、")}在這兩條軸中至少一條沒有立場資料，因此未標示。</figcaption>
       )}

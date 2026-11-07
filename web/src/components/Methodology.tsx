@@ -1,3 +1,4 @@
+import { data } from "../data";
 import { IMPORTANT_WEIGHT } from "../lib/scoring";
 
 export function Methodology({ onClose }: { onClose: () => void }) {
@@ -49,6 +50,20 @@ export function Methodology({ onClose }: { onClose: () => void }) {
         所有計算都在你的瀏覽器中完成，不需要帳號。只有在你勾選「匿名提供作答」或使用 Claude 對答時，資料才會離開你的裝置。
         對答內容不會被記錄。
       </p>
+
+      <h3>黨徽圖檔來源</h3>
+      <p className="small">
+        黨徽只用來在圖上辨識政黨，不代表任何政黨背書本網站。圖檔取自 Wikimedia Commons：
+      </p>
+      <ul className="small">
+        {data.entities.filter((e) => e.logo).map((e) => (
+          <li key={e.id}>
+            {e.name}：<a href={e.logo_source} target="_blank" rel="noreferrer">Commons 檔案頁</a>
+            ，{e.logo_license}{e.logo_author ? `，作者／來源：${e.logo_author}` : ""}
+          </li>
+        ))}
+      </ul>
+      <p className="small muted">沒有可用黨徽圖檔的政黨，以代表色圓徽加一個字表示。</p>
 
       <button onClick={onClose}>返回</button>
     </section>

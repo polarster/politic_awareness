@@ -57,6 +57,13 @@ export interface Entity {
   short?: string;
   /** 代表色 */
   color?: string;
+  /** 沒有黨徽圖檔時圓徽上顯示的字 */
+  badge?: string;
+  /** 黨徽圖檔路徑（相對於網站根目錄，例如 logos/kmt.svg） */
+  logo?: string;
+  logo_source?: string;
+  logo_license?: string;
+  logo_author?: string;
   party?: string;
   inclusion_reason?: string;
   links?: Record<string, string>;

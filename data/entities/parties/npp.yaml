@@ -3,6 +3,11 @@ type: party
 name: 時代力量
 short: 時代力量
 color: "#FBBE01"   # 代表色（可調整）
+badge: "時"      # 沒有黨徽圖檔時，圓徽上顯示的字
+logo: logos/npp.svg   # 黨徽圖檔（web/public/logos/）
+logo_source: https://commons.wikimedia.org/wiki/File:New_Power_Party_candidate_icon.svg
+logo_license: "Public domain"
+logo_author: "Qqkuro66541"
 inclusion_reason: 待核對（不分區政黨票 ≥1% 或雙北有現任議員）
 inclusion_verified: false
 links:
