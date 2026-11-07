@@ -22,7 +22,7 @@ ARCHIVE_FIELDS = ("id", "kind", "term", "meeting", "dates", "source_url", "no", 
 
 GRADES = {"A", "B", "C"}
 EVIDENCE_KINDS = {
-    "vote", "bill", "interpellation", "platform", "statement",
+    "vote", "bulletin", "bill", "interpellation", "platform", "statement",
     "interview", "debate", "social_interview",
 }
 GRADE_ORDER = {"A": 3, "B": 2, "C": 1}
@@ -126,6 +126,8 @@ def build() -> dict:
                     fail(f"{where}: 每筆出處都要有連結")
                 if e["kind"] == "vote" and not e.get("vote"):
                     fail(f"{where}: kind 為 vote 時需要 vote 欄位")
+                if e["grade"] == "A" and e["kind"] not in ("vote", "bulletin"):
+                    fail(f"{where}: A 級只能是記名表決（vote）或選舉公報（bulletin）")
             if not s.get("interpretation"):
                 fail(f"{where}: 需要 interpretation（詮釋）")
             s["grade"] = max((e["grade"] for e in ev), key=GRADE_ORDER.get)

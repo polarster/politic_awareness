@@ -34,7 +34,7 @@ export function Methodology({ onClose }: { onClose: () => void }) {
 
       <h3>立場資料與證據等級</h3>
       <ul>
-        <li><strong>A</strong>：記名表決紀錄（立法院、市議會）</li>
+        <li><strong>A</strong>：記名表決紀錄（立法院、市議會），以及中選會選舉公報上候選人自己刊登的政見</li>
         <li><strong>B</strong>：提案、連署、質詢紀錄</li>
         <li><strong>C</strong>：政見、黨綱、聲明、公開發言、訪談、辯論、社群訪談</li>
         <li>查無資料的題目不列入計算，也不推測。</li>

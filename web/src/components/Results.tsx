@@ -55,10 +55,10 @@ export function Results(p: Props) {
       return next;
     });
   };
-  const natMatch = useMemo(() => matchAll(data, "national", p.answers, p.budget, weightsFor("national")),
+  const natMatch = useMemo(() => matchAll(data, "national", p.answers, p.budget, weightsFor("national")).filter((m) => m.entity.type === "party"),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [p.answers, p.budget, weights]);
-  const munMatch = useMemo(() => matchAll(data, "municipal", p.answers, p.budget, weightsFor("municipal")),
+  const munMatch = useMemo(() => matchAll(data, "municipal", p.answers, p.budget, weightsFor("municipal")).filter((m) => m.entity.type === "party"),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [p.answers, p.budget, weights]);
   const setShowParties = (v: boolean) => {
@@ -66,7 +66,8 @@ export function Results(p: Props) {
     try { localStorage.setItem("show-parties", v ? "1" : "0"); } catch { /* ignore */ }
   };
 
-  const partiesWithData = data.entities.filter((e) => (data.stances[e.id] ?? []).length > 0);
+  // 目前只顯示政黨；政治人物（type: person）的呈現與「個人＋政黨」的計算方式待討論
+  const partiesWithData = data.entities.filter((e) => e.type === "party" && (data.stances[e.id] ?? []).length > 0);
   const spectrumParties = (layer: "national" | "municipal") =>
     showParties
       ? partiesWithData.map((e) => ({ id: e.id, label: e.short ?? e.name, color: e.color, badge: e.badge, logo: e.logo, scores: entityAxisScores(data, e, layer) }))

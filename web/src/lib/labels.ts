@@ -19,12 +19,12 @@ export const STEP_LABELS: Record<number, string> = {
 export const BUDGET_DIR_LABELS: Record<number, string> = { [-1]: "減少", 0: "維持", 1: "增加" };
 
 export const GRADE_LABELS: Record<string, string> = {
-  A: "A 記名表決",
+  A: "A 記名表決／選舉公報",
   B: "B 提案／連署／質詢",
   C: "C 政見／聲明／發言",
 };
 
 export const EVIDENCE_KIND_LABELS: Record<string, string> = {
-  vote: "表決", bill: "提案", interpellation: "質詢", platform: "政見／黨綱",
+  vote: "表決", bulletin: "選舉公報", bill: "提案", interpellation: "質詢", platform: "政見／黨綱",
   statement: "聲明", interview: "訪談", debate: "辯論", social_interview: "社群訪談",
 };
