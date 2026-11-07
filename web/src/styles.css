@@ -299,7 +299,7 @@ blockquote { margin: 4px 0; padding-left: 8px; border-left: 3px solid var(--bord
   font-size: 0.75rem; font-weight: 700; white-space: nowrap; border-radius: 999px; padding: 1px 8px;
   border: 2px solid var(--surface);
 }
-.spec-you { bottom: 50%; }
+.spec-you { bottom: 50%; z-index: 2; }
 .spec-you span { background: var(--series-1); color: #fff; transform: translateY(-2px); }
 .spec-you::after { content: ""; width: 14px; height: 14px; border-radius: 50%; background: var(--series-1); border: 2px solid var(--surface); margin-bottom: -7px; }
 .spec-compare { top: 50%; flex-direction: column-reverse; }
@@ -323,3 +323,21 @@ blockquote { margin: 4px 0; padding-left: 8px; border-left: 3px solid var(--bord
 .pmap-you circle { fill: var(--series-1); }
 .pmap-party circle { fill: var(--muted); }
 .pmap-highlight circle { fill: var(--series-2); }
+
+/* ── 光譜上的政黨標示 ── */
+.spec-area { position: relative; margin: 30px 8px 0; }
+.spec-area .spec-track { margin: 0; }
+.spec-dot {
+  position: absolute; top: 50%; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%;
+  background: var(--muted); border: 2px solid var(--surface);
+}
+.spec-dot-hl { background: var(--series-2); width: 12px; height: 12px; margin: -6px 0 0 -6px; z-index: 1; }
+.spec-labels { position: relative; margin-top: 2px; }
+.spec-leader { position: absolute; top: 0; width: 1px; background: var(--border); }
+.spec-leader.hl { background: var(--series-2); }
+.spec-tag {
+  position: absolute; font-size: 0.75rem; font-weight: 600; white-space: nowrap; line-height: 18px;
+  padding: 0 7px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--text);
+}
+.spec-tag.hl { background: var(--series-2); border-color: var(--series-2); color: #fff; }
+.spec-row .spec-nodata { margin: 6px 0 0; }

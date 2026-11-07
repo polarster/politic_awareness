@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { data, itemLabel } from "../data";
 import { postLog, toLogAdjustments } from "../lib/api";
 import { answerLabel } from "../lib/labels";
-import { axisScores, entityAxisScores, matchAll, type AxisScore } from "../lib/scoring";
+import { axisScores, entityAxisScores, matchAll } from "../lib/scoring";
 import type { Adjustment, Answers, BudgetSteps } from "../lib/types";
 import { AxisBars } from "./AxisBars";
 import { Chat } from "./Chat";
@@ -38,16 +38,10 @@ export function Results(p: Props) {
   const [openNat, setOpenNat] = useState<string | null>(null);
   const [openMun, setOpenMun] = useState<string | null>(null);
   const [showNumbers, setShowNumbers] = useState(false);
-  const compareEntity = data.entities.find((e) => e.id === compareId) ?? null;
 
-  const compareFor = (layer: "national" | "municipal", orig: AxisScore[]) => {
-    if (compareEntity) {
-      const scores = entityAxisScores(data, compareEntity, layer);
-      return { label: compareEntity.short ?? compareEntity.name, scores };
-    }
-    return adjusted ? { label: "修正前的你", scores: orig, dashed: true } : null;
-  };
   const partiesWithData = data.entities.filter((e) => (data.stances[e.id] ?? []).length > 0);
+  const spectrumParties = (layer: "national" | "municipal") =>
+    partiesWithData.map((e) => ({ id: e.id, label: e.short ?? e.name, scores: entityAxisScores(data, e, layer) }));
 
   return (
     <>
@@ -59,9 +53,9 @@ export function Results(p: Props) {
         </p>
         {partiesWithData.length > 0 && (
           <div className="compare-chips small" role="group" aria-label="對照政黨">
-            <span className="muted">對照：</span>
+            <span className="muted">強調政黨：</span>
             <button className={compareId === null ? "chip-btn on" : "chip-btn"} onClick={() => setCompareId(null)}>
-              {adjusted ? "修正前的你" : "不對照"}
+              不強調
             </button>
             {partiesWithData.map((e) => (
               <button key={e.id} className={compareId === e.id ? "chip-btn on" : "chip-btn"}
@@ -76,11 +70,11 @@ export function Results(p: Props) {
           <div className="radar-pair">
             <div>
               <h3>全國議題</h3>
-              <Spectrum you={nat} compare={compareFor("national", natOrig)} />
+              <Spectrum you={nat} parties={spectrumParties("national")} highlightId={compareId} original={adjusted ? natOrig : null} />
             </div>
             <div>
               <h3>{cityName ?? "雙北"}市政</h3>
-              <Spectrum you={mun} compare={compareFor("municipal", munOrig)} />
+              <Spectrum you={mun} parties={spectrumParties("municipal")} highlightId={compareId} original={adjusted ? munOrig : null} />
             </div>
           </div>
         </div>

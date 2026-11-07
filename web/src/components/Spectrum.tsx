@@ -1,61 +1,150 @@
+import { useLayoutEffect, useRef, useState } from "react";
 import type { AxisScore } from "../lib/scoring";
+
+export interface SpectrumParty {
+  id: string;
+  label: string;
+  scores: AxisScore[];
+}
 
 interface Props {
   you: AxisScore[];
-  /** 對照對象（政黨或修正前的你） */
-  compare?: { label: string; scores: AxisScore[]; dashed?: boolean } | null;
+  parties: SpectrumParty[];
+  /** 強調的政黨（橘色） */
+  highlightId?: string | null;
+  /** 對答修正前的你（虛線） */
+  original?: AxisScore[] | null;
 }
+
+const LANE_H = 24;
+const GAP = 6;
 
 function pct(v: number) {
   return ((v + 2) / 4) * 100;
-}
-
-/** 靠近兩端時只把文字標籤往內推（圓點維持在正確位置），避免被切掉 */
-function shift(v: number, dy: number) {
-  const p = pct(v);
-  const dx = p < 12 ? "35%" : p > 88 ? "-35%" : "0";
-  return `translate(${dx}, ${dy}px)`;
 }
 
 function fmt(v: number) {
   return (v > 0 ? "+" : "") + v.toFixed(1);
 }
 
-/** 光譜滑桿：每條軸左右對稱，兩端都是一種立場，中間是 0。 */
-export function Spectrum({ you, compare }: Props) {
+/** 估計標籤寬度（中文字約 12.5px，含左右內距） */
+export function labelWidth(s: string) {
+  return [...s].reduce((w, ch) => w + (/[\u0000-ÿ]/.test(ch) ? 7 : 12.5), 0) + 18;
+}
+
+interface Placed {
+  id: string;
+  label: string;
+  value: number;
+  x: number;        // 圓點位置（px）
+  left: number;     // 標籤左緣（px）
+  lane: number;
+}
+
+/** 依位置由左到右，把標籤放進第一個不重疊的排，避免互相遮住 */
+export function placeLabels(items: { id: string; label: string; value: number }[], width: number): Placed[] {
+  const lanes: number[] = [];
+  return [...items]
+    .sort((a, b) => a.value - b.value)
+    .map((it) => {
+      const x = (pct(it.value) / 100) * width;
+      const w = labelWidth(it.label);
+      const left = Math.min(Math.max(x - w / 2, 0), Math.max(width - w, 0));
+      let lane = lanes.findIndex((right) => left >= right + GAP);
+      if (lane === -1) {
+        lane = lanes.length;
+        lanes.push(0);
+      }
+      lanes[lane] = left + w;
+      return { ...it, x, left, lane };
+    });
+}
+
+function useWidth<T extends HTMLElement>() {
+  const ref = useRef<T>(null);
+  const [w, setW] = useState(0);
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const ro = new ResizeObserver(() => setW(el.clientWidth));
+    ro.observe(el);
+    setW(el.clientWidth);
+    return () => ro.disconnect();
+  }, []);
+  return [ref, w] as const;
+}
+
+function Row({ score, parties, highlightId, original }: {
+  score: AxisScore; parties: SpectrumParty[]; highlightId?: string | null; original?: number | null;
+}) {
+  const [ref, width] = useWidth<HTMLDivElement>();
+  const axisId = score.axis.id;
+  const withValue = parties
+    .map((p) => ({ id: p.id, label: p.label, value: p.scores.find((s) => s.axis.id === axisId)?.value ?? null }))
+    .filter((p): p is { id: string; label: string; value: number } => p.value !== null);
+  const noData = parties.filter((p) => !withValue.some((w) => w.id === p.id)).map((p) => p.label);
+  const placed = width ? placeLabels(withValue, width) : [];
+  const lanes = placed.reduce((m, p) => Math.max(m, p.lane + 1), 0);
+  const you = score.value!;
+  const youShift = pct(you) < 10 ? "35%" : pct(you) > 90 ? "-35%" : "0";
+
+  return (
+    <div className="spec-row">
+      <div className="spec-head">
+        <span className="spec-name">{score.axis.name}</span>
+        <span className="muted small">依 {score.count} 題</span>
+      </div>
+      <div className="spec-poles small">
+        <span>{score.axis.negative_pole}</span>
+        <span>{score.axis.positive_pole}</span>
+      </div>
+      <div ref={ref} className="spec-area">
+        <div className="spec-track" role="img"
+          aria-label={`${score.axis.name}：你 ${fmt(you)}；`
+            + withValue.map((p) => `${p.label} ${fmt(p.value)}`).join("、")
+            + `（-2 ${score.axis.negative_pole}，+2 ${score.axis.positive_pole}）`}>
+          <div className="spec-mid" />
+          {placed.map((p) => (
+            <span key={p.id} className={`spec-dot ${p.id === highlightId ? "spec-dot-hl" : ""}`}
+              style={{ left: p.x }} title={`${p.label}：${fmt(p.value)}`} />
+          ))}
+          {original != null && (
+            <div className="spec-pin spec-you spec-dashed" style={{ left: `${pct(original)}%` }} title={`修正前的你：${fmt(original)}`}>
+              <span>修正前</span>
+            </div>
+          )}
+          <div className="spec-pin spec-you" style={{ left: `${pct(you)}%` }} title={`你：${fmt(you)}`}>
+            <span style={{ transform: `translate(${youShift}, -2px)` }}>你</span>
+          </div>
+        </div>
+        <div className="spec-labels" style={{ height: lanes * LANE_H + (lanes ? 6 : 0) }}>
+          {placed.map((p) => (
+            <div key={p.id}>
+              <span className={`spec-leader ${p.id === highlightId ? "hl" : ""}`}
+                style={{ left: p.x, height: p.lane * LANE_H + 6 }} />
+              <span className={`spec-tag ${p.id === highlightId ? "hl" : ""}`}
+                style={{ left: p.left, top: p.lane * LANE_H + 6 }} title={`${p.label}：${fmt(p.value)}`}>
+                {p.label}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+      {noData.length > 0 && <p className="muted small spec-nodata">無資料：{noData.join("、")}</p>}
+    </div>
+  );
+}
+
+/** 光譜滑桿：每條軸左右對稱，兩端都是一種立場，中間是 0；所有有資料的政黨同時標示。 */
+export function Spectrum({ you, parties, highlightId, original }: Props) {
   const rows = you.filter((s) => s.value !== null);
   if (!rows.length) return <p className="muted">這一層沒有足夠的作答可以計算。</p>;
   return (
     <div className="spectrum">
       {rows.map((s) => {
-        const c = compare?.scores.find((x) => x.axis.id === s.axis.id)?.value ?? null;
-        return (
-          <div key={s.axis.id} className="spec-row">
-            <div className="spec-head">
-              <span className="spec-name">{s.axis.name}</span>
-              <span className="muted small">依 {s.count} 題</span>
-            </div>
-            <div className="spec-poles small">
-              <span>{s.axis.negative_pole}</span>
-              <span>{s.axis.positive_pole}</span>
-            </div>
-            <div className="spec-track"
-              role="img"
-              aria-label={`${s.axis.name}：你 ${fmt(s.value!)}${compare && c !== null ? `，${compare.label} ${fmt(c)}` : ""}（-2 ${s.axis.negative_pole}，+2 ${s.axis.positive_pole}）`}>
-              <div className="spec-mid" />
-              <div className="spec-pin spec-you" style={{ left: `${pct(s.value!)}%` }} title={`你：${fmt(s.value!)}`}>
-                <span style={{ transform: shift(s.value!, -2) }}>你</span>
-              </div>
-              {compare && c !== null && (
-                <div className={`spec-pin spec-compare ${compare.dashed ? "spec-dashed" : ""}`}
-                  style={{ left: `${pct(c)}%` }} title={`${compare.label}：${fmt(c)}`}>
-                  <span style={{ transform: shift(c, 2) }}>{compare.label}</span>
-                </div>
-              )}
-            </div>
-            {compare && c === null && <p className="muted small spec-nodata">{compare.label}在這條軸沒有立場資料</p>}
-          </div>
-        );
+        const o = original?.find((x) => x.axis.id === s.axis.id)?.value ?? null;
+        const moved = o !== null && Math.abs(o - s.value!) > 0.005;
+        return <Row key={s.axis.id} score={s} parties={parties} highlightId={highlightId} original={moved ? o : null} />;
       })}
     </div>
   );

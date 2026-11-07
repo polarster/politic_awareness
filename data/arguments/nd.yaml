@@ -1,0 +1,264 @@
+arguments:
+  - question: N01
+    pro:
+      text: "支持者認為，九二共識是兩岸過去都能接受的共同基礎，兩岸曾在此基礎上進行制度化協商與交流。2016年後，對岸以台灣未承認九二共識為由中斷兩會對話，至今未恢復；因此回到這個基礎，是重啟對話、降低緊張最務實的做法。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第4會期內政委員會第10次全體委員會議紀錄 公報 海基會董事長吳豊山報告"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/114/96/LCIDC01_1149601_00004.pdf"
+          date: "2025-11-12"
+          speaker: "吳豊山"
+        - kind: news
+          title: "台灣不能涉險 鄭麗文：盼大陸不要軍事相向 民進黨政府接受九二共識（聯合報）"
+          url: "https://udn.com/news/story/6656/9237119"
+          date: "2025-12-31"
+          speaker: "鄭麗文"
+    con:
+      text: "反對者認為，對岸已把九二共識定義為「兩岸同屬一中、共謀國家統一」，並與「一國兩制」連結，在這個框架下沒有中華民國存在的空間；以它作為對話前提，等於先在主權上讓步。多數民意也不接受，對話應在對等尊嚴、不設政治前提下進行。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第4會期內政委員會第10次全體委員會議紀錄 公報 陸委會主委邱垂正答詢"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/114/96/LCIDC01_1149601_00004.pdf"
+          date: "2025-11-12"
+          speaker: "邱垂正"
+        - kind: news
+          title: "民進黨提名參選總統 賴清德：台灣無統獨問題 民主是最大共識【全文】（中央社）"
+          url: "https://www.cna.com.tw/news/aipl/202304125004.aspx"
+          date: "2023-04-12"
+          speaker: "賴清德"
+  - question: N02
+    pro:
+      text: "支持者認為，中華人民共和國從未統治過台灣，台灣有自己的政府、軍隊、法律與選舉，「互不隸屬」只是描述兩岸的客觀現實與台海現狀。清楚表達這一點，有助於在國際上說明台灣不是中華人民共和國的一部分，也能守護台灣人民的自主地位。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第5會期內政委員會第3次全體委員會議紀錄 公報 陸委會主委邱垂正答詢"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/115/22/LCIDC01_1152201_00013.pdf"
+          date: "2026-03-23"
+          speaker: "邱垂正"
+        - kind: news
+          title: "陸委會：對岸惡意扭曲國慶演說 互不隸屬是現狀（中央社）"
+          url: "https://www.cna.com.tw/news/acn/202410160357.aspx"
+          date: "2024-10-16"
+    con:
+      text: "反對者認為，依中華民國憲法與兩岸人民關係條例，兩岸關係不是國與國的關係，較適合用「主權互不承認、治權互不否認」來描述。強調「互不隸屬」容易被解讀為兩國論，偏離憲法架構，也讓兩岸交流與對話更難推動。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第4會期內政委員會第10次全體委員會議紀錄 公報 委員賴士葆發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/114/96/LCIDC01_1149601_00004.pdf"
+          date: "2025-11-12"
+          speaker: "賴士葆"
+        - kind: news
+          title: "賴清德談「台獨」兩岸互不隸屬 國民黨：同屬一中、大陸非外國（ETtoday）"
+          url: "https://www.ettoday.net/news/20260517/3167486.htm"
+          date: "2026-05-17"
+  - question: N03
+    pro:
+      text: "支持者認為，中華民國憲法增修條文仍以「國家統一前」為前提，兩岸語言文化相近。若能以和平交流、協商談判的方式逐步走向統一，可從根本降低戰爭風險、擴大合作空間；台灣也應主動參與談判、爭取有利條件，而不是被動等待。"
+      sources:
+        - kind: official
+          title: "中華民國憲法增修條文（全國法規資料庫）"
+          url: "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0000002"
+          date: "2005-06-10"
+        - kind: news
+          title: "台灣生存戰略 新黨：直面未來 主動重啟談判（聯合報）"
+          url: "https://udn.com/news/story/6656/9465946"
+          date: "2026-04-27"
+          speaker: "李勝峯"
+    con:
+      text: "反對者認為，台灣社會已形成以主權、民主制度與自身生活方式為核心的共識，與中國的政治體制差異很大，統一可能使現有的自由與民主生活難以保障。多數民眾不支持統一，台灣的前途應由人民自主決定，並維持現有的民主生活模式。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第4會期內政委員會第10次全體委員會議紀錄 公報 委員蘇巧慧發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/114/96/LCIDC01_1149601_00004.pdf"
+          date: "2025-11-12"
+          speaker: "蘇巧慧"
+        - kind: news
+          title: "「反對與中國統一！」黃國昌：我仍列中國黑名單、與北京無聯繫（NOWnews）"
+          url: "https://www.nownews.com/news/6719364"
+          date: "2025-08-14"
+          speaker: "黃國昌"
+  - question: N04
+    pro:
+      text: "支持者認為，中國大陸是台灣重要市場，簽訂服務業、貨品貿易等協議能降低關稅與市場障礙，保障台商權益，並帶動觀光與地方商機。近年兩岸經貿與觀光往來降溫，已讓部分產業與地方經濟受衝擊，擴大往來有助經濟發展與兩岸穩定。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第4會期內政委員會第10次全體委員會議紀錄 公報 委員徐欣瑩發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/114/96/LCIDC01_1149601_00004.pdf"
+          date: "2025-11-12"
+          speaker: "徐欣瑩"
+        - kind: news
+          title: "侯友宜主張大量開放陸生陸客 當選重啟溝通ECFA服貿（中央社）"
+          url: "https://www.cna.com.tw/news/aipl/202311270276.aspx"
+          date: "2023-11-27"
+          speaker: "侯友宜"
+    con:
+      text: "反對者認為，中國常把經貿手段當作政治施壓與統戰工具，以優惠措施吸引台灣企業、人才與資金，加深台灣對單一市場的依賴；一旦遭到經濟脅迫，風險很高。與其擴大依賴，不如分散市場、強化與其他國家的經貿合作。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第4會期內政委員會第10次全體委員會議紀錄 公報 大陸委員會業務報告"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/114/96/LCIDC01_1149601_00004.pdf"
+          date: "2025-11-12"
+          speaker: "邱垂正"
+        - kind: news
+          title: "跨世代／反對與中簽和平協議、服貿 賴清德憂得不償失籲信賴台灣（NOWnews）"
+          url: "https://www.nownews.com/news/6301580"
+          date: "2023-11-15"
+          speaker: "賴清德"
+  - question: N05
+    pro:
+      text: "支持者認為，在公共空間以國家資源紀念威權統治者，與民主社會的價值不符，也可能讓政治受難者及家屬再次受傷。移除或轉化威權人物雕像，搭配歷史記憶與人權教育，有助於反省過去、落實轉型正義，讓公共空間成為民主教育的場所。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第4會期教育及文化委員會第5次全體委員會議紀錄 公報 委員林宜瑾發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/114/93/LCIDC01_1149301_00006.pdf"
+          date: "2025-11-05"
+          speaker: "林宜瑾"
+        - kind: news
+          title: "中正紀念堂將轉型 文化部年底提民主教育園區空間計畫（公視）"
+          url: "https://news.pts.org.tw/article/814876"
+          date: "2026-06-26"
+    con:
+      text: "反對者認為，歷史人物的功過應該並陳，由社會理性評斷；強行移除雕像容易引發社會對立、撕裂族群情感，無助於和解。部分雕像與所在建築也具文化資產價值，應依文化資產保存的規定審慎處理，而不是一律移除。"
+      sources:
+        - kind: gazette
+          title: "立法院第10屆第5會期第12次會議紀錄 公報 國民黨黨團附帶決議（提案人曾銘宗）"
+          url: "https://ppg.ly.gov.tw/ppg/PublicationBulletinDetail/download/communique1/final/pdf/111/71/LCIDC01_1117101_00004.pdf"
+          date: "2022-05-17"
+          speaker: "曾銘宗"
+        - kind: news
+          title: "藍營籲停止中正紀念堂轉型正義 文化部：開民主倒車（公視）"
+          url: "https://news.pts.org.tw/article/734876"
+          date: "2025-01-22"
+  - question: D01
+    pro:
+      text: "支持者認為，中國對台軍事壓力持續升高，國防投資必須跟上威脅；將國防預算提高到GDP的3%以上，可補足武器、彈藥與訓練需求，也符合國際上以GDP比例衡量國防投入的做法。台灣財政與債務狀況尚稱健全，若投入不足反而可能形成戰略缺口。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第5會期外交及國防、財政委員會第1次聯席會議紀錄 公報 委員王安祥、郭國文發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/115/24/LCIDC01_1152401_00005.pdf"
+          date: "2026-03-23"
+          speaker: "王安祥、郭國文"
+        - kind: news
+          title: "國慶演說 總統：民主台灣是2300萬人在世界最明確定位【全文】（中央社）"
+          url: "https://www.cna.com.tw/news/aipl/202510100066.aspx"
+          date: "2025-10-10"
+          speaker: "賴清德"
+    con:
+      text: "反對者認為，國防支出應依實際需求與執行能力編列，而不是追求固定的GDP比例。台灣財政資源有限，大幅擴張國防預算恐排擠社福與民生支出；採購若缺乏透明與國會監督，也可能出現浪費或弊端。國防需要合理而精準的預算，而非空白支票。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第5會期外交及國防、財政委員會第1次聯席會議紀錄 公報 委員牛煦庭發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/115/24/LCIDC01_1152401_00005.pdf"
+          date: "2026-03-23"
+          speaker: "牛煦庭"
+        - kind: news
+          title: "接受法新社專訪 鄭麗文：台灣非提款機 美國期望超出合理（世界日報）"
+          url: "https://www.worldjournal.com/wj/amp/story/121475/9111820"
+          date: "2025-11-01"
+          speaker: "鄭麗文"
+  - question: D02
+    pro:
+      text: "支持者認為，過去4個月的軍事訓練役時間太短，難以練成合格戰力；恢復一年役期可加強實戰化的射擊與戰鬥訓練，讓義務役擔任守備任務、補充兵力。在中國軍事威脅升高下，這能強化整體防衛能力與嚇阻力。"
+      sources:
+        - kind: gazette
+          title: "立法院第10屆第7會期外交及國防委員會第3次全體委員會議紀錄 公報 國防部長邱國正答詢"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/112/25/LCIDC01_1122501_00001.pdf"
+          date: "2023-03-06"
+          speaker: "邱國正"
+        - kind: news
+          title: "義務役2024年起恢復為1年薪資2.6萬 總統：困難決定但無可迴避【全文】（中央社）"
+          url: "https://www.cna.com.tw/news/aipl/202212275006.aspx"
+          date: "2022-12-27"
+          speaker: "蔡英文"
+    con:
+      text: "反對者認為，現代戰爭仰賴高科技武器，需要長期服役的專業志願役來操作；一年役期難以熟練複雜裝備，往往訓練完成不久就退伍。以志願役為主的國家也能有強大戰力，與其延長義務役，不如改善志願役的訓練與留營，提升部隊專業度。"
+      sources:
+        - kind: gazette
+          title: "立法院第10屆第7會期外交及國防委員會第3次全體委員會議紀錄 公報 委員江啟臣發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/112/25/LCIDC01_1122501_00001.pdf"
+          date: "2023-03-06"
+          speaker: "江啟臣"
+        - kind: news
+          title: "名家論壇》楊威利／一年義務役炮灰？（NOWnews）"
+          url: "https://www.nownews.com/news/6017686"
+          date: "2023-01-03"
+          speaker: "楊威利"
+  - question: D03
+    pro:
+      text: "支持者認為，中國的軍事擴張不只威脅台灣，也威脅日本、菲律賓等鄰國，日本已把中國軍事擴張視為最大戰略挑戰。台灣與美國、日本有共同的安全利益與民主價值，優先深化安全合作，可提升嚇阻力，共同維護台海與區域的和平穩定。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第5會期外交及國防委員會第18次全體委員會議紀錄 公報 委員林楚茵發言、國安局長蔡明彥答詢"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/115/44/LCIDC01_1154401_00001.pdf"
+          date: "2026-05-25"
+          speaker: "林楚茵、蔡明彥"
+        - kind: news
+          title: "賴總統：美日峰會後重申維護台海和平 展現國際社會對區域安全的重視（聯合報）"
+          url: "https://udn.com/news/story/6656/9400385"
+          date: "2026-03-24"
+          speaker: "賴清德"
+    con:
+      text: "反對者認為，國際關係很現實，大國會以自身利益優先，美國的政策也可能隨領導人改變，甚至把台灣當成談判籌碼。過度押注單一陣營的安全合作，可能升高與中國的對立；台灣應在強化自身防衛的同時，兼顧與美方合作及兩岸和平。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第5會期外交及國防委員會第18次全體委員會議紀錄 公報 委員黃建賓發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/115/44/LCIDC01_1154401_00001.pdf"
+          date: "2026-05-25"
+          speaker: "黃建賓"
+        - kind: news
+          title: "鄭麗文：國民黨與美合作沒問題 台灣不在美中選邊（聯合報）"
+          url: "https://udn.com/news/story/6656/9549142"
+          date: "2026-06-06"
+          speaker: "鄭麗文"
+  - question: D04
+    pro:
+      text: "支持者認為，兩岸官方對話中斷多年，誤判與擦槍走火的風險升高，而陸委會、海基會設立的目的就是對話與交流。與其堅持表述而讓溝通停擺，不如在政治表述上保持彈性、先恢復制度化對話，才能處理人身安全、觀光等實際問題，降低戰爭風險。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第4會期內政委員會第10次全體委員會議紀錄 公報 委員謝龍介發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/114/96/LCIDC01_1149601_00004.pdf"
+          date: "2025-11-12"
+          speaker: "謝龍介"
+        - kind: news
+          title: "台灣不能涉險 鄭麗文：盼大陸不要軍事相向 民進黨政府接受九二共識（聯合報）"
+          url: "https://udn.com/news/story/6656/9237119"
+          date: "2025-12-31"
+          speaker: "鄭麗文"
+    con:
+      text: "反對者認為，對岸恢復官方對話的前提是接受其「一個中國原則」，等於要台灣先承認自己的國家不存在；在主權上讓步，未必能換來和平與安全。台灣願意在對等尊嚴、不設政治前提下對話，但不應以犧牲主權作為代價。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第4會期內政委員會第10次全體委員會議紀錄 公報 委員蘇巧慧發言、陸委會主委邱垂正答詢"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/114/96/LCIDC01_1149601_00004.pdf"
+          date: "2025-11-12"
+          speaker: "蘇巧慧、邱垂正"
+        - kind: news
+          title: "鄭麗文籲賴清德接受九二共識 民進黨：對等尊嚴、願與中交流（公視）"
+          url: "https://news.pts.org.tw/article/787966"
+          date: "2025-12-28"
+  - question: D05
+    pro:
+      text: "支持者認為，台灣夾在美中兩強之間，若明顯選邊，容易成為大國對抗的前線甚至棋子。與雙方維持良好關係、扮演溝通的橋梁，避免四處樹敵、刺激軍事強權，較能降低衝突風險，也能同時保有經貿利益與外交空間。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第4會期外交及國防委員會第12次全體委員會議紀錄 公報 委員王鴻薇發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/114/93/LCIDC01_1149301_00002.pdf"
+          date: "2025-11-05"
+          speaker: "王鴻薇"
+        - kind: news
+          title: "盼台灣成為美中溝通橋樑 柯文哲曝參選理由：不希望台灣是兵凶戰危之地（風傳媒／中央社）"
+          url: "https://www.storm.mg/article/4838514"
+          date: "2023-07-21"
+          speaker: "柯文哲"
+    con:
+      text: "反對者認為，威脅台海和平的是中國的軍事壓力，而不是台灣的選擇；美國與理念相近國家是台灣安全與經濟的重要夥伴，穩定的美中關係與強健的台美關係並不衝突。台灣本就站在自由民主一方，與民主夥伴合作才能共同維護台海現狀。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第5會期外交及國防委員會第18次全體委員會議紀錄 公報 外交部長林佳龍報告"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/115/44/LCIDC01_1154401_00001.pdf"
+          date: "2026-05-25"
+          speaker: "林佳龍"
+        - kind: news
+          title: "綠：鄭麗文稱台灣不必選邊站 是配合中共統戰話術（中央社）"
+          url: "https://www.cna.com.tw/news/aipl/202603040201.aspx"
+          date: "2026-03-04"
