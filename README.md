@@ -38,6 +38,19 @@ npm run dev            # 會先跑 build_data.py；/api 由 vite proxy 轉到 :8
 
 修改 `data/` 後跑 `python3 scripts/build_data.py` 重新產生 JSON（`npm run dev/build` 會自動跑），並重啟後端（system prompt 在啟動時建立）。
 
+## 對外開放開發伺服器（Cloudflare Tunnel）
+
+```bash
+printf '帳號:密碼\n' > .keys/site_login && chmod 600 .keys/site_login   # 登入帳密（不會進 git）
+cd api && ANTHROPIC_API_KEY="$(cat ../.keys/claude_api.key)" .venv/bin/uvicorn app:app --no-access-log --host 127.0.0.1 --port 8000
+cd web && PUBLIC_DEV=1 npx vite --host 0.0.0.0 --port 5173
+cloudflared tunnel --no-autoupdate --url http://localhost:5173   # 印出 https://xxx.trycloudflare.com
+```
+
+- `PUBLIC_DEV=1` 會開啟登入檢查（`web/auth-plugin.ts`）：頁面、原始碼、`/api` 都需要登入；`.keys/site_login` 不存在時一律拒絕。
+- 登入 cookie 以 `.keys/session_secret` 簽章，有效 7 天；登入嘗試每個 IP 每 15 分鐘最多 10 次。
+- 快速通道（trycloudflare.com）的網址每次重啟都會變；要固定網址需綁定 Cloudflare 帳號與網域。
+
 ## 立院投票紀錄
 
 網站的「立院投票紀錄」頁（`#/votes`）列出：
