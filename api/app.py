@@ -21,6 +21,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 from prompt import TOOLS, build_system_prompt
+from usage import TokenBudget, tokens_from_usage
 
 HERE = Path(__file__).resolve().parent
 
@@ -36,6 +37,11 @@ MAX_CHARS = int(os.environ.get("MAX_CHARS", "60000"))  # 整段對話的字元�
 MAX_TOKENS = int(os.environ.get("MAX_TOKENS", "8000"))
 CHAT_RATE = (int(os.environ.get("CHAT_RATE_COUNT", "30")), int(os.environ.get("CHAT_RATE_WINDOW", "600")))
 LOG_RATE = (5, 3600)
+
+# 全站共用的 Claude 用量上限：USAGE_WINDOW_SECONDS 內的總 token 數（輸入 + 快取 + 輸出）
+TOKEN_BUDGET = int(os.environ.get("TOKEN_BUDGET", "2000000"))
+USAGE_WINDOW_SECONDS = int(os.environ.get("USAGE_WINDOW_SECONDS", str(5 * 3600)))
+USAGE_DB_PATH = Path(os.environ.get("USAGE_DB_PATH", HERE / "usage.sqlite3"))
 
 DATA: dict = json.loads(DATA_PATH.read_text(encoding="utf-8"))
 SYSTEM_PROMPT = build_system_prompt(DATA)
@@ -82,6 +88,7 @@ class RateLimiter:
 
 chat_limiter = RateLimiter(*CHAT_RATE)
 log_limiter = RateLimiter(*LOG_RATE)
+token_budget = TokenBudget(TOKEN_BUDGET, USAGE_WINDOW_SECONDS, USAGE_DB_PATH)
 
 
 def client_key(request: Request) -> str:
@@ -122,6 +129,8 @@ def chat(req: ChatRequest, request: Request):
     if not chat_limiter.allow(client_key(request)):
         raise HTTPException(429, "請求太頻繁，請稍後再試。")
     validate_conversation(req.messages)
+    if token_budget.exhausted():
+        raise HTTPException(429, "Claude 對答的用量已達這 5 小時的上限，請稍後再來。")
     try:
         resp = get_client().beta.messages.create(
             model=MODEL,
@@ -143,12 +152,20 @@ def chat(req: ChatRequest, request: Request):
     except anthropic.APIConnectionError:
         raise HTTPException(502, "無法連線到 Claude，請稍後再試。")
 
+    token_budget.record(tokens_from_usage(resp.usage))
+
     if resp.stop_reason == "refusal":
         raise HTTPException(409, "Claude 無法回應這則訊息，請換個方式說說看。")
     content = [b.to_dict() for b in resp.content]
     if not content:
         raise HTTPException(502, "Claude 沒有產生回覆，請再試一次。")
-    return {"content": content, "stop_reason": resp.stop_reason}
+    return {"content": content, "stop_reason": resp.stop_reason, "usage_percent": token_budget.percent()}
+
+
+@app.get("/api/usage")
+def usage():
+    """全站 5 小時用量百分比（不透露實際數量）。"""
+    return {"percent": token_budget.percent()}
 
 
 # ── 匿名作答記錄 ──

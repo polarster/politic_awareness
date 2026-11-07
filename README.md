@@ -47,6 +47,7 @@ npm run dev            # 會先跑 build_data.py；/api 由 vite proxy 轉到 :8
 
 - 模型預設 `claude-opus-5-5`，effort 預設 `low`；可用 `CLAUDE_MODEL`、`CLAUDE_EFFORT` 調整（例如改用 `claude-sonnet-5-5` 降低成本）。
 - 已啟用伺服器端 refusal fallback（`fallbacks: "default"`）。
+- **全站用量上限**：`TOKEN_BUDGET`（預設 2,000,000，待定）是 `USAGE_WINDOW_SECONDS`（預設 5 小時）滾動視窗內的總 token 數（輸入 + 快取寫入 + 快取讀取 + 輸出）。達到上限後 `/api/chat` 回 429。前端只顯示百分比（`GET /api/usage`），每 10 秒更新一次，每次對答回覆後也會立即更新。用量紀錄（只有時間戳 + token 數）存在 `api/usage.sqlite3`，重啟後延續。後端請用單一 worker 執行。
 - 請在 Anthropic Console 設定每月預算上限。
 
 ## 授權

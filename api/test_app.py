@@ -7,6 +7,7 @@ from fastapi.testclient import TestClient
 
 import app as app_module
 from prompt import TOOLS, build_system_prompt
+from usage import TokenBudget
 
 
 @pytest.fixture
@@ -14,6 +15,7 @@ def client(tmp_path, monkeypatch):
     monkeypatch.setattr(app_module, "LOG_DB_PATH", tmp_path / "t.sqlite3")
     monkeypatch.setattr(app_module, "chat_limiter", app_module.RateLimiter(100, 60))
     monkeypatch.setattr(app_module, "log_limiter", app_module.RateLimiter(100, 60))
+    monkeypatch.setattr(app_module, "token_budget", TokenBudget(1000, 3600))
     return TestClient(app_module.app)
 
 
@@ -34,7 +36,10 @@ class FakeClient:
 
     def create(self, **kw):
         self.calls.append(kw)
-        return SimpleNamespace(stop_reason=self.stop_reason, content=[FakeBlock(c) for c in self.content])
+        usage = SimpleNamespace(input_tokens=100, output_tokens=50,
+                                cache_creation_input_tokens=0, cache_read_input_tokens=100)
+        return SimpleNamespace(stop_reason=self.stop_reason, content=[FakeBlock(c) for c in self.content],
+                               usage=usage)
 
 
 def test_system_prompt_includes_questions_and_rules():
@@ -130,3 +135,32 @@ def test_log_stores_minimal_record(client):
 def test_log_rejects_invalid(client, override):
     r = client.post("/api/log", json=_log_body(**override))
     assert r.status_code in (400, 422)
+
+
+def test_chat_records_usage_and_reports_percent(client, monkeypatch):
+    monkeypatch.setattr(app_module, "get_client", lambda: FakeClient())
+    r = client.post("/api/chat", json={"messages": [{"role": "user", "content": "嗨"}]})
+    assert r.json()["usage_percent"] == 25  # 250 / 1000
+    assert client.get("/api/usage").json() == {"percent": 25}
+
+
+def test_chat_blocked_when_budget_exhausted(client, monkeypatch):
+    fake = FakeClient()
+    monkeypatch.setattr(app_module, "get_client", lambda: fake)
+    app_module.token_budget.record(1000)
+    r = client.post("/api/chat", json={"messages": [{"role": "user", "content": "嗨"}]})
+    assert r.status_code == 429
+    assert fake.calls == []
+    assert client.get("/api/usage").json() == {"percent": 100}
+
+
+def test_token_budget_window_and_persistence(tmp_path):
+    db = tmp_path / "u.sqlite3"
+    b = TokenBudget(100, 3600, db)
+    b.record(30, now=1000.0)
+    b.record(50, now=2000.0)
+    assert b.used(now=2000.0) == 80
+    assert b.percent(now=2000.0) == 80
+    assert b.used(now=1000.0 + 3601) == 50  # 第一筆滑出視窗
+    b2 = TokenBudget(100, 10**12, db)  # 重啟後從 SQLite 讀回
+    assert b2.used() == 80

@@ -16,6 +16,7 @@ export interface ApiMessage {
 export interface ChatResponse {
   content: ContentBlock[];
   stop_reason: string | null;
+  usage_percent: number;
 }
 
 export class ApiError extends Error {
@@ -64,4 +65,11 @@ export function toLogAdjustments(adj: Adjustment[]): LogRecord["adjustments"] {
       ? { type: a.type, question: a.question, from: a.from, to: a.to }
       : { type: a.type, question: a.question, to: a.to },
   );
+}
+
+export async function getUsagePercent(): Promise<number> {
+  const res = await fetch(`${API_BASE}/api/usage`);
+  if (!res.ok) throw new ApiError(res.status, "無法取得用量");
+  const j = (await res.json()) as { percent: number };
+  return j.percent;
 }

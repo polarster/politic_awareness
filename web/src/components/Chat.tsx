@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { data, questionById } from "../data";
 import { ApiError, postChat, type ApiMessage, type ContentBlock } from "../lib/api";
 import { positionSummary, stateSummary } from "../lib/chatContext";
 import { ANSWER_OPTIONS, answerLabel } from "../lib/labels";
 import type { Answers, BudgetSteps } from "../lib/types";
+import { UsageMeter, useUsagePolling } from "./UsageMeter";
 
 interface Props {
   answers: Answers;
@@ -65,6 +66,9 @@ export function Chat(props: Props) {
   const [error, setError] = useState<string | null>(null);
   const [input, setInput] = useState("");
   const endRef = useRef<HTMLDivElement>(null);
+  const [usage, setUsage] = useState<number | null>(null);
+  useUsagePolling(useCallback((p: number) => setUsage(p), []));
+  const usageFull = usage !== null && usage >= 100;
 
   const last = messages[messages.length - 1];
   const pending = toolUses(last).filter((t) => !decisions[t.id]);
@@ -82,6 +86,7 @@ export function Chat(props: Props) {
     try {
       const res = await postChat(next);
       setMessages([...next, { role: "assistant", content: res.content }]);
+      setUsage(res.usage_percent);
     } catch (e) {
       const lastSent = next[next.length - 1];
       if (e instanceof ApiError && e.status === 409 && typeof lastSent.content === "string") {
@@ -146,22 +151,24 @@ export function Chat(props: Props) {
   if (!consent) {
     return (
       <div className="chat-consent">
+        <UsageMeter percent={usage} />
         <p>
           和 Claude 對答時，你的作答內容與你輸入的文字會傳送到本站伺服器與 Anthropic（Claude 的開發公司）以產生回覆。
           本站<strong>不記錄對話內容</strong>。Claude 只會「建議」修正，每一項都要你確認才會生效。
         </p>
-        <button onClick={() => setConsent(true)}>我了解，開始對答</button>
+        <button onClick={() => setConsent(true)} disabled={usageFull}>我了解，開始對答</button>
       </div>
     );
   }
 
   return (
     <div className="chat">
+      <UsageMeter percent={usage} />
       {!started && (
         <div className="starters">
           <p className="muted">選一個主題開始，或直接輸入你的想法：</p>
           {data.discussions.map((d) => (
-            <button key={d.id} className="secondary" onClick={() => sendUserText(d.opening, d.id)}>
+            <button key={d.id} className="secondary" disabled={usageFull} onClick={() => sendUserText(d.opening, d.id)}>
               {d.title}
             </button>
           ))}
@@ -194,11 +201,11 @@ export function Chat(props: Props) {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder={waitingForTools ? "請先回應上面的建議" : "例如：我很在意兒童貧窮，對財團也沒有好感，這會怎麼影響我的結果？"}
-          disabled={loading || waitingForTools}
+          disabled={loading || waitingForTools || usageFull}
           rows={2}
           maxLength={2000}
         />
-        <button type="submit" disabled={loading || waitingForTools || !input.trim()}>送出</button>
+        <button type="submit" disabled={loading || waitingForTools || usageFull || !input.trim()}>送出</button>
       </form>
     </div>
   );
