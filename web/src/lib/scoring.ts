@@ -191,3 +191,40 @@ export function entityAxisScores(data: AppData, entity: Entity, layer: Layer): A
     return { axis, value: count ? sum / count : null, count };
   });
 }
+
+export interface DistanceRank {
+  id: string;
+  /** 加權平均距離，0（完全相同）到 4（兩個極端） */
+  distance: number;
+  /** 用到的軸數（雙方都有值、且權重 > 0） */
+  axes: number;
+}
+
+/**
+ * 依各軸距離 |你 − 政黨| 的加權平均排序（近 → 遠）。
+ * 權重 0 的軸不計；某政黨在某軸沒有資料時，那條軸對它不計。
+ */
+export function rankByDistance(
+  you: AxisScore[],
+  parties: { id: string; scores: AxisScore[] }[],
+  weights: Record<string, number>,
+): DistanceRank[] {
+  const out: DistanceRank[] = [];
+  for (const p of parties) {
+    let sum = 0;
+    let wsum = 0;
+    let axes = 0;
+    for (const y of you) {
+      if (y.value === null) continue;
+      const w = weights[y.axis.id] ?? 1;
+      if (w <= 0) continue;
+      const v = p.scores.find((s) => s.axis.id === y.axis.id)?.value ?? null;
+      if (v === null) continue;
+      sum += w * Math.abs(y.value - v);
+      wsum += w;
+      axes++;
+    }
+    if (wsum > 0) out.push({ id: p.id, distance: sum / wsum, axes });
+  }
+  return out.sort((a, b) => a.distance - b.distance);
+}

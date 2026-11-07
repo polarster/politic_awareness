@@ -42,6 +42,20 @@ export function Results(p: Props) {
   const [showParties, setShowPartiesState] = useState<boolean>(() => {
     try { return localStorage.getItem("show-parties") !== "0"; } catch { return true; }
   });
+  // 各議題權重（0–3），只影響距離排序；記在這個瀏覽器
+  const [weights, setWeights] = useState<Record<string, number>>(() => {
+    try { return JSON.parse(localStorage.getItem("axis-weights-v2") ?? "{}"); } catch { return {}; }
+  });
+  // 權重以「層級:軸」為鍵，全國層與市政層分開設定
+  const weightsFor = (layer: string) =>
+    Object.fromEntries(Object.entries(weights).filter(([k]) => k.startsWith(layer + ":")).map(([k, v]) => [k.slice(layer.length + 1), v]));
+  const setWeight = (layer: string) => (id: string, w: number) => {
+    setWeights((prev) => {
+      const next = { ...prev, [`${layer}:${id}`]: w };
+      try { localStorage.setItem("axis-weights-v2", JSON.stringify(next)); } catch { /* ignore */ }
+      return next;
+    });
+  };
   const setShowParties = (v: boolean) => {
     setShowPartiesState(v);
     try { localStorage.setItem("show-parties", v ? "1" : "0"); } catch { /* ignore */ }
@@ -89,11 +103,11 @@ export function Results(p: Props) {
           <div className="radar-pair">
             <div>
               <h3>全國議題</h3>
-              <Spectrum you={nat} parties={spectrumParties("national")} highlightId={compareId} original={adjusted ? natOrig : null} />
+              <Spectrum you={nat} parties={spectrumParties("national")} highlightId={compareId} original={adjusted ? natOrig : null} weights={weightsFor("national")} onWeight={setWeight("national")} />
             </div>
             <div>
               <h3>{cityName ?? "雙北"}市政</h3>
-              <Spectrum you={mun} parties={spectrumParties("municipal")} highlightId={compareId} original={adjusted ? munOrig : null} />
+              <Spectrum you={mun} parties={spectrumParties("municipal")} highlightId={compareId} original={adjusted ? munOrig : null} weights={weightsFor("municipal")} onWeight={setWeight("municipal")} />
             </div>
           </div>
         </div>

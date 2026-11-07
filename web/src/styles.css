@@ -411,3 +411,32 @@ blockquote { margin: 4px 0; padding-left: 8px; border-left: 3px solid var(--bord
   --pcv: var(--pc, var(--muted)); vertical-align: middle;
 }
 .chip-btn.on .chip-badge { box-shadow: 0 0 0 2px #fff; }
+
+/* ── 距離排序與權重 ── */
+.spec-head { gap: 8px; flex-wrap: wrap; }
+.weight { display: inline-flex; align-items: center; gap: 2px; }
+.weight .muted { margin-right: 4px; }
+.weight button {
+  padding: 1px 7px; font-size: 0.75rem; border-radius: 6px; min-width: 30px;
+  background: var(--surface); color: var(--text); border: 1px solid var(--border);
+}
+.weight button.on { background: var(--text); color: var(--surface); border-color: var(--text); font-weight: 700; }
+.spec-off .spec-area, .spec-off .spec-poles { opacity: 0.45; }
+.spec-rank { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+.rank-strip { display: flex; gap: 10px; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+.rank-strip li { display: flex; flex-direction: column; align-items: center; gap: 1px; }
+.rank-d { font-size: 0.7rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.overall { border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; background: color-mix(in srgb, var(--track) 35%, var(--surface)); }
+.overall-head { display: flex; flex-direction: column; gap: 2px; margin-bottom: 8px; }
+.overall-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.overall-list li { display: grid; grid-template-columns: 18px 30px minmax(56px, auto) 1fr 40px; align-items: center; gap: 8px; }
+.overall-list li.hl .overall-name { font-weight: 800; }
+.overall-no { font-weight: 800; color: var(--muted); text-align: right; }
+.overall-name { font-weight: 600; white-space: nowrap; }
+.overall-bar { height: 8px; background: var(--track); border-radius: 4px; overflow: hidden; }
+.overall-bar span { display: block; height: 100%; background: var(--pcv, var(--muted)); --pcv: var(--pc, var(--muted)); border-radius: 4px; }
+.overall-d { font-variant-numeric: tabular-nums; text-align: right; font-weight: 700; }
+.overall-cov { grid-column: 3 / -1; margin-top: -6px; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .overall-bar span { --pcv: color-mix(in srgb, var(--pc, var(--muted)) 62%, white); }
+}

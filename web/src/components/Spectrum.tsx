@@ -1,6 +1,6 @@
 import type React from "react";
 import { useLayoutEffect, useRef, useState } from "react";
-import type { AxisScore } from "../lib/scoring";
+import { rankByDistance, type AxisScore } from "../lib/scoring";
 import { PartyBadge } from "./PartyBadge";
 
 export interface SpectrumParty {
@@ -36,6 +36,70 @@ interface Props {
   highlightId?: string | null;
   /** 對答修正前的你（虛線） */
   original?: AxisScore[] | null;
+  /** 各軸權重（0–3），只影響距離排序 */
+  weights?: Record<string, number>;
+  onWeight?: (axisId: string, w: number) => void;
+}
+
+const WEIGHTS = [0, 1, 2, 3];
+
+function badgeOf(p: SpectrumParty) {
+  return { name: p.label, color: p.color, badge: p.badge, logo: p.logo };
+}
+
+/** 距離排序：由近到遠的黨徽列，下面標距離 */
+function RankStrip({ ranks, parties, highlightId, size = 22 }: {
+  ranks: { id: string; distance: number }[]; parties: SpectrumParty[]; highlightId?: string | null; size?: number;
+}) {
+  const byId = new Map(parties.map((p) => [p.id, p]));
+  return (
+    <ol className="rank-strip">
+      {ranks.map((r) => {
+        const p = byId.get(r.id)!;
+        return (
+          <li key={r.id}>
+            <PartyBadge info={badgeOf(p)} detail={`距離 ${r.distance.toFixed(1)}`} highlight={r.id === highlightId} size={size} />
+            <span className="rank-d">{r.distance.toFixed(1)}</span>
+          </li>
+        );
+      })}
+    </ol>
+  );
+}
+
+/** 所有議題加權後的總排名 */
+function OverallRank({ you, parties, weights, highlightId }: {
+  you: AxisScore[]; parties: SpectrumParty[]; weights: Record<string, number>; highlightId?: string | null;
+}) {
+  const ranks = rankByDistance(you, parties, weights);
+  const totalAxes = you.filter((s) => s.value !== null && (weights[s.axis.id] ?? 1) > 0).length;
+  if (!ranks.length) return null;
+  const byId = new Map(parties.map((p) => [p.id, p]));
+  return (
+    <div className="overall">
+      <div className="overall-head">
+        <strong>綜合來看，和你最接近 → 最遠</strong>
+        <span className="muted small">依下方各議題的權重加權平均；距離 0 表示完全相同，4 表示在兩個極端</span>
+      </div>
+      <ol className="overall-list">
+        {ranks.map((r, i) => {
+          const p = byId.get(r.id)!;
+          return (
+            <li key={r.id} className={r.id === highlightId ? "hl" : ""}>
+              <span className="overall-no">{i + 1}</span>
+              <PartyBadge info={badgeOf(p)} detail={`距離 ${r.distance.toFixed(2)}`} size={26} />
+              <span className="overall-name">{p.label}</span>
+              <span className="overall-bar" aria-hidden="true">
+                <span style={{ width: `${(r.distance / 4) * 100}%`, ...pc(p.color) }} />
+              </span>
+              <span className="overall-d">{r.distance.toFixed(2)}</span>
+              {r.axes < totalAxes && <span className="muted small overall-cov">依 {r.axes}/{totalAxes} 條軸</span>}
+            </li>
+          );
+        })}
+      </ol>
+    </div>
+  );
 }
 
 const LANE_H = 28;
@@ -102,8 +166,9 @@ function useWidth<T extends HTMLElement>() {
   return [ref, w] as const;
 }
 
-function Row({ score, parties, highlightId, original }: {
+function Row({ score, parties, highlightId, original, weight, onWeight }: {
   score: AxisScore; parties: SpectrumParty[]; highlightId?: string | null; original?: number | null;
+  weight: number; onWeight?: (w: number) => void;
 }) {
   const [ref, width] = useWidth<HTMLDivElement>();
   const axisId = score.axis.id;
@@ -118,10 +183,18 @@ function Row({ score, parties, highlightId, original }: {
   const youShift = pct(you) < 10 ? "35%" : pct(you) > 90 ? "-35%" : "0";
 
   return (
-    <div className="spec-row">
+    <div className={`spec-row ${weight === 0 ? "spec-off" : ""}`}>
       <div className="spec-head">
-        <span className="spec-name">{score.axis.name}</span>
-        <span className="muted small">依 {score.count} 題</span>
+        <span className="spec-name">{score.axis.name}<span className="muted small">　依 {score.count} 題</span></span>
+        {onWeight && parties.length > 0 && (
+          <span className="weight small" role="radiogroup" aria-label={`${score.axis.name}的權重`}>
+            <span className="muted">權重</span>
+            {WEIGHTS.map((w) => (
+              <button key={w} role="radio" aria-checked={weight === w} className={weight === w ? "on" : ""}
+                onClick={() => onWeight(w)}>{w === 0 ? "0" : `×${w}`}</button>
+            ))}
+          </span>
+        )}
       </div>
       <div className="spec-poles small">
         <span>{score.axis.negative_pole}</span>
@@ -165,21 +238,35 @@ function Row({ score, parties, highlightId, original }: {
           })}
         </div>
       </div>
+      {withValue.length > 0 && (
+        <div className="spec-rank small">
+          <span className="muted">和你的距離（近 → 遠）</span>
+          <RankStrip
+            ranks={withValue.map((p) => ({ id: p.id, distance: Math.abs(p.value - you) })).sort((a, b) => a.distance - b.distance)}
+            parties={parties} highlightId={highlightId} />
+          {weight === 0 && <span className="muted">（權重 0：不列入綜合排名）</span>}
+        </div>
+      )}
       {noData.length > 0 && <p className="muted small spec-nodata">無資料：{noData.join("、")}</p>}
     </div>
   );
 }
 
 /** 光譜滑桿：每條軸左右對稱，兩端都是一種立場，中間是 0；所有有資料的政黨同時標示。 */
-export function Spectrum({ you, parties, highlightId, original }: Props) {
+export function Spectrum({ you, parties, highlightId, original, weights = {}, onWeight }: Props) {
   const rows = you.filter((s) => s.value !== null);
   if (!rows.length) return <p className="muted">這一層沒有足夠的作答可以計算。</p>;
   return (
     <div className="spectrum">
+      {parties.length > 0 && <OverallRank you={you} parties={parties} weights={weights} highlightId={highlightId} />}
       {rows.map((s) => {
         const o = original?.find((x) => x.axis.id === s.axis.id)?.value ?? null;
         const moved = o !== null && Math.abs(o - s.value!) > 0.005;
-        return <Row key={s.axis.id} score={s} parties={parties} highlightId={highlightId} original={moved ? o : null} />;
+        return (
+          <Row key={s.axis.id} score={s} parties={parties} highlightId={highlightId} original={moved ? o : null}
+            weight={weights[s.axis.id] ?? 1}
+            onWeight={onWeight ? (w) => onWeight(s.axis.id, w) : undefined} />
+        );
       })}
     </div>
   );

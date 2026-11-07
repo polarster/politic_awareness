@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
-  axisScores, budgetAgreement, budgetBalance, entityAxisScores, matchEntity, questionAgreement,
+  axisScores, budgetAgreement, budgetBalance, entityAxisScores, matchEntity, questionAgreement, rankByDistance,
 } from "./scoring";
 import type { AppData } from "./types";
 
@@ -139,5 +139,29 @@ describe("entityAxisScores", () => {
   it("市政層的預算立場換算到 -2..2", () => {
     const s = entityAxisScores(data, data.entities[0], "municipal");
     expect(s.find((x) => x.axis.id === "city_priority")!.value).toBe(-2); // 1 × 2 × -1
+  });
+});
+
+describe("rankByDistance", () => {
+  const ax = (id: string) => ({ id, name: id, negative_pole: "", positive_pole: "", layer: "national" as const });
+  const sc = (vals: Record<string, number | null>) => Object.entries(vals).map(([id, value]) => ({ axis: ax(id), value, count: 1 }));
+  const you = sc({ a: 1, b: -1 });
+  const parties = [
+    { id: "near", scores: sc({ a: 1, b: 0 }) },     // 距離 0, 1
+    { id: "far", scores: sc({ a: -2, b: 2 }) },     // 距離 3, 3
+    { id: "half", scores: sc({ a: null, b: -1 }) }, // 只有 b，距離 0
+  ];
+  it("依加權平均距離由近到遠排序，缺資料的軸不計", () => {
+    const r = rankByDistance(you, parties, {});
+    expect(r.map((x) => x.id)).toEqual(["half", "near", "far"]);
+    expect(r.find((x) => x.id === "near")!.distance).toBeCloseTo(0.5);
+    expect(r.find((x) => x.id === "half")!.axes).toBe(1);
+  });
+  it("權重改變排序；權重 0 的軸不計", () => {
+    const r = rankByDistance(you, parties, { a: 3, b: 0 });
+    expect(r.find((x) => x.id === "near")!.distance).toBe(0);
+    expect(r.some((x) => x.id === "half")).toBe(false); // 唯一的 b 軸權重為 0
+    const r2 = rankByDistance(you, parties, { a: 1, b: 3 });
+    expect(r2.find((x) => x.id === "near")!.distance).toBeCloseTo(0.75); // (0 + 3×1) / 4
   });
 });
