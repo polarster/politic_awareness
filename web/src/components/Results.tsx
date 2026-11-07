@@ -32,8 +32,7 @@ export function Results(p: Props) {
   const mun = useMemo(() => axisScores(data, p.answers, p.budget, "municipal"), [p.answers, p.budget]);
   const natOrig = useMemo(() => axisScores(data, p.originalAnswers, p.budget, "national"), [p.originalAnswers, p.budget]);
   const munOrig = useMemo(() => axisScores(data, p.originalAnswers, p.budget, "municipal"), [p.originalAnswers, p.budget]);
-  const natMatch = useMemo(() => matchAll(data, "national", p.answers, p.budget), [p.answers, p.budget]);
-  const munMatch = useMemo(() => matchAll(data, "municipal", p.answers, p.budget), [p.answers, p.budget]);
+
   const [compareId, setCompareId] = useState<string | null>(null);
   const [openNat, setOpenNat] = useState<string | null>(null);
   const [openMun, setOpenMun] = useState<string | null>(null);
@@ -56,6 +55,12 @@ export function Results(p: Props) {
       return next;
     });
   };
+  const natMatch = useMemo(() => matchAll(data, "national", p.answers, p.budget, weightsFor("national")),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [p.answers, p.budget, weights]);
+  const munMatch = useMemo(() => matchAll(data, "municipal", p.answers, p.budget, weightsFor("municipal")),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [p.answers, p.budget, weights]);
   const setShowParties = (v: boolean) => {
     setShowPartiesState(v);
     try { localStorage.setItem("show-parties", v ? "1" : "0"); } catch { /* ignore */ }
@@ -149,6 +154,7 @@ export function Results(p: Props) {
         <h2>和政黨的契合度</h2>
         <p className="muted small">
           點政黨卡片看逐題對照，以及每個立場的出處與證據等級。全國層與市政層分開計算。
+          上方各議題的權重（0–3）也會套用在這裡。
         </p>
         <h3>全國議題</h3>
         <MatchRings matches={natMatch} open={openNat} onOpen={setOpenNat} compareId={compareId} onCompare={setCompareId} />

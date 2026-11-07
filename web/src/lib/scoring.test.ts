@@ -112,6 +112,18 @@ describe("matchEntity", () => {
     expect(r.total).toBe(3);
   });
 
+  it("議題權重套用到契合度；權重 0 的軸不列入", () => {
+    const ans = { E01: { v: 2, imp: false }, G01: { v: 0, imp: false } };
+    // 預設：E01 一致度 1、G01 0.5 → 0.75
+    expect(matchEntity(data, data.entities[0], "national", ans, null).score).toBeCloseTo(0.75);
+    // economy ×3：(1×3 + 0.5×1) / 4
+    expect(matchEntity(data, data.entities[0], "national", ans, null, { economy: 3 }).score).toBeCloseTo(0.875);
+    // economy 0：只剩 G01（不屬於任何軸，不受影響）
+    const r = matchEntity(data, data.entities[0], "national", ans, null, { economy: 0 });
+    expect(r.score).toBeCloseTo(0.5);
+    expect(r.items.some((i) => i.id === "E01")).toBe(false);
+  });
+
   it("反思題不列入比對", () => {
     const r = matchEntity(data, data.entities[0], "national", { X13: { v: 2, imp: false } }, null);
     expect(r.items.some((i) => i.id === "X13")).toBe(false);

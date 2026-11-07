@@ -102,12 +102,19 @@ export function budgetAgreement(userStep: number, entityDir: number): number {
   return 1 - Math.abs(sign(userStep) - entityDir) / 2;
 }
 
+/** 議題（軸）權重：0–3，沒設定時為 1；不屬於任何軸的題目不受影響。 */
+function axisWeight(axis: string | null, axisWeights?: Record<string, number>): number {
+  if (!axis || !axisWeights) return 1;
+  return axisWeights[axis] ?? 1;
+}
+
 export function matchEntity(
   data: AppData,
   entity: Entity,
   layer: Layer,
   answers: Answers,
   budget: BudgetSteps | null,
+  axisWeights?: Record<string, number>,
 ): MatchResult {
   const stanceMap = new Map((data.stances[entity.id] ?? []).map((s) => [s.question, s]));
   const items: ItemComparison[] = [];
@@ -118,18 +125,22 @@ export function matchEntity(
     const isSupp = data.supplementary.some((s) => s.id === q.id);
     if (isSupp && !a) continue; // 沒作答的補充題不列入
     if (q.reflection) continue; // 反思題不比對
+    const aw = axisWeight(q.axis, axisWeights);
+    if (aw <= 0) continue; // 議題權重 0：不列入
     const st = stanceMap.get(q.id) ?? null;
     const user = a?.v ?? null;
     const agreement = user !== null && st ? questionAgreement(user, st.value) : null;
-    items.push({ id: q.id, user, stance: st, agreement, weight: weight(a?.imp ?? false) });
+    items.push({ id: q.id, user, stance: st, agreement, weight: weight(a?.imp ?? false) * aw });
   }
 
   if (layer === "municipal" && budget) {
     for (const item of data.budget.items) {
+      const aw = axisWeight(item.axis, axisWeights);
+      if (aw <= 0) continue;
       const st = stanceMap.get(item.id) ?? null;
       const user = budget[item.id] ?? 0;
       const agreement = st ? budgetAgreement(user, st.value) : null;
-      items.push({ id: item.id, user, stance: st, agreement, weight: 1 });
+      items.push({ id: item.id, user, stance: st, agreement, weight: aw });
     }
   }
 
@@ -152,9 +163,10 @@ export function matchAll(
   layer: Layer,
   answers: Answers,
   budget: BudgetSteps | null,
+  axisWeights?: Record<string, number>,
 ): MatchResult[] {
   return data.entities
-    .map((e) => matchEntity(data, e, layer, answers, budget))
+    .map((e) => matchEntity(data, e, layer, answers, budget, axisWeights))
     .sort((a, b) => (b.score ?? -1) - (a.score ?? -1));
 }
 
