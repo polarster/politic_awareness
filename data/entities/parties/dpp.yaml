@@ -2,6 +2,7 @@ id: dpp
 type: party
 name: 民主進步黨
 short: 民進黨
+color: "#1B9431"   # 代表色（可調整）
 inclusion_reason: 立法院有席次
 inclusion_verified: false
 links:

@@ -2,6 +2,7 @@ id: tpp
 type: party
 name: 台灣民眾黨
 short: 民眾黨
+color: "#28C8C8"   # 代表色（可調整）
 inclusion_reason: 立法院有席次
 inclusion_verified: false
 links:

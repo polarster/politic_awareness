@@ -55,6 +55,8 @@ export interface Entity {
   type: "party" | "person";
   name: string;
   short?: string;
+  /** 代表色 */
+  color?: string;
   party?: string;
   inclusion_reason?: string;
   links?: Record<string, string>;

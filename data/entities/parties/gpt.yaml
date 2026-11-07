@@ -2,6 +2,7 @@ id: gpt
 type: party
 name: 綠黨
 short: 綠黨
+color: "#57B847"   # 代表色（可調整）
 inclusion_reason: 待核對（不分區政黨票 ≥1% 或雙北有現任議員）
 inclusion_verified: false
 links:

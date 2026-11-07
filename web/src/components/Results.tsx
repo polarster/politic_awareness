@@ -9,7 +9,7 @@ import { Chat } from "./Chat";
 import { FeedbackLink } from "./FeedbackLink";
 import { MatchRings } from "./MatchRings";
 import { PoliticalMap } from "./PoliticalMap";
-import { Spectrum } from "./Spectrum";
+import { pc, Spectrum } from "./Spectrum";
 
 interface Props {
   answers: Answers;
@@ -38,10 +38,20 @@ export function Results(p: Props) {
   const [openNat, setOpenNat] = useState<string | null>(null);
   const [openMun, setOpenMun] = useState<string | null>(null);
   const [showNumbers, setShowNumbers] = useState(false);
+  // 是否顯示政黨位置：記在這個瀏覽器（只是個人偏好）
+  const [showParties, setShowPartiesState] = useState<boolean>(() => {
+    try { return localStorage.getItem("show-parties") !== "0"; } catch { return true; }
+  });
+  const setShowParties = (v: boolean) => {
+    setShowPartiesState(v);
+    try { localStorage.setItem("show-parties", v ? "1" : "0"); } catch { /* ignore */ }
+  };
 
   const partiesWithData = data.entities.filter((e) => (data.stances[e.id] ?? []).length > 0);
   const spectrumParties = (layer: "national" | "municipal") =>
-    partiesWithData.map((e) => ({ id: e.id, label: e.short ?? e.name, scores: entityAxisScores(data, e, layer) }));
+    showParties
+      ? partiesWithData.map((e) => ({ id: e.id, label: e.short ?? e.name, color: e.color, scores: entityAxisScores(data, e, layer) }))
+      : [];
 
   return (
     <>
@@ -52,6 +62,13 @@ export function Results(p: Props) {
           每條軸的兩端代表兩種不同的價值取向，沒有哪一端比較好。結果只反映你在這份問卷上的作答。
         </p>
         {partiesWithData.length > 0 && (
+          <label className="switch small">
+            <input type="checkbox" role="switch" checked={showParties} onChange={(e) => setShowParties(e.target.checked)} />
+            <span className="switch-ui" aria-hidden="true" />
+            顯示政黨位置
+          </label>
+        )}
+        {showParties && partiesWithData.length > 0 && (
           <div className="compare-chips small" role="group" aria-label="對照政黨">
             <span className="muted">強調政黨：</span>
             <button className={compareId === null ? "chip-btn on" : "chip-btn"} onClick={() => setCompareId(null)}>
@@ -59,6 +76,7 @@ export function Results(p: Props) {
             </button>
             {partiesWithData.map((e) => (
               <button key={e.id} className={compareId === e.id ? "chip-btn on" : "chip-btn"}
+                style={pc(e.color)}
                 onClick={() => setCompareId(compareId === e.id ? null : e.id)}>
                 {e.short ?? e.name}
               </button>
@@ -86,9 +104,10 @@ export function Results(p: Props) {
             defaultY="identity"
             points={[
               { id: "you", label: "你", scores: nat, kind: "you" },
-              ...partiesWithData.map((e) => ({
+              ...(showParties ? partiesWithData : []).map((e) => ({
                 id: e.id,
                 label: e.short ?? e.name,
+                color: e.color,
                 scores: entityAxisScores(data, e, "national"),
                 kind: (compareId === e.id ? "highlight" : "party") as "highlight" | "party",
               })),

@@ -2,6 +2,7 @@ id: sdp
 type: party
 name: 社會民主黨
 short: 社民黨
+color: "#E4007F"   # 代表色（可調整）
 inclusion_reason: 雙北有現任議員（苗博雅，台北市議員）
 inclusion_verified: false
 links:

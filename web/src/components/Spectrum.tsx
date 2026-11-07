@@ -1,10 +1,29 @@
+import type React from "react";
 import { useLayoutEffect, useRef, useState } from "react";
 import type { AxisScore } from "../lib/scoring";
 
 export interface SpectrumParty {
   id: string;
   label: string;
+  color?: string;
   scores: AxisScore[];
+}
+
+/** 依底色亮度決定文字用黑或白 */
+/** 以 CSS 變數 --pc 傳入政黨色，讓樣式表可以在暗色模式調亮 */
+export function pc(color?: string): React.CSSProperties {
+  return color ? ({ "--pc": color } as React.CSSProperties) : {};
+}
+
+export function textOn(hex: string): string {
+  const m = /^#?([0-9a-f]{6})$/i.exec(hex);
+  if (!m) return "#fff";
+  const n = parseInt(m[1], 16);
+  const [r, g, b] = [(n >> 16) & 255, (n >> 8) & 255, n & 255].map((c) => {
+    const x = c / 255;
+    return x <= 0.03928 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4;
+  });
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b > 0.4 ? "#111" : "#fff";
 }
 
 interface Props {
@@ -35,6 +54,7 @@ export function labelWidth(s: string) {
 interface Placed {
   id: string;
   label: string;
+  color?: string;
   value: number;
   x: number;        // 圓點位置（px）
   left: number;     // 標籤左緣（px）
@@ -42,7 +62,7 @@ interface Placed {
 }
 
 /** 依位置由左到右，把標籤放進第一個不重疊的排，避免互相遮住 */
-export function placeLabels(items: { id: string; label: string; value: number }[], width: number): Placed[] {
+export function placeLabels(items: { id: string; label: string; color?: string; value: number }[], width: number): Placed[] {
   const lanes: number[] = [];
   return [...items]
     .sort((a, b) => a.value - b.value)
@@ -80,8 +100,8 @@ function Row({ score, parties, highlightId, original }: {
   const [ref, width] = useWidth<HTMLDivElement>();
   const axisId = score.axis.id;
   const withValue = parties
-    .map((p) => ({ id: p.id, label: p.label, value: p.scores.find((s) => s.axis.id === axisId)?.value ?? null }))
-    .filter((p): p is { id: string; label: string; value: number } => p.value !== null);
+    .map((p) => ({ id: p.id, label: p.label, color: p.color, value: p.scores.find((s) => s.axis.id === axisId)?.value ?? null }))
+    .filter((p): p is { id: string; label: string; color: string | undefined; value: number } => p.value !== null);
   const noData = parties.filter((p) => !withValue.some((w) => w.id === p.id)).map((p) => p.label);
   const placed = width ? placeLabels(withValue, width) : [];
   const lanes = placed.reduce((m, p) => Math.max(m, p.lane + 1), 0);
@@ -106,7 +126,7 @@ function Row({ score, parties, highlightId, original }: {
           <div className="spec-mid" />
           {placed.map((p) => (
             <span key={p.id} className={`spec-dot ${p.id === highlightId ? "spec-dot-hl" : ""}`}
-              style={{ left: p.x }} title={`${p.label}：${fmt(p.value)}`} />
+              style={{ left: p.x, ...pc(p.color) }} title={`${p.label}：${fmt(p.value)}`} />
           ))}
           {original != null && (
             <div className="spec-pin spec-you spec-dashed" style={{ left: `${pct(original)}%` }} title={`修正前的你：${fmt(original)}`}>
@@ -121,9 +141,13 @@ function Row({ score, parties, highlightId, original }: {
           {placed.map((p) => (
             <div key={p.id}>
               <span className={`spec-leader ${p.id === highlightId ? "hl" : ""}`}
-                style={{ left: p.x, height: p.lane * LANE_H + 6 }} />
+                style={{ left: p.x, height: p.lane * LANE_H + 6, ...pc(p.color) }} />
               <span className={`spec-tag ${p.id === highlightId ? "hl" : ""}`}
-                style={{ left: p.left, top: p.lane * LANE_H + 6 }} title={`${p.label}：${fmt(p.value)}`}>
+                style={{
+                  left: p.left, top: p.lane * LANE_H + 6, ...pc(p.color),
+                }}
+                title={`${p.label}：${fmt(p.value)}`}>
+                {p.color && p.id !== highlightId && <i className="spec-swatch" />}
                 {p.label}
               </span>
             </div>

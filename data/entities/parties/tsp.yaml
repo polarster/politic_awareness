@@ -2,6 +2,7 @@ id: tsp
 type: party
 name: 台灣基進
 short: 台灣基進
+color: "#A73F24"   # 代表色（可調整）
 inclusion_reason: 待核對（不分區政黨票 ≥1% 或雙北有現任議員）
 inclusion_verified: false
 links:

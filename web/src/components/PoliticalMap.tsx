@@ -1,9 +1,11 @@
 import { useState } from "react";
 import type { AxisScore } from "../lib/scoring";
+import { pc } from "./Spectrum";
 
 interface Point {
   id: string;
   label: string;
+  color?: string;
   scores: AxisScore[];
   kind: "you" | "party" | "highlight";
 }
@@ -73,9 +75,9 @@ export function PoliticalMap({ points, defaultX, defaultY }: Props) {
             const cx = coord(x!);
             const cy = coord(-y!); // 直軸 +2 在上方
             return (
-              <g key={p.id} className={`pmap-pt pmap-${p.kind}`}>
+              <g key={p.id} className={`pmap-pt pmap-${p.kind}`} style={p.kind !== "you" ? pc(p.color) : undefined}>
                 <title>{`${p.label}：${xa.name} ${x!.toFixed(1)}，${ya.name} ${y!.toFixed(1)}`}</title>
-                <circle cx={cx} cy={cy} r={p.kind === "you" ? 9 : 6} />
+                <circle cx={cx} cy={cy} r={p.kind === "you" ? 9 : p.kind === "highlight" ? 8 : 6} />
                 <text x={cx} y={cy - (p.kind === "you" ? 14 : 11)} textAnchor="middle" className="pmap-label">{p.label}</text>
               </g>
             );
