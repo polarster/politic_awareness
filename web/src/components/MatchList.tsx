@@ -55,6 +55,7 @@ function Detail({ m }: { m: MatchResult }) {
                         {e.quote && <blockquote>「{e.quote}」</blockquote>}
                         {e.context && <p className="muted small">前後語境：{e.context}</p>}
                         <a href={evidenceUrl(e)} target="_blank" rel="noreferrer">{e.title ?? "出處連結"}</a>
+                        {e.vote?.ref && <> · <a href={`#/votes/${e.vote.ref}`}>看各黨與每位立委的投票</a></>}
                       </li>
                     ))}
                   </ul>

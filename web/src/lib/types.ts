@@ -70,6 +70,45 @@ export interface Evidence {
   quote?: string;
   context?: string;
   timestamp?: number | null;
+  vote?: VoteRef;
+}
+
+export interface VoteRef {
+  body: string;
+  bill: string;
+  choice: string;
+  ref?: string;
+}
+
+export type VoteSide = "贊成者" | "反對者" | "棄權者";
+
+export interface VoteRecord {
+  id: string;
+  kind: "normal" | "override";
+  term: number;
+  meeting: string;
+  dates: string[] | null;
+  source_url: string;
+  no: number;
+  item: string;
+  short_title: string;
+  agenda_title: string;
+  counts: { 出席: number; 贊成: number; 反對: number; 棄權: number };
+  by_party: Record<VoteSide, Record<string, number>>;
+  names: Record<VoteSide, [string, string][]>;
+  procedural: boolean;
+}
+
+export interface CuratedVote {
+  id: string;
+  vote: string;
+  also?: string[];
+  title: string;
+  summary: string;
+  questions?: string[];
+  scored: boolean;
+  note?: string;
+  records: VoteRecord[];
 }
 
 export interface Stance {
@@ -87,6 +126,7 @@ export interface AppData {
   questions: Question[];
   supplementary: Question[];
   discussions: Discussion[];
+  votes: CuratedVote[];
   budget: BudgetConfig;
   entities: Entity[];
   stances: Record<string, Stance[]>;

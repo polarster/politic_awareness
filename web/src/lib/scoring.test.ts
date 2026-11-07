@@ -20,6 +20,7 @@ const data: AppData = {
     { id: "X13", layer: "national", axis: null, direction: 0, text: "", reflection: true },
   ],
   discussions: [],
+  votes: [],
   budget: {
     version: "t", start_balance: 0, min_final_balance: 0, steps: [-2, -1, 0, 1, 2],
     cities: [],

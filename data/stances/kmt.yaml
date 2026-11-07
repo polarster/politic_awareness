@@ -1,0 +1,429 @@
+entity: kmt
+stances:
+- question: N01
+  value: 2
+  interpretation: '國民黨政策綱領明定以「九二共識、一中各表」為兩岸互動基礎，現任黨主席鄭麗文也一再表示「九二共識、反對台獨」是兩岸對話的前提，立場明確且一貫。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: platform
+    title: 國民黨新政綱反台獨反一國兩制 納朱立倫求同尊異（中央社）
+    url: https://www.cna.com.tw/news/aipl/202110270237.aspx
+    date: 2021-10-27
+    venue: 國民黨中常會（政策綱領草案）
+    quote: 推動海峽兩岸在「九二共識、一中各表」的務實基礎上，由「求同存異」進一步走向「求同尊異」，開展各項有利於兩岸和平穩定發展的工作。
+    context: 中常會通過、送全代會的國民黨政策綱領草案中有關兩岸關係的段落。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 台灣不能涉險 鄭麗文：盼大陸不要軍事相向 民進黨政府接受九二共識（聯合報）
+    url: https://udn.com/news/story/6656/9237119
+    date: 2025-12-31
+    venue: 國民黨中常會
+    quote: 只要九二共識、反對台獨，兩岸就能對話交流和平，迎來繁榮與種種可能性。
+    context: 黨主席鄭麗文在中常會呼籲民進黨政府接受九二共識、公開反對台獨，並以馬英九執政八年為例。
+    timestamp: null
+- question: N02
+  value: -1
+  interpretation: '國民黨主張依中華民國憲法「兩岸同屬一個中國」、中國大陸不是外國，反對以「國與國」框架描述兩岸，因此不認同賴清德總統「互不隸屬」的表述；但該黨同時沿用「互不承認主權、互不否認治權」並強調捍衛中華民國主權，並非主張台灣隸屬中華人民共和國，故判為傾向不同意而非強烈不同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 賴清德談「台獨」兩岸互不隸屬 國民黨：同屬一中、大陸非外國（ETtoday）
+    url: https://www.ettoday.net/news/20260517/3167486.htm
+    date: 2026-05-17
+    venue: 國民黨新聞稿
+    quote: 大陸對台灣而言，不是外國
+    context: 回應賴清德以「中華民國和中華人民共和國互不隸屬」詮釋台獨意涵；國民黨表示依憲法兩岸同屬一個中國，兩岸關係不是「國與國」關係，並引用馬英九「兩岸互不承認主權、互不否認治權」的說法，要求賴清德回到九二共識、反對台獨。
+    timestamp: null
+  - grade: C
+    kind: interview
+    title: 美公廣電台專訪 鄭麗文：會習近平沒有也不可能談統一（聯合報）
+    url: https://udn.com/news/story/6656/9561979
+    date: 2026-06-12
+    venue: 美國公共廣播電台（NPR）專訪
+    quote: 只要我們不追求台灣與中國大陸永久分離，就不屬於台灣獨立。
+    context: 鄭麗文同時表示「中華民國憲法是一部『一中憲法』」。
+    timestamp: null
+- question: N03
+  value: 1
+  interpretation: '國民黨現行政綱以反台獨、反一國兩制與「九二共識、一中各表」為主軸，未把統一列為近期目標；黨主席鄭麗文表示現在談和平統一「言之過早」、在台灣公投也難以通過，但未排除統一作為長期方向，並強調須尊重台灣人民意願。立場有所保留，故判為傾向同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: interview
+    title: 談和平統一言之過早…鄭麗文：兩岸隔絕逾百年 重新認識需要時間（聯合報）
+    url: https://udn.com/news/story/6656/9309522
+    date: 2026-02-04
+    venue: 《經濟學人》專訪及後續說明
+    quote: 言之過早，沒有成熟的條件
+    context: 鄭麗文被問及兩岸和平統一時的回答；她事後說明兩岸隔絕逾百年、制度與生活方式不同，重新認識需要時間，並提出執政後推動「兩岸和平框架」。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 鄭麗文稱和平統一公投很難 張惇涵：堅持不卑不亢、維持現狀（TVBS）
+    url: https://news.tvbs.com.tw/politics/3226666
+    date: 2026-06-08
+    venue: 紐約亞洲協會演講
+    quote: 要通過和平統一是很困難的
+    context: 鄭麗文被問及台灣民意時表示，若現階段在台灣舉辦公投，和平統一很難通過。
+    timestamp: null
+- question: N04
+  value: 2
+  interpretation: '國民黨 2024 年總統參選人侯友宜主張當選後快速重啟 ECFA 溝通及服貿、貨貿；黨主席鄭麗文亦主張 2028 年執政後恢復兩岸全面交流與合作，國民黨並肯定陸方的兩岸交流措施。整體一貫支持擴大兩岸經貿往來。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: platform
+    title: 侯友宜主張大量開放陸生陸客 當選重啟溝通ECFA服貿（中央社）
+    url: https://www.cna.com.tw/news/aipl/202311270276.aspx
+    date: 2023-11-27
+    venue: 2023 台灣經濟發展論壇
+    quote: null
+    context: 國民黨總統參選人侯友宜表示當選後會先處理 ECFA 議題，快速與中國大陸展開 ECFA 溝通，服貿、貨貿也都要快速重啟。（報導為記者轉述）
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 同台柯志恩、謝龍介 鄭麗文喊：推動兩岸正常化「北京也會釋善意」（TVBS）
+    url: https://news.tvbs.com.tw/politics/3160175
+    date: 2026-03-24
+    venue: 工商建研會南區聯誼會
+    quote: 這不是台灣一廂情願，北京也會釋出相對應的善意
+    context: 鄭麗文表示 2028 年政黨輪替後，國民黨將推動兩岸關係正常化，恢復全面交流、對話與合作（記者轉述）。
+    timestamp: null
+- question: N05
+  value: -2
+  interpretation: '國民黨立法院黨團在 2025 年度總預算審查中，批評文化部中正紀念堂新願景競圖涉及移除大廳銅像，提案刪減相關預算、要求停止轉型正義相關工作並恢復儀隊在銅像大廳執勤，明確反對移除威權人物雕像。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: B
+    kind: bill
+    title: 藍委喊停止中正紀念堂轉型正義、獨裁者展覽 大刀砍3000萬預算（新頭殼）
+    url: https://newtalk.tw/news/view/2025-01-20/953890
+    date: 2025-01-20
+    venue: 立法院 114 年度中央政府總預算審查
+    quote: 恢復三軍儀隊在銅像大廳執行相關任務
+    context: 國民黨團提案，批評文化部「新願景概念競圖成果展覽」內容涉及移除大廳銅像、與國定古蹟法規扞格，提案刪減「藝術業務推展與輔導」3000 萬元並要求停止該展覽。
+    timestamp: null
+  - grade: B
+    kind: bill
+    title: 藍營籲停止中正紀念堂轉型正義 文化部：開民主倒車（公視）
+    url: https://news.pts.org.tw/article/734876
+    date: 2025-01-22
+    venue: 立法院 114 年度中央政府總預算三讀後
+    quote: null
+    context: 公視報導國民黨團提案要求停止中正紀念堂轉型正義相關工作、儀隊回到堂內，文化部批評為「開民主倒車」。
+    timestamp: null
+- question: D01
+  value: -1
+  interpretation: 黨主席鄭麗文表示台灣無法負擔超過 GDP 3% 的國防預算；國民黨團在記名表決中全數支持將特別預算上限由行政院版 1.25 兆元降為 7800 億元（本表決決定的是特別預算規模，並非直接表決 GDP 3% 目標。）國民黨表示支持合理國防與對美軍購，但反對大幅提高國防支出，故判為傾向不同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第5會期第9次會議議事錄：保衛國家安全及強化不對稱戰力計畫採購特別條例記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/115/38/01/details
+    date: '2026-05-08'
+    venue: 立法院院會
+    quote: null
+    context: 立法院第11屆第5會期第9次會議議事錄（115年5月8日、12日），記名表決結果附後(3)(5)。第五條（特別預算上限）照民眾黨團及國民黨團共同所提再修正動議通過：出席110、贊成59（國民黨50、民眾黨8、無黨籍1）、反對51（民進黨全數）。全案：出席107、贊成59、反對0、棄權48（民進黨）。黨籍依立法院委員資料比對。行政院原提版本為8年1.25兆元，通過版本上限7800億元。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 保衛國家安全及強化不對稱戰力計畫採購特別條例第五條（國民黨團、民眾黨團再修正動議，上限7800億元）
+      choice: 贊成
+      ref: defense-special-act-2026
+  - grade: C
+    kind: interview
+    title: 接受法新社專訪 鄭麗文：台灣非提款機 美國期望超出合理（世界日報）
+    url: https://www.worldjournal.com/wj/amp/story/121475/9111820
+    date: 2025-11-01
+    venue: 法新社專訪
+    quote: 台灣不是提款機，我們真的沒有那麼多錢。
+    context: 報導轉述鄭麗文表示台灣無法承擔將國防預算提升至 GDP 的 3% 以上；她也說「我們當然有保衛台灣的決心，但這不是一張空白支票。」
+    timestamp: null
+- question: D02
+  value: 1
+  interpretation: '2022 年政府宣布恢復一年期義務役時，國民黨團表態支持國防改革，但附帶加強訓練、提高軍人待遇等條件；黨內仍有主張日後縮短役期的聲音，近年未見黨中央改變立場，故判為有條件同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 役期延長後年實施！立委憂訓練官、訓練場無法到位（NOWnews）
+    url: https://www.nownews.com/news/6012946
+    date: 2022-12-28
+    venue: 國防部長拜會國民黨團
+    quote: 國民黨支持國防改革，因為國防改革後讓戰力提升，才有辦法在充分備戰前提下避戰
+    context: 國民黨團總召曾銘宗回應恢復一年期義務役，並提出加強演訓內容、提升軍人待遇、恢復九三軍人節放假等配套要求。
+    timestamp: null
+- question: D03
+  value: 0
+  interpretation: '國民黨表示支持對美軍購、與美國政府合作「沒有問題」，但黨主席鄭麗文同時強調與中國大陸講和平、台灣不在美中之間選邊，並未將美日安全合作列為優先於兩岸和平的方向；與日本安全合作則未見明確表態，故判為中立。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: interview
+    title: 鄭麗文：國民黨與美合作沒問題 台灣不在美中選邊（聯合報）
+    url: https://udn.com/news/story/6656/9549142
+    date: 2026-06-06
+    venue: 訪美期間 WorldViews 播客專訪
+    quote: 國民黨在與美國政府合作是沒有問題的，同時與中國大陸講和平也是沒有問題的。
+    context: 鄭麗文另表示「國民黨支持軍購，不會阻擋」，但無法接受空白授權。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 軍購不放手、卻喊話見川普！鄭麗文強調：先見習近平是避戰（NOWnews）
+    url: https://www.nownews.com/news/6814676
+    date: 2026-04-30
+    venue: null
+    quote: 國民黨支持對美軍購，但主張錢要花在刀口上
+    context: 鄭麗文表示美方發價書抵達後國民黨會第一時間在國會審查，同時主張先確立兩岸和平共識再與美方溝通。
+    timestamp: null
+- question: D04
+  value: 1
+  interpretation: '國民黨積極主張恢復兩岸對話，黨主席鄭麗文並於 2026 年訪陸與中共領導人會面；其前提是「九二共識、反對台獨」。國民黨認為這是依中華民國憲法的立場而非讓步，故判為同意恢復對話，但不等同接受題目所說的「讓步」框架。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 台灣不能涉險 鄭麗文：盼大陸不要軍事相向 民進黨政府接受九二共識（聯合報）
+    url: https://udn.com/news/story/6656/9237119
+    date: 2025-12-31
+    venue: 國民黨中常會
+    quote: 兩岸應該共同負起責任，維繫兩岸和平，避免任何可能的軍事衝突，展開對話交流，進行和解，締造和平。
+    context: 鄭麗文同場呼籲民進黨政府接受九二共識、公開反對台獨，以開啟兩岸對話。
+    timestamp: null
+  - grade: C
+    kind: interview
+    title: 美公廣電台專訪 鄭麗文：會習近平沒有也不可能談統一（聯合報）
+    url: https://udn.com/news/story/6656/9561979
+    date: 2026-06-12
+    venue: 美國公共廣播電台（NPR）專訪
+    quote: 兩岸只要回到「九二共識，反對台獨」
+    context: 鄭麗文表示兩岸只要回到九二共識、反對台獨即可展開對話，若 2028 年重返執政將以此為基礎重啟交流。
+    timestamp: null
+- question: D05
+  value: 1
+  interpretation: '黨主席鄭麗文多次主張台灣不必在美中之間選邊，應扮演兩岸與中美之間的橋梁，並以「美國是恩人、大陸是親人」形容；但國民黨同時自稱支持對美軍購與台美合作，並非完全等距，故判為傾向同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: interview
+    title: 鄭麗文：國民黨與美合作沒問題 台灣不在美中選邊（聯合報）
+    url: https://udn.com/news/story/6656/9549142
+    date: 2026-06-06
+    venue: 訪美期間 WorldViews 播客專訪
+    quote: 台灣真正的價值，是在中美之間搭起理解、溝通與合作的橋梁，而非在中美之間選邊站。
+    context: 鄭麗文同時表示「美國是我們的恩人，大陸是我們的親人」。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 綠：鄭麗文稱台灣不必選邊站 是配合中共統戰話術（中央社）
+    url: https://www.cna.com.tw/news/aipl/202603040201.aspx
+    date: 2026-03-04
+    venue: 《外交事務》（Foreign Affairs）投書
+    quote: null
+    context: 中央社轉述鄭麗文投書主張台灣不應被迫陷入「選邊站」的二元對立框架，應保有戰略能動性與自主空間；報導主要為民進黨發言人的批評回應。
+    timestamp: null
+- question: E04
+  value: -1
+  interpretation: '國民黨團 2026 年提出的少子化對策以現金補助為主（0 到 15 歲每月 5000 元育兒補助、0 到 6 歲托育補助、免健保費），未以擴大政府直接提供的公共托育為主軸，故判為傾向不同意「以政府直接提供為主」。此題僅有托育面向的資料，長照面向未見明確表態。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 賴總統推0至18歲成長津貼 國民黨許宇甄欣慰：從善如流（聯合報）
+    url: https://udn.com/news/story/124881/9514537
+    date: 2026-05-20
+    venue: 國民黨團
+    quote: 這國安三箭就是解決少子化危機的最佳良方。
+    context: 國民黨團「少子化國安三箭」為 0 到 15 歲每月 5000 元育兒補助、0 到 6 歲孩子健保免費、0 到 6 歲每半年托育補助 2 萬元。
+    timestamp: null
+- question: S02
+  value: -2
+  interpretation: '憲法法庭 113 年憲判字第 8 號要求死刑判決須合議庭一致決後，國民黨團認為形同實質廢死，提出「判處死刑不須一致決」公投案並在院會表決通過，明確反對廢除死刑。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第3會期第12次會議議事錄：「死刑不須一致決」公投提案記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/114/50/01/details
+    date: '2025-05-16'
+    venue: 立法院院會
+    quote: null
+    context: 記名表決結果附後(2)：照國民黨團提議通過，國民黨46、民眾黨6 贊成，民進黨48 反對；民進黨團撤銷本案之提議則不予通過（附後(1)）。黨籍依立法院委員資料比對。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 委員吳宗憲等52人擬具公投提案：「您是否同意『各級法院合議庭法官判處死刑不須一致決』之政策？」
+      choice: 贊成
+      ref: death-penalty-referendum-2025
+  - grade: B
+    kind: bill
+    title: 藍白立院聯手！「反廢死公投案」闖關成功（TVBS）
+    url: https://news.tvbs.com.tw/politics/2872728
+    date: 2025-05-16
+    venue: 立法院院會
+    quote: null
+    context: 國民黨團提出的公投案以贊成 54 人、反對 48 人通過，送中選會；中選會其後以不符公投法為由駁回。 （公投案由國民黨團提出；報導未確認是否為記名表決，故列為 B 級。）
+    timestamp: null
+  - grade: B
+    kind: bill
+    title: 藍反廢死公投最快8月底投票 中選會：未獲立院來函（公視）
+    url: https://news.pts.org.tw/article/751642
+    date: 2025-05-17
+    venue: 立法院
+    quote: 您是否同意各級法院合議庭法官判處死刑不須一致決之政策？
+    context: 公投案主文；報導指國民黨認為「死刑須一致決」等同實質廢死。
+    timestamp: null
+- question: G01
+  value: 2
+  interpretation: '國民黨團與民眾黨團共同提案修正《核子反應器設施管制法》，讓核電廠可申請延役最長 20 年並表決通過；黨主席鄭麗文 2026 年亦呼籲支持重啟核電公投，立場明確一貫。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第3會期第11次會議議事錄：核子反應器設施管制法第六條修正記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/114/48/01/details
+    date: '2025-05-13'
+    venue: 立法院院會
+    quote: null
+    context: 記名表決結果附後(9)(10)。第六條照國民黨團及民眾黨團共同所提再修正動議通過：國民黨50、民眾黨8、民進黨1 贊成，民進黨50 反對。全案：國民黨50、民眾黨8 贊成，民進黨51 反對。黨籍依立法院委員資料比對。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 核子反應器設施管制法第六條（國民黨團及民眾黨團共同所提再修正動議）
+      choice: 贊成
+      ref: nuclear-act-2025
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第5會期第17次會議議事錄：「廢除非核家園」公投提案逕付二讀記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/115/60/15/details
+    date: '2026-07-10'
+    venue: 立法院院會
+    quote: null
+    context: 記名表決結果附後(12)：國民黨49、民眾黨8 贊成，民進黨48 反對（程序表決：逕付二讀）。黨籍依立法院委員資料比對。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 國民黨團公投提案：「您是否同意政府廢除『非核家園』的能源政策……？」逕付二讀
+      choice: 贊成
+      ref: non-nuclear-referendum-2026
+  - grade: C
+    kind: statement
+    title: 鄭麗文台中為議員站台 批中央能源政策籲挺重啟核電（中央社）
+    url: https://cna.com.tw/news/aipl/202610110097.aspx
+    date: 2026-10-11
+    venue: 台中市議員參選人造勢活動
+    quote: null
+    context: 中央社轉述鄭麗文批評錯誤的能源政策導致缺電、電費越來越貴，呼籲支持重啟核電公投，主張要重啟核電台灣才有競爭力。
+    timestamp: null
+- question: G02
+  value: 2
+  interpretation: 2024 年國會改革法案（含調查權、聽證權）由國民黨團與民眾黨團共同提案三讀通過；行政院提出覆議後，國民黨團在記名投票中支持維持原決議。立場明確。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第1會期第19次會議議事錄：立法院職權行使法修正覆議案記名投票
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/113/64/01/details
+    date: '2024-06-21'
+    venue: 立法院院會
+    quote: null
+    context: 立法院第11屆第1會期第19次會議議事錄，覆議案記名投票：贊成維持原決議（反對覆議）62 人＝國民黨52、民眾黨8、無黨籍2；反對維持原決議（贊成覆議）51 人＝民進黨51。黨籍依立法院委員資料比對。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 行政院對《立法院職權行使法》修正部分條文之覆議案（表決是否維持原決議）
+      choice: 贊成維持原決議
+      ref: legislative-reform-override-2024
+  - grade: C
+    kind: statement
+    title: 戰線延長：立法院62比51票否決國會改革覆議案，綠營將提釋憲及暫時處分
+    url: https://www.twreporter.org/a/legislature-votes-down-cabinets-request-to-review-controversial-reform-bills
+    date: 2024-06-21
+    venue: 立法院院會
+    quote: 覆議案投票約10點開始，採記名投票，《立法院職權行使法》及《刑法》的覆議案各有一張選票。
+    context: 報導者報導，兩覆議案「贊成維持原決議者皆有62人，反對維持原決議者皆有51人」；國民黨主席朱立倫感謝「54位國民黨籍立委、8位民眾黨籍立委共同推動國會改革」。另據 NOWnews 報導，三黨「都無人跑票或投錯」。（新聞報導；正式表決紀錄見立法院議事錄。）
+    timestamp: null
+  - grade: B
+    kind: bill
+    title: 國會改革法三讀！藐視國會、作偽證有刑責 拒交資料罰10萬（鉅亨網）
+    url: https://news.cnyes.com/news/id/5577812
+    date: 2024-05-28
+    venue: 立法院院會
+    quote: null
+    context: 國民黨團與民眾黨團共同提出的《立法院職權行使法》部分條文修正草案三讀通過，全案表決 103 人中 58 人贊成；內容包括調查委員會、聽證會及相關罰則。 （三讀報導未確認記名表決，故列為 B 級；A 級證據見覆議案記名投票。）
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 藍白再勝！立院否決行政院覆議案 黃國昌大讚：台灣民主歷史時刻
+    url: https://www.nownews.com/news/6454203
+    date: 2024-06-21
+    venue: null
+    quote: 在藍綠白3黨都無人跑票或投錯的狀況下，以62票對51否決覆議案。
+    context: 報導並指民進黨下一步將聲請釋憲。
+    timestamp: null
+- question: V03
+  value: 1
+  interpretation: 黨團在 2025 年《環境影響評估法》第五條修正（將一定規模以上地面型、水面型太陽光電納入環評）的記名表決中全數支持擴大環評範圍。（這次修法只針對太陽光電是否納入環評，投票可能同時反映對光電開發的態度，因此只判為 ±1。）
+  last_reviewed: '2026-11-07'
+  evidence:
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第4會期第9次會議議事錄：環境影響評估法第五條修正記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/114/97/01/details
+    date: '2025-11-14'
+    venue: 立法院院會
+    quote: null
+    context: 記名表決結果附後(10)(11)：第五條及全案均為國民黨49、民眾黨8 贊成，民進黨48 反對。附帶決議內容涉及國家公園內設置地面型或水面型太陽光電。黨籍依立法院委員資料比對。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 環境影響評估法第五條（民眾黨團、國民黨團共同所提再修正動議；將一定規模以上地面型、水面型太陽光電納入環評）
+      choice: 贊成
+      ref: eia-solar-2025
+- question: R_HOUSE_TAX
+  value: 0
+  interpretation: 國民黨團在 2023 年《房屋稅條例》修正（囤房稅 2.0）的記名表決中全數棄權，未表態支持或反對，判為中立。
+  last_reviewed: '2026-11-07'
+  evidence:
+  - grade: A
+    kind: vote
+    title: 立法院第10屆第8會期第12次會議議事錄：房屋稅條例第五條（囤房稅 2.0）記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/113/01/07/details
+    date: '2023-12-15'
+    venue: 立法院院會
+    quote: null
+    context: 立法院第10屆第8會期第12次會議議事錄，記名表決結果附後(48)：第五條（稅率）照民進黨團修正動議通過，民進黨54 贊成，時代力量3 反對，國民黨29、民眾黨5 棄權。黨籍依立法院委員資料比對。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 房屋稅條例第五條（民進黨團修正動議，提高多戶持有者房屋稅率）
+      choice: 棄權
+      ref: house-tax-2023

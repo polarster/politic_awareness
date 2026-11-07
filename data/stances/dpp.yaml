@@ -1,0 +1,547 @@
+entity: dpp
+stances:
+- question: N01
+  value: -2
+  interpretation: '民進黨主席賴清德多次表示九二共識已被中共定調為一個中國原則、一國兩制，並以民意不接受為由拒絕， 立場一致且明確，因此判為非常不同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 民進黨提名參選總統 賴清德：台灣無統獨問題 民主是最大共識【全文】
+    url: https://www.cna.com.tw/news/aipl/202304125004.aspx
+    date: 2023-04-12
+    venue: 民進黨總統參選人提名
+    quote: 根據台灣歷次的民調，絕大多數的民眾反對統一，也不接受「一個中國原則」、「九二共識、一國兩制」。
+    context: 賴清德獲民進黨提名參選總統時發表的談話全文。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 賴清德：九二共識若走到底 台灣會跟香港一樣
+    url: https://www.cna.com.tw/news/aipl/202401110100.aspx
+    date: 2024-01-11
+    venue: null
+    quote: 若九二共識走到底台灣就會變跟香港一樣，這不是台灣人選擇要走的路。
+    context: 中央社報導 2024 年總統大選前，民進黨總統候選人賴清德回應馬英九與國民黨主張九二共識的發言。
+    timestamp: null
+- question: N02
+  value: 2
+  interpretation: '民進黨《台灣前途決議文》（黨章規定效力等同黨綱）明定台灣與中華人民共和國互不隸屬， 賴清德就任後的國慶演說與陸委會也一再重申，屬明確且一貫的立場。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: platform
+    title: 國民黨批台獨 民進黨：配合中共傷害台灣國家主權
+    url: https://www.dpp.org.tw/media/contents/10523
+    date: 2023-12-01
+    venue: null
+    quote: 台灣，固然依目前憲法稱為中華民國，但與中華人民共和國互不隸屬，任何有關獨立現狀的更動，都必須經由台灣全體住民以公民投票的方式決定。
+    context: 民進黨官網新聞稿，引述 1999 年《台灣前途決議文》內容回應國民黨。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 民進黨提名參選總統 賴清德：台灣無統獨問題 民主是最大共識【全文】
+    url: https://www.cna.com.tw/news/aipl/202304125004.aspx
+    date: 2023-04-12
+    venue: 民進黨總統參選人提名
+    quote: 中華民國與中華人民共和國互不隸屬
+    context: 賴清德獲民進黨提名參選總統時發表的談話全文。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 陸委會：對岸惡意扭曲國慶演說 互不隸屬是現狀
+    url: https://www.cna.com.tw/news/acn/202410160357.aspx
+    date: 2024-10-16
+    venue: null
+    quote: 強調中華民國與中華人民共和國互不隸屬是兩岸現實、台海現狀。
+    context: 民進黨執政下的陸委會回應中國對賴清德 2024 年國慶演說的批評，屬政府立場。
+    timestamp: null
+- question: N03
+  value: -2
+  interpretation: '民進黨決議文主張台灣是主權獨立國家、任何改變現狀須經全體住民公投決定，黨主席並以多數民意反對統一為立場， 未曾主張以統一為長期方向，因此判為非常不同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: platform
+    title: 國民黨批台獨 民進黨：配合中共傷害台灣國家主權
+    url: https://www.dpp.org.tw/media/contents/10523
+    date: 2023-12-01
+    venue: null
+    quote: 台灣是一主權獨立國家，其主權領域僅及於台澎金馬與其附屬島嶼，以及符合國際法規定之領海與鄰接水域。
+    context: 民進黨官網新聞稿，引述 1999 年《台灣前途決議文》內容。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 民進黨提名參選總統 賴清德：台灣無統獨問題 民主是最大共識【全文】
+    url: https://www.cna.com.tw/news/aipl/202304125004.aspx
+    date: 2023-04-12
+    venue: 民進黨總統參選人提名
+    quote: 根據台灣歷次的民調，絕大多數的民眾反對統一，也不接受「一個中國原則」、「九二共識、一國兩制」。
+    context: 賴清德以民調指出多數民眾反對統一，作為其兩岸立場的依據。
+    timestamp: null
+- question: N04
+  value: -1
+  interpretation: '賴清德反對重啟兩岸服貿協議，認為已非台灣所需；但他也表示在對等尊嚴下兩岸經貿可以互利， 民進黨執政後亦未終止 ECFA，因此判為不同意而非非常不同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 跨世代／反對與中簽和平協議、服貿 賴清德憂得不償失籲信賴台灣
+    url: https://www.nownews.com/news/6301580
+    date: 2023-11-15
+    venue: null
+    quote: 這個時候提10年前的服務貿易協定到底適不適當？我們一看就知道，這已經不是台灣需要的。
+    context: 2024 年總統大選期間，民進黨總統候選人賴清德回應藍白主張重啟服貿。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 賴清德談兩岸投資 「只要中國對等尊嚴 門永遠都是開的」
+    url: https://news.tvbs.com.tw/politics/2321434
+    date: 2023-11-30
+    venue: null
+    quote: 如果台灣接受九二共識、開放服貿、開放大量中國學生來台就業，台灣也不可能得到和平
+    context: 同場合賴清德也說「我當總統，只要中國對等尊嚴，我的門永遠都是開的」，並稱兩岸經貿「本應是雙贏」。
+    timestamp: null
+- question: N05
+  value: 1
+  interpretation: '民進黨政府依《促進轉型正義條例》推動清除校園及公共空間的威權象徵，並將中正紀念堂「去威權化、去個人崇拜」， 但強調社會溝通與逐步處理，尚未承諾移除中正紀念堂主銅像，因此判為同意而非非常同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 中正紀念堂將轉型 文化部年底提民主教育園區空間計畫
+    url: https://news.pts.org.tw/article/814876
+    date: 2026-06-26
+    venue: 行政院轉型正義會報
+    quote: 中正紀念堂更要去威權化、去個人崇拜，將請文化部於今（2026）年底提出「民主教育園區空間計畫」，並要積極推動社會溝通。
+    context: 行政院長卓榮泰主持轉型正義會報時的發言；報導也提到國防部已於 2024 年將儀隊撤出中正紀念堂銅像大廳，但未提及移除銅像。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 教育部統計：高中以上學校 68校含86項威權象徵
+    url: https://udn.com/news/story/6885/8997315
+    date: 2025-09-10
+    venue: null
+    quote: 各校將持續依促轉條例，以公開溝通、凝聚共識妥適處理，且必要時將向內政部提出清除威權象徵補助申請。
+    context: 教育部說明校園威權象徵的處理進度，屬民進黨執政下的政府立場。
+    timestamp: null
+- question: D01
+  value: 2
+  interpretation: 民進黨籍總統賴清德明確宣示國防預算依北約標準超過 GDP 3%，並於 2030 年前達到 5%，因此判為非常同意。 民進黨團在記名表決中全數反對將特別預算上限降為 7800 億元，全案表決時棄權（本表決決定的是特別預算規模，並非直接表決 GDP 3% 目標。）
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第5會期第9次會議議事錄：保衛國家安全及強化不對稱戰力計畫採購特別條例記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/115/38/01/details
+    date: '2026-05-08'
+    venue: 立法院院會
+    quote: null
+    context: 立法院第11屆第5會期第9次會議議事錄（115年5月8日、12日），記名表決結果附後(3)(5)。第五條（特別預算上限）照民眾黨團及國民黨團共同所提再修正動議通過：出席110、贊成59（國民黨50、民眾黨8、無黨籍1）、反對51（民進黨全數）。全案：出席107、贊成59、反對0、棄權48（民進黨）。黨籍依立法院委員資料比對。行政院原提版本為8年1.25兆元，通過版本上限7800億元。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 保衛國家安全及強化不對稱戰力計畫採購特別條例第五條（國民黨團、民眾黨團再修正動議，上限7800億元）
+      choice: 反對
+      ref: defense-special-act-2026
+  - grade: C
+    kind: statement
+    title: 國慶演說 總統：民主台灣是2300萬人在世界最明確定位【全文】
+    url: https://www.cna.com.tw/news/aipl/202510100066.aspx
+    date: 2025-10-10
+    venue: 2025 年國慶大會
+    quote: 明年度，我們的國防預算，按照北約標準，將超過GDP百分之3；並且也會在2030年前，達到GDP百分之5
+    context: 賴清德總統（兼民進黨主席）國慶演說全文。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 賴總統投書華郵宣布將提1.25兆國防特別預算 對美軍購強化戰力
+    url: https://www.cna.com.tw/news/aipl/202511260013.aspx
+    date: 2025-11-26
+    venue: 《華盛頓郵報》投書
+    quote: 為因應北京施壓，台灣國防支出預計在明年提升至國內生產毛額（GDP）的3.3%，並承諾在2030年前將此基準提高至5%
+    context: 中央社報導賴清德投書內容，並宣布 400 億美元國防特別預算。
+    timestamp: null
+- question: D02
+  value: 2
+  interpretation: '民進黨執政的蔡英文政府於 2022 年決定自 2024 年起恢復一年期義務役，總統並稱此為無可迴避的責任， 顯示黨在執政時明確支持至少一年的義務役。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 義務役2024年起恢復為1年薪資2.6萬 總統：困難決定但無可迴避【全文】
+    url: https://www.cna.com.tw/news/aipl/202212275006.aspx
+    date: 2022-12-27
+    venue: 總統府強化全民國防兵力結構調整方案記者會
+    quote: 我們決定從2024年起，恢復1年期的義務役，適用對象是2005年1月1日以後出生的役男。
+    context: 時任總統兼民進黨主席蔡英文宣布兵役制度調整，並表示「這是一個無比困難的決定」。
+    timestamp: null
+- question: D03
+  value: 2
+  interpretation: '賴清德多次表示台灣將與日本及理念相近的友盟深化合作、成為友盟信賴的安全合作夥伴， 並以對美軍購強化戰力，與美日安全合作是民進黨政府一貫的優先方向。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 賴總統：美日峰會後重申維護台海和平 展現國際社會對區域安全的重視
+    url: https://udn.com/news/story/6656/9400385
+    date: 2026-03-24
+    venue: 接見日本台灣親善協會訪團
+    quote: 面對區域的挑戰，台灣除了持續強化自我防衛能力，更會與日本及理念相近的友盟國家深化合作，共同維護區域的和平、穩定與繁榮。
+    context: 賴清德並引述美日峰會事實清單重申致力維護台海和平穩定。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 國慶演說 總統：民主台灣是2300萬人在世界最明確定位【全文】
+    url: https://www.cna.com.tw/news/aipl/202510100066.aspx
+    date: 2025-10-10
+    venue: 2025 年國慶大會
+    quote: 成為友盟信賴的安全合作夥伴
+    context: 賴清德國慶演說談國防與區域安全的段落。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 賴總統盼深化台日安全韌性合作 實現自由開放印太
+    url: https://cna.com.tw/news/aipl/202608070263.aspx
+    date: 2026-08-07
+    venue: 接見日本戰略研究論壇及福和會訪團
+    quote: null
+    context: 賴清德期盼台日在經貿安全、高科技產業及社會韌性等領域加強合作；訪團以倡議建立台、日、美「民主之盾」三方合作機制為主軸舉辦政策模擬。
+    timestamp: null
+- question: D04
+  value: -2
+  interpretation: '民進黨表示願在「對等尊嚴」下與中國官方交流、進行無先決條件的對話，但拒絕以接受九二共識等政治表述作為前提， 等於反對以政治讓步換取對話，因此判為非常不同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 鄭麗文籲賴清德接受九二共識 民進黨：對等尊嚴、願與中交流
+    url: https://news.pts.org.tw/article/787966
+    date: 2025-12-28
+    venue: null
+    quote: 只要對等尊嚴，當然願意跟中國官方進行交流。
+    context: 民進黨中央回應國民黨主席鄭麗文要求賴清德接受九二共識。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 賴清德提和平4支柱 葛來儀：堅持蔡總統兩岸核心原則
+    url: https://www.cna.com.tw/news/aipl/202307050025.aspx
+    date: 2023-07-05
+    venue: 《華爾街日報》投書
+    quote: 賴清德表示願意在互惠與尊嚴的原則基礎上與北京進行無條件對話。
+    context: 賴清德提出「和平四大支柱」，包括建立威懾力、經濟安全、與民主國家夥伴關係，以及穩定而有原則的兩岸關係。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 賴清德：九二共識若走到底 台灣會跟香港一樣
+    url: https://www.cna.com.tw/news/aipl/202401110100.aspx
+    date: 2024-01-11
+    venue: null
+    quote: 若九二共識走到底台灣就會變跟香港一樣，這不是台灣人選擇要走的路。
+    context: 賴清德拒絕以九二共識作為兩岸互動前提。
+    timestamp: null
+- question: D05
+  value: -1
+  interpretation: 民進黨政府以「價值外交」為主軸，強調深化民主夥伴關係並與美日等理念相近國家合作，傾向站在民主陣營一方而非在美中之間維持等距；但未見明確表述「選邊」，故判為不同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 再度獲邀聯大場外峰會發表演說 賴清德籲全球團結化解和平危機
+    url: https://news.pts.org.tw/article/771834
+    date: 2025-09-23
+    venue: 紐約 Concordia 峰會（錄影演說）
+    quote: 台灣將推動「價值外交」，以自由民主、人權、法治等價值，與志同道合國家合作，共同應對全球挑戰
+    context: 賴清德同場也表示「唯有深化民主夥伴關係，才能維護長久和平、共築繁榮穩定世界」。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 賴總統：美日峰會後重申維護台海和平 展現國際社會對區域安全的重視
+    url: https://udn.com/news/story/6656/9400385
+    date: 2026-03-24
+    venue: 接見日本台灣親善協會訪團
+    quote: 面對區域的挑戰，台灣除了持續強化自我防衛能力，更會與日本及理念相近的友盟國家深化合作，共同維護區域的和平、穩定與繁榮。
+    context: 賴清德感謝美日峰會重申維護台海和平穩定。
+    timestamp: null
+- question: E02
+  value: 1
+  interpretation: '民進黨執政以來最低工資自 2016 年起連續 11 年調升，並制定《最低工資法》建立每年審議機制； 但法律並未保證每年必漲，政府亦以審議會綜合考量決定調幅，因此判為同意而非非常同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 最低工資連11漲!審議會決定自116年1月1日起，每月最低工資調升至30,900元，每小時最低工資調升至205元。
+    url: https://www.mol.gov.tw/1607/1632/1633/99195/
+    date: 2026-09-24
+    venue: 最低工資審議會
+    quote: 本次調整案倘經行政院核定實施，是自105年以來連續11年調漲，月薪將由20,008元提升到30,900元，總調幅達54.4％；
+    context: 民進黨執政下勞動部新聞稿。
+    timestamp: null
+- question: S02
+  value: -1
+  interpretation: 民進黨黨綱仍寫「研議廢止死刑的可行性」，但黨的領導人表示台灣並未廢死、廢死需高度社會共識， 賴清德政府並於 2025 年執行死刑；整體而言目前不主張廢除死刑，因此判為不同意。 另外，民進黨團在記名表決中反對「死刑不須一致決」公投提案，即支持維持死刑判決須一致決的限制；這屬於限縮死刑的程序，不等於主張廢除死刑。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第3會期第12次會議議事錄：「死刑不須一致決」公投提案記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/114/50/01/details
+    date: '2025-05-16'
+    venue: 立法院院會
+    quote: null
+    context: 記名表決結果附後(2)：照國民黨團提議通過，國民黨46、民眾黨6 贊成，民進黨48 反對；民進黨團撤銷本案之提議則不予通過（附後(1)）。黨籍依立法院委員資料比對。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 委員吳宗憲等52人擬具公投提案：「您是否同意『各級法院合議庭法官判處死刑不須一致決』之政策？」
+      choice: 反對
+      ref: death-penalty-referendum-2025
+  - grade: C
+    kind: platform
+    title: 民進黨為何要廢死？8年槍決2死囚 蔡英文、賴清德談死刑說法曝光
+    url: https://www.nownews.com/news/6412875
+    date: 2024-04-25
+    venue: null
+    quote: 尊重生命，嚴防冤獄，研議廢止死刑的可行性。
+    context: 報導引述民進黨黨綱〈自由人權〉章節；同篇整理賴清德於 2023 年總統辯論表示台灣目前沒有廢除死刑、廢死需要高度社會共識，柯建銘亦表示廢死必須有民意支持。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 巷仔內／賴清德不走小英的路 槍決死囚打臉在野黨「實質廢死說」
+    url: https://www.nownews.com/news/6636373
+    date: 2025-01-17
+    venue: null
+    quote: null
+    context: 報導賴清德政府於 2025 年 1 月執行死刑，為賴政府首度執行死刑。
+    timestamp: null
+- question: S03
+  value: 1
+  interpretation: '民進黨政府推動「移工留才久用方案」，讓移工可轉任中階技術人力且無在台工作年限限制， 屬放寬移工長期留台的政策；但未見黨對放寬一般歸化條件的明確主張，因此判為同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 留才中心協助國內科技大廠 留用優質外國技術人力！
+    url: https://www.mol.gov.tw/1607/1632/1633/83432/
+    date: 2025-09-16
+    venue: null
+    quote: 因應全球高齡化及少子化趨勢，勞動部推動「移工留才久用方案」，於確保國人就業機會的前提下，讓外國中階技術人力無在臺工作年限的限制，適時補充雇主所需長期穩定勞動力。
+    context: 民進黨執政下勞動部新聞稿。
+    timestamp: null
+- question: V01
+  value: 1
+  interpretation: '民進黨政府長期推動太陽光電與離岸風電，並表示將持續推動多元綠能； 但未明確表態接受為此提高電價，因此判為同意而非非常同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 賴總統：再生能源裝置容量達25GW 10年增幅逾4倍
+    url: https://cna.com.tw/news/aipl/202610140091.aspx
+    date: 2026-10-14
+    venue: 2026 台灣國際淨零永續展開幕
+    quote: 未來政府將持續推動多元綠能、儲能、節能與電網強韌建設，穩定供電、落實能源安全及淨零轉型。
+    context: 中央社轉述賴清德致詞內容（非直接引語），並提及再生能源裝置容量自 2016 年 4.7GW 成長至 25GW。
+    timestamp: null
+- question: V02
+  value: 1
+  interpretation: '民進黨政府已開徵碳費（一般費率每公噸 300 元），環境部並規劃「先低後高」逐步調升； 但起徵費率偏低、調升幅度仍屬規劃，因此判為同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 碳費拍板！一般費率每公噸300元 A、B優惠方案為50和100元
+    url: https://www.ettoday.net/news/20241007/2830698.htm
+    date: 2024-10-07
+    venue: 環境部碳費費率審議會
+    quote: 全世界所有碳費制度都是「先低後高」
+    context: 環境部長彭啓明的說法；報導並指審議會規劃「之後每2年進行檢討和調升，預計2030年調高到1200元到1800元。」
+    timestamp: null
+- question: V04
+  value: 1
+  interpretation: '民進黨政府以「以氣代煤」為主軸、持續提高燃氣發電占比以確保供電； 但政府將此定位為減煤與減少空污，並不承認會增加碳排，與題目的取捨前提不完全相同，因此判為同意而非非常同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 立院2028無煤中火決議 經濟部：影響高科技投資台中意願
+    url: https://www.cna.com.tw/news/aipl/202506050032.aspx
+    date: 2025-06-05
+    venue: null
+    quote: 燃氣發電占比從2016年31.5%提高至2024年42.4%。
+    context: 經濟部表示「以氣代煤」是政府一直以來持續在做的事，燃煤機組將改建為燃氣機組。
+    timestamp: null
+- question: G01
+  value: -1
+  interpretation: 民進黨團在 2025 年《核管法》延役修法的記名表決中全數反對（僅一人贊成），2026 年 7 月亦全數反對「廢除非核家園」公投提案逕付二讀；賴清德總統 2026 年雖表示在三原則下核二、核三可評估重啟，但黨團投票紀錄一貫反對放寬，故判為傾向不同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第3會期第11次會議議事錄：核子反應器設施管制法第六條修正記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/114/48/01/details
+    date: '2025-05-13'
+    venue: 立法院院會
+    quote: null
+    context: 記名表決結果附後(9)(10)。第六條照國民黨團及民眾黨團共同所提再修正動議通過：國民黨50、民眾黨8、民進黨1 贊成，民進黨50 反對。全案：國民黨50、民眾黨8 贊成，民進黨51 反對。黨籍依立法院委員資料比對。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 核子反應器設施管制法第六條（國民黨團及民眾黨團共同所提再修正動議）
+      choice: 反對
+      ref: nuclear-act-2025
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第5會期第17次會議議事錄：「廢除非核家園」公投提案逕付二讀記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/115/60/15/details
+    date: '2026-07-10'
+    venue: 立法院院會
+    quote: null
+    context: 記名表決結果附後(12)：國民黨49、民眾黨8 贊成，民進黨48 反對（程序表決：逕付二讀）。黨籍依立法院委員資料比對。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 國民黨團公投提案：「您是否同意政府廢除『非核家園』的能源政策……？」逕付二讀
+      choice: 反對
+      ref: non-nuclear-referendum-2026
+  - grade: C
+    kind: statement
+    title: 賴總統：核二、核三重啟評估 3原則缺一不可
+    url: https://ec.ltn.com.tw/article/breakingnews/5378643
+    date: 2026-03-22
+    venue: 賴清德臉書
+    quote: 相關評估與後續討論，都必須建立在核安無虞、核廢有解、社會有共識共三項前提之上，這三項原則，缺一不可。
+    context: 報導指賴清德宣布核二、核三具重啟運轉條件，台電已在準備重啟程序。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 核二核三重啟程序中，卓榮泰：反核不是神主牌！重申核安三原則
+    url: https://www.businesstoday.com.tw/article/category/183015/post/202603240015/
+    date: 2026-03-24
+    venue: 立法院備詢
+    quote: 政府只希望按核安三原則，一一按照必須程序逐步向前走，有備而無患。
+    context: 行政院長卓榮泰在立法院答詢時說明政府對核電重啟的立場。
+    timestamp: null
+  superseded:
+  - value: -1
+    evidence:
+    - grade: C
+      kind: statement
+      title: 823核三重啟公投 賴清德表態投不同意：核電重啟有「2必須、3原則」
+      url: https://www.ettoday.net/news/20250813/3014556.htm
+      date: 2025-08-13
+      venue: 民進黨中常會
+      quote: 823公投我會去投票，我們一起投下不同意票
+      context: 據轉述，賴清德以黨主席身分在中常會表態。
+      timestamp: null
+    - grade: C
+      kind: statement
+      title: 賴清德：核三廠二號機不可能直接延役或立刻重啟
+      url: https://technews.tw/2025/05/14/non-nuclear-taiwan/
+      date: 2025-05-14
+      venue: null
+      quote: 任何的政策變更，都必須要滿足『核安無虞』、『核廢有解』，以及『社會共識』三個重要的前提，才有繼續進行的可能。
+      context: 立法院通過《核管法》修法後，賴清德的回應。
+      timestamp: null
+    note: 2025 年賴清德呼籲核三重啟公投投不同意，並強調非核家園；2026 年 3 月改稱核二、核三具重啟條件。
+- question: G02
+  value: -2
+  interpretation: '民進黨團在 2024 年國會職權修法覆議案記名表決中全數支持覆議（反對維持原決議），並批評該法為國會擴權、聲請釋憲； 民進黨雖曾提出範圍較窄的自家版本，但明確反對 2024 年法案內容，因此判為非常不同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第1會期第19次會議議事錄：立法院職權行使法修正覆議案記名投票
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/113/64/01/details
+    date: '2024-06-21'
+    venue: 立法院院會
+    quote: null
+    context: 立法院第11屆第1會期第19次會議議事錄，覆議案記名投票：贊成維持原決議（反對覆議）62 人＝國民黨52、民眾黨8、無黨籍2；反對維持原決議（贊成覆議）51 人＝民進黨51。黨籍依立法院委員資料比對。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 行政院對《立法院職權行使法》修正部分條文之覆議案（表決是否維持原決議）
+      choice: 反對維持原決議
+      ref: legislative-reform-override-2024
+  - grade: C
+    kind: statement
+    title: 立法院62：51票 否決國會職權修法覆議案
+    url: https://news.pts.org.tw/article/701198
+    date: 2024-06-21
+    venue: 立法院院會
+    quote: 民進黨團則堅持支持覆議案。
+    context: 行政院就《立法院職權行使法》及《刑法》藐視國會罪修正提出覆議，立法院以記名投票 62：51 維持原決議。（新聞報導；正式表決紀錄見立法院議事錄。）
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 藍白再勝！立院否決行政院覆議案 黃國昌大讚：台灣民主歷史時刻
+    url: https://www.nownews.com/news/6454203
+    date: 2024-06-21
+    venue: null
+    quote: 在藍綠白3黨都無人跑票或投錯的狀況下，以62票對51否決覆議案。
+    context: 報導並指民進黨下一步將聲請釋憲。
+    timestamp: null
+- question: V03
+  value: -1
+  interpretation: 黨團在 2025 年《環境影響評估法》第五條修正（將一定規模以上地面型、水面型太陽光電納入環評）的記名表決中全數反對擴大環評範圍。（這次修法只針對太陽光電是否納入環評，投票可能同時反映對光電開發的態度，因此只判為 ±1。）
+  last_reviewed: '2026-11-07'
+  evidence:
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第4會期第9次會議議事錄：環境影響評估法第五條修正記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/114/97/01/details
+    date: '2025-11-14'
+    venue: 立法院院會
+    quote: null
+    context: 記名表決結果附後(10)(11)：第五條及全案均為國民黨49、民眾黨8 贊成，民進黨48 反對。附帶決議內容涉及國家公園內設置地面型或水面型太陽光電。黨籍依立法院委員資料比對。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 環境影響評估法第五條（民眾黨團、國民黨團共同所提再修正動議；將一定規模以上地面型、水面型太陽光電納入環評）
+      choice: 反對
+      ref: eia-solar-2025
+- question: R_HOUSE_TAX
+  value: 1
+  interpretation: 民進黨團在 2023 年《房屋稅條例》修正（囤房稅 2.0）的記名表決中全數贊成提高多戶持有者房屋稅率，判為支持增加房屋稅。
+  last_reviewed: '2026-11-07'
+  evidence:
+  - grade: A
+    kind: vote
+    title: 立法院第10屆第8會期第12次會議議事錄：房屋稅條例第五條（囤房稅 2.0）記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/113/01/07/details
+    date: '2023-12-15'
+    venue: 立法院院會
+    quote: null
+    context: 立法院第10屆第8會期第12次會議議事錄，記名表決結果附後(48)：第五條（稅率）照民進黨團修正動議通過，民進黨54 贊成，時代力量3 反對，國民黨29、民眾黨5 棄權。黨籍依立法院委員資料比對。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 房屋稅條例第五條（民進黨團修正動議，提高多戶持有者房屋稅率）
+      choice: 贊成
+      ref: house-tax-2023

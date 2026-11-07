@@ -1,0 +1,313 @@
+entity: tpp
+stances:
+- question: N01
+  value: -1
+  interpretation: '民眾黨未將九二共識列為兩岸基礎，前主席柯文哲稱「那時代已經過去」，並在 2023 年政見會批評國民黨候選人接受「已無民意支持的九二共識」；但民眾黨同時主張「五個互相」等務實交流，並未完全排斥對話框架，故判為不同意而非強烈不同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: debate
+    title: 柯文哲左打賴造謠右批侯兩岸 政見會最終場火力全開
+    url: https://www.cna.com.tw/news/aipl/202312280420.aspx
+    date: 2023-12-28
+    venue: 2024 總統大選第 3 場電視政見發表會
+    quote: 公然接受已無民意支持的九二共識
+    context: 中央社報導，時任民眾黨主席、總統參選人柯文哲在政見會上批評國民黨候選人侯友宜接受九二共識，並主張兩岸最佳方案是「台灣自主、兩岸和平」。引文為報導中轉述柯文哲批評的用語。
+    timestamp: null
+  - grade: C
+    kind: interview
+    title: 朱立倫稱九二共識＝沒共識　柯文哲：那時代已過去
+    url: https://news.tvbs.com.tw/politics/1813536
+    date: 2022-06-08
+    venue: null
+    quote: 不管是什麼共識，那時代已經過去了，新時代有新的問題，大家看到底要怎麼處理
+    context: 時任民眾黨主席柯文哲回應國民黨主席朱立倫對九二共識的說法；報導以轉述呈現。
+    timestamp: null
+- question: N03
+  value: -2
+  interpretation: '民眾黨主席黃國昌在接待美國智庫訪團時，由黨方明確表示「民眾黨反對與中國統一」，屬清楚的官方表態，故判為強烈不同意。前主席柯文哲時期的表述則是「台灣自主、兩岸和平」，未直接談統一。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 「反對與中國統一！」黃國昌：我仍列中國黑名單、與北京無聯繫
+    url: https://www.nownews.com/news/6719364
+    date: 2025-08-14
+    venue: 民眾黨主席黃國昌接見布魯金斯研究院訪團（民眾黨新聞稿）
+    quote: 民眾黨反對與中國統一，並希望保持現有民主的生活模式。
+    context: NOWnews 引述民眾黨新聞稿，說明黃國昌在兩岸議題上的表態，並稱其仍在中國黑名單上、與北京政府無聯繫。
+    timestamp: null
+- question: D01
+  value: 0
+  interpretation: 民眾黨自 2023 年起主張國防預算提升至 GDP 3%，黨主席黃國昌稱此目標「從未改變」；但民眾黨團在 2026 年國防特別條例記名表決中全數支持將上限由 1.25 兆元降為 7800 億元。說法與投票方向不一致（民眾黨表示反對的是特別條例內容而非提高國防支出），故判為中立。（本表決決定的是特別預算規模，並非直接表決 GDP 3% 目標。）
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第5會期第9次會議議事錄：保衛國家安全及強化不對稱戰力計畫採購特別條例記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/115/38/01/details
+    date: '2026-05-08'
+    venue: 立法院院會
+    quote: null
+    context: 立法院第11屆第5會期第9次會議議事錄（115年5月8日、12日），記名表決結果附後(3)(5)。第五條（特別預算上限）照民眾黨團及國民黨團共同所提再修正動議通過：出席110、贊成59（國民黨50、民眾黨8、無黨籍1）、反對51（民進黨全數）。全案：出席107、贊成59、反對0、棄權48（民進黨）。黨籍依立法院委員資料比對。行政院原提版本為8年1.25兆元，通過版本上限7800億元。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 保衛國家安全及強化不對稱戰力計畫採購特別條例第五條（國民黨團、民眾黨團再修正動議，上限7800億元）
+      choice: 贊成
+      ref: defense-special-act-2026
+  - grade: C
+    kind: statement
+    title: 「反對與中國統一！」黃國昌：我仍列中國黑名單、與北京無聯繫
+    url: https://www.nownews.com/news/6719364
+    date: 2025-08-14
+    venue: 民眾黨主席黃國昌接見布魯金斯研究院訪團（民眾黨新聞稿）
+    quote: 民眾黨絕對支持強化國防實力，這也是為何柯文哲前主席在總統選舉期間率先提出將國防支出提升至GDP 3%的主張，且這個目標也從未改變。
+    context: 民眾黨新聞稿說明黨的國防立場。
+    timestamp: null
+  - grade: C
+    kind: debate
+    title: 柯文哲左打賴造謠右批侯兩岸 政見會最終場火力全開
+    url: https://www.cna.com.tw/news/aipl/202312280420.aspx
+    date: 2023-12-28
+    venue: 2024 總統大選第 3 場電視政見發表會
+    quote: null
+    context: 中央社報導柯文哲在政見會上主張國防預算應提升到 GDP 的 3%。
+    timestamp: null
+  - grade: C
+    kind: interview
+    title: 黃國昌質疑1.25兆國防預算用途 國防部：軍購只需3000億非事實
+    url: https://news.pts.org.tw/article/790660
+    date: 2026-01-14
+    venue: null
+    quote: 1兆2500億裡面有一定程度的比例，跟對美的軍購沒有關係。
+    context: 公視報導，黃國昌質疑行政院 1.25 兆國防特別預算的用途，表示民眾黨將另提版本。
+    timestamp: null
+- question: D02
+  value: 1
+  interpretation: '2022 年政府宣布恢復一年義務役時，民眾黨團表示認同兵役延長的大方向，但附帶訓練內容、薪資等配套要求；之後未見主張縮短役期，故判為同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 役期延長後年實施！立委憂訓練官、訓練場無法到位
+    url: https://www.nownews.com/news/6012946
+    date: 2022-12-28
+    venue: null
+    quote: 民眾黨團認同兵役延長的大方向，不過政策細節如訓練內容、彈性修業、薪資提升、義務役年資銜接勞退制度這四點，國防部要合理合規的規劃與訓練。
+    context: 時任民眾黨團總召邱臣遠回應國防部恢復一年期義務役的政策。
+    timestamp: null
+- question: D05
+  value: 1
+  interpretation: '前主席柯文哲在 2023 年競選時主張台灣應是「美中溝通的橋梁，而不是美中對抗的棋子」，傾向不在美中之間選邊；現任主席黃國昌則強調支持與美方維持良好關係，因此判為有保留的同意，且主要依據為 2023 年的表述。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 盼台灣成為美中溝通橋樑 柯文哲曝參選理由：不希望台灣是兵凶戰危之地
+    url: https://www.storm.mg/article/4838514
+    date: 2023-07-21
+    venue: 台北市車輛產業台灣選哲之友會成立大會
+    quote: 希望台灣是美中溝通的橋梁，而不是美中對抗的棋子
+    context: 時任民眾黨主席、總統參選人柯文哲說明參選理由（中央社稿，風傳媒刊登）。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 「反對與中國統一！」黃國昌：我仍列中國黑名單、與北京無聯繫
+    url: https://www.nownews.com/news/6719364
+    date: 2025-08-14
+    venue: 民眾黨主席黃國昌接見布魯金斯研究院訪團（民眾黨新聞稿）
+    quote: 民眾黨支持持續與美方維持良好關係，共同商討如何促進雙邊利益。
+    context: 黃國昌時期的對美表述，作為對照；未直接談美中之間是否選邊。
+    timestamp: null
+- question: S02
+  value: -2
+  interpretation: '民眾黨主席黃國昌批評 2024 年死刑憲法判決造成「實質廢死」，民眾黨團並提出無期徒刑不得假釋的修法草案，顯示該黨反對廢除死刑。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第3會期第12次會議議事錄：「死刑不須一致決」公投提案記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/114/50/01/details
+    date: '2025-05-16'
+    venue: 立法院院會
+    quote: null
+    context: 記名表決結果附後(2)：照國民黨團提議通過，國民黨46、民眾黨6 贊成，民進黨48 反對；民進黨團撤銷本案之提議則不予通過（附後(1)）。黨籍依立法院委員資料比對。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 委員吳宗憲等52人擬具公投提案：「您是否同意『各級法院合議庭法官判處死刑不須一致決』之政策？」
+      choice: 贊成
+      ref: death-penalty-referendum-2025
+  - grade: C
+    kind: statement
+    title: 「反廢死」聲浪再起 黃國昌喊話立院排審無期徒刑不得假釋
+    url: https://udn.com/news/story/6656/9217225
+    date: 2025-12-21
+    venue: null
+    quote: 到底還要有多少人不幸罹難或受傷，賴清德總統才會滿意，鄭銘謙也才會醒過來？
+    context: 聯合報報導，民眾黨主席黃國昌批評憲法法庭判決讓台灣實質廢死，並表示民眾黨團已提出無期徒刑不得假釋的修法草案，呼籲儘速排審。
+    timestamp: null
+- question: S05
+  value: -1
+  interpretation: '民眾黨主席黃國昌表示每個人都有選擇自己生活方式的權利並應被平等對待，民眾黨並推動將人工生殖擴及單身女性、同性伴侶的修法，顯示不主張政策優先鼓勵傳統婚姻家庭形式；但未見其直接反對鼓勵傳統家庭的表態，故判為不同意而非強烈不同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 2026年台灣同志遊行本周登場 民眾黨議員候選人將組隊響應
+    url: https://udn.com/news/story/6656/9842219
+    date: 2026-10-28
+    venue: null
+    quote: 我們始終相信，每個人都有追求幸福、選擇自己生活方式的權利，也都應該受到尊重、被平等對待。
+    context: 黃國昌說明民眾黨將組隊參加同志遊行，並列舉台北市府聲請同婚釋憲、開放同性伴侶註記，以及民眾黨推動《人工生殖法》修法等作為。
+    timestamp: null
+- question: V01
+  value: -1
+  interpretation: '民眾黨主席黃國昌批評政府能源政策導致電價三年四漲、台電虧損，並指綠能業者為主要受益者，同時主張重啟核電；顯示該黨不支持以電價上漲為代價加速再生能源，但未見其反對發展再生能源本身，故判為不同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: debate
+    title: 黃國昌指「綠友友吃飽」 民進黨：核電議題不應散布謠言
+    url: https://newtalk.tw/news/view/2025-08-13/987566
+    date: 2025-08-13
+    venue: 核三重啟公投辯論會
+    quote: 台電財務黑洞不斷擴大，電價過去3年漲價4次，也用人民納稅錢撥補台電3000億元，截至去年底仍虧損超過4000億元，唯一受益的卻是民進黨權貴，一個又一個綠友友洞燭機先，藉由勢力結合大賺一筆。
+    context: 黃國昌在核三公投辯論中批評民進黨能源政策。
+    timestamp: null
+- question: V03
+  value: 1
+  interpretation: 黨團在 2025 年《環境影響評估法》第五條修正（將一定規模以上地面型、水面型太陽光電納入環評）的記名表決中全數支持擴大環評範圍。（這次修法只針對太陽光電是否納入環評，投票可能同時反映對光電開發的態度，因此只判為 ±1。）
+  last_reviewed: '2026-11-07'
+  evidence:
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第4會期第9次會議議事錄：環境影響評估法第五條修正記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/114/97/01/details
+    date: '2025-11-14'
+    venue: 立法院院會
+    quote: null
+    context: 記名表決結果附後(10)(11)：第五條及全案均為國民黨49、民眾黨8 贊成，民進黨48 反對。附帶決議內容涉及國家公園內設置地面型或水面型太陽光電。黨籍依立法院委員資料比對。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 環境影響評估法第五條（民眾黨團、國民黨團共同所提再修正動議；將一定規模以上地面型、水面型太陽光電納入環評）
+      choice: 贊成
+      ref: eia-solar-2025
+- question: G01
+  value: 2
+  interpretation: '民眾黨團與國民黨團共同提出並三讀通過《核管法》修正，開放核電廠延役或重啟換照，並由黨主席黃國昌領銜提出核三重啟公投，公投後仍表示社會支持核電，立場清楚一致。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第3會期第11次會議議事錄：核子反應器設施管制法第六條修正記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/114/48/01/details
+    date: '2025-05-13'
+    venue: 立法院院會
+    quote: null
+    context: 記名表決結果附後(9)(10)。第六條照國民黨團及民眾黨團共同所提再修正動議通過：國民黨50、民眾黨8、民進黨1 贊成，民進黨50 反對。全案：國民黨50、民眾黨8 贊成，民進黨51 反對。黨籍依立法院委員資料比對。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 核子反應器設施管制法第六條（國民黨團及民眾黨團共同所提再修正動議）
+      choice: 贊成
+      ref: nuclear-act-2025
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第5會期第17次會議議事錄：「廢除非核家園」公投提案逕付二讀記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/115/60/15/details
+    date: '2026-07-10'
+    venue: 立法院院會
+    quote: null
+    context: 記名表決結果附後(12)：國民黨49、民眾黨8 贊成，民進黨48 反對（程序表決：逕付二讀）。黨籍依立法院委員資料比對。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 國民黨團公投提案：「您是否同意政府廢除『非核家園』的能源政策……？」逕付二讀
+      choice: 贊成
+      ref: non-nuclear-referendum-2026
+- question: G02
+  value: 2
+  interpretation: '2024 年國會改革法案由國民黨團與民眾黨團共同提出，行政院提出覆議後，立法院以記名投票 62 比 51 維持原決議，民眾黨 8 席立委均支持；黨團總召黃國昌稱此為台灣民主重要時刻，立場清楚。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第1會期第19次會議議事錄：立法院職權行使法修正覆議案記名投票
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/113/64/01/details
+    date: '2024-06-21'
+    venue: 立法院院會
+    quote: null
+    context: 立法院第11屆第1會期第19次會議議事錄，覆議案記名投票：贊成維持原決議（反對覆議）62 人＝國民黨52、民眾黨8、無黨籍2；反對維持原決議（贊成覆議）51 人＝民進黨51。黨籍依立法院委員資料比對。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 行政院對《立法院職權行使法》修正部分條文之覆議案（表決是否維持原決議）
+      choice: 贊成維持原決議
+      ref: legislative-reform-override-2024
+  - grade: C
+    kind: statement
+    title: 戰線延長：立法院62比51票否決國會改革覆議案，綠營將提釋憲及暫時處分
+    url: https://www.twreporter.org/a/legislature-votes-down-cabinets-request-to-review-controversial-reform-bills
+    date: 2024-06-21
+    venue: 立法院院會
+    quote: 覆議案投票約10點開始，採記名投票，《立法院職權行使法》及《刑法》的覆議案各有一張選票。
+    context: 報導者報導，兩覆議案「贊成維持原決議者皆有62人，反對維持原決議者皆有51人」；國民黨主席朱立倫感謝「54位國民黨籍立委、8位民眾黨籍立委共同推動國會改革」。另據 NOWnews 報導，三黨「都無人跑票或投錯」。（新聞報導；正式表決紀錄見立法院議事錄。）
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 政院將提釋憲 民眾黨團：卓榮泰應接受立院決議
+    url: https://newtalk.tw/news/view/2024-06-21/924769
+    date: 2024-06-21
+    venue: null
+    quote: 剛立院以62票過全體委員半數的票數，維持所推動的國會改革法案，也正式將行政院所提出的覆議案予以駁回
+    context: 民眾黨團於覆議案表決後的回應。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 藍白再勝！立院否決行政院覆議案 黃國昌大讚：台灣民主歷史時刻
+    url: https://www.nownews.com/news/6454203
+    date: 2024-06-21
+    venue: null
+    quote: 在藍綠白3黨都無人跑票或投錯的狀況下，以62票對51否決覆議案。
+    context: 報導並指民進黨下一步將聲請釋憲。
+    timestamp: null
+- question: R_HOUSE_TAX
+  value: 0
+  interpretation: 民眾黨團在 2023 年《房屋稅條例》修正（囤房稅 2.0）的記名表決中全數棄權，未表態支持或反對，判為中立。
+  last_reviewed: '2026-11-07'
+  evidence:
+  - grade: A
+    kind: vote
+    title: 立法院第10屆第8會期第12次會議議事錄：房屋稅條例第五條（囤房稅 2.0）記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/113/01/07/details
+    date: '2023-12-15'
+    venue: 立法院院會
+    quote: null
+    context: 立法院第10屆第8會期第12次會議議事錄，記名表決結果附後(48)：第五條（稅率）照民進黨團修正動議通過，民進黨54 贊成，時代力量3 反對，國民黨29、民眾黨5 棄權。黨籍依立法院委員資料比對。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 房屋稅條例第五條（民進黨團修正動議，提高多戶持有者房屋稅率）
+      choice: 棄權
+      ref: house-tax-2023

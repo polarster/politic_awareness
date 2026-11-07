@@ -15,6 +15,10 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 OUT = ROOT / "web" / "src" / "generated" / "data.json"
+LY_VOTES = DATA / "ly" / "votes.json"
+ARCHIVE_OUT = ROOT / "web" / "public" / "ly-votes.json"
+ARCHIVE_FIELDS = ("id", "kind", "term", "meeting", "dates", "source_url", "no", "item", "short_title",
+                  "agenda_title", "counts", "by_party", "names", "procedural")
 
 GRADES = {"A", "B", "C"}
 EVIDENCE_KINDS = {
@@ -142,8 +146,33 @@ def build() -> dict:
             if qid not in seen:
                 fail(f"discussions.yaml {d['id']}: 未知的題目 {qid}")
 
+    ly = {v["id"]: v for v in json.loads(LY_VOTES.read_text(encoding="utf-8"))} if LY_VOTES.exists() else {}
+    curated = []
+    vdoc = load(DATA / "votes.yaml")
+    for c in vdoc["votes"]:
+        for key in ("id", "vote", "title", "summary"):
+            if not c.get(key):
+                fail(f"votes.yaml: 缺少 {key}")
+        recs = []
+        for vid in [c["vote"], *(c.get("also") or [])]:
+            if vid not in ly:
+                fail(f"votes.yaml {c['id']}: data/ly/votes.json 中找不到表決 {vid}")
+            recs.append({k: ly[vid][k] for k in ARCHIVE_FIELDS})
+        for q in c.get("questions") or []:
+            if q not in seen:
+                fail(f"votes.yaml {c['id']}: 未知的題目 {q}")
+        curated.append({**c, "records": recs})
+    curated_ids = {c["id"] for c in curated}
+    for eid, sts in stances.items():
+        for st in sts:
+            for e in st["evidence"]:
+                ref = (e.get("vote") or {}).get("ref")
+                if ref and ref not in curated_ids:
+                    fail(f"{eid} {st['question']}: vote.ref {ref} 不在 votes.yaml 中")
+
     return {
         "version": qdoc["version"],
+        "votes": curated,
         "discussions": ddoc["discussions"],
         "axes": axes,
         "questions": qdoc["questions"],
@@ -164,10 +193,15 @@ def main():
         print("資料驗證通過")
         return
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
+    if LY_VOTES.exists():
+        archive = [{k: v[k] for k in ARCHIVE_FIELDS} for v in json.loads(LY_VOTES.read_text(encoding="utf-8"))]
+        ARCHIVE_OUT.parent.mkdir(parents=True, exist_ok=True)
+        ARCHIVE_OUT.write_text(json.dumps(archive, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    OUT.write_text(json.dumps(data, ensure_ascii=False, indent=1, default=str), encoding="utf-8")
     n_st = sum(len(v) for v in data["stances"].values())
     print(f"已輸出 {OUT.relative_to(ROOT)}：{len(data['questions'])} 題、"
-          f"{len(data['budget']['items'])} 個預算項目、{len(data['entities'])} 個對象、{n_st} 筆立場")
+          f"{len(data['budget']['items'])} 個預算項目、{len(data['entities'])} 個對象、{n_st} 筆立場、"
+          f"{len(data['votes'])} 筆精選表決")
 
 
 if __name__ == "__main__":

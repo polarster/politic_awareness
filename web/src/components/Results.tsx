@@ -94,6 +94,7 @@ export function Results(p: Props) {
       <section className="card footer-actions">
         <FeedbackLink kind="一般意見" label="給我們意見" />
         <button className="link" onClick={p.onMethodology}>計算方法與資料來源</button>
+        <a href="#/votes">立院投票紀錄</a>
         <button className="secondary" onClick={p.onRestart}>重新作答</button>
       </section>
     </>

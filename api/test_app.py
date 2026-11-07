@@ -47,7 +47,10 @@ def test_system_prompt_includes_questions_and_rules():
     assert "N01" in p and "X13" in p and "B_TECH" in p
     assert "T_POLITICAL_SILENCE" in p
     assert "不勸使用者支持" in p
-    assert "目前尚未整理任何立場資料" in p
+    if any(app_module.DATA["stances"].values()):
+        assert "kmt / G02" in p and "https://" in p
+    else:
+        assert "目前尚未整理任何立場資料" in p
 
 
 def test_tools_are_strict():

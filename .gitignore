@@ -9,3 +9,5 @@ __pycache__/
 .pytest_cache/
 web/tsconfig.tsbuildinfo
 .keys/
+build/
+web/public/ly-votes.json

@@ -3,6 +3,7 @@ import { BudgetStep } from "./components/BudgetStep";
 import { Methodology } from "./components/Methodology";
 import { QuestionStep } from "./components/QuestionStep";
 import { Results } from "./components/Results";
+import { VotesPage } from "./components/VotesPage";
 import { data, municipalQuestions, nationalQuestions } from "./data";
 import type { Adjustment, Answer, Answers, BudgetSteps } from "./lib/types";
 
@@ -42,12 +43,20 @@ function load(): State {
 export default function App() {
   const [s, setS] = useState<State>(load);
   const [showMethod, setShowMethod] = useState(false);
+  const [hash, setHash] = useState(() => window.location.hash);
+  useEffect(() => {
+    const on = () => setHash(window.location.hash);
+    window.addEventListener("hashchange", on);
+    return () => window.removeEventListener("hashchange", on);
+  }, []);
+  const votesRoute = hash.startsWith("#/votes");
+  const voteFocus = votesRoute ? decodeURIComponent(hash.split("/")[2] ?? "") || undefined : undefined;
 
   useEffect(() => {
     try { sessionStorage.setItem(STORAGE_KEY, JSON.stringify(s)); } catch { /* ignore */ }
   }, [s]);
 
-  useEffect(() => { window.scrollTo(0, 0); }, [s.step, showMethod]);
+  useEffect(() => { if (!voteFocus) window.scrollTo(0, 0); }, [s.step, showMethod, votesRoute, voteFocus]);
 
   const go = (step: Step) => setS((p) => ({
     ...p,
@@ -57,10 +66,13 @@ export default function App() {
   const setAnswer = (id: string, a: Answer) => setS((p) => ({ ...p, answers: { ...p.answers, [id]: a } }));
 
   let body: React.ReactNode;
-  if (showMethod) {
+  if (votesRoute) {
+    body = <VotesPage focus={voteFocus} onBack={() => { window.location.hash = ""; }} />;
+  } else if (showMethod) {
     body = <Methodology onClose={() => setShowMethod(false)} />;
   } else if (s.step === "intro") {
     body = (
+      <>
       <section className="card prose">
         <span className="eyebrow">政治光譜自我探索</span>
         <h1>你的政治立場，可能比一個標籤更複雜</h1>
@@ -80,6 +92,13 @@ export default function App() {
           <button className="link" onClick={() => setShowMethod(true)}>計算方法與資料來源</button>
         </div>
       </section>
+      <section className="card">
+        <span className="eyebrow">民眾有知的權利</span>
+        <h2>立法院怎麼投票？</h2>
+        <p className="small">看看各黨、每位立委在重要法案上的記名表決，全部附立法院公報原文。</p>
+        <a className="button-link" href="#/votes">查看立院投票紀錄</a>
+      </section>
+      </>
     );
   } else if (s.step === "national") {
     body = (
@@ -129,6 +148,10 @@ export default function App() {
 
   return (
     <main className="container">
+      <nav className="topnav small">
+        <a href="#" onClick={(e) => { e.preventDefault(); window.location.hash = ""; setShowMethod(false); }}>政治光譜自我探索</a>
+        <a href="#/votes">立院投票紀錄</a>
+      </nav>
       {body}
       <p className="disclaimer small muted">
         個人 side project · 題庫版本 {data.version} · 不是投票建議

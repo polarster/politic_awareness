@@ -10,8 +10,10 @@
 ## 結構
 
 ```
-data/          YAML 資料（題目、補充題、預算、討論主題、政黨、立場）
-scripts/       build_data.py：驗證 YAML 並輸出 web/src/generated/data.json
+data/          YAML 資料（題目、補充題、預算、討論主題、政黨、立場、精選表決 votes.yaml）
+data/ly/       立法院記名表決整理檔 votes.json（scripts/ly_votes.py 產生）
+scripts/       build_data.py：驗證 YAML 並輸出 web/src/generated/data.json 與 web/public/ly-votes.json
+               ly_votes.py：從立法院議事錄抓取第 10、11 屆所有記名表決，依黨籍統計
 web/           React + Vite 前端（計分全在前端）
 api/           FastAPI 後端：/api/chat（Claude 代理）、/api/log（匿名作答記錄）
 ```
@@ -35,6 +37,21 @@ npm run dev            # 會先跑 build_data.py；/api 由 vite proxy 轉到 :8
 測試：`cd web && npm test`、`cd api && .venv/bin/python -m pytest`
 
 修改 `data/` 後跑 `python3 scripts/build_data.py` 重新產生 JSON（`npm run dev/build` 會自動跑），並重啟後端（system prompt 在啟動時建立）。
+
+## 立院投票紀錄
+
+網站的「立院投票紀錄」頁（`#/votes`）列出：
+- 和題目相關的精選表決（`data/votes.yaml`），附白話說明與相關題目；
+- 第 10、11 屆全部記名表決，可用法案名稱或立委姓名搜尋。
+
+每筆都有各黨票數、逐人名單與立法院公報原文連結。更新資料：
+
+```bash
+python3 scripts/ly_votes.py          # 下載議事錄（快取於 build/ly_cache）並輸出 data/ly/votes.json
+python3 scripts/build_data.py
+```
+
+資料來源為立法院議事暨公報資訊網，透過 g0v 立法院 API（ly.govapi.tw）取得議事錄文字檔。
 
 ## 隱私設計
 
