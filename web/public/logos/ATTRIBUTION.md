@@ -12,5 +12,7 @@
 | gpt.svg | 綠黨 | CC BY-SA 4.0 | Taiwan Green Party | https://commons.wikimedia.org/wiki/File:Green_Party_Taiwan_logo_without_text.svg |
 | sdp.svg | 社會民主黨 | Public domain | Unknown author | https://commons.wikimedia.org/wiki/File:Social_Democratic_Party_Taiwan_Logo.svg |
 
-民主進步黨：Commons 上只有文字標準字（The Democratic Progressive Party Logo.svg），沒有圓形黨徽，因此先以代表色圓徽表示。
+| dpp.png | 民主進步黨 | 專案作者提供（裁切為正方形） | 民主進步黨 | — |
+
+民主進步黨：Commons 上只有文字標準字，沒有圓形黨徽；dpp.png 由專案作者提供。
 小民參政歐巴桑聯盟：Commons 上查無黨徽。
