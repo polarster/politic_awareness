@@ -111,6 +111,20 @@ export interface CuratedVote {
   records: VoteRecord[];
 }
 
+export interface ArgumentSource {
+  kind: "gazette" | "minutes" | "official" | "news";
+  title: string;
+  url: string;
+  date?: string;
+  speaker?: string;
+}
+
+export interface ArgumentSide {
+  text: string;
+  sources: ArgumentSource[];
+  note?: string;
+}
+
 export interface Stance {
   question: string;
   value: number;
@@ -127,6 +141,7 @@ export interface AppData {
   supplementary: Question[];
   discussions: Discussion[];
   votes: CuratedVote[];
+  arguments: Record<string, { pro: ArgumentSide; con: ArgumentSide }>;
   budget: BudgetConfig;
   entities: Entity[];
   stances: Record<string, Stance[]>;

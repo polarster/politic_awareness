@@ -21,6 +21,7 @@ const data: AppData = {
   ],
   discussions: [],
   votes: [],
+  arguments: {},
   budget: {
     version: "t", start_balance: 0, min_final_balance: 0, steps: [-2, -1, 0, 1, 2],
     cities: [],

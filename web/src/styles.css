@@ -219,3 +219,11 @@ blockquote { margin: 4px 0; padding-left: 8px; border-left: 3px solid var(--bord
 .important-top input { margin-top: 5px; }
 .important-top .muted { display: block; }
 .important-on { border-style: solid; border-color: var(--accent); background: var(--accent-soft); font-weight: 600; }
+
+.arguments { margin: 12px 0; }
+.arguments .row { gap: 8px; }
+.arguments .row button { padding: 6px 12px; font-size: 0.9rem; }
+.arg-side { border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 8px 8px 0; padding: 10px 12px; margin-top: 10px; }
+.arg-side p { margin: 6px 0; }
+.arg-sources { padding-left: 0; list-style: none; margin: 6px 0 0; }
+.arg-sources li { margin: 4px 0; }

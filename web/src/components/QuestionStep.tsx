@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ANSWER_OPTIONS } from "../lib/labels";
 import type { Answer, Answers, Question } from "../lib/types";
+import { Arguments } from "./Arguments";
 import { FeedbackLink } from "./FeedbackLink";
 
 interface Props {
@@ -51,6 +52,7 @@ export function QuestionStep({ title, questions, answers, onAnswer, onDone, onBa
         </button>
       )}
       {showNote && <p className="note">{q.note}</p>}
+      <Arguments key={q.id} questionId={q.id} />
 
       <label className={`important important-top ${imp ? "important-on" : ""}`}>
         <input

@@ -146,6 +146,29 @@ def build() -> dict:
             if qid not in seen:
                 fail(f"discussions.yaml {d['id']}: 未知的題目 {qid}")
 
+    ARG_KINDS = {"gazette", "minutes", "official", "news"}
+    arguments: dict[str, dict] = {}
+    for p in sorted((DATA / "arguments").glob("*.yaml")):
+        for a in (load(p) or {}).get("arguments") or []:
+            qid = a.get("question")
+            where = f"{p.name} {qid}"
+            if qid not in seen:
+                fail(f"{where}: 未知的題目")
+            if qid in arguments:
+                fail(f"{where}: 重複的題目")
+            for side in ("pro", "con"):
+                sd = a.get(side) or {}
+                if not sd.get("text"):
+                    fail(f"{where}: 缺少 {side}.text")
+                for src in sd.get("sources") or []:
+                    if src.get("kind") not in ARG_KINDS:
+                        fail(f"{where}: 未知的來源類型 {src.get('kind')}")
+                    if not str(src.get("url", "")).startswith(("http://", "https://")):
+                        fail(f"{where}: 來源需要連結")
+                    if src.get("date") is not None:
+                        src["date"] = str(src["date"])
+            arguments[qid] = {"pro": a["pro"], "con": a["con"]}
+
     ly = {v["id"]: v for v in json.loads(LY_VOTES.read_text(encoding="utf-8"))} if LY_VOTES.exists() else {}
     curated = []
     vdoc = load(DATA / "votes.yaml")
@@ -173,6 +196,7 @@ def build() -> dict:
     return {
         "version": qdoc["version"],
         "votes": curated,
+        "arguments": arguments,
         "discussions": ddoc["discussions"],
         "axes": axes,
         "questions": qdoc["questions"],
@@ -201,7 +225,7 @@ def main():
     n_st = sum(len(v) for v in data["stances"].values())
     print(f"已輸出 {OUT.relative_to(ROOT)}：{len(data['questions'])} 題、"
           f"{len(data['budget']['items'])} 個預算項目、{len(data['entities'])} 個對象、{n_st} 筆立場、"
-          f"{len(data['votes'])} 筆精選表決")
+          f"{len(data['votes'])} 筆精選表決、{len(data['arguments'])} 題正反說法")
 
 
 if __name__ == "__main__":
