@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
-  axisScores, budgetAgreement, budgetBalance, matchEntity, questionAgreement,
+  axisScores, budgetAgreement, budgetBalance, entityAxisScores, matchEntity, questionAgreement,
 } from "./scoring";
 import type { AppData } from "./types";
 
@@ -126,5 +126,18 @@ describe("matchEntity", () => {
   it("沒有立場資料時 score 為 null", () => {
     const r = matchEntity({ ...data, stances: {} }, data.entities[0], "national", { E01: { v: 1, imp: false } }, null);
     expect(r.score).toBeNull();
+  });
+});
+
+describe("entityAxisScores", () => {
+  it("以立場 × 方向平均，沒有資料的軸為 null", () => {
+    const s = entityAxisScores(data, data.entities[0], "national");
+    // E01: 2 × -1 = -2；E03 無立場
+    expect(s.find((x) => x.axis.id === "economy")!.value).toBe(-2);
+    expect(s.find((x) => x.axis.id === "city_priority")!.value).toBeNull();
+  });
+  it("市政層的預算立場換算到 -2..2", () => {
+    const s = entityAxisScores(data, data.entities[0], "municipal");
+    expect(s.find((x) => x.axis.id === "city_priority")!.value).toBe(-2); // 1 × 2 × -1
   });
 });

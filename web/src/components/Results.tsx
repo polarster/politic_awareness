@@ -2,12 +2,13 @@ import { useMemo, useState } from "react";
 import { data, itemLabel } from "../data";
 import { postLog, toLogAdjustments } from "../lib/api";
 import { answerLabel } from "../lib/labels";
-import { axisScores, matchAll } from "../lib/scoring";
+import { axisScores, entityAxisScores, matchAll, type AxisScore } from "../lib/scoring";
 import type { Adjustment, Answers, BudgetSteps } from "../lib/types";
 import { AxisBars } from "./AxisBars";
 import { Chat } from "./Chat";
 import { FeedbackLink } from "./FeedbackLink";
-import { MatchList } from "./MatchList";
+import { MatchRings } from "./MatchRings";
+import { Radar } from "./Radar";
 
 interface Props {
   answers: Answers;
@@ -32,6 +33,20 @@ export function Results(p: Props) {
   const munOrig = useMemo(() => axisScores(data, p.originalAnswers, p.budget, "municipal"), [p.originalAnswers, p.budget]);
   const natMatch = useMemo(() => matchAll(data, "national", p.answers, p.budget), [p.answers, p.budget]);
   const munMatch = useMemo(() => matchAll(data, "municipal", p.answers, p.budget), [p.answers, p.budget]);
+  const [compareId, setCompareId] = useState<string | null>(null);
+  const [openNat, setOpenNat] = useState<string | null>(null);
+  const [openMun, setOpenMun] = useState<string | null>(null);
+  const [showNumbers, setShowNumbers] = useState(false);
+  const compareEntity = data.entities.find((e) => e.id === compareId) ?? null;
+
+  const compareFor = (layer: "national" | "municipal", orig: AxisScore[]) => {
+    if (compareEntity) {
+      const scores = entityAxisScores(data, compareEntity, layer);
+      return { label: compareEntity.short ?? compareEntity.name, scores };
+    }
+    return adjusted ? { label: "修正前的你", scores: orig, dashed: true } : null;
+  };
+  const partiesWithData = data.entities.filter((e) => (data.stances[e.id] ?? []).length > 0);
 
   return (
     <>
@@ -41,21 +56,55 @@ export function Results(p: Props) {
         <p className="muted small">
           每條軸的兩端代表兩種不同的價值取向，沒有哪一端比較好。結果只反映你在這份問卷上的作答。
         </p>
-        <h3>全國議題</h3>
-        <AxisBars scores={nat} original={adjusted ? natOrig : undefined} />
-        <h3>{cityName ?? "雙北"}市政</h3>
-        <AxisBars scores={mun} original={adjusted ? munOrig : undefined} />
+        {partiesWithData.length > 0 && (
+          <div className="compare-chips small" role="group" aria-label="對照政黨">
+            <span className="muted">對照：</span>
+            <button className={compareId === null ? "chip-btn on" : "chip-btn"} onClick={() => setCompareId(null)}>
+              {adjusted ? "修正前的你" : "不對照"}
+            </button>
+            {partiesWithData.map((e) => (
+              <button key={e.id} className={compareId === e.id ? "chip-btn on" : "chip-btn"}
+                onClick={() => setCompareId(compareId === e.id ? null : e.id)}>
+                {e.short ?? e.name}
+              </button>
+            ))}
+          </div>
+        )}
+        <div className="radar-pair">
+          <div>
+            <h3>全國議題</h3>
+            <Radar title="全國議題" you={nat} compare={compareFor("national", natOrig)} />
+          </div>
+          <div>
+            <h3>{cityName ?? "雙北"}市政</h3>
+            {mun.filter((x) => x.value !== null).length >= 3
+              ? <Radar title="市政" you={mun} compare={compareFor("municipal", munOrig)} />
+              : <AxisBars scores={mun} original={adjusted ? munOrig : undefined} />}
+          </div>
+        </div>
+        <p className="muted small">政黨的位置依它在各題的立場（附出處）計算；沒有立場資料的軸以中間（0）表示。</p>
+        <button className="link small" onClick={() => setShowNumbers((v) => !v)} aria-expanded={showNumbers}>
+          {showNumbers ? "收起詳細數值" : "看詳細數值"}
+        </button>
+        {showNumbers && (
+          <>
+            <h4>全國議題</h4>
+            <AxisBars scores={nat} original={adjusted ? natOrig : undefined} />
+            <h4>市政</h4>
+            <AxisBars scores={mun} original={adjusted ? munOrig : undefined} />
+          </>
+        )}
       </section>
 
       <section className="card">
         <h2>和政黨的契合度</h2>
         <p className="muted small">
-          點開可以看逐題對照，以及每個立場的出處與證據等級。全國層與市政層分開計算。
+          點政黨卡片看逐題對照，以及每個立場的出處與證據等級。全國層與市政層分開計算。
         </p>
         <h3>全國議題</h3>
-        <MatchList matches={natMatch} />
+        <MatchRings matches={natMatch} open={openNat} onOpen={setOpenNat} compareId={compareId} onCompare={setCompareId} />
         <h3>市政</h3>
-        <MatchList matches={munMatch} />
+        <MatchRings matches={munMatch} open={openMun} onOpen={setOpenMun} />
       </section>
 
       <section className="card">

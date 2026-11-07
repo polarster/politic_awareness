@@ -227,3 +227,54 @@ blockquote { margin: 4px 0; padding-left: 8px; border-left: 3px solid var(--bord
 .arg-side p { margin: 6px 0; }
 .arg-sources { padding-left: 0; list-style: none; margin: 6px 0 0; }
 .arg-sources li { margin: 4px 0; }
+
+/* ── 圖表色票（dataviz 參考色票，已通過 light/dark 驗證） ── */
+:root { --series-1: #2a78d6; --series-2: #eb6834; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --series-1: #3987e5; --series-2: #d95926; }
+}
+
+.radar-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 8px 24px; }
+.radar { position: relative; margin: 0; }
+.radar svg { width: 100%; height: auto; max-width: 420px; display: block; margin: 0 auto; overflow: visible; }
+.radar-ring { fill: none; stroke: var(--border); stroke-width: 1; }
+.radar-ring-mid { stroke: var(--muted); stroke-dasharray: 3 4; }
+.radar-spoke { stroke: var(--border); stroke-width: 1; }
+.radar-shape { stroke-width: 2; stroke-linejoin: round; }
+.radar-you { fill: color-mix(in srgb, var(--series-1) 22%, transparent); stroke: var(--series-1); }
+.radar-compare { fill: color-mix(in srgb, var(--series-2) 14%, transparent); stroke: var(--series-2); }
+.radar-dashed { fill: none; stroke: var(--muted); stroke-dasharray: 5 4; }
+.radar-dot { stroke: var(--surface); stroke-width: 2; }
+.radar-dot-you { fill: var(--series-1); }
+.radar-dot-compare { fill: var(--series-2); }
+.radar-hit { fill: transparent; cursor: pointer; }
+.radar-label { font-size: 16px; font-weight: 600; fill: var(--text); }
+.radar-sublabel { font-size: 13px; fill: var(--muted); }
+.radar-tip {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+  padding: 8px 10px; margin: 4px auto 0; max-width: 320px;
+}
+.radar-legend { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 4px; }
+.key { display: inline-block; width: 14px; height: 4px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
+.key-you { background: var(--series-1); }
+.key-compare { background: var(--series-2); }
+.key-dashed { background: none; border-top: 2px dashed var(--muted); height: 0; }
+.compare-chips { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin: 8px 0; }
+.chip-btn {
+  background: var(--surface); color: var(--text); border: 1px solid var(--border);
+  border-radius: 999px; padding: 4px 12px; font-size: 0.85rem;
+}
+.chip-btn.on { background: var(--series-2); border-color: var(--series-2); color: #fff; }
+
+.ring-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
+.ring-card { border: 1px solid var(--border); border-radius: 14px; padding: 10px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+.ring-card-open { border-color: var(--series-1); box-shadow: 0 0 0 2px color-mix(in srgb, var(--series-1) 20%, transparent); }
+.ring-main { background: none; border: none; color: var(--text); padding: 0; display: flex; flex-direction: column; align-items: center; gap: 2px; width: 100%; }
+.ring { width: 84px; height: 84px; }
+.ring-track { fill: none; stroke: var(--track); stroke-width: 8; }
+.ring-value { fill: none; stroke: var(--series-1); stroke-width: 8; stroke-linecap: round; transition: stroke-dasharray 0.4s; }
+.ring-text { font-size: 17px; font-weight: 700; fill: var(--text); }
+.ring-name { font-weight: 600; }
+.ring-detail { margin-top: 12px; }
+.ring-text-sm { font-size: 14px; }
+.radar svg { max-width: 460px; }

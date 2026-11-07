@@ -160,3 +160,34 @@ export function matchAll(
 
 /** 覆蓋率低於此值時提示結果參考價值有限 */
 export const LOW_COVERAGE = 0.5;
+
+/**
+ * 政黨在各軸上的位置：該軸上有立場資料的題目（含預算項目）的「立場 × 方向」平均。
+ * 沒有資料的軸為 null。
+ */
+export function entityAxisScores(data: AppData, entity: Entity, layer: Layer): AxisScore[] {
+  const stances = data.stances[entity.id] ?? [];
+  const byId = new Map(stances.map((s) => [s.question, s.value]));
+  const qs = [...data.questions, ...data.supplementary].filter((q) => q.layer === layer && !q.reflection);
+  return data.axes.map((axis) => {
+    let sum = 0;
+    let count = 0;
+    for (const q of qs) {
+      if (q.axis !== axis.id) continue;
+      const v = byId.get(q.id);
+      if (v === undefined) continue;
+      sum += v * q.direction;
+      count++;
+    }
+    if (layer === "municipal") {
+      for (const b of data.budget.items) {
+        if (b.axis !== axis.id) continue;
+        const v = byId.get(b.id);
+        if (v === undefined) continue;
+        sum += v * 2 * b.direction; // 預算立場只有方向（-1/0/1），換算到 -2..2
+        count++;
+      }
+    }
+    return { axis, value: count ? sum / count : null, count };
+  });
+}

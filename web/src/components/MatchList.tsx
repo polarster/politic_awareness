@@ -26,7 +26,7 @@ function stanceLabel(id: string, v: number): string {
   return budgetItemById.has(id) ? BUDGET_DIR_LABELS[v] : answerLabel(v);
 }
 
-function Detail({ m }: { m: MatchResult }) {
+export function MatchDetail({ m }: { m: MatchResult }) {
   return (
     <table className="compare">
       <thead>
@@ -98,7 +98,7 @@ export function MatchList({ matches }: { matches: MatchResult[] }) {
               比對 {m.compared}/{m.total} 題
               {coverage < LOW_COVERAGE && "（可比對的題目偏少，結果參考價值有限）"}
             </div>
-            {isOpen && <Detail m={m} />}
+            {isOpen && <MatchDetail m={m} />}
           </li>
         );
       })}
