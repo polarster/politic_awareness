@@ -1,0 +1,10 @@
+node_modules/
+web/dist/
+web/src/generated/
+web/.env
+api/.venv/
+api/.env
+api/*.sqlite3
+__pycache__/
+.pytest_cache/
+web/tsconfig.tsbuildinfo

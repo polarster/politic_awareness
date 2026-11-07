@@ -1,0 +1,32 @@
+version: 1
+axes:
+  - id: identity
+    name: 兩岸與國家認同
+    negative_pole: 台灣主體
+    positive_pole: 兩岸整合
+    layer: national
+  - id: defense
+    name: 國防與外交
+    negative_pole: 對話與避險
+    positive_pole: 嚇阻與結盟
+    layer: national
+  - id: economy
+    name: 經濟
+    negative_pole: 重分配
+    positive_pole: 市場
+    layer: national
+  - id: social
+    name: 社會價值
+    negative_pole: 自由多元
+    positive_pole: 傳統秩序
+    layer: national
+  - id: environment
+    name: 環境與能源
+    negative_pole: 環境優先
+    positive_pole: 發展優先
+    layer: both
+  - id: city_priority
+    name: 市政優先順序
+    negative_pole: 生活照顧優先
+    positive_pole: 經濟成長優先
+    layer: municipal

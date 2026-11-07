@@ -1,0 +1,8 @@
+id: gpt
+type: party
+name: 綠黨
+short: 綠黨
+inclusion_reason: 待核對（不分區政黨票 ≥1% 或雙北有現任議員）
+inclusion_verified: false
+links:
+  official: https://www.greenparty.org.tw/

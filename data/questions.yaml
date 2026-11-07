@@ -1,0 +1,180 @@
+# 主問卷。direction: 1 表示同意 → 往該軸 positive_pole；-1 表示同意 → 往 negative_pole。
+# axis: null 表示不計入任何軸，只做逐題比對。
+version: 2026.11-draft1
+questions:
+  # ── 全國層：兩岸與國家認同 ──
+  - id: N01
+    layer: national
+    axis: identity
+    direction: 1
+    text: 兩岸應以「九二共識」作為對話基礎。
+    note: 「九二共識」指 1992 年兩岸會談的政治表述，各方對其內涵（例如是否包含「各自表述」）的理解不同。
+  - id: N02
+    layer: national
+    axis: identity
+    direction: -1
+    text: 中華民國（台灣）與中華人民共和國互不隸屬。
+  - id: N03
+    layer: national
+    axis: identity
+    direction: 1
+    text: 長期而言，兩岸應朝向統一發展。
+  - id: N04
+    layer: national
+    axis: identity
+    direction: 1
+    text: 應擴大與中國的經貿往來，例如簽訂服務業或貨品貿易協議。
+  - id: N05
+    layer: national
+    axis: identity
+    direction: -1
+    text: 應移除公共空間中的威權人物雕像。
+
+  # ── 全國層：國防與外交 ──
+  - id: D01
+    layer: national
+    axis: defense
+    direction: 1
+    text: 國防預算應提高到 GDP 的 3% 以上。
+  - id: D02
+    layer: national
+    axis: defense
+    direction: 1
+    text: 義務役應維持一年或更長。
+  - id: D03
+    layer: national
+    axis: defense
+    direction: 1
+    text: 台灣應優先強化與美國、日本的安全合作。
+  - id: D04
+    layer: national
+    axis: defense
+    direction: -1
+    text: 為了降低戰爭風險，政府應主動與中國恢復官方對話，即使需要在政治表述上做出讓步。
+  - id: D05
+    layer: national
+    axis: defense
+    direction: -1
+    text: 台灣應避免在美中之間選邊，盡量維持等距關係。
+
+  # ── 全國層：經濟 ──
+  - id: E01
+    layer: national
+    axis: economy
+    direction: -1
+    text: 應提高高所得者或大企業的稅負，用於擴大社會福利。
+  - id: E02
+    layer: national
+    axis: economy
+    direction: -1
+    text: 基本工資應每年調升，即使會增加企業成本。
+  - id: E03
+    layer: national
+    axis: economy
+    direction: 1
+    text: 政府應減少對產業的管制，讓企業更自由經營。
+  - id: E04
+    layer: national
+    axis: economy
+    direction: -1
+    text: 托育、長照等服務應主要由政府直接提供，而不是以發放現金補助為主。
+  - id: E05
+    layer: national
+    axis: economy
+    direction: 1
+    text: 社會福利應以有經濟需要的人為主（排富），而不是人人都有。
+
+  # ── 全國層：社會價值 ──
+  - id: S01
+    layer: national
+    axis: social
+    direction: -1
+    text: 學校應在課程中教導多元性別相關內容。
+  - id: S02
+    layer: national
+    axis: social
+    direction: -1
+    text: 應廢除死刑。
+  - id: S03
+    layer: national
+    axis: social
+    direction: -1
+    text: 應放寬外籍人士歸化，以及移工轉為長期居留的條件。
+  - id: S04
+    layer: national
+    axis: social
+    direction: 1
+    text: 為了維護治安，可以接受警方擁有更大的執法權限。
+  - id: S05
+    layer: national
+    axis: social
+    direction: 1
+    text: 政府政策應優先鼓勵傳統的婚姻與家庭形式。
+  - id: S06
+    layer: national
+    axis: social
+    direction: 1
+    text: 中小學應加強傳統倫理與品德教育。
+
+  # ── 全國層：環境與能源 ──
+  - id: V01
+    layer: national
+    axis: environment
+    direction: -1
+    text: 應加速發展再生能源，即使電價可能因此上漲。
+  - id: V02
+    layer: national
+    axis: environment
+    direction: -1
+    text: 應對排碳大戶課徵更高的碳費。
+  - id: V03
+    layer: national
+    axis: environment
+    direction: -1
+    text: 大型開發案應受到更嚴格的環境影響評估。
+  - id: V04
+    layer: national
+    axis: environment
+    direction: 1
+    text: 為了穩定供電，可以增加天然氣發電，即使碳排放因此增加。
+  - id: V05
+    layer: national
+    axis: environment
+    direction: 1
+    text: 環評程序應該簡化，以加快重大建設的進度。
+
+  # ── 全國層：不計入維度 ──
+  - id: G01
+    layer: national
+    axis: null
+    direction: 0
+    text: 應延役或重啟現有的核電廠。
+    note: 支持核電的理由可能是供電穩定，也可能是減碳，因此不歸入「環境 ↔ 發展」軸。
+  - id: G02
+    layer: national
+    axis: null
+    direction: 0
+    text: 立法院應擁有調查權與聽證權（如 2024 年國會改革法案的內容）。
+
+  # ── 雙北市政層：政策題（預算以外） ──
+  - id: M07
+    layer: municipal
+    axis: environment
+    direction: 1
+    text: 應放寬山坡地等土地的開發限制，以增加住宅供給。
+  - id: M08
+    layer: municipal
+    axis: identity
+    direction: 1
+    text: 台北市應持續與上海舉辦雙城論壇。
+    note: 這題主要與台北市有關，新北的使用者可以選「不知道 / 無意見」。
+  - id: M09
+    layer: municipal
+    axis: null
+    direction: 0
+    text: 雙北應更緊密整合，例如共同規劃交通、垃圾處理等跨市事務。
+  - id: M10
+    layer: municipal
+    axis: null
+    direction: 0
+    text: 市政府應擴大參與式預算，讓市民直接決定部分預算的用途。

@@ -1,0 +1,108 @@
+# 市政預算分配。第一版用點數，每格成本都是 1。
+# expense：增加一格花 cost_per_step 點，減少一格得到點數。
+# revenue：增加一格得到點數，減少一格花點數。
+# surplus：增加一格花點數。
+version: 2026.11-draft1
+start_balance: 0
+min_final_balance: 0
+steps: [-2, -1, 0, 1, 2]
+cities:
+  - id: taipei
+    name: 台北市
+  - id: newtaipei
+    name: 新北市
+items:
+  - id: B_HOUSING
+    kind: expense
+    name: 社會住宅
+    cost_per_step: 1
+    axis: city_priority
+    direction: -1
+  - id: B_TRANSIT
+    kind: expense
+    name: 捷運與公車
+    cost_per_step: 1
+    axis: environment
+    direction: -1
+  - id: B_ROADS
+    kind: expense
+    name: 道路與停車場
+    cost_per_step: 1
+    axis: city_priority
+    direction: 1
+  - id: B_CHILDCARE
+    kind: expense
+    name: 公立托育
+    cost_per_step: 1
+    axis: city_priority
+    direction: -1
+  - id: B_ELDERCARE
+    kind: expense
+    name: 長照與敬老
+    cost_per_step: 1
+    axis: city_priority
+    direction: -1
+  - id: B_EDUCATION
+    kind: expense
+    name: 教育
+    detail: 降低班級人數、增聘教師、減輕教師行政負擔
+    cost_per_step: 1
+    axis: city_priority
+    direction: -1
+  - id: B_SAFETY
+    kind: expense
+    name: 治安與消防
+    cost_per_step: 1
+    axis: social
+    direction: 1
+  - id: B_PARKS
+    kind: expense
+    name: 公園與人行環境
+    cost_per_step: 1
+    axis: environment
+    direction: -1
+  - id: B_URBAN_RENEWAL
+    kind: expense
+    name: 都市更新補助
+    cost_per_step: 1
+    axis: city_priority
+    direction: 1
+  - id: B_CASH
+    kind: expense
+    name: 現金補助
+    detail: 生育獎勵、敬老金
+    cost_per_step: 1
+    axis: city_priority
+    direction: -1
+  - id: B_TECH
+    kind: expense
+    name: 科技與產業發展
+    detail: 科技園區、AI 應用、招商、新創補助
+    cost_per_step: 1
+    axis: city_priority
+    direction: 1
+  - id: R_HOUSE_TAX
+    kind: revenue
+    name: 房屋稅（囤房稅）
+    cost_per_step: 1
+    axis: city_priority
+    direction: -1
+  - id: R_FARES
+    kind: revenue
+    name: 大眾運輸票價
+    cost_per_step: 1
+    axis: null
+    direction: 0
+  - id: R_DEBT
+    kind: revenue
+    name: 舉債
+    cost_per_step: 1
+    axis: null
+    direction: 0
+  - id: S_RESERVE
+    kind: surplus
+    name: 還債或留作準備金
+    min_step: 0          # 結餘不能為負（動用準備金等同舉債，已有舉債項目）
+    cost_per_step: 1
+    axis: null
+    direction: 0
