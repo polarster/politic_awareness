@@ -1,6 +1,6 @@
 # 黨徽圖檔來源與授權
 
-以下圖檔取自 Wikimedia Commons，僅用於在光譜與地圖上辨識政黨，不代表任何政黨背書本網站。
+以下圖檔取自 Wikimedia Commons 或政黨官網，僅用於在光譜與地圖上辨識政黨，不代表任何政黨背書本網站。
 政黨標誌可能受商標法保護；Commons 標示的「public domain」是針對著作權。
 
 | 檔案 | 政黨 | 授權 | 作者／來源 | Commons 頁面 |
@@ -12,7 +12,7 @@
 | gpt.svg | 綠黨 | CC BY-SA 4.0 | Taiwan Green Party | https://commons.wikimedia.org/wiki/File:Green_Party_Taiwan_logo_without_text.svg |
 | sdp.svg | 社會民主黨 | Public domain | Unknown author | https://commons.wikimedia.org/wiki/File:Social_Democratic_Party_Taiwan_Logo.svg |
 
-| dpp.png | 民主進步黨 | 專案作者提供（裁切為正方形） | 民主進步黨 | — |
+| dpp.svg | 民主進步黨 | 民進黨官網提供下載的識別系統檔（DPP OF TAIWAN.ai），轉為 SVG 並裁切出黨徽 | 民主進步黨 | https://www.dpp.org.tw/download |
 
-民主進步黨：Commons 上只有文字標準字，沒有圓形黨徽；dpp.png 由專案作者提供。
+民主進步黨：Commons 上只有文字標準字，沒有圓形黨徽；改用民進黨官網下載頁提供的識別系統檔。
 小民參政歐巴桑聯盟：Commons 上查無黨徽。

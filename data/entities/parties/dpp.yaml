@@ -4,9 +4,9 @@ name: 民主進步黨
 short: 民進黨
 color: "#1B9431"   # 代表色（可調整）
 badge: "民"      # 沒有黨徽圖檔時，圓徽上顯示的字
-logo: logos/dpp.png   # 黨徽圖檔（web/public/logos/）
-logo_source: ""
-logo_license: "專案作者提供"
+logo: logos/dpp.svg   # 黨徽圖檔（web/public/logos/）
+logo_source: https://www.dpp.org.tw/download
+logo_license: "民主進步黨官網「識別系統（彩色黨徽）」下載檔，由 .ai 轉為 SVG 並裁切出黨徽"
 logo_author: "民主進步黨"
 inclusion_reason: 立法院有席次
 inclusion_verified: false
