@@ -1,0 +1,165 @@
+entity: sdp
+stances:
+- question: N02
+  value: 2
+  interpretation: 社民黨政綱主張「台灣已是主權獨立之國家」並反對中國併吞，立場清楚。（依據為 2016 年官網政綱；社民黨官網目前已無法連線，引用網站存檔。）
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: platform
+    title: 社會民主黨政綱：新政治（舊版官網）
+    url: https://old.sdp.org.tw/programs/2
+    date: null
+    venue: 社會民主黨官網政綱（2016 年網站存檔）
+    quote: 社民黨主張台灣已是主權獨立之國家，我們反對中國併吞，並將積極推動臺灣在國際上的被承認與參與。
+    context: 政綱「新政治」篇；同篇第 11 點並寫道「台灣是一個主權獨立的國家，社民黨將積極推動國際間的普遍承認與交往」。 出處為社民黨舊版官網（old.sdp.org.tw）；新版官網（www.sdp.org.tw）尚未補齊黨綱內容。
+    timestamp: null
+- question: N03
+  value: -2
+  interpretation: 社民黨政綱主張台灣是主權獨立國家並「反對中國併吞」；2024 年黨召集人徐雍也把藍白與中共的關係視為威脅。明確反對統一方向。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: platform
+    title: 社會民主黨政綱：新政治（舊版官網）
+    url: https://old.sdp.org.tw/programs/2
+    date: null
+    venue: 社會民主黨官網政綱（2016 年網站存檔）
+    quote: 社民黨主張台灣已是主權獨立之國家，我們反對中國併吞，並將積極推動臺灣在國際上的被承認與參與。
+    context: 政綱「新政治」篇。 出處為社民黨舊版官網（old.sdp.org.tw）；新版官網（www.sdp.org.tw）尚未補齊黨綱內容。
+    timestamp: null
+- question: E01
+  value: 1
+  interpretation: 社民黨政綱批評稅制長期向富人與財團傾斜、不斷為富人減稅，主張改革稅制，並以共同分擔的財政建立普遍的社會安全網；但只見於 2016 年政綱，未見近年的具體稅改主張，故判為同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: platform
+    title: 社會民主黨政綱：新經濟（舊版官網）
+    url: https://old.sdp.org.tw/programs/1
+    date: null
+    venue: 社會民主黨官網政綱（2016 年網站存檔）
+    quote: 長期以來，不論其政黨支持者的階級屬性為何，執政黨都與富人和財團形成官商共治的統治集團，不願以實價課稅等政策來抑制過度哄抬的房價，反而不斷為富人減稅，給予財團稅賦優惠。
+    context: 政綱「新經濟」篇前言，並主張「當務之急是改革稅制與產業政策，並強化財產的社會責任」。 出處為社民黨舊版官網（old.sdp.org.tw）；新版官網（www.sdp.org.tw）尚未補齊黨綱內容。
+    timestamp: null
+- question: E02
+  value: 1
+  interpretation: 社民黨政綱主張「提高基本工資至合理生活水準」；但沒有找到該黨對每年調升機制的具體表態，故判為同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: platform
+    title: 社會民主黨政綱：新經濟（舊版官網）
+    url: https://old.sdp.org.tw/programs/1
+    date: null
+    venue: 社會民主黨官網政綱（2016 年網站存檔）
+    quote: 社民黨主張透過政策糾舉違法資方、強化工會、提高基本工資至合理生活水準、建立公司經營者與勞動者平等共享利潤之機制，以改變受薪者淪為「新貧階級」之現況。
+    context: 政綱「新經濟」篇第 3-1 點「改變台灣高工時、低工資之現況」。 出處為社民黨舊版官網（old.sdp.org.tw）；新版官網（www.sdp.org.tw）尚未補齊黨綱內容。
+    timestamp: null
+- question: E04
+  value: 2
+  interpretation: 社民黨政綱主張「公共化的托育與長期照護」，並明言社會安全網「不應被殘補式的現金給付取代」，與題目方向一致且表述明確。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: platform
+    title: 社會民主黨政綱：新社會（舊版官網）
+    url: https://old.sdp.org.tw/programs/3
+    date: null
+    venue: 社會民主黨官網政綱（2016 年網站存檔）
+    quote: 因此，政府有義務提供足夠的資源保障，來保護個人發展；社會安全網不應被殘補式的現金給付取代。
+    context: 政綱「新社會」篇前言；同篇第 5-1 點主張「透過完善年金規劃，與公共化的托育與長期照護政策，使生命的每個階段免於匱乏」。 出處為社民黨舊版官網（old.sdp.org.tw）；新版官網（www.sdp.org.tw）尚未補齊黨綱內容。
+    timestamp: null
+- question: E05
+  value: -1
+  interpretation: 社民黨政綱主張建立「普遍性」、讓每個人皆能納入的社會安全網，傾向普及式而非排富式的福利設計；但同時強調「符合需求」，且僅見於 2016 年政綱，故判為不同意而非強烈不同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: platform
+    title: 社會民主黨政綱：新社會（舊版官網）
+    url: https://old.sdp.org.tw/programs/3
+    date: null
+    venue: 社會民主黨官網政綱（2016 年網站存檔）
+    quote: 國家有義務規劃平等的、普遍性且符合需求的社會安全網，讓每個人皆能納入其中，讓有需求者不虞缺乏，因為，我們認為社會成員的生活尊嚴，不可由市場機制取代。
+    context: 政綱「新社會」篇第 4-3 點「健全社會福利，創造社會團結」。 出處為社民黨舊版官網（old.sdp.org.tw）；新版官網（www.sdp.org.tw）尚未補齊黨綱內容。
+    timestamp: null
+- question: S01
+  value: 1
+  interpretation: 2017 年台北市議員提案要求性平教材須經家長會通過，社民黨到議會召開記者會批評，主張學校應提供性平教育；但相關表態較早，且未見近年的政綱表述，故判為同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 北市議會要撤性平教育 社民黨批：讓學生活在歧視中
+    url: https://newtalk.tw/news/view/2017-05-24/87511
+    date: 2017-05-24
+    venue: 社民黨於台北市議會召開的記者會
+    quote: 性平教育家長不會教、學校不能教，那小孩子要去哪裡學？看A片學嗎？上網學嗎？到補習班學嗎？
+    context: Newtalk 報導，社民黨苗博雅（當時尚未當選議員）在記者會上的發言；社民黨范雲也提到學生因性別氣質不同而承受壓力的問題。
+    timestamp: null
+- question: V03
+  value: 1
+  interpretation: 社民黨政綱主張「以環境永續為經濟發展前提」，並要求「嚴格進行環境影響評估」；但只見於 2016 年政綱，故判為同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: platform
+    title: 社會民主黨政綱：新經濟（舊版官網）
+    url: https://old.sdp.org.tw/programs/1
+    date: null
+    venue: 社會民主黨官網政綱（2016 年網站存檔）
+    quote: 政府應積極制訂綠色產業發展政策，嚴格進行環境影響評估，並協助污染性工業轉型。
+    context: 政綱「新經濟」篇第 1-5 點「發展綠色產業替代污染性工業，以環境永續為經濟發展前提」。 出處為社民黨舊版官網（old.sdp.org.tw）；新版官網（www.sdp.org.tw）尚未補齊黨綱內容。
+    timestamp: null
+- question: G01
+  value: -1
+  interpretation: 社民黨台北市議員苗博雅 2025 年反對核三延役，質疑核廢料沒有可行的長期處理方案；2026 年她表示若核安與核廢能解決，「新式核能」可以是選項，但若有疑慮、核廢無解，就沒有老舊核電延役的條件。立場有條件，判為不同意。（依據為議員發言，她並稱是個人一貫立場；未找到社民黨的正式聲明。）
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 稱「新式核能」是選項遭酸牆頭草 苗博雅曝信念
+    url: https://udn.com/news/story/6656/9398938
+    date: 2026-03-24
+    venue: 苗博雅臉書
+    quote: null
+    context: 聯合報轉述苗博雅的貼文：反核不是因民進黨反核，是因為核安有疑慮、核廢沒解答，如果未來科技進步，能確保核安無虞，能解決核廢儲存，新式核能可以是一個選項，但如果有疑、核廢無解，就沒有老舊核電延役的條件。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 黃國昌忘了昔日反核？苗博雅：如今卻提出懦弱「核三延役」公投案
+    url: https://newtalk.tw/news/view/2025-05-13/970551
+    date: 2025-05-13
+    venue: 環團於立法院外的抗議活動
+    quote: 若連現存的幾10年來的核廢料，都找不到務實可行的長期處理方案，為何現在要延役一個老舊的核電廠？
+    context: 苗博雅聲援環團抗議藍白修正《核管法》讓核三延役，並自述曾任 2021 年「核四商轉」公投的反方辯論者。
+    timestamp: null
+- question: G02
+  value: -1
+  interpretation: 2024 年國會職權修法時，社民黨召集人徐雍批評藍白修法「只是為了接下來的政治鬥爭開門」，並呼籲民進黨阻止法案、聲請釋憲；但他也表示人民期待的是更透明開放的國會改革，未見社民黨反對調查權、聽證權本身，故判為不同意而非強烈不同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 反國會濫權長期抗爭 小黨分進合擊：我們不會缺席
+    url: https://newtalk.tw/news/view/2024-05-28/921589
+    date: 2024-05-28
+    venue: 時代力量、台灣基進、社民黨、綠黨、歐巴桑聯盟聯合記者會
+    quote: 徐雍指出，人民期待的國會改革應該是更加資訊透明與開放，站在小黨的立場，更希望國會避免一黨獨大、有尊重小黨發言與協調法案的空間，但現在藍白修法只是為了接下來的政治鬥爭開門，無法有效監督國會，同時也消耗過去台灣所累積的民主與經濟成果
+    context: Newtalk 報導，小黨聯合聲明要求將國會擴權法案退回委員會實質審查；報導並寫「社民黨呼籲藍白兩黨應立即停止破壞民主法治的所有作為，民進黨應採取一切可行辦法阻止法案通過，並盡快提出釋憲」。
+    timestamp: null
+- question: R_HOUSE_TAX
+  value: 1
+  interpretation: 社民黨政綱批評政府不願以實價課稅抑制房價，主張限制投機性炒作、強化財產的社會責任，傾向提高房屋持有稅；但沒有找到該黨對囤房稅的具體近期主張，判斷依據為 2016 年政綱。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: platform
+    title: 社會民主黨政綱：新經濟（舊版官網）
+    url: https://old.sdp.org.tw/programs/1
+    date: null
+    venue: 社會民主黨官網政綱（2016 年網站存檔）
+    quote: 不願以實價課稅等政策來抑制過度哄抬的房價，反而不斷為富人減稅，給予財團稅賦優惠。
+    context: 政綱「新經濟」篇前言；同篇主張改革稅制、強化財產的社會責任，「新社會」篇第 5-2 點也主張設立完善的住屋政策、限制投機性炒作。 出處為社民黨舊版官網（old.sdp.org.tw）；新版官網（www.sdp.org.tw）尚未補齊黨綱內容。
+    timestamp: null

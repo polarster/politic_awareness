@@ -1,0 +1,458 @@
+entity: npp
+stances:
+- question: N01
+  value: -2
+  interpretation: 時代力量主張台灣國家地位正常化，2025 年黨的聲明把國民黨的「九二共識」立場描述為對中國的退讓；2019 年時任時力立委黃國昌也表示時代力量早就強調「根本沒有這種東西」。歷來未見時代力量接受九二共識，判為強烈不同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 中共人大設立光復台灣光復紀念日　時代力量：光復不屬於中共，台灣主權歸於台灣人民
+    url: https://newpowerparty.tw/archives/25809
+    date: 2025-10-25
+    venue: 時代力量新聞稿
+    quote: 時代力量認為，國民黨在「九二共識」上的立場變化，清楚顯示其在中國議題上的退讓。
+    context: 時代力量回應中共設立「台灣光復紀念日」的聲明，回顧「九二共識」一詞由蘇起於 2000 年創造，並稱如今「各表」早已不復存在。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 憲法沒有「一中各表」的空間 黃國昌：來場政黨大辯論吧！
+    url: https://newtalk.tw/news/view/2019-01-06/190631
+    date: 2019-01-06
+    venue: null
+    quote: null
+    context: Newtalk 報導，時任時代力量立委黃國昌回應朱立倫的九二共識說法，報導轉述他表示「時代力量早就多次強調根本沒有這種東西，主張推動國家正常化的必要性」。黃國昌後來已離開時代力量，此處只作為時力當時立場的參考。
+    timestamp: null
+- question: N02
+  value: 2
+  interpretation: 時代力量 2026 年的聲明明確表示「台灣與中國互不隸屬」，並稱中華人民共和國「當然是外國」；黨綱也主張台灣國家地位正常化。立場清楚一致。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 國民黨質疑「中華人民共和國是外國嗎？」時代力量：中共從未統治台灣任何一天，當然是外國！
+    url: https://newpowerparty.tw/archives/28903
+    date: 2026-05-18
+    venue: 時代力量新聞稿
+    quote: 台灣與中國互不隸屬，不僅是此刻的政治現況，更是清晰的歷史事實。
+    context: 時代力量回應國民黨向賴清德總統提出「中華人民共和國是否為外國」的問題，並呼籲朝野一致向國際傳達「台海兩岸互不隸屬」的立場。
+    timestamp: null
+- question: N03
+  value: -2
+  interpretation: 時代力量 2025 年通過的「新時代的主張」以支持台灣主權獨立為核心，時力黨團也曾表示台灣人不可能接受「和平統一」或「一國兩制」。立場清楚一致。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: platform
+    title: 時代力量理念主張：新時代的主張
+    url: https://newpowerparty.tw/about
+    date: 2025-03-15
+    venue: 時代力量第四屆黨員代表第一次會議通過
+    quote: 時代力量要爭取支持台灣主權獨立的多數民意，最小化親中政黨影響力，促成多個本土政黨分別執政在野，對外團結一致、對內良性競爭的政黨體系。
+    context: 時代力量官網「理念主張」頁所載 2025 年黨綱性文件；同頁 2015 年基本主張則寫明「推動台灣的國家地位正常化」。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 【二十大】習近平不承諾放棄對台動武　時代力量籲台軍延兵役期
+    url: https://www.rfa.org/cantonese/news/htm/tw-army-10182022053230.html
+    date: 2022-10-18
+    venue: 時代力量立法院黨團記者會
+    quote: 中共對香港人的殘害、新疆人的殘害，習近平所謂「和平統一」或「一國兩制」，已經沒有辦法來欺騙我們台灣人，台灣人無論是過去、現在或未來都不可能接受。
+    context: 自由亞洲電台報導，時力黨團副總召陳椒華在回應中共二十大報告的記者會上的發言。
+    timestamp: null
+- question: N04
+  value: -2
+  interpretation: 時代力量源自反對服貿的太陽花學運，黨主席王婉諭 2023 年表示時力多次對「重啟服貿」等主張表達強烈不認同，判為強烈不同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 王婉諭：抗中不容模糊空間 政黨應在內政上競爭
+    url: https://www.cna.com.tw/news/aipl/202310210162.aspx
+    date: 2023-10-21
+    venue: 雷震民主人權基金會活動致詞
+    quote: 時代力量因此多次對柯文哲提出的兩岸一家親、強國等距、重啟服貿等主張表達強烈不認同
+    context: 中央社報導時代力量黨主席王婉諭的致詞；引文為報導中轉述她的說法。報導並寫她認為這些主張是「嘗試在中美之間討好兩方」。
+    timestamp: null
+  - grade: C
+    kind: platform
+    title: 時代力量理念主張：新時代的主張
+    url: https://newpowerparty.tw/about
+    date: 2025-03-15
+    venue: 時代力量第四屆黨員代表第一次會議通過
+    quote: 十年前，為金權服務的政治，跨海峽政商權貴對台灣主權的威脅，讓人民走上街頭，催生了時代力量的組黨運動。
+    context: 黨綱性文件的前言，說明時代力量源自太陽花學運（反服貿）。
+    timestamp: null
+- question: N05
+  value: 2
+  interpretation: 時代力量 2022 年與民間團體向總統府陳情，要求限期 3 個月內移除中正紀念堂及各部會的蔣介石銅像等威權象徵，立場清楚。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 盼掃除威權象徵 時力：限期3個月移除中正紀念堂銅像
+    url: https://newtalk.tw/news/view/2022-02-25/715385
+    date: 2022-02-25
+    venue: 時代力量與台灣228關懷總會、台灣教授協會聯合記者會
+    quote: 落實促轉條例旨意，限期3個月內移除中正紀念堂及各部會尚存之蔣介石銅像等威權獨裁象徵，並請蔡總統承諾不再編列預算維護兩蔣陵寢，應由蔣家後人自行處理相關事宜。
+    context: 時力黨主席陳椒華、立委邱顯智、王婉諭與民團向立法院長及總統府遞交陳情書的五項訴求之一。
+    timestamp: null
+- question: D01
+  value: 1
+  interpretation: 時代力量黨綱主張強化軍事力量，並支持行政院 1.25 兆國防特別預算條例，黨主席王婉諭稱加上這筆預算國防支出占 GDP 比例「仍未達美方長期建議的水準」；但未見該黨直接表態支持「GDP 3%」這個數字，故判為同意而非強烈同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 王婉諭：強化國防是國家利益　籲在野黨停止以資訊落差杯葛軍購法案
+    url: https://newpowerparty.tw/archives/27058
+    date: 2026-01-16
+    venue: 時代力量新聞稿
+    quote: 她指出，即使加上這筆特別預算，台灣國防支出占GDP的比例仍未達美方長期建議的水準。
+    context: 王婉諭呼籲在野黨讓國防特別預算條例進入委員會審查，並說明 1.25 兆元為 8 年整體規劃、平均每年約 1,500 億元。
+    timestamp: null
+  - grade: C
+    kind: platform
+    title: 時代力量理念主張：新時代的主張
+    url: https://newpowerparty.tw/about
+    date: 2025-03-15
+    venue: 時代力量第四屆黨員代表第一次會議通過
+    quote: 時代力量主張，台灣必須強化軍事力量，打造全民參與的韌性社會，建構民主防衛、防止中國滲透的法制，應對中國的侵略威脅。
+    context: 黨綱性文件「捍衛主權，走向國際」段落。
+    timestamp: null
+- question: D02
+  value: 2
+  interpretation: 2022 年政府宣布前，時代力量黨團就主動要求國防部儘速研擬延長義務役役期，甚至主張讓女性以多元形式參與義務役；政府宣布恢復一年役期時也表態支持。立場清楚一致。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 【二十大】習近平不承諾放棄對台動武　時代力量籲台軍延兵役期
+    url: https://www.rfa.org/cantonese/news/htm/tw-army-10182022053230.html
+    date: 2022-10-18
+    venue: 時代力量立法院黨團記者會
+    quote: 再度呼籲國防部，儘速完成延長義務役役期的政策研擬，同時改革訓練甚至可以去整合民間的訓練資源，讓女性也納入多元形式的義務參與，以擴增台灣的整體戰力。
+    context: 自由亞洲電台報導，時力黨團總召邱顯智的發言。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 役期延長後年實施！立委憂訓練官、訓練場無法到位
+    url: https://www.nownews.com/news/6012946
+    date: 2022-12-28
+    venue: 國防部長邱國正拜會時代力量黨團
+    quote: 在野三黨表態都支持兵役延長，但是也有委員質疑還有一年實施，訓練官與訓練場能否到位。
+    context: NOWnews 報導，時力立委邱顯智等人在國防部長說明恢復一年役期時表態支持，同時質疑訓練能量。
+    timestamp: null
+- question: D03
+  value: 1
+  interpretation: 黨主席王婉諭表示與美國結盟是「非常務實的選擇，沒有戰略模糊的空間」，時代力量也把台美安全承諾當成國防政策的前提。（相關表述主要談美國，未特別提到日本。） 但只明確提到美國、未提到日本，比照其他政黨的標準判為同意（+1）。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 王婉諭：抗中不容模糊空間 政黨應在內政上競爭
+    url: https://www.cna.com.tw/news/aipl/202310210162.aspx
+    date: 2023-10-21
+    venue: 雷震民主人權基金會活動致詞
+    quote: 所以和政治立場及價值取向較接近的美國結盟，這是非常務實的選擇，沒有戰略模糊的空間。
+    context: 中央社報導時代力量黨主席王婉諭的致詞；引文為報導中轉述她的說法。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 國民黨質疑「中華人民共和國是外國嗎？」時代力量：中共從未統治台灣任何一天，當然是外國！
+    url: https://newpowerparty.tw/archives/28903
+    date: 2026-05-18
+    venue: 時代力量新聞稿
+    quote: 歷史上的「六項保證」從來就不是美國單方面給予的施捨，而是建立在台灣必須持續提升國防預算、強化自我防衛能力之上的台美共同承諾。
+    context: 時代力量批評在野黨刪減國防特別預算，認為這會傷害台美關係。
+    timestamp: null
+- question: D04
+  value: -2
+  interpretation: 時代力量批評國民黨主席訪中是「犧牲主權的屈辱下跪」，黨主席王婉諭也強調「國家主權，沒有任何模糊空間」，反對以政治表述讓步換取對話，立場清楚。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 時代力量批鄭麗文訪中：犧牲主權的屈辱下跪換不來和平
+    url: https://newpowerparty.tw/archives/28450
+    date: 2026-04-07
+    venue: 時代力量新聞稿
+    quote: 歷史已經證明，犧牲主權的屈辱下跪，從來不會換來真正的和平。
+    context: 時代力量批評國民黨主席鄭麗文率團訪中，並稱在未經合法授權下，任何個人與政黨都不得與中共進行政治交易。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 張凱鈞赴陸「兩岸一家親」 王婉諭嚴厲譴責三問民眾黨
+    url: https://www.nownews.com/news/6450674
+    date: 2024-06-17
+    venue: null
+    quote: null
+    context: NOWnews 報導，王婉諭譴責民眾黨中央委員在海峽論壇提及「兩岸一家親」，並強調「國家主權，沒有任何模糊空間」。
+    timestamp: null
+- question: D05
+  value: -2
+  interpretation: 黨主席王婉諭表示時代力量多次對「強國等距」等主張表達強烈不認同，認為這是嘗試在中美之間討好兩方，立場清楚。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 王婉諭：抗中不容模糊空間 政黨應在內政上競爭
+    url: https://www.cna.com.tw/news/aipl/202310210162.aspx
+    date: 2023-10-21
+    venue: 雷震民主人權基金會活動致詞
+    quote: 因為這些訊息傳達的，是嘗試在中美之間討好兩方，採取不符合現實的中庸之道，更可能引來盟國質疑台灣捍衛獨立自主的決心。
+    context: 中央社報導，王婉諭說明時代力量為何強烈不認同柯文哲的「兩岸一家親、強國等距、重啟服貿」等主張；引文為報導中轉述她的說法。
+    timestamp: null
+- question: E01
+  value: 1
+  interpretation: 時代力量黨綱主張加強課徵資本利得稅、改革財產稅制，並擴大社會福利支出。主張的重點是資本利得與房地產持有稅，沒有直接談到所得稅或營所稅，故判為同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: platform
+    title: 時代力量理念主張：基本主張
+    url: https://newpowerparty.tw/about
+    date: 2015-10-19
+    venue: 時代力量全黨網路會議表決通過
+    quote: 應杜絕政府不必要的支出浪費，推動「租稅改革」及「年金改革」，加強「資本利得稅」的課徵，並全面檢討軍公教退休制度。
+    context: 2015 年基本主張「社會正義與環境」段落。
+    timestamp: null
+  - grade: C
+    kind: platform
+    title: 時代力量理念主張：新時代的主張
+    url: https://newpowerparty.tw/about
+    date: 2025-03-15
+    venue: 時代力量第四屆黨員代表第一次會議通過
+    quote: 時代力量主張，台灣必須改革財產稅制，抑制失控的住宅市場，必須擴大社會福利支出
+    context: 2025 年黨綱性文件「多元平權，平等分配」段落。
+    timestamp: null
+- question: E02
+  value: 1
+  interpretation: 時代力量黨綱主張最低薪資應達到「合理生活薪資的水準」，支持持續調升；但沒有找到該黨對每年調升機制的具體表態，故判為同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: platform
+    title: 時代力量理念主張：基本主張
+    url: https://newpowerparty.tw/about
+    date: 2015-10-19
+    venue: 時代力量全黨網路會議表決通過
+    quote: 同時，應強化受薪階級及勞農階級的權利，最低薪資應達到合理生活薪資的水準，勞工與農民的退休應獲得更多保障
+    context: 2015 年基本主張「社會正義與環境」段落。
+    timestamp: null
+- question: E04
+  value: 1
+  interpretation: 時代力量黨綱主張讓幼兒、老人、弱勢「都能獲得公共體系照護」，黨主席王婉諭也批評普發育兒現金無法解決少子化，主張投資住宅、育嬰假等結構性改革；但近期論述重點多在住宅與育嬰假，沒有專門談托育、長照由政府直接提供，故判為同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: platform
+    title: 時代力量理念主張：基本主張
+    url: https://newpowerparty.tw/about
+    date: 2015-10-19
+    venue: 時代力量全黨網路會議表決通過
+    quote: 促進完善的社會福利制度，讓幼兒、老人、弱勢都能獲得公共體系照護，由社會共同承擔責任。
+    context: 2015 年基本主張「社會正義與環境」段落。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 藍綠遇事不決就發現金！王婉諭重批：發現金是討好選民，根本無法解決少子化
+    url: https://newpowerparty.tw/archives/28865
+    date: 2026-05-21
+    venue: 時代力量新聞稿
+    quote: 她呼籲賴清德總統，與其為了討好選民而盲目把錢發掉，不如將這些珍貴的資源實質投資在社會體制與國家的未來，讓社會更安全、更宜居、更友善生育，才是拆解少子化國安危機的唯一解方。
+    context: 王婉諭回應國民黨與賴清德總統先後提出 0 至 18 歲每月普發 5,000 元的政策。
+    timestamp: null
+- question: E05
+  value: 1
+  interpretation: 時代力量反對不排富的普發現金，也批評 2026 年長者健保費補助「號稱排富」卻幾乎全面免繳，主張資源應優先照顧需要的人；但該黨同時支持公共托育等普及性服務，故判為同意而非強烈同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 藍綠遇事不決就發現金！王婉諭重批：發現金是討好選民，根本無法解決少子化
+    url: https://newpowerparty.tw/archives/28865
+    date: 2026-05-21
+    venue: 時代力量新聞稿
+    quote: 然而，同樣花費 2,000 億元，完全不排富的普發現金是極大的資源錯置。
+    context: 王婉諭批評藍綠以普發現金因應少子化。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 立院三讀 65 歲免健保費　時代力量：藍白突襲為選舉發 400 億紅包，劫貧濟富、惡化世代不公讓下一代買單？
+    url: https://newpowerparty.tw/archives/31432
+    date: 2026-10-16
+    venue: 時代力量新聞稿
+    quote: 時代力量指出，這項修法最荒謬的地方，就是號稱排富，卻連年收入 160 多萬元的單身長輩，都可能獲得全額補助，稅率未達 20%的門檻涵蓋約 83%的長輩，幾乎形同全面免繳。
+    context: 時代力量批評《老人福利法》第 22 條修正缺乏實質排富及財源規劃。
+    timestamp: null
+- question: S05
+  value: -1
+  interpretation: 時代力量黨綱主張保障「多元群體選擇生活方式的權利」，黨主席王婉諭連年率黨參加同志遊行，並關注同婚家庭的權益，顯示不主張政策優先鼓勵傳統婚姻家庭形式；但未見其直接反對鼓勵傳統家庭的表態，故判為不同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: platform
+    title: 時代力量理念主張：新時代的主張
+    url: https://newpowerparty.tw/about
+    date: 2025-03-15
+    venue: 時代力量第四屆黨員代表第一次會議通過
+    quote: 時代力量主張，台灣必須保障多元群體選擇生活方式的權利，弭平少數群體追求平等發展的落差。
+    context: 2025 年黨綱性文件「多元平權，平等分配」段落。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 第22屆台灣同志大遊行登場　時代力量主席王婉諭連五年參加，高舉「愛是力量，共生無懼」旗幟
+    url: https://newpowerparty.tw/archives/11231
+    date: 2024-10-26
+    venue: 時代力量新聞稿
+    quote: null
+    context: 王婉諭在同志遊行表示，目前僅有部分縣市保障同婚家庭可請領生育獎勵金等，性別平等仍有未竟之事。
+    timestamp: null
+- question: V01
+  value: 1
+  interpretation: 時代力量表示再生能源是「必須堅持的道路」，並要求政府不顧建商成本疑慮、讓新建住宅屋頂光電新制完整上路；但沒有找到該黨對「即使電價上漲」這項取捨的表態，故判為同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 搞臭綠能轉型的，就是這些貪腐的綠能蟑螂
+    url: https://newpowerparty.tw/archives/24851
+    date: 2025-08-27
+    venue: 時代力量新聞稿
+    quote: 時代力量呼籲，再生能源絕對是台灣能源轉型的必要拼圖，也是必須堅持的道路，但如此重要的轉型，不能淪為貪腐洗錢、政黨酬庸與黑白掛鉤的工具。
+    context: 時代力量回應前經濟部綠能科技推動中心副執行長涉貪遭羈押一案。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 建商好朋友坐鎮政院？時代力量轟「前建商獨董」陳金德主導光電新制大轉彎
+    url: https://newpowerparty.tw/archives/30452
+    date: 2026-08-06
+    venue: 時代力量新聞稿
+    quote: 時代力量最後強烈要求，政府不該向既得利益者妥協，請行政院立即補破網，在今年 12 月 1 日前讓屋頂光電新制完整上路，還給下一代一個永續的未來！
+    context: 行政院在屋頂光電新制上路前，將新建住宅與店舖診所類排除；建商曾以成本增加為由反對。
+    timestamp: null
+- question: V03
+  value: 1
+  interpretation: 時代力量黨綱主張以環境永續作為經濟開發的「必要前提」，2021 年也基於守護環境的立場支持藻礁公投；但沒有找到該黨對環評制度本身的近期具體主張，故判為同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: platform
+    title: 時代力量理念主張：基本主張
+    url: https://newpowerparty.tw/about
+    date: 2015-10-19
+    venue: 時代力量全黨網路會議表決通過
+    quote: 「時代力量」主張以環境永續發展作為經濟開發的必要前提，反對偏重「大財團」與「高污染」的產業政策。
+    context: 2015 年基本主張「社會正義與環境」段落。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 四大公投僅重啟核四不同意！時力啟動百場宣講
+    url: https://www.nownews.com/news/5431655
+    date: 2021-11-04
+    venue: 時代力量「齊力愛台」四大公投記者會
+    quote: 因此，基於守護環境的立場，時代力量支持此案公投。
+    context: 時力說明支持「珍愛藻礁」公投（三接遷離藻礁海岸）的理由，並稱曾要求政府以類似聽證會的形式讓雙方討論。
+    timestamp: null
+- question: G01
+  value: -1
+  interpretation: 2021 年時代力量呼籲重啟核四公投投不同意；2026 年政府啟動核三重啟程序時，時代力量質疑「核安無虞、核廢有解、社會有共識」三項前提都沒有達成，但也表示「能源政策可以調整」，並未主張永久排除核電，故判為不同意而非強烈不同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 核電政策大轉彎　時代力量：是否重啟核電，是一個基本的政治誠信問題。
+    url: https://newpowerparty.tw/archives/27811
+    date: 2026-03-23
+    venue: 時代力量新聞稿
+    quote: 時代力量指出，核安並非無虞。台電評估指出，核三廠面臨超過設計值的地震風險，核二、核三設備也已老化，政府從未清楚回應這個風險。
+    context: 時代力量回應賴清德總統宣布核二、核三具備重啟條件，質疑三項前提未達成；聲明最後稱「能源政策可以調整，但政府的誠信不能打折」。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 僅重啟核四案不同意 時代力量推公投「三個同意」
+    url: https://news.ltn.com.tw/news/politics/breakingnews/3725602
+    date: 2021-11-04
+    venue: 時代力量四大公投記者會
+    quote: 除了核四呼籲投不同意之外，經過黨內討論與決策機制後，對於藻礁、萊豬與公投綁大選，都請支持者投下同意票。
+    context: 自由時報報導時代力量對 2021 年四項公投的立場；NOWnews 同日報導，時力以核四安全性、斷層帶與疏散道路等理由主張投反對票。
+    timestamp: null
+- question: G02
+  value: 1
+  interpretation: 時代力量長期主張立法院應建立聽證與調查制度，並曾於 2016 年提案修法；但對 2024 年藍白版本的「即問即答」「藐視國會罪」及強行表決的程序有所批評，故判為有保留的同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 國會改革吵什麼？30年歷史與爭議一次看（二）2024國會改革，改革還是濫權？
+    url: https://newpowerparty.tw/archives/10393
+    date: 2024-08-06
+    venue: 時代力量官網文章
+    quote: 儘管我們支持國會建立聽證調查制度，但我們完全無法接受，沒有實質逐條討論，最後還以再修正動議強行二三讀的粗暴立法。
+    context: 時代力量整理 2024 年國會職權修法的說明文章；文中也寫道「賦予立法院調查權，有效監督行政部門，是時力一直以來的主張」。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 憲法法庭判國會職權法案多條違憲　王婉諭：儘速修法強化民主制衡
+    url: https://newpowerparty.tw/archives/11220
+    date: 2024-10-25
+    venue: 時代力量新聞稿
+    quote: 屏棄「國情報告即問即答」、「藐視國會」等顯有疑慮且定義不清的違憲條文，在持續強化聽證調查權力的基礎上，重新訂定更詳盡的制度規範，建立完善的救濟制度。
+    context: 王婉諭回應憲法法庭判決，主張儘速啟動第二輪國會職權修法，並修憲將監察權、調查權移往國會。
+    timestamp: null
+  - grade: C
+    kind: platform
+    title: 時代力量理念主張：基本主張
+    url: https://newpowerparty.tw/about
+    date: 2015-10-19
+    venue: 時代力量全黨網路會議表決通過
+    quote: 建立國會聽證制度，強化立法權對行政權的監督，並廢除黨團協商。
+    context: 2015 年基本主張「憲法與民主憲政」段落。
+    timestamp: null
+- question: R_HOUSE_TAX
+  value: 1
+  interpretation: 【注意：投票紀錄是「反對」，但立場是支持加稅】時代力量黨團在 2023 年《房屋稅條例》第五條（囤房稅 2.0）的記名表決中投反對票，但從協商過程與黨的說法來看，反對原因是認為政院版稅率太低、應再提高稅率上限，並非反對加稅；黨主席王婉諭 2025 年也批評「囤房稅形同虛設」。因此判為支持增加房屋稅。
+  last_reviewed: '2026-11-07'
+  evidence:
+  - grade: A
+    kind: vote
+    title: 立法院第10屆第8會期第12次會議議事錄：房屋稅條例第五條（囤房稅 2.0）記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/113/01/07/details
+    date: '2023-12-15'
+    venue: 立法院院會
+    quote: null
+    context: 立法院第10屆第8會期第12次會議議事錄，記名表決結果附後(48)：第五條（稅率）照民進黨團修正動議通過，民進黨54 贊成，時代力量3（王婉諭、陳椒華、邱顯智）反對，國民黨29、民眾黨5 棄權。同案時代力量黨團提案增訂第五條之一，不予採納。黨籍依立法院委員資料比對。注意：時力投反對票是因為主張更高稅率，見下方出處。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 房屋稅條例第五條（民進黨團修正動議，提高多戶持有者房屋稅率）
+      choice: 反對
+      ref: house-tax-2023
+  - grade: C
+    kind: statement
+    title: 囤房稅2.0今三讀 最高稅率估4.8％
+    url: https://www.ctee.com.tw/news/20231219700049-430101
+    date: 2023-12-19
+    venue: null
+    quote: 立法院18日針對囤房稅2.0黨團協商，時代力量堅持應再提高稅率上限，最後稅率相關條文保留
+    context: 工商時報報導（表決當日上午刊出）；同篇報導並引述時力立委邱顯智稱政院版最高稅率 4.8％「不痛不癢」。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 政院拍板提高囤房稅率至4.8% 時力喊話：力拼選前三讀別再跳票
+    url: https://www.nownews.com/news/6189898
+    date: 2023-07-06
+    venue: null
+    quote: 要打房就打真的，不要打假的，時代力量版一定會大幅拉高稅率，搭配空屋主動申報，才能打擊囤房空屋大戶。
+    context: NOWnews 報導，時力立委邱顯智回應行政院版囤房稅 2.0 草案。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 王婉諭投書《經濟學人》 揭真正的「台灣病」是房地產的超穩定結構
+    url: https://newpowerparty.tw/archives/26107
+    date: 2025-12-02
+    venue: 時代力量新聞稿
+    quote: 她指出，台灣的房地產持有成本幾乎為零，囤房稅形同虛設，地價稅基與市價嚴重脫節，使得房地產成為資金在股市之外，唯一缺乏限制的合理資產配置選項。
+    context: 時代力量轉述黨主席王婉諭投書《經濟學人》的內容。
+    timestamp: null
