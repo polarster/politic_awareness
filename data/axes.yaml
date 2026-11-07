@@ -10,16 +10,29 @@ axes:
     negative_pole: 對話與避險
     positive_pole: 嚇阻與結盟
     layer: national
-  - id: economy
-    name: 經濟
-    negative_pole: 重分配
-    positive_pole: 市場
+  - id: market
+    name: 市場自由度
+    negative_pole: 政府介入
+    positive_pole: 市場自主
     layer: national
+    description: 政府要不要介入市場運作：價格、勞動條件、產業經營與管制。
+  - id: welfare
+    name: 稅與福利制度
+    negative_pole: 普及福利
+    positive_pole: 選擇性福利
+    layer: national
+    description: 政府收多少稅、提供多少福利，以及福利是人人都有，還是只給有需要的人。
   - id: social
     name: 社會價值
     negative_pole: 自由多元
     positive_pole: 傳統秩序
     layer: national
+  - id: liberty
+    name: 公民自由與國家權力
+    negative_pole: 公民自由
+    positive_pole: 國家權力
+    layer: national
+    description: 為了安全、秩序或對抗假訊息，政府可以限制言論、集會、隱私到什麼程度。
   - id: environment
     name: 環境與能源
     negative_pole: 環境優先

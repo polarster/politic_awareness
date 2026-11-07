@@ -1,6 +1,6 @@
 # 主問卷。direction: 1 表示同意 → 往該軸 positive_pole；-1 表示同意 → 往 negative_pole。
 # axis: null 表示不計入任何軸，只做逐題比對。
-version: 2026.11-draft1
+version: 2026.11-draft2
 questions:
   # ── 全國層：兩岸與國家認同 ──
   - id: N01
@@ -57,32 +57,48 @@ questions:
     direction: -1
     text: 台灣應避免在美中之間選邊，盡量維持等距關係。
 
-  # ── 全國層：經濟 ──
+  # ── 全國層：市場自由度（market）與稅與福利制度（welfare） ──
   - id: E01
     layer: national
-    axis: economy
+    axis: welfare
     direction: -1
     text: 應提高高所得者或大企業的稅負，用於擴大社會福利。
   - id: E02
     layer: national
-    axis: economy
+    axis: market
     direction: -1
     text: 基本工資應每年調升，即使會增加企業成本。
   - id: E03
     layer: national
-    axis: economy
+    axis: market
     direction: 1
     text: 政府應減少對產業的管制，讓企業更自由經營。
   - id: E04
     layer: national
-    axis: economy
+    axis: welfare
     direction: -1
     text: 托育、長照等服務應主要由政府直接提供，而不是以發放現金補助為主。
   - id: E05
     layer: national
-    axis: economy
+    axis: welfare
     direction: 1
     text: 社會福利應以有經濟需要的人為主（排富），而不是人人都有。
+    note: 排富（只給有需要的人）是美國式「選擇性福利」的特徵；北歐式則是人人都有的「普及福利」，靠較高的稅收支撐。
+  - id: E06
+    layer: national
+    axis: market
+    direction: 1
+    text: 應放寬勞動法規（例如工時、解僱規定），讓企業用人更有彈性。
+  - id: E07
+    layer: national
+    axis: market
+    direction: -1
+    text: 能源、交通等關鍵產業應由國營事業經營，而不是交給民間企業。
+  - id: E08
+    layer: national
+    axis: welfare
+    direction: 1
+    text: 應降低整體稅負，即使社會福利因此減少。
 
   # ── 全國層：社會價值 ──
   - id: S01
@@ -102,7 +118,7 @@ questions:
     text: 應放寬外籍人士歸化，以及移工轉為長期居留的條件。
   - id: S04
     layer: national
-    axis: social
+    axis: liberty
     direction: 1
     text: 為了維護治安，可以接受警方擁有更大的執法權限。
   - id: S05
@@ -115,6 +131,33 @@ questions:
     axis: social
     direction: 1
     text: 中小學應加強傳統倫理與品德教育。
+
+  # ── 全國層：公民自由與國家權力（S04 也屬於這條軸） ──
+  - id: L01
+    layer: national
+    axis: liberty
+    direction: 1
+    text: 政府應有權要求網路平台限期下架被認定為假訊息的內容。
+  - id: L02
+    layer: national
+    axis: liberty
+    direction: 1
+    text: 為了國家安全，可以擴大情治機關監控通訊的權限。
+  - id: L03
+    layer: national
+    axis: liberty
+    direction: -1
+    text: 即使言論內容有爭議或被認為有害，除非有明確而立即的危險，政府都不應以刑罰處罰。
+  - id: L04
+    layer: national
+    axis: liberty
+    direction: -1
+    text: 集會遊行應改為報備制，政府不應事先許可或限制。
+  - id: L05
+    layer: national
+    axis: liberty
+    direction: -1
+    text: 政府蒐集、利用個人資料應受更嚴格的限制，即使會降低治安或防疫的效率。
 
   # ── 全國層：環境與能源 ──
   - id: V01

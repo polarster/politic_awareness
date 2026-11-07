@@ -1,0 +1,268 @@
+arguments:
+  - question: E01
+    pro:
+      text: "支持者認為，經濟成長的果實愈來愈集中在少數資本擁有者，受薪階級卻承受物價上漲壓力。適度提高對高所得、高資產者或大企業的稅負，例如調高遺產稅率或研議富人稅，並把財源用在長照等社會福利，能縮小貧富差距、落實分配正義，幫助較弱勢的人。"
+      sources:
+        - kind: gazette
+          title: "立法院第9屆第3會期財政委員會第5次全體委員會議紀錄 公報 委員吳秉叡發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/106/27/LCIDC01_1062701_00011.pdf"
+          date: "2017-03-15"
+          speaker: "吳秉叡"
+        - kind: news
+          title: "AI 紅利如何全民共享？賴士葆提案課5%富人稅（聯合報）"
+          url: "https://udn.com/news/story/7238/9660597"
+          date: "2026-07-30"
+          speaker: "賴士葆"
+    con:
+      text: "反對者認為，高所得者與企業的資金流動性高，稅率一提高，就可能透過提前贈與、把錢移到海外等方式規避，實際稅收未必增加，反而造成資金外流。調高最高稅率也可能加重一般高薪受雇者的負擔，較好的做法是擴大稅基、填補免稅漏洞。"
+      sources:
+        - kind: gazette
+          title: "立法院第9屆第3會期財政委員會第5次全體委員會議紀錄 公報 委員賴士葆、盧秀燕發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/106/27/LCIDC01_1062701_00011.pdf"
+          date: "2017-03-15"
+          speaker: "賴士葆、盧秀燕"
+        - kind: news
+          title: "政策失當 縮貧富差距 專家：應檢討稅制（聯合報）"
+          url: "https://udn.com/news/story/7238/9661870"
+          date: "2026-07-31"
+  - question: E02
+    pro:
+      text: "支持者認為，物價年年上漲，最低工資若沒有跟著調整，基層勞工的實質所得就會縮水，難以維持基本生活。勞資雙方談判力量並不對等，應以法律明定最低工資不得低於前一年、並反映物價漲幅，讓調整有穩定依據，保障勞工及其家庭的生活。"
+      sources:
+        - kind: gazette
+          title: "立法院第10屆第8會期社會福利及衛生環境委員會第5次全體委員會議紀錄 公報 委員林為洲、王婉諭發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/112/72/LCIDC01_1127202_00002.pdf"
+          date: "2023-10-18"
+          speaker: "林為洲、王婉諭"
+        - kind: official
+          title: "最低工資連11漲！審議會決定自116年1月1日起，每月最低工資調升至30,900元（勞動部新聞稿）"
+          url: "https://www.mol.gov.tw/1607/1632/1633/99195/"
+          date: "2026-09-24"
+    con:
+      text: "反對者認為，最低工資應依整體經濟、產業景氣與企業負擔能力彈性調整，不宜用法律規定固定公式或每年必漲。在關稅衝擊、成本上升時，傳統產業與中小企業壓力很大，強制調漲可能影響企業營運彈性與投資意願，最後也不利於產業競爭力。"
+      sources:
+        - kind: gazette
+          title: "立法院第10屆第8會期社會福利及衛生環境委員會第5次全體委員會議紀錄 公報 勞動部長許銘春說明、經濟部書面報告"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/112/72/LCIDC01_1127202_00002.pdf"
+          date: "2023-10-18"
+          speaker: "許銘春"
+        - kind: news
+          title: "最低工資調漲 工商團體籲政府盡速提配套方案（中央社）"
+          url: "https://www.cna.com.tw/news/afe/202509260262.aspx"
+          date: "2025-09-26"
+  - question: E03
+    pro:
+      text: "支持者認為，過多、過嚴或解釋不一的法規，會讓企業申請流程冗長、成本升高，壓抑投資與創新。政府主動檢討不合時宜的函釋與行政規則，提高程序透明與可預期性，能排除投資障礙，讓企業更有彈性因應市場變化，提升整體競爭力。"
+      sources:
+        - kind: official
+          title: "賴揆：積極推動法規鬆綁 建立彈性、高效能行政文化（行政院新聞稿）"
+          url: "https://www.ey.gov.tw/Page/9277F759E41CCD91/b321ee62-3764-4c1a-9103-3cfb7bb8444e"
+          date: "2018-05-17"
+          speaker: "賴清德"
+        - kind: news
+          title: "日本工商會白皮書首發問卷揭3大痛點 國發會拋雙軸轉型3點正面回應（優分析）"
+          url: "https://uanalyze.com.tw/articles/3033056663"
+          date: "2026-10-07"
+    con:
+      text: "反對者認為，管制是保護消費者、勞工與環境的重要防線。食安等事件顯示，過度仰賴業者自主管理容易流於書面形式，等到出事才補救，代價由全民承擔。政府應落實稽查與把關，而不是一味鬆綁；企業經營的自由，應建立在對公共安全負責的前提上。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第5會期社會福利及衛生環境委員會第20次全體委員會議紀錄 公報 委員林淑芬發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/115/65/LCIDC01_1156501_00003.pdf"
+          date: "2026-07-22"
+          speaker: "林淑芬"
+        - kind: news
+          title: "致癌沙拉油風暴「上游驗合格、下游驗超標」 綠委：食用油業者管理制度已失靈？（聯合報）"
+          url: "https://udn.com/news/story/6656/9603147"
+          date: "2026-07-02"
+  - question: E04
+    pro:
+      text: "支持者認為，現金補助雖然直接，但不一定換得到可近、有品質的服務，經濟較弱勢的家庭即使拿到錢，也可能請不起照顧人力。由政府直接提供或擴大公共托育、長照服務，才能確保普及、平價與品質，真正減輕家庭照顧負擔，也較能回應少子化等結構問題。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第5會期社會福利及衛生環境委員會第3次全體委員會議紀錄 公報 委員林淑芬發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/115/23/LCIDC01_1152301_00006.pdf"
+          date: "2026-03-26"
+          speaker: "林淑芬"
+        - kind: news
+          title: "立院預算中心：搶救少子化過度仰賴現金補助 成效欠佳（聯合報）"
+          url: "https://udn.com/news/story/6656/9521948"
+          date: "2026-05-24"
+    con:
+      text: "反對者認為，每個家庭的需求與安排都不同，直接發放津貼可讓家長依自身狀況自由運用，較快減輕育兒與照顧的經濟負擔。朝野近年都提出成長津貼或育兒補助，顯示現金支持能直接回應家庭壓力；服務與津貼可以並行，不必以政府直接提供為主。"
+      sources:
+        - kind: news
+          title: "賴總統推0至18歲成長津貼 國民黨許宇甄欣慰：從善如流（聯合報）"
+          url: "https://udn.com/news/story/124881/9514537"
+          date: "2026-05-20"
+          speaker: "許宇甄"
+        - kind: news
+          title: "賴總統提0至18歲每月領5千「兒少成長津貼」 衛福部曝初步規畫不排富（聯合報）"
+          url: "https://udn.com/news/story/124881/9515316"
+          date: "2026-05-20"
+  - question: E05
+    pro:
+      text: "支持者認為，政府資源有限，福利若不分貧富一律發放，補助效果會被稀釋，也加重財政負擔。把資源集中給真正有需要的家庭，例如排除所得最高的一部分家庭，再把省下的經費加倍用於中低收入者，較能縮小差距，也符合公共政策照顧弱勢的原則。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第5會期社會福利及衛生環境委員會「臺灣未來帳戶特別條例草案」公聽會紀錄 公報 中華兒童暨家庭守護者協會執行長周明湧發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/115/24/LCIDC01_1152401_00004.pdf"
+          date: "2026-04-02"
+          speaker: "周明湧"
+        - kind: news
+          title: "朝野選前競開支票未排富 學者憂增財政負擔（聯合報）"
+          url: "https://udn.com/news/story/6656/9678339"
+          date: "2026-08-08"
+    con:
+      text: "反對者認為，每個孩子、每個國民都同樣重要，人人都有的普及式福利，能讓所有繳稅的人共享自己努力創造的經濟成果。制度簡單清楚、不必逐一審查所得，也能照顧到所得略高於門檻、同樣承受生活壓力的中間家庭，較能凝聚社會對福利制度的支持。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第4會期第3次會議紀錄 公報 委員葉元之質詢"
+          url: "https://ppg.ly.gov.tw/ppg/PublicationBulletinDetail/download/communique1/final/pdf/114/78/LCIDC01_1147801_00013.pdf"
+          date: "2025-10-03"
+          speaker: "葉元之"
+        - kind: news
+          title: "賴總統提0至18歲每月領5千「兒少成長津貼」 衛福部曝初步規畫不排富（聯合報）"
+          url: "https://udn.com/news/story/124881/9515316"
+          date: "2026-05-20"
+          speaker: "張美美"
+  - question: S01
+    pro:
+      text: "支持者認為，校園裡本來就有不同性傾向與性別認同的學生，也有同志家庭的孩子。教材若刻意迴避，會讓這些孩子感到被忽視，也不利於減少歧視。依課綱在不同學習階段適齡地介紹多元性別，能幫助學生認識並尊重彼此的差異。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第2會期教育及文化委員會「因應數位時代，啟動性別平等教育2.0」公聽會紀錄 公報 台灣同志諮詢熱線協會副秘書長彭治鏐發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/114/07/LCIDC01_1140704_00009.pdf"
+          date: "2024-12-23"
+          speaker: "彭治鏐"
+        - kind: news
+          title: "幸福盟批同志教育「換湯不換藥」教育部：絕對適齡（新頭殼）"
+          url: "https://newtalk.tw/news/view/2019-03-29/226591"
+          date: "2019-03-29"
+    con:
+      text: "反對者認為，性教育與多元性別議題涉及價值觀，應尊重家長的教育角色並循序漸進。調查顯示多數家長重視適齡教育，小學宜先聚焦身體界限與自我保護等基礎內容，較深入的議題應在學生較成熟時再談，並讓家長參與課程設計，避免家庭與學校產生衝突。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第2會期教育及文化委員會「因應數位時代，啟動性別平等教育2.0」公聽會紀錄 公報 國教行動聯盟理事長王瀚陽發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/114/07/LCIDC01_1140704_00009.pdf"
+          date: "2024-12-23"
+          speaker: "王瀚陽"
+        - kind: news
+          title: "小一發同婚繪本 家長團體、挺同團體大論戰（公視）"
+          url: "https://news.pts.org.tw/article/493339"
+          date: "2020-09-09"
+  - question: S02
+    pro:
+      text: "支持者認為，死刑一旦執行就無法挽回，只要司法仍有誤判的可能，就可能奪走無辜者的生命；台灣過去威權時期也曾以唯一死刑對付政治犯。國家應尊重生命、嚴防冤獄，以其他刑罰維護社會安全，而不是以剝奪生命來回應犯罪。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第3會期第12次會議紀錄 公報 委員莊瑞雄發言"
+          url: "https://ppg.ly.gov.tw/ppg/PublicationBulletinDetail/download/communique1/final/pdf/114/48/LCIDC01_1144801_00004.pdf"
+          date: "2025-05-16"
+          speaker: "莊瑞雄"
+        - kind: news
+          title: "民進黨為何要廢死？8年槍決2死囚 蔡英文、賴清德談死刑說法曝光（NOWnews）"
+          url: "https://www.nownews.com/news/6412875"
+          date: "2024-04-25"
+    con:
+      text: "反對者認為，對手段兇殘、罪證確鑿的重大犯罪，死刑是實現社會公平正義、回應被害人家屬的必要手段，民調也顯示多數民眾反對廢除。判決門檻若嚴格到幾乎無法判處，等於讓死刑名存實亡；國家應優先保護無辜者，讓難以教化的人與社會隔絕。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第3會期第6次會議紀錄 公報 委員林沛祥、陳菁徽發言"
+          url: "https://ppg.ly.gov.tw/ppg/PublicationBulletinDetail/download/communique1/final/pdf/114/28/LCIDC01_1142801_00003.pdf"
+          date: "2025-03-21"
+          speaker: "林沛祥、陳菁徽"
+        - kind: news
+          title: "「反廢死」聲浪再起 黃國昌喊話立院排審無期徒刑不得假釋（聯合報）"
+          url: "https://udn.com/news/story/6656/9217225"
+          date: "2025-12-21"
+          speaker: "黃國昌"
+  - question: S03
+    pro:
+      text: "支持者認為，台灣面臨少子化與人才、勞動力短缺，放寬優秀外國人才歸化的居留年限，並讓資深、有技術的移工有機會轉為中階技術人力、銜接長期居留，能留住熟手、提升國家競爭力，也讓長期在台貢獻的人有穩定的生活與身分保障。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第1會期第12次會議紀錄 公報 國籍法部分條文修正草案內政委員會審查報告"
+          url: "https://ppg.ly.gov.tw/ppg/PublicationBulletinDetail/download/communique1/final/pdf/113/35/LCIDC01_1133501_00010.pdf"
+          date: "2024-05-07"
+        - kind: official
+          title: "留才中心協助國內科技大廠 留用優質外國技術人力！（勞動部新聞稿）"
+          url: "https://www.mol.gov.tw/1607/1632/1633/83432/"
+          date: "2025-09-16"
+    con:
+      text: "反對者認為，若持續擴大引進並長期留用外籍勞動力，雇主就比較不需要提高薪資、改善工作條件，可能壓低本國勞工薪資，並排擠中高齡者的就業機會。在國人仍面臨低薪問題時，應優先改善本國勞工的待遇與就業，而不是放寬外籍人力的居留條件。"
+      sources:
+        - kind: news
+          title: "缺工擴大引進移工！全產總反對 專家憂加劇低薪、排擠中高齡就業（NOWnews）"
+          url: "https://www.nownews.com/news/6282538"
+          date: "2023-10-17"
+  - question: S04
+    pro:
+      text: "支持者認為，詐騙、跨境與科技犯罪手法不斷翻新，警察與檢調若缺乏足夠的偵查工具與法律授權，就難以有效打擊犯罪、保護民眾的財產與安全。在法律明確授權、並有法院審查等配套下，適度擴大執法權限，有助於維護治安。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第1會期司法及法制委員會第30次全體委員會議紀錄 公報 委員沈發惠發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/113/56/LCIDC01_1135601_00006.pdf"
+          date: "2024-06-05"
+          speaker: "沈發惠"
+        - kind: news
+          title: "憂《科技偵查法》侵害隱私 立委籲輕罪不適用避免浮濫調閱（公視）"
+          url: "https://news.pts.org.tw/article/698747"
+          date: "2024-06-06"
+    con:
+      text: "反對者認為，擴大執法權限容易侵害人民的隱私、言論與通訊自由，也可能波及與案件無關的第三人；權力一旦擴張，不論哪個政黨執政，都有被濫用的風險。執法權應受到嚴格的法律限制與法官審查，不能只為了辦案方便而放寬。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第1會期司法及法制委員會第30次全體委員會議紀錄 公報 委員莊瑞雄發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/113/56/LCIDC01_1135601_00006.pdf"
+          date: "2024-06-05"
+          speaker: "莊瑞雄"
+        - kind: news
+          title: "擬立法授權檢警監聽通訊軟體 引發隱私疑慮（公視）"
+          url: "https://news.pts.org.tw/article/494107"
+          date: "2020-09-16"
+  - question: S05
+    pro:
+      text: "支持者認為，有父有母的婚姻家庭是孩子成長最穩定的環境，政府資源應優先用於鼓勵適齡結婚、生育，而不是擴大單身或同性伴侶使用人工生殖等做法。這類政策涉及兒童權益，社會也還沒有共識，應審慎推動並尊重多數民意。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第1會期社會福利及衛生環境委員會「人工生殖法條文修正草案」公聽會紀錄 公報 社團法人台灣全國媽媽護家護兒聯盟書面資料"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/113/24/LCIDC01_1132401_00005.pdf"
+          date: "2024-04-03"
+        - kind: news
+          title: "《人工生殖法》擬納同志、單身 民團網路調查逾7成民眾反對（公視）"
+          url: "https://news.pts.org.tw/article/678600"
+          date: "2024-01-29"
+    con:
+      text: "反對者認為，現代家庭型態愈來愈多元，包括單親、同志伴侶與單身家庭，政府應平等支持每一種家庭，而不是只優先某一種形式。讓單身女性與女同志伴侶也能使用人工生殖等政策，是尊重生育自主，也能兼顧兒童最佳利益。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第1會期社會福利及衛生環境委員會「人工生殖法條文修正草案」公聽會紀錄 公報 委員范雲發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/113/24/LCIDC01_1132401_00005.pdf"
+          date: "2024-04-03"
+          speaker: "范雲"
+        - kind: news
+          title: "人工生殖法草案修訂擬脫鉤代理孕母 女女同婚適用（聯合報）"
+          url: "https://udn.com/news/story/7266/9194795"
+          date: "2025-12-10"
+  - question: S06
+    pro:
+      text: "支持者認為，近年課程淡化傳統經典與四維八德等德目，學生缺少系統性的倫理教育，校園師生關係緊張、青少年犯罪問題也引發關注。加強傳統倫理與品德教育，能幫助學生建立是非觀念與責任感，培養尊重他人的態度。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第1會期教育及文化委員會「高級中等教育修法暨108課綱實施檢討」公聽會紀錄 公報 段心儀發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/113/52/LCIDC01_1135201_00002.pdf"
+          date: "2024-05-30"
+          speaker: "段心儀"
+        - kind: news
+          title: "108課綱去中國化、狂刪文言文 北一女師轟「無恥與不倫」 教育部回應了（台灣英文新聞）"
+          url: "https://www.taiwannews.com.tw/zh/news/5055321"
+          date: "2023-12-08"
+    con:
+      text: "反對者認為，品德不是靠背誦教條或特定德目就能養成，而應在生活實踐與討論中培養。現行課綱並未廢除禮義廉恥，而是強調讓學生學會表達、溝通與思辨，在生活中實踐尊重與責任；教育應與時俱進，而不是回到過去背誦中心德目的方式。"
+      sources:
+        - kind: news
+          title: "任內最困難工作潘文忠這麼說 品德教育「不是讓孩子背教條」（聯合報）"
+          url: "https://udn.com/news/story/6885/7950601"
+          date: "2024-05-08"
+          speaker: "潘文忠"

@@ -2,7 +2,7 @@
 # expense：增加一格花 cost_per_step 點，減少一格得到點數。
 # revenue：增加一格得到點數，減少一格花點數。
 # surplus：增加一格花點數。
-version: 2026.11-draft1
+version: 2026.11-draft2
 start_balance: 0
 min_final_balance: 0
 steps: [-2, -1, 0, 1, 2]

@@ -1,45 +1,45 @@
 # 補充題庫（Claude 對答用）。狀態：草稿，使用者尚未審閱。
-version: 2026.11-draft1
+version: 2026.11-draft2
 questions:
   - id: X01
     layer: national
-    axis: economy
-    direction: -1
+    axis: null
+    direction: 0
     topics: [class]
     text: 應更嚴格限制企業和財團的政治獻金。
   - id: X02
     layer: national
-    axis: economy
+    axis: welfare
     direction: -1
     topics: [welfare, children]
     text: 政府應發放普遍性的兒童津貼，以減少兒童貧窮。
   - id: X03
     layer: national
-    axis: economy
+    axis: welfare
     direction: -1
     topics: [class]
     text: 貧富差距是台灣目前最需要處理的問題之一。
   - id: X04
     layer: national
-    axis: economy
+    axis: welfare
     direction: 1
     topics: [tax]
     text: 應繼續降低營利事業所得稅，以吸引投資。
   - id: X05
     layer: national
-    axis: economy
+    axis: market
     direction: -1
     topics: [labor]
     text: 家事移工應納入基本工資保障。
   - id: X06
     layer: national
-    axis: economy
+    axis: market
     direction: -1
     topics: [labor, family]
     text: 應延長育嬰假並提高育嬰津貼，即使增加雇主負擔。
   - id: X07
     layer: national
-    axis: economy
+    axis: market
     direction: 1
     topics: [energy]
     text: 電價應反映發電成本，不應由台電吸收虧損。
@@ -57,7 +57,7 @@ questions:
     text: 台灣應增加對開發中國家的人道援助。
   - id: X10
     layer: national
-    axis: social
+    axis: liberty
     direction: 1
     topics: [rights]
     text: 社會秩序比個人自由更重要。
@@ -69,7 +69,7 @@ questions:
     text: 政府應集中國家資源（例如能源、土地、水資源、人才培育），優先支持台積電這類關鍵大型企業發展。
   - id: X12
     layer: national
-    axis: economy
+    axis: welfare
     direction: -1
     topics: [industry, class, tax]
     text: 受到國家資源支持的大型企業，應該負擔更多回饋，例如更高的稅或在地分享。

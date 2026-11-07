@@ -120,8 +120,8 @@ export function Results(p: Props) {
           <span className="tag">呈現方式 B：政治地圖</span>
           <h3>全國議題</h3>
           <PoliticalMap
-            defaultX="economy"
-            defaultY="identity"
+            defaultX="market"
+            defaultY="welfare"
             points={[
               { id: "you", label: "你", scores: nat, kind: "you" },
               ...(showParties ? partiesWithData : []).map((e) => ({

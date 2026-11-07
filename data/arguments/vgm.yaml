@@ -1,0 +1,274 @@
+arguments:
+  - question: V01
+    pro:
+      text: "支持者認為，再生能源已成為產業出口的剛性需求，國際供應鏈要求減碳，台灣必須加速發展太陽光電、風電、地熱等綠能，才能保住產業競爭力、提升能源安全並因應氣候變遷。即使短期電價可能上升，長期來看這是淨零轉型的必要投資。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第2會期第6次會議紀錄 公報 行政院長卓榮泰「能源配比及電價政策」專案報告"
+          url: "https://ppg.ly.gov.tw/ppg/PublicationBulletinDetail/download/communique1/final/pdf/113/84/LCIDC01_1138401_00010.pdf"
+          date: "2024-10-29"
+          speaker: "卓榮泰"
+        - kind: news
+          title: "賴總統：再生能源裝置容量達25GW 10年增幅逾4倍（中央社）"
+          url: "https://cna.com.tw/news/aipl/202610140091.aspx"
+          date: "2026-10-14"
+          speaker: "賴清德"
+    con:
+      text: "反對者認為，再生能源成本較高又有間歇性，政府以高價購買綠電，加上停用較便宜的電源，使台電虧損擴大，最後以調漲電價或預算撥補由全民買單，衝擊民生與產業競爭力。能源政策應以穩定、平價供電為優先，不宜為衝綠能比例而讓電價持續上漲。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第2會期第6次會議紀錄 公報 委員張啓楷質詢"
+          url: "https://ppg.ly.gov.tw/ppg/PublicationBulletinDetail/download/communique1/final/pdf/113/84/LCIDC01_1138401_00010.pdf"
+          date: "2024-10-29"
+          speaker: "張啓楷"
+        - kind: news
+          title: "黃國昌指「綠友友吃飽」 民進黨：核電議題不應散布謠言（新頭殼）"
+          url: "https://newtalk.tw/news/view/2025-08-13/987566"
+          date: "2025-08-13"
+          speaker: "黃國昌"
+  - question: V02
+    pro:
+      text: "支持者認為，碳費是讓排放者為污染付出代價的工具，費率太低、優惠太多時，大企業可能選擇繳費了事而不真正減碳。逐步提高碳費，並把收入用於協助轉型與照顧受影響的弱勢群體，能更有效推動減碳，也與國際「先低後高」的碳定價做法一致。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第5會期社會福利及衛生環境委員會「《氣候變遷因應法》碳費徵收、減量誘因及溫室氣體管理基金運用制度」公聽會紀錄 公報 林彥廷研究員、委員王育敏發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/115/72/LCIDC01_1157202_00001.pdf"
+          date: "2026-08-12"
+          speaker: "林彥廷、王育敏"
+        - kind: news
+          title: "碳費拍板！一般費率每公噸300元 A、B優惠方案為50和100元（ETtoday）"
+          url: "https://www.ettoday.net/news/20241007/2830698.htm"
+          date: "2024-10-07"
+    con:
+      text: "反對者認為，台灣的碳費費率已明顯高於日本、韓國等出口競爭國的實質碳價，對製造業是額外成本；在電價、工資同時上漲之下，恐削弱國際競爭力，進口產品反而相對便宜。碳費應先低後高、不高於競爭對手，並給產業足夠的轉型時間。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第2會期經濟委員會第7次全體委員會議紀錄 公報 委員張嘉郡、呂玉玲發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/113/87/LCIDC01_1138702_00001.pdf"
+          date: "2024-10-23"
+          speaker: "張嘉郡、呂玉玲"
+        - kind: news
+          title: "碳費費率出爐 經部：方案未獲採納 遺憾但持續爭取（工商時報）"
+          url: "https://www.ctee.com.tw/news/20241008700054-430104"
+          date: "2024-10-08"
+  - question: V03
+    pro:
+      text: "支持者認為，大型開發一旦破壞山林、水域或地質敏感區就難以回復。近年部分光電案場設在山坡地、水庫等敏感地點卻不必環評，引發生態與用水安全疑慮。擴大並加嚴環評範圍，讓審查結論具有實質拘束力，才能事前把關，減少日後的衝突與訴訟。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第4會期第9次會議紀錄 公報 委員陳昭姿發言（環境影響評估法第五條修正草案）"
+          url: "https://ppg.ly.gov.tw/ppg/PublicationBulletinDetail/download/communique1/final/pdf/114/94/LCIDC01_1149401_00007.pdf"
+          date: "2025-11-14"
+          speaker: "陳昭姿"
+        - kind: news
+          title: "環評總體檢出爐 籲老舊環評應有完整退場機制（聯合報）"
+          url: "https://udn.com/news/story/7266/9634861"
+          date: "2026-07-17"
+    con:
+      text: "反對者認為，現行審查已相當耗時，一個地面型光電案場從申請到併聯平均就要6到7年，若再加嚴環評門檻，綠能等必要建設會更難推動，影響能源轉型與產業用電。開發選址的問題，應透過整體國土規劃與更有效率的程序處理，而不是一味加嚴。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第4會期社會福利及衛生環境委員會第5次全體委員會議紀錄 公報 委員林月琴發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/114/86/LCIDC01_1148601_00003.pdf"
+          date: "2025-10-20"
+          speaker: "林月琴"
+        - kind: news
+          title: "修法加嚴環評、限縮開發面積範圍，能否解決光電不當選址問題？（報導者）"
+          url: "https://www.twreporter.org/a/more-stringent-environmental-impact-assessments-to-build-solar-facilities"
+          date: "2025-12-03"
+  - question: V04
+    pro:
+      text: "支持者認為，再生能源有間歇性，核電機組又已停役，天然氣機組啟動快、可彈性調度，是維持供電穩定的關鍵。以氣代煤已降低空污與電力排碳係數；在綠能還不足以撐起供電之前，增加燃氣發電是兼顧穩定供電與減少污染的務實選擇。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第3會期第11次會議紀錄 公報 委員郭昱晴發言（核子反應器設施管制法第六條修正草案）"
+          url: "https://ppg.ly.gov.tw/ppg/PublicationBulletinDetail/download/communique1/final/pdf/114/44/LCIDC01_1144405_00001.pdf"
+          date: "2025-05-13"
+          speaker: "郭昱晴"
+        - kind: news
+          title: "立院2028無煤中火決議 經濟部：影響高科技投資台中意願（中央社）"
+          url: "https://www.cna.com.tw/news/aipl/202506050032.aspx"
+          date: "2025-06-05"
+    con:
+      text: "反對者認為，增加燃氣發電會讓火力發電占比居高不下，碳排與空污難以下降，偏離淨零目標；天然氣發電的成本也高於核能等低碳電源。為了供電穩定，應發展更多元的低碳電源，而不是讓電力過度依賴燃燒化石燃料的天然氣。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第3會期第11次會議紀錄 公報 委員劉書彬發言（核子反應器設施管制法第六條修正草案）"
+          url: "https://ppg.ly.gov.tw/ppg/PublicationBulletinDetail/download/communique1/final/pdf/114/44/LCIDC01_1144405_00001.pdf"
+          date: "2025-05-13"
+          speaker: "劉書彬"
+        - kind: news
+          title: "非核後7成用電靠火力 當低碳成為全球供應鏈門檻 台灣能源下一步？（公視）"
+          url: "https://news.pts.org.tw/article/762309"
+          date: "2025-07-24"
+  - question: V05
+    pro:
+      text: "支持者認為，現行環評與相關審查牽涉多個部會，程序冗長、標準不一，重大建設與綠能案場常延宕多年，投資者因此卻步、轉往國外。簡化程序、統一審查標準、公開審查進度，能加快建設推動，同時維持必要的環境把關。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第4會期社會福利及衛生環境委員會第5次全體委員會議紀錄 公報 經濟部次長賴建信答詢"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/114/86/LCIDC01_1148601_00003.pdf"
+          date: "2025-10-20"
+          speaker: "賴建信"
+        - kind: news
+          title: "光電環評修惡 投資全喊停 業界陳情 經部擬再提修法（自由時報）"
+          url: "https://ec.ltn.com.tw/article/paper/1733110"
+          date: "2025-11-23"
+    con:
+      text: "反對者認為，環評是開發前全面檢視環境與社會影響的重要機制。近年山坡地、水庫光電等爭議顯示，把關不足會危害居民安全與用水；若為了趕進度而簡化程序，主管機關更容易順應開發需求，讓問題留到事後才處理。應強化審查與公民參與，而非削弱。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第4會期第9次會議紀錄 公報 委員王育敏發言（環境影響評估法第五條修正草案）"
+          url: "https://ppg.ly.gov.tw/ppg/PublicationBulletinDetail/download/communique1/final/pdf/114/94/LCIDC01_1149401_00007.pdf"
+          date: "2025-11-14"
+          speaker: "王育敏"
+        - kind: news
+          title: "環評總體檢出爐 籲老舊環評應有完整退場機制（聯合報）"
+          url: "https://udn.com/news/story/7266/9634861"
+          date: "2026-07-17"
+  - question: G01
+    pro:
+      text: "支持者認為，核電是穩定、低碳且發電成本較低的電源。面對AI產業帶動的用電成長與淨零目標，延役或重啟既有核電廠，可以分散能源風險、減少火力發電帶來的碳排與空污，並減輕電價上漲壓力；國際上也有不少國家重新重視核能。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第3會期第11次會議紀錄 公報 委員葛如鈞、劉書彬發言（核子反應器設施管制法第六條修正草案）"
+          url: "https://ppg.ly.gov.tw/ppg/PublicationBulletinDetail/download/communique1/final/pdf/114/44/LCIDC01_1144405_00001.pdf"
+          date: "2025-05-13"
+          speaker: "葛如鈞、劉書彬"
+        - kind: news
+          title: "鄭麗文台中為議員站台 批中央能源政策籲挺重啟核電（中央社）"
+          url: "https://cna.com.tw/news/aipl/202610110097.aspx"
+          date: "2026-10-11"
+          speaker: "鄭麗文"
+    con:
+      text: "反對者認為，台灣地震頻繁、人口密集，核電廠鄰近活動斷層，老舊機組延役的安全風險高，核廢料的最終處置至今也沒有解方。在核安無虞、核廢有解、社會有共識之前，不應倉促以修法推動延役或重啟，而應持續發展其他電源。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第3會期第11次會議紀錄 公報 委員賴瑞隆發言（核子反應器設施管制法第六條修正草案）"
+          url: "https://ppg.ly.gov.tw/ppg/PublicationBulletinDetail/download/communique1/final/pdf/114/44/LCIDC01_1144405_00001.pdf"
+          date: "2025-05-13"
+          speaker: "賴瑞隆"
+        - kind: news
+          title: "賴總統：核二、核三重啟評估 3原則缺一不可（自由時報）"
+          url: "https://ec.ltn.com.tw/article/breakingnews/5378643"
+          date: "2026-03-22"
+          speaker: "賴清德"
+  - question: G02
+    pro:
+      text: "支持者認為，調查權與聽證權是民主國家國會監督行政部門的常見權力，英、美、德、日等國都有，大法官釋字第585號也肯定立法院享有一定的調查權。賦予立法院這些權限，能強化國會監督，讓政府施政更透明、責任更清楚。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第1會期第1次全院委員會紀錄 公報 委員徐欣瑩發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/113/60/LCIDC01_1136001_00004.pdf"
+          date: "2024-06-19"
+          speaker: "徐欣瑩"
+        - kind: news
+          title: "藍白再勝！立院否決行政院覆議案 黃國昌大讚：台灣民主歷史時刻（NOWnews）"
+          url: "https://www.nownews.com/news/6454203"
+          date: "2024-06-21"
+          speaker: "黃國昌"
+    con:
+      text: "反對者認為，相關修法讓國會權力過度擴張，可能對一般民眾課予作證義務與處罰，侵害人民基本權利，也破壞權力分立；立法過程也被批評倉促。憲法法庭後來宣告其中多項規定違憲，顯示國會權力仍須受到憲法的界線約束。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第1會期第1次全院委員會紀錄 公報 委員李柏毅發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/113/60/LCIDC01_1136001_00004.pdf"
+          date: "2024-06-19"
+          speaker: "李柏毅"
+        - kind: news
+          title: "憲法法庭判「國會改革案大部分違憲」 藍委怒：大法官該廢了（TVBS）"
+          url: "https://news.tvbs.com.tw/politics/2664287"
+          date: "2024-10-26"
+  - question: M07
+    pro:
+      text: "支持者認為，雙北住宅老舊，許多山坡地上的房子已有安全疑慮，部分居民也覺得房子不夠住。適度放寬山坡地、保護區等土地的開發與都更限制，能增加住宅供給、改善居住安全；部分地主長年受限無法開發，也應保障其信賴利益與財產權。"
+      sources:
+        - kind: news
+          title: "蔣萬安提「都更5箭」 放寬山限區都更、設電梯補助加碼至300萬（自由時報）"
+          url: "https://ec.ltn.com.tw/article/breakingnews/4231510"
+          date: "2023-03-07"
+          speaker: "蔣萬安"
+        - kind: news
+          title: "陽明山開發看法兩極 地主籲信賴保護（聯合報）"
+          url: "https://udn.com/news/story/7314/9665172"
+          date: "2026-08-02"
+    con:
+      text: "反對者認為，山坡地地質脆弱、生態敏感，在極端降雨愈來愈頻繁的情況下，放寬開發會提高坍方與災害風險，威脅居住安全與自然景觀。台北人口已呈負成長，不必再往山坡地擴張；台北市政府也已規劃把多處「保變住」地區回復為保護區。"
+      sources:
+        - kind: news
+          title: "山限區建物高度鬆綁遭反對 北市府將納討論（中央社）"
+          url: "https://www.cna.com.tw/news/aloc/202305060199.aspx"
+          date: "2023-05-06"
+        - kind: news
+          title: "北市19「保變住」政策翻轉 將回復為保護區（聯合報）"
+          url: "https://udn.com/news/story/7314/9665171"
+          date: "2026-08-02"
+  - question: M08
+    pro:
+      text: "支持者認為，雙城論壇是台北與上海持續多年的城市交流平台，雙方可就水治理、技職培訓、科技與低碳等市政議題分享經驗、簽署合作備忘錄。在兩岸官方互動有限時，以對等、尊嚴、善意、互惠的原則持續交流，有助於營造和平氛圍。"
+      sources:
+        - kind: official
+          title: "赴上海市參加「2023臺北上海城市論壇暨市政參訪活動」交流計畫書（臺北市政府，內政部移民署公開）"
+          url: "https://www.immigration.gov.tw/media/97895/20230829臺北市市長蔣萬安赴陸計畫及行程.pdf"
+          date: "2023-08-29"
+        - kind: news
+          title: "雙城論壇12/27、28上海登場 蔣萬安：聚焦科技與水治理（公視）"
+          url: "https://news.pts.org.tw/article/785483"
+          date: "2025-12-11"
+          speaker: "蔣萬安"
+    con:
+      text: "反對者認為，多年來對方出席人員的層級常不對等，論壇也沒有換來實質的相互尊重，中共軍機擾台並未減少。論壇可能被用來營造有利對岸的統戰氛圍，若無法確保對等與安全，城市交流就不應以這種形式持續舉辦。"
+      sources:
+        - kind: news
+          title: "蔣萬安擬赴上海參加雙城論壇 民進黨議員全數缺席（公視）"
+          url: "https://news.pts.org.tw/article/770340"
+          date: "2025-09-12"
+          speaker: "顏若芳"
+  - question: M09
+    pro:
+      text: "支持者認為，雙北是同一個生活圈，每天有數十萬人跨市通勤、通學，交通、垃圾、防災、飲用水等問題很難以行政界線切割。透過合作平台共同規劃，已促成垃圾袋統一價格、捷運環狀線等成果，更緊密整合能提升效率與市民便利。"
+      sources:
+        - kind: official
+          title: "雙北合作交流平臺第8次副市長層級會議紀錄（新北市政府）"
+          url: "https://www.rde.ntpc.gov.tw/userfiles/2120500/files/%E5%89%AF%E5%B8%82%E9%95%B7%E5%B1%A4%E7%B4%9A%E6%9C%83%E8%AD%B0%E7%B4%80%E9%8C%84.pdf"
+          date: "2019-07-01"
+        - kind: news
+          title: "蘇巧慧：雙北要共榮 但也要各自精采（聯合報）"
+          url: "https://udn.com/news/story/124652/9608613"
+          date: "2026-07-06"
+    con:
+      text: "反對者認為，雙北可以合作，但兩市應保有各自的主體性與特色，透過良性競爭提升施政品質。過度整合可能模糊權責、衍生經費分攤爭議，例如捷運公車轉乘優惠的費用，兩市就曾談不攏。跨市事務宜依個案協商，而不是全面一體化。"
+      sources:
+        - kind: news
+          title: "專訪／蘇巧慧：雙北要共榮 但也要各自精采（聯合報）"
+          url: "https://udn.com/news/story/124652/9608969"
+          date: "2026-07-06"
+          speaker: "蘇巧慧"
+        - kind: news
+          title: "捷運公車雙向轉乘優惠 雙北負擔喬不攏（中央社）"
+          url: "https://www.cna.com.tw/news/aloc/201707120243.aspx"
+          date: "2017-07-12"
+  - question: M10
+    pro:
+      text: "支持者認為，參與式預算讓市民實際參與公共資源的分配，從提案、討論到投票，能喚起公民意識、共同關心社區事務，市政府也能從市民的角度解決生活中的大小問題，提高施政品質與滿意度。擴大參與，有助於深化民主與開放政府。"
+      sources:
+        - kind: official
+          title: "臺北市參與式預算住民大會參與者及錄案案件性別分析報告（臺北市政府民政局）"
+          url: "https://www-ws.gov.taipei/001/Upload/334/relfile/15936/134653/9d818cf0-c423-4a22-a6d1-fa9bffd883af.pdf"
+          date: "2024-08-08"
+        - kind: news
+          title: "參與式預算SOP出爐 效率嚇到柯文哲（風傳媒）"
+          url: "https://www.storm.mg/article/56559"
+          date: "2015-07-08"
+    con:
+      text: "反對者認為，參與式預算每年投入不少經費與行政人力，實際成效卻有限，部分提案流於形式，或成案後因執行問題喊卡，也缺乏專責的監督機制。預算本應由民選議會審議把關，擴大參與式預算可能繞過代議機制，讓權責不夠清楚。"
+      sources:
+        - kind: news
+          title: "北市議長吳碧珠批市府多項缺失 籲柯Ｐ改進（新頭殼）"
+          url: "https://newtalk.tw/news/view/2016-11-18/79229"
+          date: "2016-11-18"
+          speaker: "吳碧珠"
+        - kind: news
+          title: "當熱情的參與式預算遇到冷靜的公部門⋯⋯（報導者）"
+          url: "https://www.twreporter.org/a/participatory-budget-challenge"
+          date: "2016-11-03"
