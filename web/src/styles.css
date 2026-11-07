@@ -211,3 +211,11 @@ blockquote { margin: 4px 0; padding-left: 8px; border-left: 3px solid var(--bord
 .chip-棄權者 { background: var(--track); }
 .chip-person { border-color: var(--accent); font-weight: 600; }
 .vote-detail { padding-bottom: 12px; }
+
+.important-top {
+  border: 1px dashed var(--border); border-radius: 8px; padding: 10px 12px; margin: 12px 0 4px;
+  align-items: flex-start;
+}
+.important-top input { margin-top: 5px; }
+.important-top .muted { display: block; }
+.important-on { border-style: solid; border-color: var(--accent); background: var(--accent-soft); font-weight: 600; }

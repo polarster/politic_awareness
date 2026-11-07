@@ -18,17 +18,21 @@ export function QuestionStep({ title, questions, answers, onAnswer, onDone, onBa
   const [showNote, setShowNote] = useState(false);
   const q = questions[idx];
   const cur = answers[q.id];
+  // 作答前就可以先勾「重要」；已作答的題目以作答紀錄為準
+  const [pendingImp, setPendingImp] = useState(false);
+  const imp = cur ? cur.imp : pendingImp;
   const answeredCount = questions.filter((x) => x.id in answers).length;
 
   const go = (next: number) => {
     setShowNote(false);
+    setPendingImp(false);
     if (next < 0) onBack();
     else if (next >= questions.length) onDone();
     else setIdx(next);
   };
 
   const choose = (v: number | null) => {
-    onAnswer(q.id, { v, imp: cur?.imp ?? false });
+    onAnswer(q.id, { v, imp });
     window.setTimeout(() => go(idx + 1), 150);
   };
 
@@ -48,6 +52,18 @@ export function QuestionStep({ title, questions, answers, onAnswer, onDone, onBa
       )}
       {showNote && <p className="note">{q.note}</p>}
 
+      <label className={`important important-top ${imp ? "important-on" : ""}`}>
+        <input
+          type="checkbox"
+          checked={imp}
+          onChange={(e) => (cur ? onAnswer(q.id, { v: cur.v, imp: e.target.checked }) : setPendingImp(e.target.checked))}
+        />
+        <span>
+          這題對我很重要
+          <span className="muted small">先想想這個議題對你的份量，重要的題目計分時權重加倍</span>
+        </span>
+      </label>
+
       <div className="options" role="radiogroup" aria-label="同意程度">
         {ANSWER_OPTIONS.map((o) => (
           <button
@@ -61,16 +77,6 @@ export function QuestionStep({ title, questions, answers, onAnswer, onDone, onBa
           </button>
         ))}
       </div>
-
-      <label className="important">
-        <input
-          type="checkbox"
-          checked={cur?.imp ?? false}
-          onChange={(e) => onAnswer(q.id, { v: cur?.v ?? null, imp: e.target.checked })}
-          disabled={!cur}
-        />
-        這題對我很重要
-      </label>
 
       <div className="nav">
         <button className="secondary" onClick={() => go(idx - 1)}>上一題</button>
