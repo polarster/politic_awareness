@@ -5,6 +5,7 @@ import {
 } from "../lib/labels";
 import { LOW_COVERAGE, type MatchResult } from "../lib/scoring";
 import type { Evidence } from "../lib/types";
+import { safeHref } from "../lib/url";
 import { FeedbackLink } from "./FeedbackLink";
 
 function evidenceUrl(e: Evidence): string {
@@ -46,18 +47,25 @@ export function MatchDetail({ m }: { m: MatchResult }) {
                   </summary>
                   <p className="small"><strong>判斷依據：</strong>{it.stance.interpretation}</p>
                   <ul className="evidence">
-                    {it.stance.evidence.map((e, i) => (
-                      <li key={i}>
-                        <span className="muted small">
-                          {GRADE_LABELS[e.grade]} · {EVIDENCE_KIND_LABELS[e.kind] ?? e.kind}
-                          {e.date ? ` · ${e.date}` : ""}{e.venue ? ` · ${e.venue}` : ""}
-                        </span>
-                        {e.quote && <blockquote>「{e.quote}」</blockquote>}
-                        {e.context && <p className="muted small">前後語境：{e.context}</p>}
-                        <a href={evidenceUrl(e)} target="_blank" rel="noreferrer">{e.title ?? "出處連結"}</a>
-                        {e.vote?.ref && <> · <a href={`#/votes/${e.vote.ref}`}>看各黨與每位立委的投票</a></>}
-                      </li>
-                    ))}
+                    {it.stance.evidence.map((e, i) => {
+                      // 出處網址只放行 http(s)；不合格時只把標題顯示成純文字
+                      const href = safeHref(evidenceUrl(e));
+                      const source = href
+                        ? <a href={href} target="_blank" rel="noreferrer">{e.title ?? "出處連結"}</a>
+                        : e.title;
+                      return (
+                        <li key={i}>
+                          <span className="muted small">
+                            {GRADE_LABELS[e.grade]} · {EVIDENCE_KIND_LABELS[e.kind] ?? e.kind}
+                            {e.date ? ` · ${e.date}` : ""}{e.venue ? ` · ${e.venue}` : ""}
+                          </span>
+                          {e.quote && <blockquote>「{e.quote}」</blockquote>}
+                          {e.context && <p className="muted small">前後語境：{e.context}</p>}
+                          {source}
+                          {e.vote?.ref && <>{source ? " · " : ""}<a href={`#/votes/${e.vote.ref}`}>看各黨與每位立委的投票</a></>}
+                        </li>
+                      );
+                    })}
                   </ul>
                   <FeedbackLink kind="立場標錯" target={`${m.entity.id}:${it.id}`} label="這個立場標錯了？" />
                 </details>

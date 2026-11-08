@@ -1,7 +1,15 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { data, questionById } from "../data";
-import { ApiError, postChat, type ApiMessage, type ContentBlock } from "../lib/api";
+import { postChat, type ApiMessage, type ContentBlock } from "../lib/api";
 import { positionSummary, stateSummary } from "../lib/chatContext";
+import {
+  ACTION_LABELS, chatErrorOf, errorAction, inputBlocked, inputHint, recoverFromError, restartInput,
+  type ChatError, type ErrorAction,
+} from "../lib/chatErrors";
+import {
+  firstMessage, isToolUse, nextToolStep, toolUses, topicOf, userText, withUserText,
+  type Decision, type ToolUse,
+} from "../lib/chatFlow";
 import { ANSWER_OPTIONS, answerLabel } from "../lib/labels";
 import type { Answers, BudgetSteps } from "../lib/types";
 import { UsageMeter, useUsagePolling } from "./UsageMeter";
@@ -13,25 +21,6 @@ interface Props {
   onAnswerChange: (id: string, v: number, reason: string) => void;
   onImportanceChange: (id: string, imp: boolean, reason: string) => void;
   onSupplementaryAnswer: (id: string, v: number | null) => void;
-}
-
-type ToolUse = { type: "tool_use"; id: string; name: string; input: Record<string, unknown> };
-
-interface Decision {
-  label: string;
-  result: string;
-  isError?: boolean;
-}
-
-const USER_TEXT_MARKER = "【使用者訊息】\n";
-
-function isToolUse(b: ContentBlock): b is ToolUse {
-  return b.type === "tool_use";
-}
-
-function toolUses(m: ApiMessage | undefined): ToolUse[] {
-  if (!m || m.role !== "assistant" || typeof m.content === "string") return [];
-  return m.content.filter(isToolUse);
 }
 
 /** 檢查 Claude 的工具輸入；不合法時回傳錯誤訊息。 */
@@ -63,17 +52,31 @@ export function Chat(props: Props) {
   const [messages, setMessages] = useState<ApiMessage[]>([]);
   const [decisions, setDecisions] = useState<Record<string, Decision>>({});
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<ChatError | null>(null);
   const [input, setInput] = useState("");
   const endRef = useRef<HTMLDivElement>(null);
   const [usage, setUsage] = useState<number | null>(null);
   useUsagePolling(useCallback((p: number) => setUsage(p), []));
   const usageFull = usage !== null && usage >= 100;
+  // 不需要使用者操作的自動回送次數（使用者每次操作後歸零）
+  const autoResends = useRef(0);
+  // 自動回送停下來時的那則 assistant 訊息；它的工具結果等使用者下一則訊息時一起送
+  const [heldFor, setHeldFor] = useState<ApiMessage | null>(null);
+  // 因為 max_tokens 被截斷的回覆（記訊息物件本身；送回後端的訊息不能多帶欄位）
+  const [truncated, setTruncated] = useState<ReadonlySet<ApiMessage>>(() => new Set());
 
   const last = messages[messages.length - 1];
   const pending = toolUses(last).filter((t) => !decisions[t.id]);
   const waitingForTools = pending.length > 0;
   const started = messages.length > 0;
+  const held = last !== undefined && last === heldFor;
+  // 上一則使用者文字沒有送出（連線失敗等）：先重試，不要再接一則，避免連續兩則 user 訊息或越併越長。
+  // 只有工具結果沒送出時可以直接打字，文字會和工具結果合併成一則
+  const unsentText = !loading && last?.role === "user" && userText(last) !== null;
+  // 這段對話不能再繼續（要重新開始），或要重新整理頁面：先處理錯誤，不能再打字
+  const inputLocked = loading || waitingForTools || usageFull || unsentText || inputBlocked(error);
+  // 錯誤訊息旁邊的按鈕（重試、重新開始對話、重新整理頁面）
+  const action = errorAction(error, last);
 
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -85,17 +88,16 @@ export function Chat(props: Props) {
     setError(null);
     try {
       const res = await postChat(next);
-      setMessages([...next, { role: "assistant", content: res.content }]);
+      const reply: ApiMessage = { role: "assistant", content: res.content };
+      if (res.stop_reason === "max_tokens") setTruncated((s) => new Set(s).add(reply));
+      setMessages([...next, reply]);
       setUsage(res.usage_percent);
     } catch (e) {
-      const lastSent = next[next.length - 1];
-      if (e instanceof ApiError && e.status === 409 && typeof lastSent.content === "string") {
-        // Claude 拒絕回應：撤回這則訊息，讓使用者換個說法
-        setMessages(next.slice(0, -1));
-        const idx = lastSent.content.indexOf(USER_TEXT_MARKER);
-        setInput(idx >= 0 ? lastSent.content.slice(idx + USER_TEXT_MARKER.length) : lastSent.content);
-      }
-      setError(e instanceof Error ? e.message : "連線失敗");
+      // 依錯誤類型復原：Claude 拒絕回應、這則太長、用量用完時撤回文字放回輸入框；其他保留對話，由下方按鈕處理
+      const r = recoverFromError(next, chatErrorOf(e));
+      setMessages(r.messages);
+      if (r.restoredText !== null) setInput(r.restoredText);
+      setError(r.error);
     } finally {
       setLoading(false);
     }
@@ -112,20 +114,18 @@ export function Chat(props: Props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [last]);
 
-  // 最後一則 assistant 訊息的工具都處理完後，把所有結果放在同一則訊息送回
+  // 最後一則 assistant 訊息的工具都處理完後，把所有結果放在同一則訊息送回。
+  // 結果全是系統擋下的錯誤時不需要使用者操作就會送出，模型一直出錯就會連發請求，
+  // 所以每次使用者操作後最多自動回送一次，之後先停下來，等使用者下一則訊息時一起送。
   useEffect(() => {
-    const uses = toolUses(last);
-    if (!uses.length || loading) return;
-    if (!uses.every((t) => decisions[t.id])) return;
-    const results: ContentBlock[] = uses.map((t) => ({
-      type: "tool_result",
-      tool_use_id: t.id,
-      content: decisions[t.id].result,
-      ...(decisions[t.id].isError ? { is_error: true } : {}),
-    }));
-    void send([...messages, { role: "user", content: results }]);
+    if (loading || held) return;
+    const step = nextToolStep(last, decisions, autoResends.current);
+    if (step.kind === "hold") setHeldFor(last ?? null);
+    if (step.kind !== "send") return;
+    autoResends.current = step.autoResends;
+    void send([...messages, step.message]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [decisions, last]);
+  }, [decisions, last, held]);
 
   function decide(id: string, d: Decision) {
     setDecisions((prev) => ({ ...prev, [id]: d }));
@@ -138,14 +138,37 @@ export function Chat(props: Props) {
   function sendUserText(text: string, discussionId?: string) {
     const t = text.trim();
     if (!t) return;
-    let content = t;
-    if (!started) {
-      content = stateSummary(answers, budget, cityName)
-        + (discussionId ? `\n\n【討論主題】${discussionId}` : "")
-        + `\n\n${USER_TEXT_MARKER}${t}`;
-    }
+    // 第一則附上作答摘要與討論主題：按了主題按鈕，或送出失敗後把放回輸入框的開場白再送出時（見 topicOf）
+    const content = started ? t
+      : firstMessage(stateSummary(answers, budget, cityName), t, discussionId ?? topicOf(t, data.discussions));
+    autoResends.current = 0;
     setInput("");
-    void send([...messages, { role: "user", content }]);
+    // 停下來或沒送成功的工具結果，會和這段文字合併成一則
+    void send(withUserText(messages, content, decisions));
+  }
+
+  function retry() {
+    autoResends.current = 0;
+    void send(messages);
+  }
+
+  // 這段對話不能再繼續：清掉對話重新開始（作答結果與頁面其他狀態都保留）。
+  // 下一則訊息是新的第一則，會重新附上作答摘要，也會換一個新的 conversation_id
+  function restart() {
+    autoResends.current = 0;
+    setMessages([]);
+    setDecisions({});
+    setHeldFor(null);
+    setTruncated(new Set());
+    setError(null);
+    // 沒送出的那段文字放回輸入框，可以在新的對話裡再送一次（主題按鈕的開場白再送出時會附上同一個主題）
+    setInput((cur) => restartInput(messages, cur));
+  }
+
+  function onErrorAction(a: ErrorAction) {
+    if (a === "retry") retry();
+    else if (a === "restart") restart();
+    else window.location.reload();
   }
 
   if (!consent) {
@@ -177,7 +200,7 @@ export function Chat(props: Props) {
 
       <div className="chat-log">
         {messages.map((m, i) => (
-          <Message key={i} m={m}
+          <Message key={i} m={m} truncated={truncated.has(m)}
             render={(t) => (
               <ToolCard t={t} answers={answers} decision={decisions[t.id]}
                 onDecide={(d) => decide(t.id, d)}
@@ -185,11 +208,16 @@ export function Chat(props: Props) {
             )} />
         ))}
         {loading && <div className="bubble bubble-assistant muted">Claude 思考中…</div>}
+        {held && !loading && (
+          <div className="note small">
+            Claude 剛才的建議有點問題，系統先停下來，沒有再自動送出。你可以直接輸入下一句話，對話會接著進行。
+          </div>
+        )}
         {error && (
           <div className="error">
-            {error}
-            {!loading && last?.role === "user" && (
-              <button className="link" onClick={() => void send(messages)}>重試</button>
+            {error.message}
+            {!loading && action && (
+              <> <button className="link" onClick={() => onErrorAction(action)}>{ACTION_LABELS[action]}</button></>
             )}
           </div>
         )}
@@ -200,26 +228,27 @@ export function Chat(props: Props) {
         <textarea
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder={waitingForTools ? "請先回應上面的建議" : "例如：我很在意兒童貧窮，對財團也沒有好感，這會怎麼影響我的結果？"}
-          disabled={loading || waitingForTools || usageFull}
+          placeholder={inputHint({ waitingForTools, unsentText, error })}
+          disabled={inputLocked}
           rows={2}
           maxLength={2000}
         />
-        <button type="submit" disabled={loading || waitingForTools || usageFull || !input.trim()}>送出</button>
+        <button type="submit" disabled={inputLocked || !input.trim()}>送出</button>
       </form>
     </div>
   );
 }
 
-function Message({ m, render }: {
+function Message({ m, truncated, render }: {
   m: ApiMessage;
+  /** 這則回覆因為 max_tokens 被截斷 */
+  truncated: boolean;
   render: (t: ToolUse) => React.ReactNode;
 }) {
   if (m.role === "user") {
-    if (typeof m.content !== "string") return null; // tool_result 不顯示
-    const idx = m.content.indexOf(USER_TEXT_MARKER);
-    const text = idx >= 0 ? m.content.slice(idx + USER_TEXT_MARKER.length) : m.content;
-    return <div className="bubble bubble-user">{text}</div>;
+    // 只顯示使用者輸入的文字；tool_result 不顯示（和工具結果合併送出的文字也要顯示）
+    const text = userText(m);
+    return text === null ? null : <div className="bubble bubble-user">{text}</div>;
   }
   const blocks = typeof m.content === "string" ? [{ type: "text", text: m.content } as ContentBlock] : m.content;
   return (
@@ -231,6 +260,7 @@ function Message({ m, render }: {
         if (isToolUse(b)) return <div key={i}>{render(b)}</div>;
         return null; // thinking 等區塊不顯示，但會原樣保存並送回
       })}
+      {truncated && <div className="note small">這則回覆太長，後面被截斷了。可以請 Claude 說短一點。</div>}
     </>
   );
 }

@@ -2,28 +2,38 @@ import { useEffect, useState } from "react";
 import { BudgetStep } from "./components/BudgetStep";
 import { Methodology } from "./components/Methodology";
 import { QuestionStep } from "./components/QuestionStep";
+import { ReflectStep } from "./components/ReflectStep";
 import { Results } from "./components/Results";
 import { VotesPage } from "./components/VotesPage";
 import { data, municipalQuestions, nationalQuestions } from "./data";
-import type { Adjustment, Answer, Answers, BudgetSteps } from "./lib/types";
+import { isTunnelHost } from "./lib/host";
+import { parseVoteFocus } from "./lib/route";
+import type { Adjustment, Answer, Answers, BudgetSteps, Journey } from "./lib/types";
 
-type Step = "intro" | "national" | "budget" | "municipal" | "results";
+type Step = "intro" | "national" | "budget" | "municipal" | "choose" | "reflect" | "results";
 
 interface State {
   version: string;
   step: Step;
   answers: Answers;
+  /** 第一輪完成時的答案（第一直覺）；之後的對答修正與思辨旅程都不會改動它 */
   originalAnswers: Answers | null;
+  /** 第二輪「思辨旅程」：none 未開始、doing 進行中、done 已完成 */
+  journey: Journey;
+  /** 是否在看過結果之後才開始思辨旅程（可能受結果影響，資料上分開標記） */
+  journeyAfterResults: boolean;
   city: string | null;
   budget: BudgetSteps;
   adjustments: Adjustment[];
 }
 
 const STORAGE_KEY = "politic-awareness-progress";
+/** #/votes/<id> 只接受這些精選表決 id，其他一律當成找不到 */
+const VOTE_IDS: ReadonlySet<string> = new Set(data.votes.map((v) => v.id));
 
 function initial(): State {
   return {
-    version: data.version, step: "intro", answers: {}, originalAnswers: null,
+    version: data.version, step: "intro", answers: {}, originalAnswers: null, journey: "none", journeyAfterResults: false,
     city: null, budget: {}, adjustments: [],
   };
 }
@@ -34,7 +44,7 @@ function load(): State {
     const raw = sessionStorage.getItem(STORAGE_KEY);
     if (raw) {
       const s = JSON.parse(raw) as State;
-      if (s.version === data.version) return s;
+      if (s.version === data.version) return { ...initial(), ...s };
     }
   } catch { /* ignore */ }
   return initial();
@@ -50,7 +60,7 @@ export default function App() {
     return () => window.removeEventListener("hashchange", on);
   }, []);
   const votesRoute = hash.startsWith("#/votes");
-  const voteFocus = votesRoute ? decodeURIComponent(hash.split("/")[2] ?? "") || undefined : undefined;
+  const voteFocus = votesRoute ? parseVoteFocus(hash, VOTE_IDS) : undefined;
 
   useEffect(() => {
     try { sessionStorage.setItem(STORAGE_KEY, JSON.stringify(s)); } catch { /* ignore */ }
@@ -61,9 +71,14 @@ export default function App() {
   const go = (step: Step) => setS((p) => ({
     ...p,
     step,
-    originalAnswers: step === "results" && !p.originalAnswers ? p.answers : p.originalAnswers,
+    // 第一輪結束（進入選擇或結果頁）時，記下第一直覺
+    originalAnswers: (step === "choose" || step === "results") && !p.originalAnswers ? p.answers : p.originalAnswers,
   }));
   const setAnswer = (id: string, a: Answer) => setS((p) => ({ ...p, answers: { ...p.answers, [id]: a } }));
+  // 思辨旅程的題目：有正反說法、而且第一輪答過的政策題
+  const first = s.originalAnswers ?? s.answers;
+  const reflectQuestionsFor = (a: Answers) => data.questions.filter((q) => data.arguments[q.id] && q.id in a);
+  const reflectQuestions = reflectQuestionsFor(first);
 
   let body: React.ReactNode;
   if (votesRoute) {
@@ -79,6 +94,10 @@ export default function App() {
         <p>
           這份問卷約 {nationalQuestions.length + municipalQuestions.length} 題，加上一段雙北市政預算分配，大約 10 分鐘。
           完成後你會看到自己在幾個維度上的位置，以及和各政黨立場的對照。每個政黨立場都附有出處。
+        </p>
+        <p>
+          <strong>請照第一直覺快速作答</strong>，不用想太久。看完結果後，可以再進行「思辨旅程」：
+          看看和你不同方向的說法，比較你的第一直覺和深思之後有什麼不同。
         </p>
         <p>
           結果跟你想的不一樣？可以和 Claude 聊聊，它會解釋結果怎麼來的，並在你同意下修正。
@@ -115,13 +134,39 @@ export default function App() {
   } else if (s.step === "municipal") {
     body = (
       <QuestionStep key="municipal" title="雙北市政" questions={municipalQuestions} answers={s.answers}
-        onAnswer={setAnswer} onBack={() => go("budget")} onDone={() => go("results")} />
+        onAnswer={setAnswer} onBack={() => go("budget")} onDone={() => go(reflectQuestionsFor(s.answers).length ? "choose" : "results")} />
+    );
+  } else if (s.step === "choose") {
+    body = (
+      <section className="card prose">
+        <span className="eyebrow">第一輪完成</span>
+        <h2>要先進行「思辨旅程」嗎？</h2>
+        <p>
+          你剛剛的答案就是你的<strong>第一直覺</strong>。接下來 {reflectQuestions.length} 題，每題會先給你看和你不同方向的說法（附立法院公報等出處），
+          再讓你決定要不要調整。最後你會看到第一直覺和深思之後的差別。約 10 分鐘，可以隨時跳過剩下的題目。
+        </p>
+        <p className="muted small">
+          建議在看結果之前進行：先看到「最接近哪個政黨」，可能會影響你怎麼看這些論點。
+        </p>
+        <div className="row">
+          <button onClick={() => setS((p) => ({ ...p, step: "reflect", journey: "doing" }))}>開始思辨旅程</button>
+          <button className="secondary" onClick={() => go("results")}>直接看結果</button>
+        </div>
+      </section>
+    );
+  } else if (s.step === "reflect" && reflectQuestions.length) {
+    body = (
+      <ReflectStep questions={reflectQuestions} first={first} answers={s.answers} onAnswer={setAnswer}
+        onDone={() => setS((p) => ({ ...p, step: "results", journey: "done" }))} />
     );
   } else {
     body = (
       <Results
         answers={s.answers}
         originalAnswers={s.originalAnswers ?? s.answers}
+        journey={s.journey}
+        onStartJourney={() => setS((p) => ({ ...p, step: "reflect", journey: p.journey === "done" ? "done" : "doing", journeyAfterResults: true }))}
+        journeyAfterResults={s.journeyAfterResults}
         budget={s.city ? s.budget : null}
         city={s.city}
         adjustments={s.adjustments}
@@ -156,6 +201,12 @@ export default function App() {
       <p className="disclaimer small muted">
         個人 side project · 題庫版本 {data.version} · 不是投票建議
       </p>
+      {/* 對外模式（經 Cloudflare Tunnel）才有登入閘道與 /__logout；本機開發時不顯示 */}
+      {isTunnelHost(window.location.hostname) && (
+        <form className="disclaimer small" method="post" action="/__logout">
+          <button type="submit" className="link">登出</button>
+        </form>
+      )}
     </main>
   );
 }

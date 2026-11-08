@@ -1,0 +1,11 @@
+# 正式部署（Cloudflare Pages）用的回應標頭；npm run build 會把這個檔案複製到 web/dist/_headers。
+# Vercel 不讀這個檔案，請把同樣的標頭寫在 vercel.json 的 headers。
+# - connect-src：後端 API 不在同一個網域時（設定了 VITE_API_BASE），要加上它的網域，
+#   例如 connect-src 'self' https://api.example.org
+# - 可以先把 Content-Security-Policy 改名成 Content-Security-Policy-Report-Only 觀察，沒有違規再正式啟用。
+# - frame-ancestors 只能用 HTTP 標頭設定，寫在 <meta> 裡無效。
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

@@ -9,7 +9,7 @@ interface Point {
   badge?: string;
   logo?: string;
   scores: AxisScore[];
-  kind: "you" | "party" | "highlight";
+  kind: "you" | "you-first" | "party" | "highlight";
 }
 
 interface Props {
@@ -37,7 +37,7 @@ export function PoliticalMap({ points, defaultX, defaultY }: Props) {
   const val = (p: Point, id: string) => p.scores.find((s) => s.axis.id === id)?.value ?? null;
 
   const plotted = points.map((p) => ({ p, x: val(p, xId), y: val(p, yId) }));
-  const missing = plotted.filter((d) => d.p.kind !== "you" && (d.x === null || d.y === null)).map((d) => d.p.label);
+  const missing = plotted.filter((d) => d.p.kind !== "you" && d.p.kind !== "you-first" && (d.x === null || d.y === null)).map((d) => d.p.label);
   const W = S + PAD * 2;
 
   return (
@@ -71,13 +71,31 @@ export function PoliticalMap({ points, defaultX, defaultY }: Props) {
         <text x={PAD} y={PAD + S + 20} className="pmap-pole">◀ {xa.negative_pole}</text>
         <text x={PAD + S} y={PAD + S + 20} textAnchor="end" className="pmap-pole">{xa.positive_pole} ▶</text>
 
+        {/* 完整版：第一直覺 → 現在的箭頭 */}
+        {(() => {
+          const a = plotted.find((d) => d.p.kind === "you-first");
+          const b = plotted.find((d) => d.p.kind === "you");
+          if (!a || !b || a.x === null || a.y === null || b.x === null || b.y === null) return null;
+          if (Math.abs(a.x - b.x) < 0.01 && Math.abs(a.y - b.y) < 0.01) return null;
+          return <line x1={coord(a.x)} y1={coord(-a.y)} x2={coord(b.x)} y2={coord(-b.y)} className="pmap-move" />;
+        })()}
         {plotted
           .filter((d) => d.x !== null && d.y !== null)
+          .filter((d, _, all) => d.p.kind !== "you-first" || !all.some((o) => o.p.kind === "you" && Math.abs(o.x! - d.x!) < 0.01 && Math.abs(o.y! - d.y!) < 0.01))
           .sort((a, b) => (a.p.kind === "you" ? 1 : 0) - (b.p.kind === "you" ? 1 : 0))
           .map(({ p, x, y }) => {
             const cx = coord(x!);
             const cy = coord(-y!); // 直軸 +2 在上方
             const text = `${p.label}：${xa.name} ${x!.toFixed(1)}，${ya.name} ${y!.toFixed(1)}`;
+            if (p.kind === "you-first") {
+              return (
+                <g key={p.id} className="pmap-pt pmap-first">
+                  <title>{text}</title>
+                  <circle cx={cx} cy={cy} r={8} />
+                  <text x={cx} y={cy + 22} textAnchor="middle" className="pmap-label">{p.label}</text>
+                </g>
+              );
+            }
             if (p.kind === "you") {
               return (
                 <g key={p.id} className="pmap-pt pmap-you">

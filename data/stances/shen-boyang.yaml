@@ -1,0 +1,303 @@
+entity: shen-boyang
+stances:
+- question: N01
+  value: -2
+  interpretation: '沈伯洋把「九二共識」列為他不接受的「政治前提」之一，表示只有在沒有政治前提的情況下才願意參加兩岸城市論壇；
+    他也曾說九二共識「一直是不存在的共識」。明確不接受以九二共識作為對話基礎，判為非常不同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: interview
+    title: 登上少康戰情室「破圈」 沈伯洋：無政治前提願參加雙城論壇
+    url: https://news.ltn.com.tw/news/politics/breakingnews/5598938
+    date: 2026-10-07
+    venue: TVBS《少康戰情室》
+    quote: 政治前提包含九二共識、一國兩制、台灣屬於中國一部分、中國台灣等
+    context: 自由時報報導沈伯洋上 TVBS 政論節目，談台北上海雙城論壇時說「假設對方願意辦沒有政治前提的論壇，那自然願意參加」，並列舉上述政治前提。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 賴清德指在野接受一中九二共識 沈伯洋：他們要直接把台灣變中國
+    url: https://tw.news.yahoo.com/%E8%B3%B4%E6%B8%85%E5%BE%B7%E6%8C%87%E5%9C%A8%E9%87%8E%E6%8E%A5%E5%8F%97-%E4%B8%AD%E4%B9%9D%E4%BA%8C%E5%85%B1%E8%AD%98-%E6%B2%88%E4%BC%AF%E6%B4%8B-%E4%BB%96%E5%80%91%E8%A6%81%E7%9B%B4%E6%8E%A5%E6%8A%8A%E5%8F%B0%E7%81%A3%E8%AE%8A%E4%B8%AD%E5%9C%8B-023700507.html
+    date: 2025-12-03
+    venue: null
+    quote: null
+    context: 鏡報（Yahoo 新聞轉載）以間接引述報導，沈伯洋回應賴清德對九二共識的談話時表示九二共識「一直是不存在的共識」、中國也不承認；報導未以引號呈現原話，故不列為引文。
+    timestamp: null
+- question: N02
+  value: 2
+  interpretation: '沈伯洋明確表示台灣從未被中華人民共和國統治，兩國主權互不隸屬，判為非常同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 沈伯洋：中共透過文化洗國族認同 國民黨沒從國共內戰學到教訓
+    url: https://udn.com/news/story/6656/9303821
+    date: 2026-02-02
+    venue: null
+    quote: 台灣從未被中華人民共和國統治，所以兩個國家主權互不隸屬，沒有家人不家人之說。
+    context: 聯合報報導，沈伯洋回應國民黨與中共交流及「兩岸一家親」的說法。
+    timestamp: null
+- question: N03
+  value: -2
+  interpretation: '沈伯洋稱兩岸「完全是不同的國家」，在制度與文化上「完全沒有混同的可能」，與長期朝統一發展的方向明確相反，判為非常不同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 沈伯洋：中共透過文化洗國族認同 國民黨沒從國共內戰學到教訓
+    url: https://udn.com/news/story/6656/9303821
+    date: 2026-02-02
+    venue: null
+    quote: 兩邊就完全是不同的國家，不管是在制度上、文化上，完全沒有混同的可能
+    context: 聯合報報導，同場沈伯洋也說「中國最喜歡強調語言文化相同，但『完全就是不同』」。
+    timestamp: null
+- question: D03
+  value: 1
+  interpretation: '沈伯洋以民進黨代表身分出席民進黨與日本自民黨的外交防衛政策意見交換會，表示將持續推動台日實質合作、共同維護印太和平穩定。
+    方向清楚，但找到的發言集中在日本、未直接談與美國的安全合作及「優先」排序，故判為同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 民進黨、自民黨第7次政策交換會 深化安保、海纜與文化全方位合作
+    url: https://newtalk.tw/news/view/2026-09-14/1059721
+    date: 2026-09-14
+    venue: 民進黨與自民黨第 7 次「台日外交、防衛政策意見交換會」會後記者會
+    quote: 台灣與日本共享自由、民主與法治價值，兩黨維持制度化深度對話具有重大戰略意義，未來將持續推動實質合作，共同維護印太區域的和平、穩定與繁榮。
+    context: 同場他也表示「當前中國對台灣及區域所採取的威脅，不只是傳統軍事層面，也包括法律戰、假訊息及認知作戰。」
+    timestamp: null
+- question: S02
+  value: 1
+  interpretation: '沈伯洋 2026 年受訪時表示「長遠來講死刑減少使用」，並稱自己沒有提出廢死修法、死刑屬中央權責；
+    另在 2025 年記名表決中反對國民黨團「判處死刑不須一致決」公投提案（黨團一致投票，屬限縮死刑的程序面，不等於主張廢死）。
+    較早的說法（對手引述的 2020 年廣播發言「我是主張不要有死刑」）傾向廢除，但依「以較新的講法為準」，
+    目前只判為傾向同意而非非常同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第3會期第12次會議議事錄：「死刑不須一致決」公投提案記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/114/50/01/details
+    date: 2025-05-16
+    venue: 立法院院會
+    quote: null
+    context: 記名表決結果附後(2)：照國民黨團提議通過，贊成54（國民黨46、民眾黨6、無黨籍2），反對48（民進黨全數），沈伯洋投反對；民進黨團撤銷本案之提議（附後(1)）沈伯洋投贊成，未通過。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 委員吳宗憲等52人擬具公投提案：「您是否同意『各級法院合議庭法官判處死刑不須一致決』之政策？」
+      choice: 反對
+      ref: death-penalty-referendum-2025
+  - grade: C
+    kind: interview
+    title: 專訪／到底支持還是反對廢死？沈伯洋：長遠來講死刑減少使用
+    url: https://udn.com/news/story/6656/9801115
+    date: 2026-10-07
+    venue: 聯合報專訪
+    quote: 長遠來講死刑減少使用
+    context: 選戰期間國民黨團質疑他是否支持廢死，他在專訪中表示「我就是要幫大家形成共識那個人」。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 藍營又扯廢死 沈伯洋反擊：蠻好笑的，我沒提廢死的修法
+    url: https://news.ltn.com.tw/news/politics/breakingnews/5598207
+    date: 2026-10-07
+    venue: null
+    quote: 大家一直猜測我在想什麼，我覺得這蠻好笑的
+    context: 自由時報報導，他表示死刑是中央議題、憲法法庭已畫出基準，並反問若他支持廢死為何至今沒有提出廢死修法。
+    timestamp: null
+  superseded:
+  - value: 2
+    evidence:
+    - grade: C
+      kind: interview
+      title: 「毒駕可處死刑」沈伯洋未投票 蔣萬安競辦反問：不要有死刑？
+      url: https://udn.com/news/story/6656/9847367
+      date: 2026-10-30
+      venue: 2020 年廣播節目（經蔣萬安競選辦公室引述）
+      quote: 我是主張不要有死刑
+      context: 聯合報報導，蔣萬安競辦發言人引述沈伯洋 2020 年在廣播節目的發言；同一報導指出沈伯洋等綠委未參與「毒駕致死最重可處死刑」修法的表決。這句話是對手陣營轉述，未找到原始錄音。
+      timestamp: null
+    note: 2020 年（依對手陣營引述）曾表示主張不要有死刑；2026 年的說法改為長遠減少使用、不主張立即修法廢除。
+- question: G01
+  value: -1
+  interpretation: '沈伯洋在 2025 年《核管法》延役修法、2025 年民眾黨「核三恢復運轉」公投提案、2026 年國民黨「廢除非核家園」公投提案逕付二讀等記名表決中，
+    都跟隨民進黨團投反對。沒有找到他個人對延役或重啟核電的詳細說法，僅有黨團一致投票，故判為傾向不同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第3會期第11次會議議事錄：核子反應器設施管制法第六條修正記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/114/48/01/details
+    date: 2025-05-09
+    venue: 立法院院會
+    quote: null
+    context: 記名表決結果附後(9)(10)。第六條照國民黨團及民眾黨團再修正動議通過：贊成61（國民黨50、民眾黨8、無黨籍2、民進黨1），反對50（民進黨），沈伯洋投反對；全案贊成60、反對51（民進黨），沈伯洋投反對。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 核子反應器設施管制法第六條（國民黨團、民眾黨團再修正動議，核電廠可申請延長運轉執照）
+      choice: 反對
+      ref: nuclear-act-2025
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第3會期第12次會議議事錄：「核三恢復運轉」公投提案記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/114/50/01/details
+    date: 2025-05-16
+    venue: 立法院院會
+    quote: null
+    context: 記名表決結果附後(7)：民眾黨團公投提案「您是否同意第三核能發電廠經通過整體安全評估後，恢復繼續運轉？」照民眾黨團修正動議通過，贊成58（國民黨49、民眾黨7、無黨籍2），反對49（民進黨全數），沈伯洋投反對。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 台灣民眾黨黨團擬具公投提案：「您是否同意第三核能發電廠經通過整體安全評估後，恢復繼續運轉？」
+      choice: 反對
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第5會期第17次會議議事錄：「廢除非核家園」公投提案逕付二讀記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/115/60/15/details
+    date: 2026-07-10
+    venue: 立法院院會
+    quote: null
+    context: 程序表決，決定國民黨團公投提案是否不經委員會審查直接進入院會討論：贊成58（國民黨49、民眾黨8、無黨籍1），反對48（民進黨全數），沈伯洋投反對。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 國民黨黨團擬具公投提案（廢除「非核家園」能源政策）逕付二讀
+      choice: 反對
+      ref: non-nuclear-referendum-2026
+- question: G02
+  value: -2
+  interpretation: '2024 年國會職權修法覆議案記名表決中，沈伯洋兩案均投反對（即反對維持原決議、支持行政院覆議，要求推翻這套法案）。
+    題目問的正是是否支持 2024 年通過的這套法案，記名表決直接對應，判為非常不同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第1會期第19次會議議事錄：立法院職權行使法及刑法第一百四十一條之一覆議案記名投票
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/113/64/01/details
+    date: 2024-06-21
+    venue: 立法院院會
+    quote: null
+    context: 兩案覆議均以贊成維持原決議62人（國民黨52、民眾黨8、無黨籍2）、反對51（民進黨全數）維持原決議；沈伯洋兩案均投反對。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 立法院職權行使法修正部分條文覆議案（贊成＝維持原決議）
+      choice: 反對
+      ref: legislative-reform-override-2024
+- question: V03
+  value: -1
+  interpretation: '2025 年《環境影響評估法》第五條修正（把一定規模以上的地面型、水面型太陽光電納入環評），沈伯洋跟隨民進黨團投反對。
+    這次修法只針對太陽光電，投票可能同時反映對光電開發的態度，而且只有黨團一致投票，因此只判為 -1。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第4會期第9次會議議事錄：環境影響評估法第五條修正記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/114/97/01/details
+    date: 2025-11-14
+    venue: 立法院院會
+    quote: null
+    context: 第五條照民眾黨團、國民黨團再修正動議通過：贊成59（國民黨49、民眾黨8、無黨籍2），反對48（民進黨全數），沈伯洋投反對；全案表決同樣 59 比 48，沈伯洋投反對。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 環境影響評估法第五條（太陽光電納入環評，民眾黨團、國民黨團再修正動議）
+      choice: 反對
+      ref: eia-solar-2025
+- question: M08
+  value: -1
+  interpretation: '沈伯洋以台北市長參選人身分表示雙城論壇效益低、「沒有效益的事情就不要辦」，與上海交流要非常小心；
+    10 月他改稱框架可以保留，但條件是沒有政治前提（包含九二共識、「中國台灣」等稱呼），而他也指出與上海交流「就要遵守他們的政治前提」。
+    條件實際上很難滿足，整體傾向不支持照現狀持續辦理，但未明確說一定停辦，故判為傾向不同意。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 沒效益？沈伯洋當選停辦雙城論壇 北市府反擊：沒效益應問中央
+    url: https://udn.com/news/story/124652/9502690
+    date: 2026-05-14
+    venue: null
+    quote: 沒有效益的事情就不要辦
+    context: 聯合報報導，沈伯洋並提出可改辦「無限城論壇」，以紐約、倫敦、東京等城市為交流對象；報導轉述他表示若有效益、有好的主題且不涉國安問題，可以續辦。
+    timestamp: null
+  - grade: C
+    kind: interview
+    title: 登上少康戰情室「破圈」 沈伯洋：無政治前提願參加雙城論壇
+    url: https://news.ltn.com.tw/news/politics/breakingnews/5598938
+    date: 2026-10-07
+    venue: TVBS《少康戰情室》
+    quote: 假設對方願意辦沒有政治前提的論壇，那自然願意參加。
+    context: 他表示雙城論壇的「框架留著沒有大礙」，但要「沒有政治前提、有效益、有內容或能幫助到產業」；並說「跟上海官員交流其實都是風險控管而已」，與上海交換「就要遵守他們的政治前提」。
+    timestamp: null
+- question: B_CHILDCARE
+  value: 1
+  interpretation: '沈伯洋的育兒政見「家庭一站通」主張 6 個月到 6 歲的孩子每週最多 4 小時免費臨托，並整合、新設托育據點、改善教保人員勞動條件，
+    屬擴大公共托育服務，判為增加。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: platform
+    title: 沈伯洋育兒政見「家庭一站通」（新頭殼報導）
+    url: https://newtalk.tw/news/view/2026-06-23/1042858
+    date: 2026-06-23
+    venue: 台北市長參選人育兒政見
+    quote: 這是一般性的需求
+    context: 新頭殼報導（多為轉述）：滿 6 個月至 6 歲孩童每週最多 4 小時免費臨托；全面盤點各行政區托育資源，整合現有托育據點、居家托育與未來新設據點，並改善教保服務人員勞動條件；未提出預算金額。引文是他說明臨托需求時的原話。
+    timestamp: null
+- question: B_TRANSIT
+  value: 1
+  interpretation: '沈伯洋的交通政見主張直接補貼公車駕駛薪資、充實人力以改善公車安全，並要求為通車逾 30 年的台北捷運做總體檢，
+    屬增加大眾運輸支出，判為增加。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: platform
+    title: 拋四大交通政見！沈伯洋：通學區零死亡、公車安全改革
+    url: https://www.nownews.com/news/6875465
+    date: 2026-09-16
+    venue: 台北市長參選人交通政策發表
+    quote: 必須直接補貼駕駛薪資、充實人力
+    context: NOWnews 報導他的四大交通政見；他也指出「通車逾30年的台北捷運急需進行總體檢」。
+    timestamp: null
+- question: B_PARKS
+  value: 1
+  interpretation: '沈伯洋主張把中央的校園周邊人行空間參考指引升格為台北的標準、目標「通學區零死亡」，並要補上跨河、越堤的自行車路網斷點，
+    屬增加人行與通行環境建設，判為增加。
+
+    '
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: platform
+    title: 拋四大交通政見！沈伯洋：通學區零死亡、公車安全改革
+    url: https://www.nownews.com/news/6875465
+    date: 2026-09-16
+    venue: 台北市長參選人交通政策發表
+    quote: 把中央的「參考」落實成台北的「標準」
+    context: NOWnews 報導，指校園周邊人行空間的中央參考指引；同一政見另提出「補上跨河與越堤的斷點」，旗艦工程為港墘跨基隆河自行車專用橋。
+    timestamp: null

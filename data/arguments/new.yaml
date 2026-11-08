@@ -1,0 +1,229 @@
+arguments:
+  - question: E06
+    pro:
+      text: "支持者認為，各行業型態不同，一體適用難以落實：三班制換班可能只隔8小時，少數行業難守11小時；陪喪家的殯葬人員、機構褓姆難配合七休一；現行加班上限讓旺季長的產業調度不及，想加班多賺的勞工也沒機會。在保留基本保障與把關下放寬，能讓勞資雙贏。"
+      sources:
+        - kind: gazette
+          title: "立法院第9屆第4會期第1次臨時會第2次會議紀錄 公報 委員鍾佳濱、陳素月發言（2018年1月9日至10日）"
+          url: "https://ppg.ly.gov.tw/ppg/PublicationBulletinDetail/download/communique1/final/pdf/107/19/LCIDC01_1071905_00001.pdf"
+          date: "2018-01-09"
+          speaker: "鍾佳濱、陳素月"
+        - kind: news
+          title: "林美珠說明修法「彈性」適用範圍：孩子對保姆這麼依賴，能放手讓別人來帶嗎？（風傳媒）"
+          url: "https://www.storm.mg/article/383863"
+          date: "2018-01-10"
+          speaker: "林美珠"
+        - kind: official
+          title: "委員鄭麗文等16人擬具「勞動基準法第三十二條條文修正草案」（立法院議案關係文書）"
+          url: "https://ppg.ly.gov.tw/ppg/download/agenda1/02/pdf/10/05/04/LCEWA01_100504_00013.pdf"
+          date: "2022-03-16"
+          speaker: "鄭麗文"
+    con:
+      text: "反對者認為，勞資地位不對等，工會覆蓋率僅約7%，勞資會議常流於形式，勞工很難說不；台灣工時已居全球前段，現行例外已可能讓勞工連上12天、換班只隔8小時，扣掉通勤難以睡足，會提高心臟病風險；再放寬等於把彈性留給企業、過勞留給勞工。"
+      sources:
+        - kind: gazette
+          title: "立法院第9屆第4會期第1次臨時會第2次會議紀錄 公報 委員林淑芬、李鴻鈞、曾銘宗發言（2018年1月9日至10日）"
+          url: "https://ppg.ly.gov.tw/ppg/PublicationBulletinDetail/download/communique1/final/pdf/107/19/LCIDC01_1071905_00001.pdf"
+          date: "2018-01-09"
+          speaker: "林淑芬、李鴻鈞、曾銘宗"
+        - kind: news
+          title: "【一例一休急轉彎】勞權倒退30年的大修法（報導者）"
+          url: "https://www.twreporter.org/a/refine-labour-law-moving-backward"
+          date: "2017-11-05"
+        - kind: official
+          title: "委員黃昭順等20人擬具「勞動基準法部分條文修正草案」（立法院議案關係文書）"
+          url: "https://ppg.ly.gov.tw/ppg/download/agenda1/02/pdf/09/05/14/LCEWA01_090514_00103.pdf"
+          date: "2018-05-23"
+          speaker: "黃昭順"
+  - question: E07
+    pro:
+      text: "支持者認為，電力是民生必需的服務，維持大型、穩定供電的國營台電，政府才能管制電價、為電價負責，也符合人民期待。若沒有大型國營電業，關鍵事業可能像媒體、電信等公用事業一樣在財團之間買來買去、炒高行情。"
+      sources:
+        - kind: gazette
+          title: "立法院第9屆第2會期第1次臨時會第1次會議紀錄 公報 電業法三讀 委員管碧玲發言"
+          url: "https://ppg.ly.gov.tw/ppg/PublicationBulletinDetail/download/communique1/final/pdf/106/14/LCIDC01_1061403_00006.pdf"
+          date: "2017-01-11"
+          speaker: "管碧玲"
+    con:
+      text: "反對者認為，國營電業的電價常以照顧民生、穩定物價為由凍漲，2022至2024年台電低於成本售電，累計虧損逾四千億元，要靠全民納稅錢撥補。建立開放公平的電業競爭平台，讓民間參與電力建設，能增進經營效率與供電穩定。"
+      sources:
+        - kind: gazette
+          title: "立法院第9屆第2會期第1次臨時會第1次會議紀錄 公報 電業法三讀 委員陳怡潔發言"
+          url: "https://ppg.ly.gov.tw/ppg/PublicationBulletinDetail/download/communique1/final/pdf/106/14/LCIDC01_1061403_00006.pdf"
+          date: "2017-01-11"
+          speaker: "陳怡潔"
+        - kind: news
+          title: "【Data Reporter】台電負債比逾9成，2025上半年電價凍漲：7張圖表解析長期影響（報導者）"
+          url: "https://www.twreporter.org/a/data-reporter-taiwan-freezing-electricity-rates"
+          date: "2025-03-28"
+  - question: E08
+    pro:
+      text: "支持者認為，政府連年超收稅金，每年讓千萬受薪者各少繳2萬元所得稅也才2,000億，做得到。增加社福、教育支出雖然沒錯，但最直接讓大眾受惠的是減稅；稅收成長遠快於經濟成長，也代表人民稅負加重、稅制該改革。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第1會期財政委員會第7次全體委員會議紀錄（立法院公報第113卷第27期）"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/113/27/LCIDC01_1132701_00001.pdf"
+          date: "2024-04-10"
+          speaker: "王世堅"
+        - kind: gazette
+          title: "立法院第11屆第3會期財政委員會第1次公聽會「稅收超徵還稅於民」公聽會紀錄（立法院公報第114卷第25期）"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/114/25/LCIDC01_1142501_00017.pdf"
+          date: "2025-03-10"
+          speaker: "黃耀輝"
+    con:
+      text: "反對者認為，稅課收入高於預算不等於政府有財政賸餘，若不考量整體收支就還稅於民，恐怕要舉債發現金。增加的稅收應用來照顧人民、擴大社會投資，例如0到6歲國家一起養、高中職免學費、長照3.0，以因應高齡化與少子女化。"
+      sources:
+        - kind: news
+          title: "稅收高於預算創高 賴總統：擴大育兒、學費補助等社會投資（中央社）"
+          url: "https://www.cna.com.tw/news/afe/202502140213.aspx"
+          date: "2025-02-14"
+          speaker: "賴清德"
+        - kind: news
+          title: "總統：增加稅收將用於照顧人民 持續推動社福政策（聯合報）"
+          url: "https://udn.com/news/story/6656/9627134"
+          date: "2026-07-14"
+          speaker: "賴清德"
+        - kind: news
+          title: "立院召開還稅於民公聽會 財政部提3理由反對（公視）"
+          url: "https://news.pts.org.tw/article/741378"
+          date: "2025-03-10"
+          speaker: "財政部"
+  - question: L01
+    pro:
+      text: "支持者認為，防疫、災害防救等法律本就禁止傳播特定不實訊息，主管機關應可要求平台處理這類違法內容，並向法院申請資訊限制令。法院核發前先暫時加註最長30天的中立警語，並非下架，而是提醒使用者轉傳前多參考不同來源。"
+      sources:
+        - kind: news
+          title: "數位中介服務法成立專責法人 NCC：沒有養網軍、沒有濫權（科技新報）"
+          url: "https://technews.tw/2022/07/07/the-digital-intermediary-service-act-established-a-specialized-legal-person/"
+          date: "2022-07-07"
+          speaker: "翁柏宗"
+        - kind: news
+          title: "NCC 中介法加註警語條款歧見大，專家質疑形同貼黃標（中央社／科技新報）"
+          url: "https://technews.tw/2022/08/16/digital-intermediary-services-act-add-warnings-to-illegal-content/"
+          date: "2022-08-16"
+          speaker: "劉佳琪"
+    con:
+      text: "反對者認為，由行政機關認定什麼是不實訊息，並在法院裁定前就要求平台暫時加註警語，容易讓行政權力過大、箝制言論自由，警語也形同替內容貼上「黃標」。台灣之所以可貴就在於言論自由，這類讓政府介入網路內容的法案不應再推出。"
+      sources:
+        - kind: gazette
+          title: "立法院第10屆第6會期交通委員會第10次全體委員會議紀錄 公報 委員李貴敏、游毓蘭質詢"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/111/113/LCIDC01_11111302_00003.pdf"
+          date: "2022-12-01"
+          speaker: "李貴敏、游毓蘭"
+        - kind: news
+          title: "NCC 中介法加註警語條款歧見大，專家質疑形同貼黃標（中央社／科技新報）"
+          url: "https://technews.tw/2022/08/16/digital-intermediary-services-act-add-warnings-to-illegal-content/"
+          date: "2022-08-16"
+          speaker: "周冠汝、何吉森"
+  - question: L02
+    pro:
+      text: "支持者認為，境外敵對勢力的威脅日增，為維護國家安全，應把國安法、反滲透法的罪名納入可通訊監察的範圍。現代戰爭已進入混合戰時代，面對認知作戰，情報機關也需要網路平台配合提供數據，才能及早掌握異常資訊流動並預警。"
+      sources:
+        - kind: official
+          title: "委員蔡易餘等18人擬具「通訊保障及監察法部分條文修正草案」（立法院議案）"
+          url: "https://ppg.ly.gov.tw/ppg/bills/202110054990000/details"
+          date: "2024-06-07"
+          speaker: "蔡易餘"
+        - kind: official
+          title: "委員林宜瑾等19人擬具「國家情報工作法第三條、第五條及第十三條之一條文修正草案」（立法院議案）"
+          url: "https://ppg.ly.gov.tw/ppg/bills/202110208050000/details"
+          date: "2026-04-24"
+          speaker: "林宜瑾"
+        - kind: news
+          title: "反制中國認知作戰 綠委提案修「情工法」阻斷內容（自由時報）"
+          url: "https://news.ltn.com.tw/news/politics/breakingnews/5423708"
+          date: "2026-05-03"
+          speaker: "林宜瑾"
+    con:
+      text: "反對者認為，「國家安全」已成為容易取用的理由，國安監聽外國人每次可長達一年，還可能聽到國人的跨境通訊。情報機關可自行向電信業者調取通信紀錄、網路流量紀錄，沒有法院監督與公開統計，修法擴大調取範圍時也未補上程序規範。"
+      sources:
+        - kind: org
+          title: "兩公約第二次國家審查：台權會隱私權（公政公約第17條）發言單（台灣人權促進會聲明）"
+          url: "https://www.tahr.org.tw/news/2119/"
+          date: "2017-01-19"
+          speaker: "台灣人權促進會"
+        - kind: org
+          title: "數位人權平行報告：公政公約審查影子報告（台灣人權促進會）"
+          url: "https://www.tahr.org.tw/news/3804/"
+          date: "2025-11-14"
+          speaker: "台灣人權促進會（數位人權專員周冠汝撰）"
+        - kind: org
+          title: "法律意見｜就行政院《通訊保障及監察法》之民間版草案及意見（民間司法改革基金會）"
+          url: "https://www.jrf.org.tw/articles/2744"
+          date: "2024-07-10"
+          speaker: "民間司法改革基金會"
+  - question: L03
+    pro:
+      text: "支持者認為，言論自由最需要保護的，正是激烈批評政府的言論。以刑罰處罰侮辱性言論，標準往往很主觀，判決也時有罪、時無罪，容易讓抗議者與社會運動者因言入罪，形成寒蟬效應。名譽受損可以透過民事賠償處理，公然侮辱除罪化也是國際趨勢。"
+      sources:
+        - kind: gazette
+          title: "立法院第10屆第4會期第15次會議紀錄 公報 中華民國刑法第一百四十條修正 委員邱顯智發言"
+          url: "https://ppg.ly.gov.tw/ppg/PublicationBulletinDetail/download/communique1/final/pdf/111/19/LCIDC01_1111901_00008.pdf"
+          date: "2021-12-28"
+          speaker: "邱顯智"
+        - kind: news
+          title: "公然侮辱是否除罪改民事賠償 憲法法庭言詞辯論（公視）"
+          url: "https://news.pts.org.tw/article/672996"
+          date: "2023-12-25"
+          speaker: "李念祖"
+    con:
+      text: "反對者認為，言論自由並非毫無界限，憲法也允許為維持社會秩序而以法律限制。有人躲在螢幕後匿名辱罵，被害人孤立無援、身心受創，民事求償又難以及時蒐證；第一線執法人員也常遭辱罵。若完全不用刑罰，恐怕助長網路霸凌，無法有效保護受害者。"
+      sources:
+        - kind: gazette
+          title: "立法院第10屆第4會期第15次會議紀錄 公報 中華民國刑法第一百四十條修正 委員葉毓蘭發言"
+          url: "https://ppg.ly.gov.tw/ppg/PublicationBulletinDetail/download/communique1/final/pdf/111/19/LCIDC01_1111901_00008.pdf"
+          date: "2021-12-28"
+          speaker: "葉毓蘭"
+        - kind: news
+          title: "公然侮辱是否除罪改民事賠償 憲法法庭言詞辯論（公視）"
+          url: "https://news.pts.org.tw/article/672996"
+          date: "2023-12-25"
+          speaker: "郭永發"
+  - question: L04
+    pro:
+      text: "支持者認為，集會遊行是憲法保障的基本人權，由警察事先核准、禁止或解散，不符合國際人權標準。改採報備制後，報備的目的是請求主管機關協助交通與保護，而不是取得許可；若現場發生危害公共安全的行為，本來就有其他法律可以處理，不需要事前管制。"
+      sources:
+        - kind: gazette
+          title: "立法院第9屆第1會期內政委員會第10次全體委員會議紀錄 公報 集會遊行法修正草案 委員鄭麗君、KolasYotaka、尤美女發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/105/29/LCIDC01_1052901_00004.pdf"
+          date: "2016-04-25"
+          speaker: "鄭麗君、KolasYotaka、尤美女"
+    con:
+      text: "反對者認為，美國、日本等民主國家也有許可制；事前申請讓主管機關能掌握路線與地點，協調交通、評估安全，避免團體間衝突。大法官釋字第445號也認為，只審查時間、地點與方式的許可制並不違憲；緊急與偶發性集會已不需事先許可，現制足以兼顧自由與秩序。"
+      sources:
+        - kind: official
+          title: "司法院大法官釋字第445號解釋（1998）"
+          url: "https://cons.judicial.gov.tw/docdata.aspx?fid=100&id=310626"
+          date: "1998-01-23"
+        - kind: gazette
+          title: "立法院第9屆第1會期內政委員會第10次全體委員會議紀錄 公報 警政署署長陳國恩說明各國集會遊行制度"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/105/29/LCIDC01_1052901_00004.pdf"
+          date: "2016-04-25"
+          speaker: "陳國恩"
+  - question: L05
+    pro:
+      text: "支持者認為，健保等個人資料極為敏感，若只憑「國家安全」「急迫危險」「公共利益」等抽象字眼，就能排除人民的退出權、擴大政府利用，等於由資料持有者自己說了算。限制人民的資訊自主，應由法律明確規定要件，並經獨立審查與公告程序把關，才能避免濫用。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第3會期社會福利及衛生環境委員會第18次全體委員會議紀錄 公報 全民健康保險資料管理條例草案 委員林淑芬、陳昭姿發言"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/114/63/LCIDC01_1146302_00003.pdf"
+          date: "2025-06-26"
+          speaker: "林淑芬、陳昭姿"
+        - kind: news
+          title: "健保資管條例三讀》民眾得請求退出健保資料利用 但「例外條款」恐讓退出權形同虛設（民報）"
+          url: "https://www.peoplenews.tw/?p=1016"
+          date: "2025-12-02"
+          speaker: "林淑芬、陳昭姿"
+    con:
+      text: "反對者認為，健保是強制納保的社會保險，資料的公益利用本就不以個人同意為前提。遇到重大疫情時，若民眾可任意退出，就無法分析疫苗是否有效；偵辦詐騙時，調取基本資料若要層層申請，也會錯失時機。做好假名化與安全控管，合理利用資料仍能兼顧隱私。"
+      sources:
+        - kind: gazette
+          title: "立法院第11屆第3會期社會福利及衛生環境委員會第18次全體委員會議紀錄 公報 全民健康保險資料管理條例草案 衛生福利部部長邱泰源報告、代理司長陳真慧說明"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/114/63/LCIDC01_1146302_00003.pdf"
+          date: "2025-06-26"
+          speaker: "邱泰源、陳真慧"
+        - kind: gazette
+          title: "立法院第11屆第1會期司法及法制委員會第31次全體委員會議紀錄 公報 通訊保障及監察法修正草案 法務部部長鄭銘謙答詢"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/113/57/LCIDC01_1135701_00008.pdf"
+          date: "2024-06-06"
+          speaker: "鄭銘謙"

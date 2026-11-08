@@ -1,0 +1,52 @@
+entity: chen-bingfu
+stances:
+- question: B_ROADS
+  value: 1
+  interpretation: 公報政見主張增設或更新停車場、改善道路，判為增加。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: '一、改善台北停車問題
+
+      ・爭取於校園改建時增設地下停車場，創造更多停車空間。
+
+      ・推動更新現有老舊立體停車場、增設新式機械停車場。'
+    context: 公報第5頁（PDF 第1頁），號次5 陳炳甫（推薦政黨：中國國民黨）的政見欄。2022-11-26 為投票日。
+    timestamp: null
+- question: B_CHILDCARE
+  value: 1
+  interpretation: 公報政見主張增設公立或公共化托育、幼兒園，判為增加。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: '二、打造友善育兒城市
+
+      ・爭取新設服務業家長適用時段之公托，讓更多家長可享受公托福利。'
+    context: 公報第5頁（PDF 第1頁），號次5 陳炳甫（推薦政黨：中國國民黨）的政見欄。2022-11-26 為投票日。
+    timestamp: null
+- question: B_TRANSIT
+  value: 1
+  interpretation: 公報政見主張推動或加速捷運路線、增設車站或擴充公車等大眾運輸，判為增加。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: '五、推動民生汐止線
+
+      ・督促市府加速捷運興建工程，提供居民便捷交通並促進沿線商圈發展。'
+    context: 公報第5頁（PDF 第1頁），號次5 陳炳甫（推薦政黨：中國國民黨）的政見欄。2022-11-26 為投票日。
+    timestamp: null

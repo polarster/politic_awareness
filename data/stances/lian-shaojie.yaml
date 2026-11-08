@@ -1,0 +1,62 @@
+entity: lian-shaojie
+stances:
+- question: B_CHILDCARE
+  value: 1
+  interpretation: 公報政見主張增設公立或公共化托育、幼兒園，判為增加。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: '都市育兒不孤單，多元支持親子家庭
+
+      ●增設社區公共托育家園，試辦夜間與臨時托育'
+    context: 公報第5頁（PDF 第1頁），號次7 連紹傑（推薦政黨：小民參政歐巴桑聯盟）的政見欄。2022-11-26 為投票日。
+    timestamp: null
+- question: B_HOUSING
+  value: 1
+  interpretation: 公報政見主張增建社會住宅或調降社宅租金，都需要市府投入更多經費，判為增加。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: '打造宜居城市，生活安心又無礙
+
+      ●持續增設社會住宅，增加開發回饋社宅比例'
+    context: 公報第5頁（PDF 第1頁），號次7 連紹傑（推薦政黨：小民參政歐巴桑聯盟）的政見欄。2022-11-26 為投票日。
+    timestamp: null
+- question: B_PARKS
+  value: 1
+  interpretation: 公報政見主張增設、改善公園或人行道，判為增加。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: ●拓寬人行道，淨空路阻和人行道障礙，改善標線型人行道設計和道路夜間照明，斑馬線退縮，維護各族群慢行者移動的權利
+    context: 公報第5頁（PDF 第1頁），號次7 連紹傑（推薦政黨：小民參政歐巴桑聯盟）的政見欄。2022-11-26 為投票日。
+    timestamp: null
+- question: B_TRANSIT
+  value: 1
+  interpretation: 公報政見主張推動或加速捷運路線、增設車站或擴充公車等大眾運輸，判為增加。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: ●擴大低碳交通網絡，增加電動公車及YouBike親子車，推行市立醫院無障礙接駁車
+    context: 公報第5頁（PDF 第1頁），號次7 連紹傑（推薦政黨：小民參政歐巴桑聯盟）的政見欄。2022-11-26 為投票日。
+    timestamp: null

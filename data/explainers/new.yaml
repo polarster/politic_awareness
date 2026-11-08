@@ -1,0 +1,231 @@
+# 名詞與背景、正反說法的白話說明（勞動、國營事業、稅負、公民自由）
+# 規則：中立；不提政黨與政治人物名字；plain 不加入原說法以外的事實或論點。
+explainers:
+  - question: E06
+    terms:
+      - term: 加班時數上限
+        text: "《勞動基準法》規定，加班每月原則上不得超過46小時；經工會或勞資會議同意，可放寬到每月54小時，但每三個月合計不得超過138小時。"
+        sources:
+          - kind: official
+            title: "勞動基準法 第32條（全國法規資料庫）"
+            url: "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0030001"
+      - term: 輪班間隔
+        text: "輪班工作更換班次時，中間至少要有連續11小時的休息；特殊行業經主管機關公告，並經工會或勞資會議同意，可縮短為不少於連續8小時。"
+        sources:
+          - kind: official
+            title: "勞動基準法 第34條（全國法規資料庫）"
+            url: "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0030001"
+      - term: 連續工作天數
+        text: "《勞動基準法》規定勞工每7天中應有2天休息，其中1天是例假，原則上最多連續上班6天；經主管機關指定的行業，經工會或勞資會議同意，可改為每2週至少2天例假，或在每7天的週期內挪動例假，因此可能連續上班超過6天。"
+        sources:
+          - kind: official
+            title: "勞動基準法 第36條（全國法規資料庫）"
+            url: "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0030001"
+      - term: 勞資會議
+        text: "事業單位內由勞方與資方代表共同組成的協商會議。依《勞動基準法》，沒有工會的公司，延長加班上限、縮短輪班間隔等彈性安排，須經勞資會議同意。"
+        sources:
+          - kind: official
+            title: "勞動基準法（全國法規資料庫）"
+            url: "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0030001"
+    plain:
+      pro: "支持的人認為，各行業不同，同一套規定難做到：少數行業輪班難隔11小時，陪喪家的殯葬人員、機構褓姆難七休一；現在的加班上限讓旺季長的產業人手調不過來，想加班賺錢的人也沒機會。有保障地放寬，勞資都好。"
+      con: "反對的人認為，勞資不對等，工會少、勞資會議常只是形式，勞工很難說不。台灣工時已經很長，現在的例外已可能連上12天、換班只隔8小時，扣掉通勤睡不飽，更容易得心臟病；再放寬就是彈性給企業、過勞給勞工。"
+
+  - question: E07
+    terms:
+      - term: 國營事業
+        text: "依《國營事業管理法》，指政府獨資經營，或與民間合資但政府資本超過一半的事業，例如台灣電力公司、台灣中油，須受立法院預算監督。"
+        sources:
+          - kind: official
+            title: "國營事業管理法 第3條（全國法規資料庫）"
+            url: "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0120001"
+    background:
+      text: "2017年《電業法》修正後，再生能源發電業可直接把電賣給用戶，但輸電、配電仍由台電經營。台鐵則於2024年1月1日改制為「國營臺灣鐵路股份有限公司」，政府仍持有全部股份。"
+      sources:
+        - kind: official
+          title: "電業法（全國法規資料庫）"
+          url: "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0030011"
+        - kind: official
+          title: "國營臺灣鐵路股份有限公司設置條例（全國法規資料庫）"
+          url: "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0000198"
+        - kind: news
+          title: "台鐵公司揭牌（新頭殼）"
+          url: "https://newtalk.tw/news/view/2024-01-01/903142"
+          date: "2024-01-01"
+    plain:
+      pro: "支持的人認為，電力是民生必需，維持大型穩定供電的國營台電，政府才能管住電價、為電價負責。沒有大型國營電業，可能像媒體、電信那樣在財團之間買來買去、炒高行情。"
+      con: "反對的人認為，國營電業常為了照顧民生、穩定物價凍漲電價，台電近年低於成本賣電，虧損四千多億要靠稅金補。開放公平競爭、讓民間參與電力建設，能提升效率和供電穩定。"
+
+  - question: E08
+    terms:
+      - term: 稅收超徵
+        text: "指全年實際徵收的稅收（實徵數）高於預算編列時預估的數字。財政部認為這是依法徵收、只是稅收優於預期，不等於政府有多餘的錢；也有人認為代表人民被多收了稅。"
+        sources:
+          - kind: news
+            title: "立院召開還稅於民公聽會 財政部提3理由反對（公視）"
+            url: "https://news.pts.org.tw/article/741378"
+            date: "2025-03-10"
+    background:
+      text: "2024年全國稅收3兆7619億元，比預算多出5283億元，創歷史新高，也是連續第4年超徵。2025年7月立法院三讀通過特別條例，其中包括以特別預算普發每人1萬元現金。超徵稅收的用途，實際討論還包括普發現金與償還債務。"
+      sources:
+        - kind: news
+          title: "稅收超徵創新高 國民黨拋還錢於民2.0（立法院全球資訊網）"
+          url: "https://www.ly.gov.tw/Pages/Detail.aspx?nodeid=54301&pid=248675"
+          date: "2025-02-13"
+        - kind: news
+          title: "立院召開還稅於民公聽會 財政部提3理由反對（公視）"
+          url: "https://news.pts.org.tw/article/741378"
+          date: "2025-03-10"
+        - kind: official
+          title: "因應國際情勢強化經濟社會及民生國安韌性特別條例（三讀通過條文）"
+          url: "https://ppg.ly.gov.tw/ppg/BillThirdReadingPassesClause/download/resources/ppgb32100/D_202508041044520.pdf"
+          date: "2025-07-11"
+        - kind: official
+          title: "財政部「稅收超徵還稅於民」公聽會書面報告"
+          url: "https://ppg.ly.gov.tw/ppg/SittingAttachment/download/2025030587/01253002907040007002.pdf"
+          date: "2025-03-10"
+        - kind: gazette
+          title: "立法院第11屆第3會期財政委員會第1次公聽會「稅收超徵還稅於民」公聽會紀錄（立法院公報第114卷第25期）"
+          url: "https://ppg.ly.gov.tw/ppg/SittingCommitteesInfo/download/communique1/final/pdf/114/25/LCIDC01_1142501_00017.pdf"
+          date: "2025-03-10"
+    plain:
+      pro: "支持的人認為，政府年年超收，每年讓千萬上班族各少繳2萬元稅也才2,000億，做得到。增加社福、教育支出沒錯，但最直接讓大家受惠的是減稅；稅收比經濟成長快很多，也代表稅負變重、稅制該改。"
+      con: "反對的人認為，稅收比預算多不代表政府有多的錢，不看整體收支就還稅於民，可能要借錢發現金。多的稅收應該用來照顧人民，例如育兒補助、高中職免學費、長照3.0。"
+
+  - question: L01
+    terms:
+      - term: 數位中介服務法草案
+        text: "主管機關2022年提出的草案，擬規範網路平台處理違法內容的責任。因各界擔心影響言論自由，行政院同年決定暫緩推動。"
+        sources:
+          - kind: news
+            title: "數位中介法草案爭議，NCC 將找數位部協商（科技新報）"
+            url: "https://technews.tw/2022/08/25/controversy-over-draft-law-on-digital-intermediaries/"
+            date: "2022-08-25"
+          - kind: news
+            title: "數位中介服務法草案爭議 NCC暫緩公聽會（公視新聞網）"
+            url: "https://news.pts.org.tw/article/595977"
+            date: "2022-08-19"
+    plain:
+      pro: "支持的人認為，防疫、災害等法律本就禁止傳播特定假訊息，主管機關應可要求平台處理，並請法院發限制令。裁定前先加最多30天的中立警語，不是下架，是提醒多看其他來源。"
+      con: "反對的人認為，由行政機關認定什麼是假訊息，還在法院裁定前就要求加警語，易讓行政權過大、壓制言論，警語也像貼「黃標」。言論自由是台灣可貴之處，這類法案不該再推出。"
+
+  - question: L02
+    terms:
+      - term: 通訊監察
+        text: "俗稱監聽，指執法或情報機關在當事人不知情下，取得其電話、網路等通訊內容。依《通訊保障及監察法》，偵查犯罪的監聽原則上須由法官核發通訊監察書；國安監聽則由國家情報機關首長核發。"
+        sources:
+          - kind: official
+            title: "通訊保障及監察法 第5、7條（全國法規資料庫）"
+            url: "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0060044"
+      - term: 網路流量紀錄
+        text: "指使用電信服務上網時產生的設備識別資料、IP位址與位置、連線時間與用量、網域名稱等紀錄，不含通訊內容。國家情報機關可直接向電信業者調取國安監察對象的這類紀錄，不須法院核發調取票。"
+        sources:
+          - kind: official
+            title: "通訊保障及監察法 第3-1條、第11-1條（全國法規資料庫）"
+            url: "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0060044"
+    background:
+      text: "依現行法律，國家情報機關監察與外國勢力或境外敵對勢力相關的通訊時，若對象在國內設有戶籍，須先經高等法院專責法官同意；情況急迫時可先執行，再補行同意。2024年修法時，把國家安全法、反滲透法的部分罪名列入偵查犯罪可聲請監聽的範圍，可調取的紀錄也擴及網路流量紀錄。"
+      sources:
+        - kind: official
+          title: "通訊保障及監察法 第5、7、11-1條（全國法規資料庫）"
+          url: "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0060044"
+        - kind: official
+          title: "通訊保障及監察法 沿革（全國法規資料庫）"
+          url: "https://law.moj.gov.tw/LawClass/LawHistory.aspx?pcode=K0060044"
+          date: "2024-07-31"
+    plain:
+      pro: "支持的人認為，境外敵對勢力威脅日增，為了國安，應把國安法、反滲透法的罪名納入可監聽範圍。現在已是混合戰時代，面對認知作戰，情報機關也需要網路平台配合提供數據，才能及早掌握異常訊息流動並預警。"
+      con: "反對的人認為，「國家安全」很容易被拿來當理由，國安監聽外國人一次可長達一年，也可能聽到國人跨境的通訊。情報機關還能直接向電信業者拿通聯和上網紀錄，不經法院、也不公布統計，修法擴大範圍時也沒補上規範。"
+
+  - question: L03
+    terms:
+      - term: 明確而立即的危險
+        text: "源自美國法院的言論自由審查標準：只有言論會明顯、立即引發嚴重危害時，政府才可以限制。台灣大法官釋字第445號審查集會遊行限制時，也用過「明顯而立即危險」的概念。"
+        sources:
+          - kind: official
+            title: "釋字第445號解釋（憲法法庭）"
+            url: "https://cons.judicial.gov.tw/docdata.aspx?fid=100&id=310626"
+            date: "1998-01-23"
+      - term: 公然侮辱罪
+        text: "《刑法》第309條，處罰在公開場合侮辱他人。2024年憲法法庭判決此罪合憲，但限縮為故意貶損他人名譽、且超過一般人可合理忍受的範圍時才成立。"
+        sources:
+          - kind: news
+            title: "公然侮辱罪合憲但限縮範圍 憲法法庭：故意貶損他人名譽才構成（中央社）"
+            url: "https://www.cna.com.tw/news/asoc/202404260274.aspx"
+            date: "2024-04-26"
+      - term: 寒蟬效應
+        text: "指人們因為擔心受罰或惹上官司，即使言論本身合法也選擇不說，使得公共討論變少、多元意見難以出現的現象。"
+        sources:
+          - kind: reference
+            title: "寒蟬效應（維基百科）"
+            url: "https://zh.wikipedia.org/zh-tw/寒蟬效應"
+      - term: 除罪化
+        text: "把原本會處以刑罰的行為，改成不再用刑法處罰；但行為人仍可能要負民事賠償，或受行政罰等其他法律責任。"
+        sources:
+          - kind: reference
+            title: "除罪化（維基百科）"
+            url: "https://zh.wikipedia.org/zh-tw/除罪化"
+    plain:
+      pro: "支持的人認為，言論自由最該保護激烈批評政府的話。用刑罰處罰侮辱言論，標準主觀、判決不一，易讓抗議者因言入罪、不敢發聲。名譽受損可用民事賠償，除罪化也是國際趨勢。"
+      con: "反對的人認為，言論自由有界限，憲法也允許為秩序立法限制。有人匿名在網路辱罵，被害人孤立受傷，民事求償難及時蒐證，執法人員也常被罵。完全不用刑罰，恐助長網路霸凌。"
+
+  - question: L04
+    terms:
+      - term: 許可制
+        text: "集會遊行前須向主管機關（警察機關）申請，經核准才能舉行；未經許可或違反限制時，主管機關可命令解散並處罰。現行《集會遊行法》對室外集會遊行採用此制度。"
+        sources:
+          - kind: official
+            title: "集會遊行法 第8條（全國法規資料庫）"
+            url: "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0080058"
+      - term: 報備制
+        text: "集會遊行前只需通知主管機關時間、地點與路線，不必取得同意。主管機關的角色主要是協助交通與安全維護，而不是決定能不能舉行。"
+        sources:
+          - kind: official
+            title: "釋字第718號解釋（憲法法庭）"
+            url: "https://cons.judicial.gov.tw/docdata.aspx?fid=100&id=310899"
+            date: "2014-03-21"
+    background:
+      text: "2014年大法官釋字第718號認定，法律要求緊急性、偶發性集會遊行也要事先申請許可，違反憲法，相關規定自2015年起失效。其餘室外集會遊行至今仍採許可制。"
+      sources:
+        - kind: official
+          title: "釋字第718號解釋（憲法法庭）"
+          url: "https://cons.judicial.gov.tw/docdata.aspx?fid=100&id=310899"
+          date: "2014-03-21"
+        - kind: official
+          title: "集會遊行法（全國法規資料庫）"
+          url: "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0080058"
+    plain:
+      pro: "支持的人認為，集會遊行是憲法保障的人權，警察事前核准、禁止或解散，不符國際人權標準。報備是請政府協助交通和保護，不是取得許可；現場若危害公安，已有其他法律處理。"
+      con: "反對的人認為，美國、日本也有許可制；先申請，政府才能協調路線、交通和安全，避免團體衝突。大法官也認為只管時間地點方式的許可制不違憲，緊急集會已免許可，現制就夠了。"
+
+  - question: L05
+    terms:
+      - term: 健保資料目的外利用
+        text: "健保署為辦理健保業務蒐集民眾就醫、用藥等資料；把這些資料另外提供給學術研究、政策分析等其他用途，稱為「特定目的外利用」。"
+        sources:
+          - kind: official
+            title: "全民健康保險資料管理條例（全國法規資料庫）"
+            url: "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0060042"
+      - term: 退出權
+        text: "指個人可以要求機關停止把自己的資料用在原本蒐集目的以外的用途。2022年憲法法庭判決，認為健保資料目的外利用缺少讓人民退出的機制，要求3年內修法。"
+        sources:
+          - kind: official
+            title: "立法院三讀通過「全民健康保險資料管理條例」 保障個人資訊隱私權及健保資料合理利用（衛生福利部）"
+            url: "https://mohw.gov.tw/cp-16-84706-1.html"
+            date: "2025-12-02"
+      - term: 假名化
+        text: "把資料中的姓名、身分證號等直接識別資訊換成代碼，不透過另外存放的對照資訊，就無法認出是誰。持有對照資訊的人仍可能還原，因此須分開存放並加強保護。"
+        sources:
+          - kind: official
+            title: "全民健康保險資料管理條例 第3條（全國法規資料庫）"
+            url: "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0060042"
+    background:
+      text: "《全民健康保險資料管理條例》於2025年12月公布，把健保資料目的外利用的規範從行政命令提升為法律，並納入請求停止利用等機制。"
+      sources:
+        - kind: official
+          title: "全民健康保險資料管理條例（全國法規資料庫）"
+          url: "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0060042"
+          date: "2025-12-19"
+    plain:
+      pro: "支持的人認為，健保等個資很敏感，只憑「國家安全」「公共利益」等抽象字眼就能取消退出權、擴大政府使用，等於持有者說了算。應由法律明訂條件，並經獨立審查、公告把關。"
+      con: "反對的人認為，健保是強制納保，資料公益利用本不以個人同意為前提。大疫情時若能任意退出，就無法分析疫苗效果；查詐騙層層申請會誤事。做好假名化和控管就能兼顧隱私。"

@@ -121,7 +121,7 @@ export interface CuratedVote {
 }
 
 export interface ArgumentSource {
-  kind: "gazette" | "minutes" | "official" | "news";
+  kind: "gazette" | "minutes" | "official" | "news" | "org" | "research";
   title: string;
   url: string;
   date?: string;
@@ -132,6 +132,20 @@ export interface ArgumentSide {
   text: string;
   sources: ArgumentSource[];
   note?: string;
+}
+
+export interface ExplainerSource {
+  kind: "gazette" | "minutes" | "official" | "news" | "org" | "research" | "reference";
+  title: string;
+  url: string;
+  date?: string;
+}
+
+/** 名詞與背景、正反說法的白話說明 */
+export interface Explainer {
+  terms: { term: string; text: string; sources: ExplainerSource[] }[];
+  background?: { text: string; sources: ExplainerSource[] } | null;
+  plain: { pro: string; con: string };
 }
 
 export interface Stance {
@@ -151,6 +165,7 @@ export interface AppData {
   discussions: Discussion[];
   votes: CuratedVote[];
   arguments: Record<string, { pro: ArgumentSide; con: ArgumentSide }>;
+  explainers: Record<string, Explainer>;
   budget: BudgetConfig;
   entities: Entity[];
   stances: Record<string, Stance[]>;
@@ -163,6 +178,7 @@ export interface Answer {
 }
 
 export type Answers = Record<string, Answer>;
+export type Journey = "none" | "doing" | "done";
 export type BudgetSteps = Record<string, number>;
 
 export type Adjustment =

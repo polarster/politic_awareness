@@ -1,6 +1,6 @@
 # 主問卷。direction: 1 表示同意 → 往該軸 positive_pole；-1 表示同意 → 往 negative_pole。
 # axis: null 表示不計入任何軸，只做逐題比對。
-version: 2026.11-draft2
+version: 2026.11-draft4
 questions:
   # ── 全國層：兩岸與國家認同 ──
   - id: N01
@@ -13,7 +13,7 @@ questions:
     layer: national
     axis: identity
     direction: -1
-    text: 中華民國（台灣）與中華人民共和國互不隸屬。
+    text: 中華民國（台灣）與中華人民共和國是國與國的關係。
   - id: N03
     layer: national
     axis: identity
@@ -24,18 +24,11 @@ questions:
     axis: identity
     direction: 1
     text: 應擴大與中國的經貿往來，例如簽訂服務業或貨品貿易協議。
-  - id: N05
-    layer: national
-    axis: identity
-    direction: -1
-    text: 應移除公共空間中的威權人物雕像。
-
-  # ── 全國層：國防與外交 ──
   - id: D01
     layer: national
     axis: defense
     direction: 1
-    text: 國防預算應提高到 GDP 的 3% 以上。
+    text: 國防預算應在 2030 年前提高到 GDP 的 5%。
   - id: D02
     layer: national
     axis: defense
@@ -88,7 +81,7 @@ questions:
     layer: national
     axis: market
     direction: 1
-    text: 應放寬勞動法規（例如工時、解僱規定），讓企業用人更有彈性。
+    text: 應放寬工時等勞動規定（例如加班時數上限、輪班間隔），讓企業用人更有彈性。
   - id: E07
     layer: national
     axis: market
@@ -98,7 +91,7 @@ questions:
     layer: national
     axis: welfare
     direction: 1
-    text: 應降低整體稅負，即使社會福利因此減少。
+    text: 政府稅收超徵時，應優先用於減稅，而不是擴大社會福利支出。
 
   # ── 全國層：社會價值 ──
   - id: S01
@@ -115,7 +108,7 @@ questions:
     layer: national
     axis: social
     direction: -1
-    text: 應放寬外籍人士歸化，以及移工轉為長期居留的條件。
+    text: 應放寬移工轉為長期居留（留才久用）的條件。
   - id: S04
     layer: national
     axis: liberty
@@ -130,7 +123,7 @@ questions:
     layer: national
     axis: social
     direction: 1
-    text: 中小學應加強傳統倫理與品德教育。
+    text: 中小學應以四維八德等傳統德目為核心，加強品德教育。
 
   # ── 全國層：公民自由與國家權力（S04 也屬於這條軸） ──
   - id: L01
@@ -152,7 +145,7 @@ questions:
     layer: national
     axis: liberty
     direction: -1
-    text: 集會遊行應改為報備制，政府不應事先許可或限制。
+    text: 集會遊行應由許可制改為報備制：事先通知即可，不需政府核准。
   - id: L05
     layer: national
     axis: liberty
@@ -179,12 +172,8 @@ questions:
     layer: national
     axis: environment
     direction: 1
-    text: 為了穩定供電，可以增加天然氣發電，即使碳排放因此增加。
-  - id: V05
-    layer: national
-    axis: environment
-    direction: 1
-    text: 環評程序應該簡化，以加快重大建設的進度。
+    text: 未來新增的發電應以天然氣為主、再生能源為輔。
+    note: 本題只比較天然氣與再生能源；對核電的看法另有一題。
 
   # ── 全國層：不計入維度 ──
   - id: G01
@@ -197,7 +186,7 @@ questions:
     layer: national
     axis: null
     direction: 0
-    text: 立法院應擁有調查權與聽證權（如 2024 年國會改革法案的內容）。
+    text: 支持 2024 年立法院通過的國會改革法案（擴大立法院調查權與聽證權，並增訂藐視國會罪）。
 
   # ── 雙北市政層：政策題（預算以外） ──
   - id: M07
@@ -215,7 +204,7 @@ questions:
     layer: municipal
     axis: null
     direction: 0
-    text: 雙北應更緊密整合，例如共同規劃交通、垃圾處理等跨市事務。
+    text: 雙北應建立「共治」機制，由兩市共同決策交通、垃圾處理等跨市事務，而不只是個案合作。
   - id: M10
     layer: municipal
     axis: null

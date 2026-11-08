@@ -1,0 +1,32 @@
+id: chen-yijun
+type: person
+name: 陳怡君
+party: null
+roles:
+- title: 台北市議員
+  since: '2018-12-25'
+  note: 第13、14屆
+candidacy:
+  election: 2026-local
+  office: 台北市議員
+  district: 臺北市第4選舉區（中山、大同）
+  party_at_registration: 無
+  source: https://www.setn.com/news/1901722
+past_candidacies:
+- election: 2022-local
+  office: 台北市議員
+  district: 臺北市第4選舉區（中山、大同）
+  number: 1
+  party_at_registration: 民主進步黨
+  votes: 15782
+  elected: true
+  source: https://zh.wikipedia.org/zh-tw/2022年臺北市議員選舉
+inclusion_reason: 2022 年臺北市議員第4選舉區（中山、大同）選舉公報候選人；2026 年再度登記參選
+note: 2022 年以民進黨提名參選並當選。2026 年因一審判決遭民進黨停權 2 年 6 個月、未能參加黨內初選，以無黨籍登記參選連任。
+links:
+  bulletin_2022: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+  registration_2026: https://www.setn.com/news/1901722
+  news:
+  - title: 陳怡君遭停權2年半！50萬初選費用去哪　綠北市黨部說話了
+    url: https://news.tvbs.com.tw/politics/3120315
+    date: '2026-02-05'

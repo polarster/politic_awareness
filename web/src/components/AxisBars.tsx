@@ -4,13 +4,14 @@ interface Props {
   scores: AxisScore[];
   /** 對答修正前的位置；有修正時以淡色標記顯示 */
   original?: AxisScore[];
+  originalLabel?: string;
 }
 
 function pct(v: number): number {
   return ((v + 2) / 4) * 100;
 }
 
-export function AxisBars({ scores, original }: Props) {
+export function AxisBars({ scores, original, originalLabel = "修正前" }: Props) {
   const shown = scores.filter((s) => s.value !== null);
   if (!shown.length) return <p className="muted">這一層沒有足夠的作答可以計算。</p>;
   return (
@@ -27,7 +28,7 @@ export function AxisBars({ scores, original }: Props) {
             <div className="axis-track" role="img"
               aria-label={`${s.axis.name}：${s.value!.toFixed(2)}，-2 為${s.axis.negative_pole}，+2 為${s.axis.positive_pole}`}>
               <div className="axis-mid" />
-              {moved && <div className="axis-dot axis-dot-orig" style={{ left: `${pct(o!)}%` }} title="修正前" />}
+              {moved && <div className="axis-dot axis-dot-orig" style={{ left: `${pct(o!)}%` }} title={originalLabel} />}
               <div className="axis-dot" style={{ left: `${pct(s.value!)}%` }} />
             </div>
             <div className="axis-poles small">
@@ -37,7 +38,7 @@ export function AxisBars({ scores, original }: Props) {
           </div>
         );
       })}
-      {original && <p className="muted small">空心圓點是與 Claude 對答修正前的位置。</p>}
+      {original && <p className="muted small">{originalLabel === "修正前" ? "空心圓點是與 Claude 對答修正前的位置。" : `空心圓點是${originalLabel}的位置。`}</p>}
     </div>
   );
 }

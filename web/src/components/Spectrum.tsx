@@ -34,8 +34,9 @@ interface Props {
   parties: SpectrumParty[];
   /** 強調的政黨（橘色） */
   highlightId?: string | null;
-  /** 對答修正前的你（虛線） */
+  /** 對照用的你（虛線）：簡單版是對答修正前，完整版是第一直覺 */
   original?: AxisScore[] | null;
+  originalLabel?: string;
   /** 各軸權重（0–3），只影響距離排序 */
   weights?: Record<string, number>;
   onWeight?: (axisId: string, w: number) => void;
@@ -71,10 +72,20 @@ function RankStrip({ ranks, parties, highlightId, size = 22 }: {
 function OverallRank({ you, parties, weights, highlightId }: {
   you: AxisScore[]; parties: SpectrumParty[]; weights: Record<string, number>; highlightId?: string | null;
 }) {
-  const ranks = rankByDistance(you, parties, weights);
   const totalAxes = you.filter((s) => s.value !== null && (weights[s.axis.id] ?? 1) > 0).length;
-  if (!ranks.length) return null;
+  const all = rankByDistance(you, parties, weights);
+  // 有資料的軸不到一半的政黨，不列入排名（只靠一兩條軸的距離沒有代表性）
+  const ranks = all.filter((r) => r.axes * 2 >= totalAxes);
+  const left = all.filter((r) => r.axes * 2 < totalAxes).map((r) => parties.find((p) => p.id === r.id)!.label);
   const byId = new Map(parties.map((p) => [p.id, p]));
+  if (ranks.length < 2) {
+    return (
+      <div className="overall">
+        <strong>綜合排名</strong>
+        <p className="muted small">這一層的政黨立場資料還太少（多數政黨有資料的軸不到一半），暫不排名。各黨在個別軸上的位置仍標在下方光譜上。</p>
+      </div>
+    );
+  }
   return (
     <div className="overall">
       <div className="overall-head">
@@ -87,17 +98,22 @@ function OverallRank({ you, parties, weights, highlightId }: {
           return (
             <li key={r.id} className={r.id === highlightId ? "hl" : ""}>
               <span className="overall-no">{i + 1}</span>
-              <PartyBadge info={badgeOf(p)} detail={`距離 ${r.distance.toFixed(2)}`} size={26} />
-              <span className="overall-name">{p.label}</span>
+              <PartyBadge info={badgeOf(p)} detail={`距離 ${r.distance.toFixed(2)}${r.axes < totalAxes ? `（依 ${r.axes}/${totalAxes} 條軸）` : ""}`} size={26} />
+              <span className="overall-name">{p.label}{r.axes < totalAxes && <sup className="muted">*</sup>}</span>
               <span className="overall-bar" aria-hidden="true">
                 <span style={{ width: `${(r.distance / 4) * 100}%`, ...pc(p.color) }} />
               </span>
               <span className="overall-d">{r.distance.toFixed(2)}</span>
-              {r.axes < totalAxes && <span className="muted small overall-cov">依 {r.axes}/{totalAxes} 條軸</span>}
             </li>
           );
         })}
       </ol>
+      {(ranks.some((r) => r.axes < totalAxes) || left.length > 0) && (
+        <p className="muted small overall-foot">
+          {ranks.some((r) => r.axes < totalAxes) && "* 部分軸沒有該黨資料，只用有資料的軸計算。"}
+          {left.length > 0 && `${left.join("、")}有資料的軸不到一半，未列入排名。`}
+        </p>
+      )}
     </div>
   );
 }
@@ -166,9 +182,9 @@ function useWidth<T extends HTMLElement>() {
   return [ref, w] as const;
 }
 
-function Row({ score, parties, highlightId, original, weight, onWeight }: {
-  score: AxisScore; parties: SpectrumParty[]; highlightId?: string | null; original?: number | null;
-  weight: number; onWeight?: (w: number) => void;
+function Row({ score, parties, highlightId, original, originalLabel = "修正前", weight, onWeight, showRank, totalParties }: {
+  score: AxisScore; parties: SpectrumParty[]; highlightId?: string | null; original?: number | null; originalLabel?: string;
+  weight: number; onWeight?: (w: number) => void; showRank: boolean; totalParties: number;
 }) {
   const [ref, width] = useWidth<HTMLDivElement>();
   const axisId = score.axis.id;
@@ -176,6 +192,7 @@ function Row({ score, parties, highlightId, original, weight, onWeight }: {
     .map((p) => ({ id: p.id, label: p.label, color: p.color, value: p.scores.find((s) => s.axis.id === axisId)?.value ?? null }))
     .filter((p): p is { id: string; label: string; color: string | undefined; value: number } => p.value !== null);
   const noData = parties.filter((p) => !withValue.some((w) => w.id === p.id)).map((p) => p.label);
+  // 黨徽直接放在軌道上；太近時往下錯開一排，用短線連回原位置
   const placed = width ? placeLabels(withValue, width, () => BADGE) : [];
   const info = new Map(parties.map((p) => [p.id, p]));
   const lanes = placed.reduce((m, p) => Math.max(m, p.lane + 1), 0);
@@ -186,7 +203,7 @@ function Row({ score, parties, highlightId, original, weight, onWeight }: {
     <div className={`spec-row ${weight === 0 ? "spec-off" : ""}`}>
       <div className="spec-head">
         <span className="spec-name">{score.axis.name}<span className="muted small">　依 {score.count} 題</span></span>
-        {onWeight && parties.length > 0 && (
+        {onWeight && withValue.length > 0 && (
           <span className="weight small" role="radiogroup" aria-label={`${score.axis.name}的權重`}>
             <span className="muted">權重</span>
             {WEIGHTS.map((w) => (
@@ -196,50 +213,47 @@ function Row({ score, parties, highlightId, original, weight, onWeight }: {
           </span>
         )}
       </div>
-      <div className="spec-poles small">
-        <span>{score.axis.negative_pole}</span>
-        <span>{score.axis.positive_pole}</span>
-      </div>
-      <div ref={ref} className="spec-area">
+      <div ref={ref} className="spec-area" style={{ paddingBottom: lanes > 1 ? (lanes - 1) * LANE_H : 0 }}>
         <div className="spec-track" role="img"
           aria-label={`${score.axis.name}：你 ${fmt(you)}；`
             + withValue.map((p) => `${p.label} ${fmt(p.value)}`).join("、")
             + `（-2 ${score.axis.negative_pole}，+2 ${score.axis.positive_pole}）`}>
           <div className="spec-mid" />
-          {placed.map((p) => (
-            <span key={p.id} className={`spec-dot ${p.id === highlightId ? "spec-dot-hl" : ""}`}
-              style={{ left: p.x, ...pc(p.color) }} title={`${p.label}：${fmt(p.value)}`} />
-          ))}
           {original != null && (
-            <div className="spec-pin spec-you spec-dashed" style={{ left: `${pct(original)}%` }} title={`修正前的你：${fmt(original)}`}>
-              <span>修正前</span>
-            </div>
+            <span className="spec-move" style={{ left: `${pct(Math.min(original, you))}%`, width: `${Math.abs(pct(original) - pct(you))}%` }} />
+          )}
+          {original != null && (
+            <div className="spec-pin spec-you spec-dashed spec-nolabel" style={{ left: `${pct(original)}%` }} title={`${originalLabel}的你：${fmt(original)}`} />
           )}
           <div className="spec-pin spec-you" style={{ left: `${pct(you)}%` }} title={`你：${fmt(you)}`}>
             <span style={{ transform: `translate(${youShift}, -2px)` }}>你</span>
           </div>
         </div>
-        <div className="spec-labels" style={{ height: lanes * LANE_H + (lanes ? 6 : 0) }}>
-          {placed.map((p) => {
-            const party = info.get(p.id)!;
-            return (
-              <div key={p.id}>
+        {placed.map((p) => {
+          const party = info.get(p.id)!;
+          return (
+            <div key={p.id}>
+              {p.lane > 0 && (
                 <span className={`spec-leader ${p.id === highlightId ? "hl" : ""}`}
-                  style={{ left: p.x, height: p.lane * LANE_H + 6, ...pc(p.color) }} />
-                <PartyBadge
-                  info={{ name: party.label, color: party.color, badge: party.badge, logo: party.logo }}
-                  detail={fmt(p.value)}
-                  highlight={p.id === highlightId}
-                  size={BADGE}
-                  align={p.left < 50 ? "start" : p.left > width - 80 ? "end" : "center"}
-                  style={{ position: "absolute", left: p.left, top: p.lane * LANE_H + 6 }}
-                />
-              </div>
-            );
-          })}
-        </div>
+                  style={{ left: p.x, top: 6, height: p.lane * LANE_H, ...pc(p.color) }} />
+              )}
+              <PartyBadge
+                info={{ name: party.label, color: party.color, badge: party.badge, logo: party.logo }}
+                detail={fmt(p.value)}
+                highlight={p.id === highlightId}
+                size={BADGE}
+                align={p.x < 50 ? "start" : p.x > width - 80 ? "end" : "center"}
+                style={{ position: "absolute", left: Math.min(Math.max(p.x - BADGE / 2, -4), width - BADGE + 4), top: 6 - BADGE / 2 + p.lane * LANE_H }}
+              />
+            </div>
+          );
+        })}
       </div>
-      {withValue.length > 0 && (
+      <div className="spec-poles small">
+        <span>{score.axis.negative_pole}</span>
+        <span>{score.axis.positive_pole}</span>
+      </div>
+      {showRank && withValue.length > 0 && (
         <div className="spec-rank small">
           <span className="muted">和你的距離（近 → 遠）</span>
           <RankStrip
@@ -248,24 +262,42 @@ function Row({ score, parties, highlightId, original, weight, onWeight }: {
           {weight === 0 && <span className="muted">（權重 0：不列入綜合排名）</span>}
         </div>
       )}
-      {noData.length > 0 && <p className="muted small spec-nodata">無資料：{noData.join("、")}</p>}
+      {totalParties > 0 && (withValue.length === 0
+        ? <p className="muted small spec-nodata">這條軸目前沒有政黨資料。</p>
+        : noData.length > 0 && <p className="muted small spec-nodata">無資料：{noData.join("、")}</p>)}
     </div>
   );
 }
 
 /** 光譜滑桿：每條軸左右對稱，兩端都是一種立場，中間是 0；所有有資料的政黨同時標示。 */
-export function Spectrum({ you, parties, highlightId, original, weights = {}, onWeight }: Props) {
+export function Spectrum({ you, parties, highlightId, original, originalLabel = "修正前", weights = {}, onWeight }: Props) {
+  const [showRank, setShowRank] = useState(false);
   const rows = you.filter((s) => s.value !== null);
   if (!rows.length) return <p className="muted">這一層沒有足夠的作答可以計算。</p>;
+  const anyMoved = rows.some((s) => {
+    const o = original?.find((x) => x.axis.id === s.axis.id)?.value ?? null;
+    return o !== null && Math.abs(o - s.value!) > 0.005;
+  });
   return (
     <div className="spectrum">
       {parties.length > 0 && <OverallRank you={you} parties={parties} weights={weights} highlightId={highlightId} />}
+      <div className="spec-legend small">
+        <span><i className="lg-you" />你</span>
+        {anyMoved && <span><i className="lg-orig" />{originalLabel}</span>}
+        {parties.length > 0 && <span className="muted">黨徽：各政黨的位置（點一下看名稱）</span>}
+        {parties.length > 0 && (
+          <label className="spec-rank-toggle">
+            <input type="checkbox" checked={showRank} onChange={(e) => setShowRank(e.target.checked)} />
+            顯示每條軸的距離排序
+          </label>
+        )}
+      </div>
       {rows.map((s) => {
         const o = original?.find((x) => x.axis.id === s.axis.id)?.value ?? null;
         const moved = o !== null && Math.abs(o - s.value!) > 0.005;
         return (
-          <Row key={s.axis.id} score={s} parties={parties} highlightId={highlightId} original={moved ? o : null}
-            weight={weights[s.axis.id] ?? 1}
+          <Row key={s.axis.id} score={s} parties={parties} highlightId={highlightId} original={moved ? o : null} originalLabel={originalLabel}
+            weight={weights[s.axis.id] ?? 1} showRank={showRank} totalParties={parties.length}
             onWeight={onWeight ? (w) => onWeight(s.axis.id, w) : undefined} />
         );
       })}

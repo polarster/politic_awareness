@@ -22,14 +22,16 @@ function divided(rec: VoteRecord): boolean {
 }
 
 function Curated({ focus }: { focus?: string }) {
-  const refs = useRef<Record<string, HTMLElement | null>>({});
+  // 用 Map 而不是一般物件：focus 來自網址，constructor、__proto__ 這類名稱不會取到原型鏈上的東西
+  const refs = useRef(new Map<string, HTMLElement>());
   useEffect(() => {
-    if (focus) refs.current[focus]?.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (focus) refs.current.get(focus)?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, [focus]);
   return (
     <>
       {data.votes.map((c) => (
-        <article key={c.id} id={c.id} ref={(el) => { refs.current[c.id] = el; }}
+        <article key={c.id} id={c.id}
+          ref={(el) => { if (el) refs.current.set(c.id, el); else refs.current.delete(c.id); }}
           className={`card vote-card ${focus === c.id ? "vote-focus" : ""}`}>
           <div className="step-head">
             <span className="eyebrow">{voteDate(c.records[0])}</span>
