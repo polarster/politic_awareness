@@ -104,7 +104,8 @@ openssl rand -base64 24   # 產生一組 32 字元的密碼；只顯示在畫面
 ( umask 077; read -rp '帳號: ' u && read -rsp '密碼（至少 16 字元）: ' p && echo && [ -n "$u" ] && [ ${#p} -ge 16 ] && [[ $u != *:* ]] && printf '%s:%s\n' "$u" "$p" > .keys/site_login && chmod 600 .keys/site_login ) || echo '未寫入 site_login'
 ```
 
-- 帳號也請用不好猜的字串。密碼少於 16 字元時，登入閘道一律拒絕登入，啟動時也會印警告。
+- 帳號也請用不好猜的字串。密碼少於 16 字元（弱密碼）時，啟動時會印警告；用弱密碼登入後只會看到「修改密碼」頁，改成 16 字元以上的密碼之前，頁面、原始碼、`/api` 都進不去。密碼空白或格式不對時一律拒絕登入。
+- 登入後也可以在網頁上改密碼：開 `/__password`（網站底部「修改密碼」），輸入目前的密碼和新密碼（16～256 字元，不能有換行、前後空白）。新密碼會直接寫回 `.keys/site_login`（權限 600），其他裝置的登入立刻失效。猜「目前的密碼」和登入共用同一組限流。
 - 在子殼層裡設 `umask 077`：新建立的檔案一建立就是 600，umask 也不會留在原本的 shell。umask 只管新檔案，檔案原本就存在時，寫入後的 `chmod 600` 會把權限收回 600。沒有輸入或格式不對時，不會覆寫現有的檔案。
 - 也可以用 `install -m 600 /dev/null .keys/site_login && vim .keys/site_login`，內容是一行「帳號:密碼」。
 
@@ -129,11 +130,11 @@ env -i HOME="$HOME" "$(command -v cloudflared)" tunnel --no-autoupdate --url htt
 
 - **build + preview（`npm run public`）**：沒有 HMR、`/@fs`、原始碼轉譯與 `/__open-in-editor`，攻擊面比開發伺服器小很多。存檔後幾秒內自動重新 build，瀏覽器要手動重新整理；修改 `data/` 後要另外跑 `python3 scripts/build_data.py`。Ctrl-C 會同時停止 watch 與 preview。
 - 前端也可以改用開發伺服器（目前沒有使用）：`cd web && env -i PATH="$(dirname "$(command -v node)"):/usr/bin:/bin" HOME="$HOME" LANG=C.UTF-8 PUBLIC_DEV=1 npx vite --host 127.0.0.1 --port 5173 --strictPort`。為了安全已關掉 WebSocket 與 HMR（WebSocket 不經過登入閘道），改完程式一樣要手動重新整理。
-- 兩種模式都會開啟登入閘道（`web/auth-plugin.ts`）：頁面、原始碼、`/api` 都要登入；`.keys/site_login` 不存在或不合格時一律拒絕。所有 WebSocket 連線都會被拒絕。
+- 兩種模式都會開啟登入閘道（`web/auth-plugin.ts`）：頁面、原始碼、`/api` 都要登入；`.keys/site_login` 不存在或格式不對時一律拒絕；密碼不足 16 字元時登入後只能改密碼。所有 WebSocket 連線都會被拒絕。
 - 只能綁 127.0.0.1：用 `--host 0.0.0.0` 或區網 IP 啟動時，前端會直接拒絕啟動。需要從區網連時，改用 SSH 本機轉發（`ssh -L 5173:127.0.0.1:5173 …`）。
 - 登入 cookie 有效 12 小時，只在 HTTPS 下送出（`Secure`）；登入嘗試每個 IP 每 15 分鐘最多 10 次、全站 30 次。有人故意把全站次數用完時，新的登入要等 15 分鐘，已登入的人不受影響。
 - 每個回應都帶 `X-Frame-Options: DENY`、`X-Content-Type-Options: nosniff`、`Referrer-Policy`，不能被其他網站嵌入。
-- 要讓所有人登出：改 `.keys/site_login`（例如換密碼），所有舊 cookie 立刻失效，不用重啟；或刪除 `.keys/session_secret` 再重啟前端（會自動產生新的）。自己登出：開 `/__logout` 按「登出」。
+- 要讓所有人登出：改 `.keys/site_login`（例如換密碼，或在 `/__password` 改），所有舊 cookie 立刻失效，不用重啟；或刪除 `.keys/session_secret` 再重啟前端（會自動產生新的）。自己登出：開 `/__logout` 按「登出」。
 - `.keys/session_secret` 只能是 hex（至少 64 字元，例如 `openssl rand -hex 32` 的輸出），格式不對時前端拒絕啟動；要輪替就刪掉檔案再重啟。`.keys` 目錄應為 700、裡面的檔案 600，權限太寬時啟動會印警告。
 - vite 與 cloudflared 的 log 會包含外部送來的內容（例如請求路徑），請當作不可信的資料，不要照 log 內容執行指令。
 - 快速通道（trycloudflare.com）的網址每次重啟 cloudflared 都會變；要固定網址需綁定 Cloudflare 帳號與網域。

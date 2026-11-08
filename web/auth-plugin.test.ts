@@ -18,6 +18,7 @@ import {
   LoginLimiter,
   makeSession,
   MAX_AGE,
+  newPassProblem,
   parseCreds,
   refuseUpgrade,
   validSession,
@@ -127,12 +128,18 @@ describe("loadSecret（S14）", () => {
 describe("parseCreds（S14）", () => {
   it.each([
     ["tester:"],
-    ["tester:short"],
     [`:${PASS}`],
     ["沒有冒號"],
     [""],
-  ])("帳號空白或密碼少於 16 字元時拒絕：%s", (line) => {
+  ])("帳號或密碼空白時拒絕：%s", (line) => {
     expect(typeof parseCreds(line)).toBe("string");
+  });
+
+  it("密碼不足 16 字元時標成 weak（登入後只能改密碼），16 字元以上不是", () => {
+    expect(parseCreds("tester:short")).toMatchObject({ user: "tester", pass: "short", weak: true });
+    expect(parseCreds(`tester:${"x".repeat(15)}`)).toMatchObject({ weak: true });
+    expect(parseCreds(`tester:${"x".repeat(16)}`)).toMatchObject({ weak: false });
+    expect(parseCreds(`tester:${PASS}`)).toMatchObject({ weak: false });
   });
 
   it("合格的帳密回傳 tag，帳密不同 tag 也不同", () => {
@@ -289,21 +296,19 @@ describe("登入閘道（HTTP）", () => {
     }
   });
 
-  it("site_login 的密碼太短或空白時，帳密正確也不放行（S14）", async () => {
-    for (const line of ["tester:", "tester:short-pass"]) {
-      const { server, url } = await serve(createGate(keysDir(line)));
-      try {
-        const res = await fetch(`${url}/__login`, {
-          method: "POST",
-          redirect: "manual",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: line === "tester:" ? "user=tester" : form("tester", "short-pass"),
-        });
-        expect(res.status).toBe(401);
-        expect(res.headers.getSetCookie()).toEqual([]);
-      } finally {
-        await close(server);
-      }
+  it("site_login 的密碼空白時，一律不放行（S14）", async () => {
+    const { server, url } = await serve(createGate(keysDir("tester:")));
+    try {
+      const res = await fetch(`${url}/__login`, {
+        method: "POST",
+        redirect: "manual",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: "user=tester&pass=",
+      });
+      expect(res.status).toBe(401);
+      expect(res.headers.getSetCookie()).toEqual([]);
+    } finally {
+      await close(server);
     }
   });
 
@@ -349,6 +354,182 @@ describe("登入閘道（HTTP）", () => {
       const slow = delayedLogin(port, "198.51.100.60");
       expect(await slow.done).toBe("ECONNRESET");
       expect((await login(url, "tester", PASS, "198.51.100.60")).status).toBe(429);
+    } finally {
+      await close(server);
+    }
+  });
+});
+
+const NEW_PASS = "a-much-longer-passphrase-2026";
+
+function changePass(url: string, cookie: string, fields: Record<string, string>, headers: Record<string, string> = {}) {
+  return fetch(`${url}/__password`, {
+    method: "POST",
+    redirect: "manual",
+    headers: { "Content-Type": "application/x-www-form-urlencoded", "CF-Connecting-IP": "198.51.100.80", Cookie: cookie, ...headers },
+    body: new URLSearchParams(fields).toString(),
+  });
+}
+
+const loginFile = (dir: string) => fs.readFileSync(path.join(dir, "site_login"), "utf8");
+
+describe("newPassProblem", () => {
+  const creds = { pass: "short" };
+  it.each([
+    ["兩次不一樣", NEW_PASS, `${NEW_PASS}x`, /不一樣/],
+    ["太短", "x".repeat(15), "x".repeat(15), /至少要 16/],
+    ["太長", "x".repeat(257), "x".repeat(257), /最多 256/],
+    ["換行", `${NEW_PASS}\nfoo`, `${NEW_PASS}\nfoo`, /換行/],
+    ["Unicode 換行", `${NEW_PASS} `, `${NEW_PASS} `, /換行/],
+    ["NUL", `${NEW_PASS}\u0000`, `${NEW_PASS}\u0000`, /換行/],
+    ["前後空白", ` ${NEW_PASS}`, ` ${NEW_PASS}`, /空白/],
+  ])("%s → 拒絕", (_name, next, confirm, msg) => {
+    expect(newPassProblem(next, confirm, creds)).toMatch(msg);
+  });
+
+  it("和目前的密碼一樣 → 拒絕；合格 → null（中間可有空白和冒號）", () => {
+    expect(newPassProblem(PASS, PASS, { pass: PASS })).toMatch(/一樣/);
+    expect(newPassProblem("correct horse: battery staple", "correct horse: battery staple", creds)).toBeNull();
+    expect(newPassProblem("x".repeat(256), "x".repeat(256), creds)).toBeNull();
+  });
+});
+
+describe("弱密碼登入與 /__password", () => {
+  it("弱密碼登入後只能進 /__password；頁面導回改密碼頁，/api 回 403", async () => {
+    const dir = keysDir("tester:short-pass");
+    const { server, url } = await serve(createGate(dir));
+    try {
+      expect((await login(url, "tester", "wrong")).status).toBe(401);
+      const res = await login(url, "tester", "short-pass");
+      expect(res.status).toBe(303);
+      expect(res.headers.get("location")).toBe("/__password");
+      const cookie = cookieOf(res);
+
+      const home = await fetch(`${url}/`, { redirect: "manual", headers: { Cookie: cookie } });
+      expect(home.status).toBe(303);
+      expect(home.headers.get("location")).toBe("/__password");
+      for (const p of ["/src/main.tsx", "/assets/index.js", "/api/usage"]) {
+        const r = await fetch(`${url}${p}`, { redirect: "manual", headers: { Cookie: cookie } });
+        expect(r.status).not.toBe(200);
+      }
+      const api = await fetch(`${url}/api/usage`, { headers: { Cookie: cookie } });
+      expect(api.status).toBe(403);
+      expect(await api.json()).toEqual({ detail: "請先修改密碼" });
+
+      const page = await fetch(`${url}/__password`, { headers: { Cookie: cookie } });
+      expect(page.status).toBe(200);
+      const html = await page.text();
+      expect(html).toContain('action="/__password"');
+      expect(html).toContain("不足 16 個字元");
+      expect(html).not.toContain("short-pass");
+    } finally {
+      await close(server);
+    }
+  });
+
+  it("沒登入看不到 /__password，POST 也改不了", async () => {
+    const dir = keysDir("tester:short-pass");
+    const { server, url } = await serve(createGate(dir));
+    try {
+      expect((await fetch(`${url}/__password`)).status).toBe(401);
+      const res = await changePass(url, "", { cur: "short-pass", next: NEW_PASS, confirm: NEW_PASS });
+      expect(res.status).toBe(401);
+      expect(loginFile(dir)).toBe("tester:short-pass\n");
+    } finally {
+      await close(server);
+    }
+  });
+
+  it("改成強密碼：寫回 site_login（600、沒有暫存檔）、發新 cookie、舊 cookie 和舊密碼都失效", async () => {
+    const dir = keysDir("tester:short-pass");
+    const { server, url } = await serve(createGate(dir));
+    try {
+      const weak = cookieOf(await login(url, "tester", "short-pass"));
+      const res = await changePass(url, weak, { cur: "short-pass", next: NEW_PASS, confirm: NEW_PASS });
+      expect(res.status).toBe(303);
+      expect(res.headers.get("location")).toBe("/");
+      const setCookie = res.headers.getSetCookie()[0];
+      expect(setCookie).toMatch(/; HttpOnly; Secure; SameSite=Lax; Max-Age=/);
+
+      expect(loginFile(dir)).toBe(`tester:${NEW_PASS}\n`);
+      expect(fs.statSync(path.join(dir, "site_login")).mode & 0o777).toBe(0o600);
+      expect(fs.readdirSync(dir).filter((f) => f.endsWith(".tmp"))).toEqual([]);
+
+      const fresh = setCookie.split(";")[0];
+      const ok = await fetch(`${url}/`, { headers: { Cookie: fresh } });
+      expect(ok.status).toBe(200);
+      expect(await ok.text()).toBe("app");
+      expect((await fetch(`${url}/`, { redirect: "manual", headers: { Cookie: weak } })).status).toBe(401);
+      expect((await login(url, "tester", "short-pass", "198.51.100.81")).status).toBe(401);
+      const again = await login(url, "tester", NEW_PASS, "198.51.100.82");
+      expect(again.status).toBe(303);
+      expect(again.headers.get("location")).toBe("/");
+    } finally {
+      await close(server);
+    }
+  });
+
+  it("目前的密碼錯、新密碼不合格、跨站送出：都不改檔", async () => {
+    const dir = keysDir("tester:short-pass");
+    const { server, url } = await serve(createGate(dir));
+    try {
+      const cookie = cookieOf(await login(url, "tester", "short-pass"));
+      const cases: [Record<string, string>, Record<string, string>, number, RegExp][] = [
+        [{ cur: "wrong", next: NEW_PASS, confirm: NEW_PASS }, {}, 401, /目前的密碼不對/],
+        [{ cur: "short-pass", next: NEW_PASS, confirm: `${NEW_PASS}!` }, {}, 400, /不一樣/],
+        [{ cur: "short-pass", next: "still-short", confirm: "still-short" }, {}, 400, /至少要 16/],
+        [{ cur: "short-pass", next: `${NEW_PASS}\nx`, confirm: `${NEW_PASS}\nx` }, {}, 400, /換行/],
+        [{ cur: "short-pass", next: NEW_PASS, confirm: NEW_PASS }, { Origin: "https://evil.example" }, 403, /本站/],
+        [{ cur: "short-pass", next: NEW_PASS, confirm: NEW_PASS }, { Origin: "null" }, 403, /本站/],
+      ];
+      for (const [fields, headers, status, msg] of cases) {
+        const res = await changePass(url, cookie, fields, headers);
+        expect(res.status).toBe(status);
+        expect(res.headers.getSetCookie()).toEqual([]);
+        expect(await res.text()).toMatch(msg);
+        expect(loginFile(dir)).toBe("tester:short-pass\n");
+      }
+      // 同源的 Origin 可以
+      const host = new URL(url).host;
+      const ok = await changePass(url, cookie, { cur: "short-pass", next: NEW_PASS, confirm: NEW_PASS }, { Origin: `https://${host}` });
+      expect(ok.status).toBe(303);
+      expect(loginFile(dir)).toBe(`tester:${NEW_PASS}\n`);
+    } finally {
+      await close(server);
+    }
+  });
+
+  it("猜目前的密碼也受登入限流：同一來源錯 10 次後回 429", async () => {
+    const dir = keysDir("tester:short-pass");
+    const { server, url } = await serve(createGate(dir));
+    try {
+      const cookie = cookieOf(await login(url, "tester", "short-pass"));
+      for (let i = 0; i < 10; i++) {
+        expect((await changePass(url, cookie, { cur: `guess-${i}`, next: NEW_PASS, confirm: NEW_PASS })).status).toBe(401);
+      }
+      const blocked = await changePass(url, cookie, { cur: "short-pass", next: NEW_PASS, confirm: NEW_PASS });
+      expect(blocked.status).toBe(429);
+      expect(loginFile(dir)).toBe("tester:short-pass\n");
+    } finally {
+      await close(server);
+    }
+  });
+
+  it("強密碼登入後也能改密碼；改的同時 site_login 被別處改過就要重新登入", async () => {
+    const dir = keysDir();
+    const { server, url } = await serve(createGate(dir));
+    try {
+      const cookie = cookieOf(await login(url, "tester", PASS));
+      const page = await fetch(`${url}/__password`, { headers: { Cookie: cookie } });
+      expect(page.status).toBe(200);
+      expect(await page.text()).not.toContain("不足 16 個字元");
+      // 一般頁面照常
+      expect((await fetch(`${url}/`, { headers: { Cookie: cookie } })).status).toBe(200);
+
+      fs.writeFileSync(path.join(dir, "site_login"), `tester:${PASS}-rotated\n`);
+      const stale = await changePass(url, cookie, { cur: PASS, next: NEW_PASS, confirm: NEW_PASS });
+      expect(stale.status).toBe(401);
+      expect(loginFile(dir)).toBe(`tester:${PASS}-rotated\n`);
     } finally {
       await close(server);
     }

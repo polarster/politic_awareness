@@ -2,7 +2,10 @@
  * 開發／預覽伺服器的登入閘道（PUBLIC_DEV=1 對外開放時使用）。
  *
  * - 帳密放在專案根目錄的 .keys/site_login，一行「帳號:密碼」，密碼至少 16 字元。
- *   檔案不存在或格式不符時一律拒絕登入（fail closed），並在終端機印出警告。
+ *   檔案不存在、格式不符或密碼空白時一律拒絕登入（fail closed），並在終端機印出警告。
+ * - 密碼不足 16 字元（弱密碼）時仍可登入，但登入後只能進 /__password 改密碼；
+ *   改成合格的密碼之前，頁面、原始碼、/api 都進不去。
+ * - /__password：登入後可改密碼（要再輸入目前的密碼），新密碼直接寫回 site_login（600、先寫暫存檔再改名）。
  * - 登入後發 HMAC 簽章的 cookie。簽章內容綁定目前的帳密，所以改了 site_login，
  *   所有舊 cookie 立刻失效（不用重啟）。簽章金鑰在 .keys/session_secret（hex），
  *   不存在時自動產生；內容不是 hex 時拒絕啟動，避免變成空金鑰。
@@ -21,7 +24,9 @@ import type { Connect, Plugin } from "vite";
 const COOKIE = "pa_session";
 export const MAX_AGE = 12 * 3600; // cookie 有效 12 小時
 export const MIN_PASS_LENGTH = 16;
+export const MAX_PASS_LENGTH = 256;
 const MAX_BODY = 4096;
+const MAX_PASSWORD_FORM_BODY = 16_384; // 三個欄位，每個最多 256 字元；中文 URL 編碼後一個字 9 bytes
 const SESSION_RE = /^(\d{1,12})\.([A-Za-z0-9_-]{43})$/;
 const HEX_SECRET_RE = /^[0-9a-f]{64,}$/i;
 // cloudflared 從本機連進來；只有這些來源送的 CF-Connecting-IP 才採用
@@ -93,19 +98,44 @@ function warnLoosePermissions(dir: string) {
 
 // ── 帳密 ──
 
-export type Creds = { user: string; pass: string; tag: string };
+/** weak：密碼不足 16 字元，登入後只能改密碼 */
+export type Creds = { user: string; pass: string; tag: string; weak: boolean };
 
-/** 解析 site_login：帳號不可為空、密碼至少 16 字元；不合格時回傳問題說明 */
+/** 解析 site_login：帳號、密碼都不可為空；密碼不足 16 字元時標成 weak。不合格時回傳問題說明 */
 export function parseCreds(text: string): Creds | string {
   const line = text.split(/\r?\n/)[0].trim();
   const i = line.indexOf(":");
   if (i <= 0) return "格式應為一行「帳號:密碼」";
   const user = line.slice(0, i);
   const pass = line.slice(i + 1);
-  if (pass.length < MIN_PASS_LENGTH) return `密碼至少要 ${MIN_PASS_LENGTH} 個字元`;
+  if (!pass) return "密碼不可為空";
   // tag 會綁進 cookie 簽章：帳密一改，舊 cookie 全部失效
   const tag = crypto.createHash("sha256").update(`${user}:${pass}`).digest("base64url");
-  return { user, pass, tag };
+  return { user, pass, tag, weak: pass.length < MIN_PASS_LENGTH };
+}
+
+/** 新密碼的檢查；合格回傳 null，否則回傳要顯示的說明 */
+export function newPassProblem(next: string, confirm: string, creds: Pick<Creds, "pass">): string | null {
+  if (next !== confirm) return "兩次輸入的新密碼不一樣。";
+  if (next.length < MIN_PASS_LENGTH) return `新密碼至少要 ${MIN_PASS_LENGTH} 個字元。`;
+  if (next.length > MAX_PASS_LENGTH) return `新密碼最多 ${MAX_PASS_LENGTH} 個字元。`;
+  // site_login 只讀第一行、前後空白會被 trim 掉：這些字元存進去就登不進來了
+  if (/[\u0000-\u001f\u007f\u2028\u2029]/.test(next)) return "新密碼不能有換行或控制字元。";
+  if (next !== next.trim()) return "新密碼開頭和結尾不能是空白。";
+  if (next === creds.pass) return "新密碼不能和目前的密碼一樣。";
+  return null;
+}
+
+/** 寫入 site_login：先寫 600 的暫存檔再改名，中途失敗也不會留下寫一半的檔案 */
+function writeCreds(file: string, user: string, pass: string) {
+  const tmp = `${file}.${crypto.randomBytes(6).toString("hex")}.tmp`;
+  try {
+    fs.writeFileSync(tmp, `${user}:${pass}\n`, { mode: 0o600, flag: "wx" });
+    fs.renameSync(tmp, file);
+  } catch (err) {
+    fs.rmSync(tmp, { force: true });
+    throw err;
+  }
 }
 
 /** 讀取 site_login；依 inode、大小、修改時間快取，檔案一改就重讀 */
@@ -126,7 +156,10 @@ function credsReader(file: string): () => Creds | null {
     try {
       const parsed = parseCreds(fs.readFileSync(file, "utf8"));
       if (typeof parsed === "string") warn(`${file}：${parsed}，所有登入都會被拒絕。`);
-      else creds = parsed;
+      else {
+        creds = parsed;
+        if (parsed.weak) warn(`${file}：密碼不足 ${MIN_PASS_LENGTH} 個字元，登入後只能先到 /__password 改密碼。`);
+      }
     } catch {
       warn(`讀不到 ${file}，所有登入都會被拒絕。`);
     }
@@ -274,6 +307,8 @@ form{background:var(--card);border:1px solid var(--line);border-radius:12px;padd
 input{font:inherit;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--fg)}
 button{font:inherit;padding:8px;border-radius:8px;border:none;background:var(--accent);color:#fff;cursor:pointer}
 .err{color:#b3261e;margin:0}
+.hint{margin:0;font-size:.9em;opacity:.8}
+a{color:var(--accent)}
 </style></head><body>
 ${inner}
 </body></html>`;
@@ -298,6 +333,30 @@ function logoutPage() {
     `<form method="post" action="/__logout">
 <strong>政治光譜自我探索（開發中）</strong>
 <button type="submit">登出</button>
+<a href="/__password">修改密碼</a>
+</form>`,
+  );
+}
+
+function escapeHtml(s: string) {
+  return s.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+}
+
+/** 改密碼頁。forced：目前是弱密碼，改完之前其他頁面都進不去 */
+function passwordPage(user: string, forced: boolean, msg = "") {
+  return page(
+    "修改密碼",
+    `<form method="post" action="/__password">
+<strong>修改密碼</strong>
+${forced ? `<p class="hint">目前的密碼不足 ${MIN_PASS_LENGTH} 個字元，請先換一組強密碼才能使用網站。</p>` : ""}
+${msg ? `<p class="err">${msg}</p>` : ""}
+<input name="user" value="${escapeHtml(user)}" autocomplete="username" readonly hidden>
+<input name="cur" type="password" placeholder="目前的密碼" autocomplete="current-password" required>
+<input name="next" type="password" placeholder="新密碼（至少 ${MIN_PASS_LENGTH} 字元）" autocomplete="new-password" minlength="${MIN_PASS_LENGTH}" maxlength="${MAX_PASS_LENGTH}" required>
+<input name="confirm" type="password" placeholder="再輸入一次新密碼" autocomplete="new-password" minlength="${MIN_PASS_LENGTH}" maxlength="${MAX_PASS_LENGTH}" required>
+<p class="hint">建議用密碼管理器產生的隨機密碼。改好後其他已登入的裝置都會被登出。</p>
+<button type="submit">儲存新密碼</button>
+${forced ? "" : `<a href="/">回網站</a>`}
 </form>`,
   );
 }
@@ -324,19 +383,18 @@ export type GateOptions = { limiter?: LoginLimiter; bodyTimeoutMs?: number; now?
 export function createGate(keysDir: string, opts: GateOptions = {}): Connect.NextHandleFunction {
   const key = loadSecret(keysDir);
   warnLoosePermissions(keysDir);
-  const readCreds = credsReader(path.join(keysDir, "site_login"));
+  const credsFile = path.join(keysDir, "site_login");
+  const readCreds = credsReader(credsFile);
   readCreds(); // 啟動時先讀一次，有問題馬上印警告
   const limiter = opts.limiter ?? new LoginLimiter();
   const bodyTimeoutMs = opts.bodyTimeoutMs ?? 5_000;
   const now = opts.now ?? Date.now;
   const cookieAttrs = "Path=/; HttpOnly; Secure; SameSite=Lax";
 
-  function login(req: IncomingMessage, res: ServerResponse) {
-    const ip = clientIp(req);
-    const at = now();
-    if (!limiter.reserve(ip, at)) {
-      return send(res, 429, loginPage("嘗試太多次，請 15 分鐘後再試。"), { "Retry-After": "900" });
-    }
+  const sessionCookie = (tag: string) => `${COOKIE}=${makeSession(key, tag, now())}; ${cookieAttrs}; Max-Age=${MAX_AGE}`;
+
+  /** 讀表單 body：超過上限或太慢就斷線（這次仍算一次嘗試）；處理過程出錯一律 fail closed */
+  function readForm(req: IncomingMessage, res: ServerResponse, maxBody: number, onForm: (form: URLSearchParams) => void) {
     let body = "";
     let aborted = false;
     let timer: ReturnType<typeof setTimeout> | undefined = undefined;
@@ -345,30 +403,76 @@ export function createGate(keysDir: string, opts: GateOptions = {}): Connect.Nex
       clearTimeout(timer);
       req.destroy();
     };
-    timer = setTimeout(abort, bodyTimeoutMs); // body 太慢就斷線（這次仍算一次嘗試）
+    timer = setTimeout(abort, bodyTimeoutMs);
     req.setEncoding("utf8");
     req.on("data", (chunk: string) => {
       body += chunk;
-      if (body.length > MAX_BODY) abort();
+      if (body.length > maxBody) abort();
     });
     req.on("error", () => clearTimeout(timer));
     req.on("end", () => {
       clearTimeout(timer);
       if (aborted) return;
       try {
-        const form = new URLSearchParams(body);
-        const creds = readCreds();
-        if (!creds || !credsMatch(form.get("user") ?? "", form.get("pass") ?? "", creds)) {
-          return send(res, 401, loginPage(creds ? "帳號或密碼錯誤。" : "伺服器尚未設定帳號密碼。"));
-        }
-        limiter.succeeded(ip, at);
-        send(res, 303, "", {
-          Location: "/",
-          "Set-Cookie": `${COOKIE}=${makeSession(key, creds.tag, now())}; ${cookieAttrs}; Max-Age=${MAX_AGE}`,
-        });
+        onForm(new URLSearchParams(body));
       } catch {
         failClosed(res);
       }
+    });
+  }
+
+  function login(req: IncomingMessage, res: ServerResponse) {
+    const ip = clientIp(req);
+    const at = now();
+    if (!limiter.reserve(ip, at)) {
+      return send(res, 429, loginPage("嘗試太多次，請 15 分鐘後再試。"), { "Retry-After": "900" });
+    }
+    readForm(req, res, MAX_BODY, (form) => {
+      const creds = readCreds();
+      if (!creds || !credsMatch(form.get("user") ?? "", form.get("pass") ?? "", creds)) {
+        return send(res, 401, loginPage(creds ? "帳號或密碼錯誤。" : "伺服器尚未設定帳號密碼。"));
+      }
+      limiter.succeeded(ip, at);
+      // 弱密碼：先帶去改密碼
+      send(res, 303, "", { Location: creds.weak ? "/__password" : "/", "Set-Cookie": sessionCookie(creds.tag) });
+    });
+  }
+
+  /** 從別的網站送來的表單（Origin 和 Host 不同）一律拒絕；cookie 的 SameSite=Lax 之外再擋一層 */
+  function sameOrigin(req: IncomingMessage): boolean {
+    const origin = req.headers.origin;
+    if (origin === undefined) return true;
+    try {
+      return new URL(origin).host === req.headers.host;
+    } catch {
+      return false; // 包括 "null"
+    }
+  }
+
+  /** 改密碼：要已登入、同源、在限流額度內，而且目前的密碼要對 */
+  function changePassword(req: IncomingMessage, res: ServerResponse, creds: Creds) {
+    if (!sameOrigin(req)) return send(res, 403, passwordPage(creds.user, creds.weak, "請從本站的頁面送出。"));
+    const ip = clientIp(req);
+    const at = now();
+    if (!limiter.reserve(ip, at)) {
+      return send(res, 429, passwordPage(creds.user, creds.weak, "嘗試太多次，請 15 分鐘後再試。"), { "Retry-After": "900" });
+    }
+    readForm(req, res, MAX_PASSWORD_FORM_BODY, (form) => {
+      const current = readCreds();
+      // 送出期間 site_login 被改過：原本的 session 已經失效
+      if (!current || current.tag !== creds.tag) return send(res, 401, loginPage("密碼已經改過，請重新登入。"));
+      if (!credsMatch(current.user, form.get("cur") ?? "", current)) {
+        return send(res, 401, passwordPage(current.user, current.weak, "目前的密碼不對。"));
+      }
+      limiter.succeeded(ip, at); // 目前的密碼對了，不算猜密碼
+      const next = form.get("next") ?? "";
+      const problem = newPassProblem(next, form.get("confirm") ?? "", current);
+      if (problem) return send(res, 400, passwordPage(current.user, current.weak, problem));
+      writeCreds(credsFile, current.user, next);
+      const updated = readCreds();
+      if (!updated || updated.weak || updated.pass !== next) throw new Error("site_login 寫入後讀回來不一致");
+      warn("site_login 已透過 /__password 更新，其他裝置的登入都已失效。");
+      send(res, 303, "", { Location: "/", "Set-Cookie": sessionCookie(updated.tag) });
     });
   }
 
@@ -385,9 +489,22 @@ export function createGate(keysDir: string, opts: GateOptions = {}): Connect.Nex
       else send(res, 200, logoutPage());
       return false;
     }
-    const tag = readCreds()?.tag;
-    if (sessionCookies(req).some((v) => validSession(key, tag, v, now()))) return true;
-    if (pathname.startsWith("/api/") || req.headers.accept?.includes("application/json")) {
+    const creds = readCreds();
+    const authed = creds !== null && sessionCookies(req).some((v) => validSession(key, creds.tag, v, now()));
+    const wantsJson = pathname.startsWith("/api/") || req.headers.accept?.includes("application/json");
+    if (authed && pathname === "/__password") {
+      if (req.method === "POST") changePassword(req, res, creds);
+      else send(res, 200, passwordPage(creds.user, creds.weak));
+      return false;
+    }
+    if (authed && !creds.weak) return true;
+    if (authed) {
+      // 弱密碼登入：改密碼之前只能看改密碼頁
+      if (wantsJson) send(res, 403, JSON.stringify({ detail: "請先修改密碼" }), { "Content-Type": "application/json; charset=utf-8" });
+      else send(res, 303, "", { Location: "/__password" });
+      return false;
+    }
+    if (wantsJson) {
       send(res, 401, JSON.stringify({ detail: "請先登入" }), { "Content-Type": "application/json; charset=utf-8" });
     } else {
       send(res, 401, loginPage());

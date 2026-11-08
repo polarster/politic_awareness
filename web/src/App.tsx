@@ -201,10 +201,10 @@ export default function App() {
       <p className="disclaimer small muted">
         個人 side project · 題庫版本 {data.version} · 不是投票建議
       </p>
-      {/* 對外模式（經 Cloudflare Tunnel）才有登入閘道與 /__logout；本機開發時不顯示 */}
+      {/* 對外模式（經 Cloudflare Tunnel）才有登入閘道、/__logout 與 /__password；本機開發時不顯示 */}
       {isTunnelHost(window.location.hostname) && (
         <form className="disclaimer small" method="post" action="/__logout">
-          <button type="submit" className="link">登出</button>
+          <button type="submit" className="link">登出</button> · <a href="/__password">修改密碼</a>
         </form>
       )}
     </main>
