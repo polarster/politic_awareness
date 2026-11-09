@@ -1,0 +1,78 @@
+entity: liu-caiwei
+stances:
+- question: B_HOUSING
+  value: 1
+  interpretation: 公報政見主張增建社會住宅或調降社宅租金，都需要市府投入更多經費，判為增加。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: '社會正義
+
+      ●推動居住正義，提高租金補助，增加社會住宅，並加速老舊住宅都市更新效率。'
+    context: 公報第5頁（PDF 第1頁），號次8 柳采葳（推薦政黨：中國國民黨）的政見欄。2022-11-26 為投票日。
+    timestamp: null
+- question: B_ELDERCARE
+  value: 1
+  interpretation: 公報政見主張增設長照、日照據點或擴大長者照顧與補助，判為增加。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: ●普及「通用設計」的概念，增設樂齡照顧中心，加強中、低收入戶及弱勢族群生活照顧。
+    context: 公報第5頁（PDF 第1頁），號次8 柳采葳（推薦政黨：中國國民黨）的政見欄。2022-11-26 為投票日。
+    timestamp: null
+- question: B_CASH
+  value: 1
+  interpretation: 公報政見主張增設或提高育兒、生育、新婚等現金補助，判為增加。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: ●改革少子化問題，提高0-5歲之育兒津貼，整合幼托人力，健全後疫情時代托嬰制度問題。
+    context: 公報第5頁（PDF 第1頁），號次8 柳采葳（推薦政黨：中國國民黨）的政見欄。2022-11-26 為投票日。
+    timestamp: null
+- question: B_PARKS
+  value: 1
+  interpretation: 公報政見主張增設、改善公園或人行道，判為增加。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: '美好環境
+
+      ●增設中山、大同共融公園，以利兒童大腦與肢體多元發展，同時兼具長者休憩運動功能。'
+    context: 公報第5頁（PDF 第1頁），號次8 柳采葳（推薦政黨：中國國民黨）的政見欄。2022-11-26 為投票日。
+    timestamp: null
+- question: B_TRANSIT
+  value: 1
+  interpretation: 公報政見主張監督民生汐止線儘速執行可行性評估，方向是推動新捷運路線，判為增加；但只要求可行性評估，力道較弱。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: '區域發展
+
+      ●監督捷運汐止-民生線儘速執行可行性評估，便利東西向交通的路網。'
+    context: 公報第5頁（PDF 第1頁），號次8 柳采葳（推薦政黨：中國國民黨）的政見欄。2022-11-26 為投票日。
+    timestamp: null

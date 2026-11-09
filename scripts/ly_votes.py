@@ -5,12 +5,16 @@
 原始出處為立法院議事暨公報資訊網（ppg.ly.gov.tw）。
 
 用法：python3 scripts/ly_votes.py --terms 10 11 [--out data/ly/votes.json] [--cache build/ly_cache]
+
+上游欄位（會議代碼、議事錄網址、公報連結、日期）不符合預期時，會列出有問題的會議並中止，
+不會下載議事錄或寫入任何檔案。只從 ALLOWED_HOSTS 以 https 下載。
 """
 from __future__ import annotations
 
 import argparse
 import json
 import re
+import sys
 import time
 import urllib.parse
 import urllib.request
@@ -20,12 +24,58 @@ from pathlib import Path
 API = "https://ly.govapi.tw/v2"
 UA = {"User-Agent": "politic-awareness/0.1 (research script)"}
 
+# 上游資料若被竄改，可能把本機檔案（例如 file: 網址）或任意網址帶進快取與公開的 JSON，所以逐項檢查。
+# 只從這兩個主機下載：g0v 立法院 API，以及它存放議事錄文字檔的位置。上游換主機時，人工確認後再加進來
+ALLOWED_HOSTS = {"ly.govapi.tw", "lydata.ronny-s3.click"}
+# 會議代碼會拼進快取檔名，只接受「院會-10-8-12」「臨時會院會-10-1-1-1」這種格式
+MEETING_CODE = re.compile(r"(臨時會)?院會-[0-9]{1,2}-[0-9]{1,2}(-[0-9]{1,2})?-[0-9]{1,3}")
+# 公報連結會原樣放上網站
+SOURCE_URL = re.compile(r"https://ppg\.ly\.gov\.tw/[^\s\"'<>\\]*")
+DATE = re.compile(r"[0-9]{4}-[0-9]{2}-[0-9]{2}")
+
+
+class UpstreamError(RuntimeError):
+    """上游資料不符合預期（可能被竄改）。不重試，直接中止。"""
+
+
+def check_url(url: object) -> None:
+    """只允許 https，而且網址的主機部分必須剛好是 ALLOWED_HOSTS 之一（不能帶帳密或 port）。
+    解析不了的網址（例如 "https://[ly.govapi.tw/x"，或主機含全形＃）也一律拒絕。"""
+    ok = isinstance(url, str) and not re.search(r"[\x00-\x20\x7f\\]", url)
+    if ok:
+        try:
+            u = urllib.parse.urlsplit(url)
+        except ValueError:
+            ok = False
+        else:
+            ok = u.scheme == "https" and u.netloc in ALLOWED_HOSTS
+    if not ok:
+        raise UpstreamError(f"拒絕下載不在白名單內的網址：{url!r}")
+
+
+class _CheckedRedirect(urllib.request.HTTPRedirectHandler):
+    """重新導向的目的地也要通過 check_url。"""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        check_url(newurl)
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+_opener = urllib.request.build_opener(_CheckedRedirect)
+
 
 def get(url: str, retries: int = 3) -> bytes:
+    check_url(url)
     for i in range(retries):
         try:
-            with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=60) as r:
+            with _opener.open(urllib.request.Request(url, headers=UA), timeout=60) as r:
                 return r.read()
+        except UpstreamError:
+            raise
+        except ValueError as e:
+            # urllib 會先自己解析重新導向的 Location，解析不了（例如 "https://[x"）就丟 ValueError，
+            # 輪不到 _CheckedRedirect 檢查。這是上游給的網址有問題，不是網路不穩，重試也沒用
+            raise UpstreamError(f"下載 {url!r} 時遇到無法解析的網址：{e}") from e
         except Exception:
             if i == retries - 1:
                 raise
@@ -54,6 +104,39 @@ def meetings(term: int) -> list[dict]:
         if page >= d.get("total_page", 1):
             return out
         page += 1
+
+
+def source_url(m: dict) -> object:
+    rec = m.get("議事錄") or {}
+    return rec.get("source_url") or rec.get("ppg_url")
+
+
+def meeting_problems(m: dict) -> list[str]:
+    """會寫進快取檔名或公開 JSON 的上游欄位，不符合預期時回傳問題清單。"""
+    code = m.get("會議代碼")
+    where = f"會議 {code!r}"
+    problems = []
+    if not isinstance(code, str) or not MEETING_CODE.fullmatch(code):
+        problems.append(f"{where}：會議代碼格式不符")
+    try:
+        check_url((m.get("議事錄") or {}).get("txt_file"))
+    except UpstreamError as e:
+        problems.append(f"{where}：議事錄 txt_file {e}")
+    src = source_url(m)
+    if not isinstance(src, str) or not SOURCE_URL.fullmatch(src):
+        problems.append(f"{where}：公報連結不是 https://ppg.ly.gov.tw/ 底下的網址：{src!r}")
+    dates = m.get("日期")
+    if dates is not None and not (isinstance(dates, list) and all(isinstance(d, str) and DATE.fullmatch(d) for d in dates)):
+        problems.append(f"{where}：日期格式不符：{dates!r}")
+    return problems
+
+
+def cache_file(cache: Path, code: str) -> Path:
+    """會議代碼已檢查過格式；寫檔前再確認路徑（含符號連結）沒有跑出快取目錄。"""
+    f = cache / f"{code}.txt"
+    if not f.resolve().is_relative_to(cache.resolve()):
+        raise UpstreamError(f"快取檔案的位置跑出 {cache}：{f}")
+    return f
 
 
 HEADER = re.compile(r"^\((\d+)\)「(.+)」部分[：:]\s*$")
@@ -261,21 +344,27 @@ def main():
     for t in sorted({t2 for t in args.terms for t2 in (t - 1, t, t + 1) if t2 >= 9}, reverse=True):
         try:
             fallback.update(legislators(t))
+        except UpstreamError:
+            raise
         except Exception:
             pass
     # API 委員名單缺漏者，人工補上（第 10 屆）
     fallback.update({"葉毓蘭": "中國國民黨", "廖國棟": "中國國民黨", "伍麗華": "民主進步黨"})
-    results = []
+    plan = []
     for term in args.terms:
         party = {**fallback, **legislators(term)}
-        for m in meetings(term):
-            rec = m.get("議事錄") or {}
-            txt_url = rec.get("txt_file")
-            if not txt_url:
-                continue
-            f = cache / (m["會議代碼"] + ".txt")
+        plan.append((term, party, [m for m in meetings(term) if (m.get("議事錄") or {}).get("txt_file")]))
+    # 先檢查所有會議的欄位，全部通過才下載；有任何一筆不符合就中止並列出
+    problems = [p for _, _, ms in plan for m in ms for p in meeting_problems(m)]
+    if problems:
+        sys.exit("上游資料不符合預期，已中止（沒有下載議事錄，也沒有寫入任何檔案）：\n  " + "\n  ".join(problems))
+    results = []
+    for term, party, ms in plan:
+        for m in ms:
+            rec = m["議事錄"]
+            f = cache_file(cache, m["會議代碼"])
             if not f.exists():
-                f.write_bytes(get(txt_url))
+                f.write_bytes(get(rec["txt_file"]))
                 time.sleep(0.3)
             text = f.read_text(encoding="utf-8", errors="replace")
             sec_cache: dict = {}
@@ -311,7 +400,7 @@ def main():
                     "term": term,
                     "meeting": m["會議代碼"],
                     "dates": m.get("日期"),
-                    "source_url": rec.get("source_url") or rec.get("ppg_url"),
+                    "source_url": source_url(m),
                     "no": v["no"],
                     "item": v["item"],
                     "counts": v["counts"],

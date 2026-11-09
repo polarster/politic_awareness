@@ -1,0 +1,307 @@
+entity: miao-poya
+stances:
+- question: N02
+  value: 1
+  interpretation: >
+    苗博雅 2018、2022 兩屆市議員選舉公報的政見分別以「堅持台灣主體 監督兩岸交流」「捍衛臺灣主權 民主良善治理」為標題；
+    2018 年雙城論壇晚宴她穿著印有台獨字樣的服裝出席，表示兩方交朋友要「把對方當成獨立個體」。
+    方向明確傾向台灣主體，但沒有找到她直接以「國與國」定位兩岸的表述（公報只有標題層級），因此判為同意而非非常同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年臺北市議員選舉公報 第6選舉區（大安、文山）：19號苗博雅
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC06%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: 2022-11-26
+    venue: 中選會選舉公報
+    quote: 捍衛臺灣主權 民主良善治理
+    context: 公報 PDF 第 3 頁（印刷頁碼第 7 頁）政見欄的分類標題，其下列有「推動台北與日、韓、歐美、東南亞城市外交，讓世界認識自由民主臺灣。」「刪減浮濫編列的中國交流預算，並禁止公職人員接受中國官方招待旅遊。」
+    timestamp: null
+  - grade: A
+    kind: bulletin
+    title: 107年臺北市議員選舉公報 第6選舉區（大安、文山）：8號苗博雅
+    url: https://eebulletin.cec.gov.tw/107/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC06%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: 2018-11-24
+    venue: 中選會選舉公報
+    quote: 堅持台灣主體 監督兩岸交流
+    context: 公報 PDF 第 2 頁（印刷頁碼第 4 頁）政見欄的分類標題。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 雙城歡迎晚宴 苗博雅穿台獨背心表立場
+    url: https://www.cna.com.tw/news/acn/201812190361.aspx
+    date: 2018-12-19
+    venue: 台北上海雙城論壇歡迎晚宴
+    quote: 兩人要交朋友，一定是要把對方當成獨立個體，才有真正辦法交朋友
+    context: 中央社報導，苗博雅另表示「台灣獨立在台灣與中國交流過程中，不是禁忌的詞」、「中國與台灣交朋友，不是兩岸一家親」。
+    timestamp: null
+- question: N03
+  value: -2
+  interpretation: >
+    苗博雅公開以台獨字樣服裝出席雙城論壇晚宴，並說台灣獨立在兩岸交流中「不是禁忌的詞」、兩岸「不是兩岸一家親」；
+    選舉公報以「捍衛臺灣主權」為政見主軸。未見她支持統一方向的表述，判為非常不同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 雙城歡迎晚宴 苗博雅穿台獨背心表立場
+    url: https://www.cna.com.tw/news/acn/201812190361.aspx
+    date: 2018-12-19
+    venue: 台北上海雙城論壇歡迎晚宴
+    quote: 台灣獨立在台灣與中國交流過程中，不是禁忌的詞
+    context: 中央社報導她穿著印有「台灣獨立」字樣的服裝出席市府晚宴，與上海台辦官員同桌。
+    timestamp: null
+- question: M08
+  value: -1
+  interpretation: >
+    苗博雅 2018、2022 兩次選舉公報都主張刪減「浮濫編列」的中國交流預算；2022 年她在議會推動預算附帶條件，
+    共機共艦持續擾台時雙城論壇預算不得動支，2023 年批評雙城論壇「淪為兩岸市長、政治高官權貴的作秀舞台」。
+    她反對的是現行辦法與預算浮濫，並在 2018 年出席晚宴、2025 年建議市長利用論壇向小紅書反映打詐，
+    沒有明確主張永久停辦，因此判為不同意而非非常不同意。（公報寫的是「中國交流預算」，雙城論壇是其中主要項目，屬詮釋。）
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年臺北市議員選舉公報 第6選舉區（大安、文山）：19號苗博雅
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC06%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: 2022-11-26
+    venue: 中選會選舉公報
+    quote: 刪減浮濫編列的中國交流預算，並禁止公職人員接受中國官方招待旅遊。
+    context: 公報 PDF 第 3 頁（印刷頁碼第 7 頁），「捍衛臺灣主權 民主良善治理」項下。
+    timestamp: null
+  - grade: A
+    kind: bulletin
+    title: 107年臺北市議員選舉公報 第6選舉區（大安、文山）：8號苗博雅
+    url: https://eebulletin.cec.gov.tw/107/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC06%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: 2018-11-24
+    venue: 中選會選舉公報
+    quote: 全面檢視台北與中國的交流活動，刪減浮濫編列的預算，並禁止公職人員接受中國官方招待旅遊。
+    context: 公報 PDF 第 2 頁（印刷頁碼第 4 頁），「堅持台灣主體 監督兩岸交流」項下。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 共機天天擾台！柯文哲無視北市議會決議辦雙城論壇 苗博雅嗆｢算帳｣
+    url: https://newtalk.tw/news/view/2022-07-20/788239
+    date: 2022-07-20
+    venue: null
+    quote: 本項預算如用於舉辦台北上海雙城論壇，若舉辦前共機、共艦持續擾台，兩岸氛圍不佳，則本預算不得動支。
+    context: 新頭殼報導，苗博雅引述她促成的議會預算附帶決議，批評市府仍舉辦 2022 年雙城論壇，「還是無法約束柯文哲想透過雙城論壇搭建政治舞台的心」。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 富察在中國被捕恐釀寒蟬效應！苗博雅批北市辦雙城論壇淪空殼
+    url: https://www.nownews.com/news/6130935
+    date: 2023-05-05
+    venue: null
+    quote: 看似熱烈交流，現在才發現原來是空殼，淪為兩岸市長、政治高官權貴的作秀舞台。
+    context: NOWnews 報導（間接引述），她並質疑「今年雙城論壇還要不要辦？」，若市府認為交給陸委會、海基會即可，則「雙城論壇預算刪掉」。
+    timestamp: null
+- question: S01
+  value: 2
+  interpretation: >
+    苗博雅 2018 年公報主張「強化性別平等、勞動教育課程深度與比重」，2022 年公報主張「落實性別平等教育」；
+    2017 年台北市擬增加性平會家長代表時，她批評市府面對護家盟「膝蓋就會軟掉」、要求「別讓台北市的性平教育潰堤」。
+    她也是 2018 年婚姻平權公投（第 14 案）領銜人。性別平等教育依法包含多元性別內容，立場明確一貫。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年臺北市議員選舉公報 第6選舉區（大安、文山）：19號苗博雅
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC06%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: 2022-11-26
+    venue: 中選會選舉公報
+    quote: 落實性別平等教育、本土語言教育、反霸凌教育。
+    context: 公報 PDF 第 3 頁（印刷頁碼第 7 頁），「教育藝文食安 市民安居樂業」項下。
+    timestamp: null
+  - grade: A
+    kind: bulletin
+    title: 107年臺北市議員選舉公報 第6選舉區（大安、文山）：8號苗博雅
+    url: https://eebulletin.cec.gov.tw/107/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC06%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: 2018-11-24
+    venue: 中選會選舉公報
+    quote: 遏止強迫第八節、早自習考試及挪用體育、音樂等非學科課程惡習，強化性別平等、勞動教育課程深度與比重。
+    context: 公報 PDF 第 2 頁（印刷頁碼第 4 頁），「正常化教學 生活重於分數」項下。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 性平會增家長代表？ 苗博雅批：一遇護家盟 柯P膝蓋就軟掉
+    url: https://newtalk.tw/news/view/2017-09-07/97118
+    date: 2017-09-07
+    venue: null
+    quote: 別讓台北市的性平教育潰堤。
+    context: 新頭殼報導，時任社民黨全國委員的苗博雅反對台北市增加性平委員會家長代表，認為由家長決定性教育教材會破壞教育專業。
+    timestamp: null
+- question: S05
+  value: -2
+  interpretation: >
+    苗博雅是 2018 年全國性公投第 14 案（以民法婚姻章保障同性別二人建立婚姻關係）的領銜人，
+    兩次選舉公報也主張「不分性別、性向、族裔，爭取 LGBTQ、新住民、移工享有平等的尊重和制度支持」，
+    與「政策應優先鼓勵傳統婚姻與家庭形式」方向相反。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: B
+    kind: bill
+    title: 全國性公民投票第 14 案設立經費募集專戶應行配合注意事項（中選會）
+    url: https://web.cec.gov.tw/api/file/53b8d387-8ea3-41ba-a0e6-1b861a124e22.pdf
+    date: 2018-10-24
+    venue: 2018 年全國性公民投票
+    quote: 全國性公民投票第 14 案領銜人苗博雅
+    context: 中選會文件載明第 14 案主文「您是否同意，以民法婚姻章保障同性別二人建立婚姻關係？」，提案領銜人為苗博雅。
+    timestamp: null
+  - grade: A
+    kind: bulletin
+    title: 111年臺北市議員選舉公報 第6選舉區（大安、文山）：19號苗博雅
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC06%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: 2022-11-26
+    venue: 中選會選舉公報
+    quote: 不分性別、性向、族裔，爭取LGBTQ、新住民、移工享有平等的尊重和制度支持。
+    context: 公報 PDF 第 3 頁（印刷頁碼第 7 頁），「保障基本人權 多元平等尊重」項下；2018 年公報有相同文字。這一條本身沒有直接談傳統家庭政策，主要依據是公投提案。
+    timestamp: null
+- question: S02
+  value: 2
+  interpretation: >
+    苗博雅曾任台灣廢除死刑推動聯盟法務主任（2018 年公報經歷欄自述），長期主張廢除死刑；2024 年立委選戰對手以廢死攻擊她時，
+    她表示願就廢死與對手公開辯論，媒體描述她對廢死立場「堅若磐石」。2025 年她表示「該講的都講過」、不再配合對手表態，
+    但未改變立場。判為非常同意。（近年直接引語多為回應攻擊，主張本身的依據是經歷與媒體描述。）
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: interview
+    title: 願與對手直球辯論廢死！苗博雅看父親改變有信心翻轉深藍選區（遠見）
+    url: https://city.gvm.com.tw/article/109138
+    date: 2024-01-11
+    venue: 遠見雜誌專訪
+    quote: 時間、地點、主題都讓他指定沒關係，我可以左手讓他、右手也讓他
+    context: 她回應願與羅智強就廢死議題辯論。文中記者敘述：「儘管對手對廢死爭議大做文章，但談及這個燙手山芋，苗博雅絲毫沒有改變自己的立場與主張，對廢死立場的態度仍堅若磐石」。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 死刑存廢狂燒！曾痛批馬政府「拿死囚血暖民調」…苗博雅被問「怎沒譴責賴清德」？她首度正面回應
+    url: https://www.businesstoday.com.tw/article/category/183027/post/202501180006/
+    date: 2025-01-18
+    venue: 臉書直播
+    quote: 該講的都講過，大法官也有判決了。我不會配合你們演出。這個國家，有更重要的事。
+    context: 2025 年 1 月政府執行死刑後，她被質疑為何不譴責；她表示立場過去已說明，並強調大法官應獨立、不受政黨施壓。
+    timestamp: null
+- question: G01
+  value: -1
+  interpretation: >
+    2025 年她反對核三延役，質疑核廢料沒有長期處理方案；2026 年她表示若科技能確保核安、解決核廢，「新式核能可以是一個選項」，
+    但核廢無解就「沒有老舊核電延役的條件」。以較新的有條件表態為準，判為不同意而非非常不同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 稱「新式核能」是選項遭酸牆頭草 苗博雅曝信念
+    url: https://udn.com/news/story/6656/9398938
+    date: 2026-03-24
+    venue: 臉書貼文
+    quote: 反核不是因民進黨反核，是因為核安有疑慮、核廢沒解答，如果未來科技進步，能確保核安無虞，能解決核廢儲存，新式核能可以是一個選項，但如果有疑、核廢無解，就沒有老舊核電延役的條件。
+    context: 聯合報報導她 2026 年 3 月 23 日的臉書貼文。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 黃國昌忘了昔日反核？苗博雅：如今卻提出懦弱「核三延役」公投案
+    url: https://newtalk.tw/news/view/2025-05-13/970551
+    date: 2025-05-13
+    venue: null
+    quote: 若連現存的幾10年來的核廢料，都找不到務實可行的長期處理方案，為何現在要延役一個老舊的核電廠？
+    context: 她批評民眾黨提出的核三延役公投主文未寫入核廢料處置，認為延役「消耗社會資源、造成社會撕裂」。
+    timestamp: null
+- question: L04
+  value: 1
+  interpretation: >
+    她表示「確實對集會遊行法有意見」，主張對政治人物、政黨的抗議「應該儘量放寬」；但不反對在法院、憲法法庭、軍事營區設禁制區。
+    她沒有直接表態許可制或報備制，這筆是從她對集遊法的批評推論而來，證據較弱（C 級），判為同意而非非常同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 黃國昌「想看小草被驅離」？苗博雅挨批雙標　反擊揭白營算盤（TVBS）
+    url: https://news.tvbs.com.tw/politics/2604299
+    date: 2024-09-01
+    venue: 臉書貼文
+    quote: 對政治人物、政黨的抗議，應該儘量放寬。
+    context: TVBS 報導她的臉書貼文：「苗博雅確實對集會遊行法有意見。但苗博雅一向也「反對」民粹包圍法院，影響司法獨立。」並稱「對於應該獨立行使職權的機關，（例如憲法法庭、法院）以及涉及國家安全的地點（例如軍事營區），苗博雅並不反對設置禁制區。」
+    timestamp: null
+- question: L05
+  value: 1
+  interpretation: >
+    2022 年公報主張「資料治理法制化，保障市民資訊自主權」，方向是以法規約束政府對個資的利用；
+    但沒有談到與治安、防疫效率的取捨，判為同意而非非常同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年臺北市議員選舉公報 第6選舉區（大安、文山）：19號苗博雅
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC06%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: 2022-11-26
+    venue: 中選會選舉公報
+    quote: 資料治理法制化，保障市民資訊自主權。
+    context: 公報 PDF 第 3 頁（印刷頁碼第 7 頁），「保障基本人權 多元平等尊重」項下。
+    timestamp: null
+- question: B_HOUSING
+  value: 1
+  interpretation: 2022 年公報以「社會住宅、包租代管，降低青年負擔」列為居住政見，判為支持增加社會住宅預算。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年臺北市議員選舉公報 第6選舉區（大安、文山）：19號苗博雅
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC06%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: 2022-11-26
+    venue: 中選會選舉公報
+    quote: 社會住宅、包租代管，降低青年負擔。危老重建，提升居住品質。
+    context: 公報 PDF 第 3 頁（印刷頁碼第 7 頁），「堅持居住正義 優質宜居城市」項下。
+    timestamp: null
+- question: B_CHILDCARE
+  value: 1
+  interpretation: 2018、2022 兩次公報都主張利用閒置校舍設置幼兒托育中心，2018 年並以「普及公共照顧」為標題，判為支持增加公立托育預算。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年臺北市議員選舉公報 第6選舉區（大安、文山）：19號苗博雅
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC06%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: 2022-11-26
+    venue: 中選會選舉公報
+    quote: 爭取閒置校舍設置幼兒托育與長照中心。
+    context: 公報 PDF 第 3 頁（印刷頁碼第 7 頁），「保障基本人權 多元平等尊重」項下。
+    timestamp: null
+  - grade: A
+    kind: bulletin
+    title: 107年臺北市議員選舉公報 第6選舉區（大安、文山）：8號苗博雅
+    url: https://eebulletin.cec.gov.tw/107/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC06%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: 2018-11-24
+    venue: 中選會選舉公報
+    quote: 爭取閒置校舍設置幼兒托育與長照中心。推動增設多功能親子館「一區二館」，提供全職家長「一日臨托」服務。
+    context: 公報 PDF 第 2 頁（印刷頁碼第 4 頁），「友善長照幼托 普及公共照顧」項下。
+    timestamp: null
+- question: B_ELDERCARE
+  value: 1
+  interpretation: 2018、2022 兩次公報都主張利用閒置校舍設置長照中心，判為支持增加長照預算。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年臺北市議員選舉公報 第6選舉區（大安、文山）：19號苗博雅
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC06%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: 2022-11-26
+    venue: 中選會選舉公報
+    quote: 爭取閒置校舍設置幼兒托育與長照中心。
+    context: 公報 PDF 第 3 頁（印刷頁碼第 7 頁）；2018 年公報（PDF 第 2 頁）有相同文字。
+    timestamp: null
+- question: B_TRANSIT
+  value: 1
+  interpretation: 2022 年公報主張「持續建設捷運，建構完整安全大眾運輸網絡」，判為支持增加捷運與公車預算。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年臺北市議員選舉公報 第6選舉區（大安、文山）：19號苗博雅
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC06%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: 2022-11-26
+    venue: 中選會選舉公報
+    quote: 人本交通、道路平權，持續建設捷運，建構完整安全大眾運輸網絡。
+    context: 公報 PDF 第 3 頁（印刷頁碼第 7 頁），「堅持居住正義 優質宜居城市」項下。
+    timestamp: null

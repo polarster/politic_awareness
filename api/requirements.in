@@ -1,0 +1,13 @@
+# 後端執行期的直接相依（只放執行期需要的套件；測試工具在 requirements-dev.in）。版本釘死。
+#
+# requirements.txt 是由這個檔案產生、含所有間接相依與 sha256 hash 的鎖定檔。部署時：
+#   python3 -m venv --upgrade-deps .venv
+#   .venv/bin/pip install --require-hashes --no-deps -r requirements.txt
+# 更新版本：改這裡的版本號，再在乾淨的 venv 裡安裝 pip-tools 後執行
+#   pip-compile --generate-hashes --strip-extras --output-file=requirements.txt requirements.in
+#   pip-compile --generate-hashes --strip-extras --output-file=requirements-dev.txt requirements-dev.in
+# 並跑一次測試。uvicorn 不裝 [standard]（uvloop、httptools 等）：用內建的 asyncio 與 h11 就夠了。
+anthropic==2.6.0
+fastapi==0.162.0
+pydantic==2.14.3
+uvicorn==0.54.0

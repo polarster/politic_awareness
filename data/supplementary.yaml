@@ -1,5 +1,5 @@
 # 補充題庫（Claude 對答用）。狀態：草稿，使用者尚未審閱。
-version: 2026.11-draft2
+version: 2026.11-draft4
 questions:
   - id: X01
     layer: national
@@ -31,12 +31,13 @@ questions:
     direction: -1
     topics: [labor]
     text: 家事移工應納入基本工資保障。
+  # 草稿：等 2026-11-10 院會處理性平法第16條之1後定稿，年齡與措辭可能要改
   - id: X06
     layer: national
     axis: market
     direction: -1
     topics: [labor, family]
-    text: 應延長育嬰假並提高育嬰津貼，即使增加雇主負擔。
+    text: 受僱的家長應可依法請育兒假（可按日申請），照顧未滿12歲的孩子，即使企業人力調度可能更困難。
   - id: X07
     layer: national
     axis: market
@@ -73,6 +74,12 @@ questions:
     direction: -1
     topics: [industry, class, tax]
     text: 受到國家資源支持的大型企業，應該負擔更多回饋，例如更高的稅或在地分享。
+  - id: X15
+    layer: national
+    axis: market
+    direction: -1
+    topics: [labor, pension]
+    text: 應提高勞退新制雇主的法定最低提繳率（目前為每月工資的6%），即使會增加企業人事成本。
 
   # ── 反思題：不計分、不比對政黨，只用在討論主題 ──
   - id: X13

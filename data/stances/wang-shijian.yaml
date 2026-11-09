@@ -1,0 +1,140 @@
+entity: wang-shijian
+stances:
+- question: G01
+  value: 0
+  interpretation: 王世堅在 2025 年《核管法》延役修法的記名表決中投反對票；但 2026 年 3 月賴清德總統表示核三具備重啟條件後，他公開支持政策調整，並主張把「非核家園」改成「非碳家園」、政府應研究核能重啟並以安全為優先。2026 年 7 月他仍與民進黨團一致，反對國民黨團「廢除非核家園」公投提案逕付二讀（程序表決，對象是公投提案而非重啟本身）。較新的發言傾向支持研究重啟，較新的表決則反對國民黨的公投提案，整體立場混合，判為中立；2025
+    年的反對票列為較早的立場。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 重啟核電…王世堅：為台灣好都是對的 相信黨內會支持
+    url: https://www.worldjournal.com/wj/story/121221/9403431
+    date: '2026-03-26'
+    venue: null
+    quote: 只要政策調整是為台灣社會好，都是對的，相信總統做決定前已深思熟慮。
+    context: 世界新聞網轉載報導：賴清德總統表示核三廠 2 號機及 3 號機「已具備重啟條件」，王世堅受訪時表態支持。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 賴清德核能政策遭黨內炮轟 王世堅：非核家園改成「非碳家園」
+    url: https://newtalk.tw/news/view/2026-04-01/1027584
+    date: '2026-04-01'
+    venue: null
+    quote: 核三若能重啟就能補足6%電源，如果不是這部分補足，就會增加6%的碳
+    context: 新頭殼報導（記者轉述）：王世堅表示「非核家園只要改一個字，也就是「非碳家園」」，並稱政府要研究、探討核能重啟，把安全列為最優先考慮。
+    timestamp: null
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第5會期第17次會議議事錄：「廢除非核家園」公投提案逕付二讀記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/115/60/15/details
+    date: '2026-07-10'
+    venue: 立法院院會
+    quote: null
+    context: 記名表決結果附後(12)：國民黨49、民眾黨8、無黨籍1 贊成，民進黨48 反對（程序表決：逕付二讀）；王世堅投反對。表決紀錄取自 data/ly/votes.json（院會-11-5-17#12）。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 國民黨團公投提案：「您是否同意政府廢除『非核家園』的能源政策……？」逕付二讀
+      choice: 反對
+      ref: non-nuclear-referendum-2026
+  superseded:
+  - value: -1
+    evidence:
+    - grade: A
+      kind: vote
+      title: 立法院第11屆第3會期第11次會議議事錄：核子反應器設施管制法第六條修正記名表決
+      url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/114/48/01/details
+      date: '2025-05-09'
+      venue: 立法院院會
+      quote: null
+      context: 記名表決結果附後(9)(10)：第六條照國民黨團及民眾黨團共同所提再修正動議通過，國民黨50、民眾黨8、民進黨1、無黨籍2 贊成，民進黨50 反對；全案國民黨50、民眾黨8、無黨籍2 贊成，民進黨51 反對。王世堅兩次都投反對。表決紀錄取自 data/ly/votes.json（院會-11-3-11#9、#10）。
+      timestamp: null
+      vote:
+        body: 立法院
+        bill: 核子反應器設施管制法第六條（國民黨團及民眾黨團共同所提再修正動議）
+        choice: 反對
+        ref: nuclear-act-2025
+    note: 2025 年 5 月在《核管法》第六條延役修法及全案表決中都投反對票（賴清德 2026 年政策轉向之前）。
+- question: V03
+  value: -1
+  interpretation: 王世堅在 2025 年《環評法》第五條修正（把一定規模以上地面型、水面型太陽光電納入環評）的記名表決中投反對票，與民進黨團一致。這次修法只針對太陽光電，投票可能同時反映對光電開發的態度。王世堅本人沒有找到針對這題的公開發言，判斷只根據他和民進黨團一致的記名表決，因此只判為 ±1。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第4會期第9次會議議事錄：環境影響評估法第五條修正記名表決
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/114/97/01/details
+    date: '2025-11-14'
+    venue: 立法院院會
+    quote: null
+    context: 記名表決結果附後(10)(11)：第五條及全案均為國民黨49、民眾黨8、無黨籍2 贊成，民進黨48 反對；王世堅兩次都投反對。表決紀錄取自 data/ly/votes.json（院會-11-4-9#10、#11）。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 環境影響評估法第五條（民眾黨團、國民黨團共同所提再修正動議；將一定規模以上地面型、水面型太陽光電納入環評）
+      choice: 反對
+      ref: eia-solar-2025
+- question: G02
+  value: -2
+  interpretation: 王世堅在 2024 年國會職權修法覆議案的記名投票中投「反對維持原決議」（即支持行政院覆議，要求推翻這套法案），刑法藐視國會罪覆議案也相同。題目問的正是是否支持 2024 年通過的這套法案，記名表決直接對應，判為非常不同意。（沒有找到他本人針對這題的公開發言。）
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: vote
+    title: 立法院第11屆第1會期第19次會議議事錄：立法院職權行使法修正覆議案記名投票
+    url: https://ppg.ly.gov.tw/ppg/publications/official-gazettes/113/64/01/details
+    date: '2024-06-21'
+    venue: 立法院院會
+    quote: null
+    context: 覆議案記名投票：贊成維持原決議 62 人（國民黨52、民眾黨8、無黨籍2），反對維持原決議 51 人（民進黨51）；王世堅投反對維持原決議。刑法第一百四十一條之一覆議案結果相同。表決紀錄取自 data/ly/votes.json（院會-11-1-19#1001、#1002）。
+    timestamp: null
+    vote:
+      body: 立法院
+      bill: 行政院對《立法院職權行使法》修正部分條文之覆議案（表決是否維持原決議）
+      choice: 反對維持原決議
+      ref: legislative-reform-override-2024
+- question: B_CHILDCARE
+  value: 1
+  interpretation: 公報政見主張增設公立或公共化托育、幼兒園，判為增加。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: 二、督促市府廣建公幼、公托！！
+    context: 公報第5頁（PDF 第1頁），號次6 王世堅（推薦政黨：民主進步黨）的政見欄。2022-11-26 為投票日。
+    timestamp: null
+- question: B_URBAN_RENEWAL
+  value: 1
+  interpretation: 公報政見主張推動公辦都更、增加都更獎勵，判為增加。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: '三、督促市府推動公辦都更！！
+
+      四、督促市府增加都更獎勵！！'
+    context: 公報第5頁（PDF 第1頁），號次6 王世堅（推薦政黨：民主進步黨）的政見欄。2022-11-26 為投票日。
+    timestamp: null
+- question: B_TRANSIT
+  value: 1
+  interpretation: 公報政見主張推動或加速捷運路線、增設車站或擴充公車等大眾運輸，判為增加。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: 七、督促市府建置捷運民生汐止線！！
+    context: 公報第5頁（PDF 第1頁），號次6 王世堅（推薦政黨：民主進步黨）的政見欄。2022-11-26 為投票日。
+    timestamp: null

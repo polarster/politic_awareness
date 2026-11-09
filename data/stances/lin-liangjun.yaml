@@ -1,0 +1,64 @@
+entity: lin-liangjun
+stances:
+- question: B_CHILDCARE
+  value: 1
+  interpretation: 公報政見主張增設公立或公共化托育、幼兒園，判為增加。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: '④友善育兒｜關懷長者｜愛護毛孩
+
+      ★校園閒置空間轉爲公共托育家園及非營利幼兒園、提升準公共化參與、增進教保員勞動環境，讓育兒更輕鬆。'
+    context: 公報第5頁（PDF 第1頁），號次4 林亮君（推薦政黨：無）的政見欄。2022-11-26 為投票日。
+    timestamp: null
+- question: B_ELDERCARE
+  value: 1
+  interpretation: 公報政見主張增設長照、日照據點或擴大長者照顧與補助，判為增加。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: ★增加日照中心據點、媒合高齡長輩就業、重視長者心理健康，營造樂齡生活。
+    context: 公報第5頁（PDF 第1頁），號次4 林亮君（推薦政黨：無）的政見欄。2022-11-26 為投票日。
+    timestamp: null
+- question: B_PARKS
+  value: 1
+  interpretation: 公報政見主張增設、改善公園或人行道，判為增加。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: '②用路平權｜以人爲本｜交通安全
+
+      ★增設實體人行道，檢討巷弄違停、騎樓佔用問題，營造友善行人、輪椅族及嬰兒車的通行環境。'
+    context: 公報第5頁（PDF 第1頁），號次4 林亮君（推薦政黨：無）的政見欄。2022-11-26 為投票日。
+    timestamp: null
+- question: B_HOUSING
+  value: 1
+  interpretation: 公報政見主張調降社會住宅租金，等於市府要多補貼社會住宅，判為增加；但沒有提到增建社宅。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: '③居住正義｜力挺青年｜綠能減碳
+
+      ★調降社會住宅租金，確保家戶可負擔。'
+    context: 公報第5頁（PDF 第1頁），號次4 林亮君（推薦政黨：無）的政見欄。2022-11-26 為投票日。
+    timestamp: null

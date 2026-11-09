@@ -1,0 +1,28 @@
+id: lin-liangjun
+type: person
+name: 林亮君
+party: dpp
+roles:
+- title: 台北市議員
+  since: '2018-12-25'
+  note: 第13、14屆
+candidacy:
+  election: 2026-local
+  office: 台北市議員
+  district: 臺北市第4選舉區（中山、大同）
+  party_at_registration: 民主進步黨
+  source: https://www.setn.com/news/1901722
+past_candidacies:
+- election: 2022-local
+  office: 台北市議員
+  district: 臺北市第4選舉區（中山、大同）
+  number: 4
+  party_at_registration: 無
+  votes: 13817
+  elected: true
+  source: https://zh.wikipedia.org/zh-tw/2022年臺北市議員選舉
+inclusion_reason: 2022 年臺北市議員第4選舉區（中山、大同）選舉公報候選人；2026 年再度登記參選
+note: 2022 年以無黨籍參選並當選（公報推薦政黨欄為「無」）；之後加入民進黨，2026 年以民進黨籍登記參選。
+links:
+  bulletin_2022: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+  registration_2026: https://www.setn.com/news/1901722

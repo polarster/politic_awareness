@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ANSWER_OPTIONS } from "../lib/labels";
 import type { Answer, Answers, Question } from "../lib/types";
-import { Arguments } from "./Arguments";
+import { Arguments, Background } from "./Arguments";
 import { FeedbackLink } from "./FeedbackLink";
 
 interface Props {
@@ -13,10 +13,10 @@ interface Props {
   onBack: () => void;
 }
 
+/** 第一輪：照直覺快速作答。正反說法收在不顯眼的小連結裡。 */
 export function QuestionStep({ title, questions, answers, onAnswer, onDone, onBack }: Props) {
   const firstUnanswered = questions.findIndex((q) => !(q.id in answers));
   const [idx, setIdx] = useState(firstUnanswered === -1 ? 0 : firstUnanswered);
-  const [showNote, setShowNote] = useState(false);
   const q = questions[idx];
   const cur = answers[q.id];
   // 作答前就可以先勾「重要」；已作答的題目以作答紀錄為準
@@ -25,7 +25,6 @@ export function QuestionStep({ title, questions, answers, onAnswer, onDone, onBa
   const answeredCount = questions.filter((x) => x.id in answers).length;
 
   const go = (next: number) => {
-    setShowNote(false);
     setPendingImp(false);
     if (next < 0) onBack();
     else if (next >= questions.length) onDone();
@@ -46,13 +45,7 @@ export function QuestionStep({ title, questions, answers, onAnswer, onDone, onBa
       <div className="progress"><div style={{ width: `${(answeredCount / questions.length) * 100}%` }} /></div>
 
       <h2 className="question">{q.text}</h2>
-      {q.note && (
-        <button className="link" onClick={() => setShowNote((s) => !s)}>
-          {showNote ? "收起背景說明" : "背景說明"}
-        </button>
-      )}
-      {showNote && <p className="note">{q.note}</p>}
-      <Arguments key={q.id} questionId={q.id} />
+      <Background key={`bg-${q.id}`} question={q} />
 
       <label className={`important important-top ${imp ? "important-on" : ""}`}>
         <input
@@ -66,7 +59,7 @@ export function QuestionStep({ title, questions, answers, onAnswer, onDone, onBa
         </span>
       </label>
 
-      <div className="options" role="radiogroup" aria-label="同意程度">
+      <div key={`options-${q.id}`} className="options" role="radiogroup" aria-label="同意程度">
         {ANSWER_OPTIONS.map((o) => (
           <button
             key={String(o.v)}
@@ -79,6 +72,8 @@ export function QuestionStep({ title, questions, answers, onAnswer, onDone, onBa
           </button>
         ))}
       </div>
+
+      <Arguments key={q.id} questionId={q.id} subtle />
 
       <div className="nav">
         <button className="secondary" onClick={() => go(idx - 1)}>上一題</button>

@@ -37,20 +37,6 @@ stances:
     quote: 台灣抵制北京冬奧，不僅是對民主自由的捍衛，也是向國際宣示，台灣要與中國劃清界線。
     context: 綠黨呼籲台灣跟進民主國家外交抵制北京冬奧，並批評中國的「愛國者治台」論述。
     timestamp: null
-- question: N05
-  value: 1
-  interpretation: 綠黨 2022 年呼籲政府加速中正紀念堂等威權遺址的轉型，支持處理威權象徵；但沒有明確談到移除雕像本身，故判為同意。
-  last_reviewed: 2026-11-07
-  evidence:
-  - grade: C
-    kind: statement
-    title: 【銘記威權傷痛才是抗中保台的最佳利器】
-    url: https://www.greenparty.org.tw/posts/news/20220124/
-    date: 2022-01-24
-    venue: 綠黨官網文章
-    quote: 綠黨在此呼籲蔡英文政府應加速中正紀念堂等威權遺址的轉型
-    context: 綠黨回應蔡英文總統出席蔣經國總統圖書館開幕的發言，認為應銘記獨裁者對人民的迫害。
-    timestamp: null
 - question: D05
   value: -1
   interpretation: 綠黨表示台灣身在「抗中前線」，應「與民主夥伴站在一起」、與中國劃清界線，不主張在美中之間維持等距；但相關表態多為 2021 年的官網短文，且未直接談美中等距，故判為不同意。
@@ -115,20 +101,6 @@ stances:
     venue: 台灣綠黨 2024 立委選舉政策主張
     quote: 從學校到社會學習系統，以「全面性教育（comprehensive sex education）」制定性與性別課程；落實從根本預防性騷擾、性侵害發生之可能。
     context: 政見「實質性別平等」，副標為「落實性/別教育，捍衛所有性別認同者之身體自主權」。
-    timestamp: null
-- question: S03
-  value: 1
-  interpretation: 綠黨 2024 年政見主張外籍學生「先留學後留才」、新移民婚姻居留不受制於配偶同意，並加強移工保障，整體傾向放寬移民相關限制；但沒有直接談移工轉為長期居留的條件，故判為同意。
-  last_reviewed: 2026-11-07
-  evidence:
-  - grade: C
-    kind: platform
-    title: 【台灣綠黨2024主打政見】
-    url: https://www.greenparty.org.tw/posts/topic/tai-wan-lu-dang-2024zhu-da-zheng-jian/
-    date: 2023-12-28
-    venue: 台灣綠黨 2024 立委選舉政策主張
-    quote: 公辦仲介派遣移工，外籍學生實行先留學後留才。確保移工受勞基法保障，並改善新移民婚姻人權，不受制於配偶同意。
-    context: 政見「移民工保障足」，副標為「婚姻居留自主權；移工由公辦仲介並全適用勞基法」。
     timestamp: null
 - question: S05
   value: -2
@@ -204,6 +176,38 @@ stances:
     quote: 我們堅持在所有的決策中，都需以永續為核心，留給未來世代美好生活的可能性，並停止持續成長的全球過度消費和浪費
     context: 綠黨依《全球綠人憲章》列出的六大核心價值之一「不犧牲下一代的永續」。
     timestamp: null
+- question: V04
+  value: -1
+  interpretation: 綠黨主張「綠能100」，也就是發電100%使用綠電；2024年政見也主張「強調太陽、風能，降低化石能源」。方向是以再生能源為主，與題目「新增發電以天然氣為主、再生能源為輔」相反。不過綠黨2021年也表示，在再生能源尚未能穩定輸出之前，以燃氣取代燃煤的三接「有其存在必要」，而且沒有找到直接針對新增燃氣機組的表態。這是從政見推論的結果，所以判為不同意（-1），不判為非常不同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: platform
+    title: 【台灣綠黨2024主打政見】
+    url: https://www.greenparty.org.tw/posts/topic/tai-wan-lu-dang-2024zhu-da-zheng-jian/
+    date: 2023-12-28
+    venue: 台灣綠黨 2024 立委選舉政策主張
+    quote: 以氣候正義和公正轉型為基礎，全面碳稅促進綠能，強調太陽、風能，降低化石能源。
+    context: 2024年立委選舉政見，列在「反核減碳穩供▶反核養綠能，碳稅中立正義，強韌防災電網」項下。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 【綠能100！淨零碳排！】
+    url: https://www.greenparty.org.tw/posts/news/20211104/
+    date: 2021-11-04
+    venue: 綠黨官網文章
+    quote: 在能源的部分，綠黨認為台灣要達成淨零轉型，必須走向綠能100，也就是發電100%使用綠電。
+    context: 綠黨官網聲明。同一篇主張多元發展太陽能、風力、地熱、生質能，並推動分散式電網與儲能來穩定供電。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 【落實環差評估 尋求生態保育與能源轉型間平衡】
+    url: https://www.greenparty.org.tw/posts/news/20211202/
+    date: 2021-12-02
+    venue: 綠黨官網文章
+    quote: 然而在再生能源尚未能穩定輸出的此時此刻，以燃氣取代燃煤的三接，的確有其存在必要
+    context: 2021年藻礁公投時，綠黨接受三接外推方案，認為過渡期間以燃氣取代燃煤有其必要。這一筆用來說明為什麼只判 -1、不判 -2。
+    timestamp: null
 - question: G01
   value: -2
   interpretation: 綠黨長期反核，2021 年呼籲重啟核四公投投不同意；2025 年更成立核三重啟公投的「反方辦事處」，表達「拒絕核能的堅定立場」。立場清楚一致。
@@ -228,8 +232,10 @@ stances:
     context: 政見「反核減碳穩供」的副標。
     timestamp: null
 - question: G02
-  value: -1
-  interpretation: 2024 年國會職權修法時，綠黨強烈譴責藍白「國會擴權」，要求退回「濫權的版本」重新審查，並引述法學教授連署指草案有違憲疑慮；但未見綠黨反對國會擁有調查權、聽證權本身，故判為不同意而非強烈不同意。
+  value: -2
+  interpretation: '2024 年國會職權修法時，綠黨強烈譴責藍白「國會擴權」，要求退回「濫權的版本」重新審查，並引述法學教授連署指草案有違憲疑慮。題目問的正是 2024 年通過的這套法案，綠黨明確反對，判為非常不同意。（未見綠黨反對國會擁有調查權、聽證權本身。）
+
+    '
   last_reviewed: 2026-11-07
   evidence:
   - grade: C
@@ -254,4 +260,64 @@ stances:
     venue: 台灣綠黨 2024 立委選舉政策主張
     quote: 大舉提高第三房以上的囤房稅，逐房提高，增加持有成本。
     context: 政見「落實居住正義」，同時主張廣建社會住宅、限制第三房起的貸款成數。
+    timestamp: null
+- question: E06
+  value: -1
+  interpretation: 綠黨 2024 年政見主張「減工時加工資」、強化勞動組織，並主張移工、家事移工全面適用勞基法，方向是縮短工時、加強勞動保障，與放寬加班上限、輪班間隔等工時規定相反；但沒有找到該黨對加班上限、輪班間隔或七休一修法的具體表態，屬從政見推論，故判為不同意而非強烈不同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: platform
+    title: 【台灣綠黨2024主打政見】
+    url: https://www.greenparty.org.tw/posts/topic/tai-wan-lu-dang-2024zhu-da-zheng-jian/
+    date: 2023-12-28
+    venue: 台灣綠黨 2024 立委選舉政策主張
+    quote: 減工時加工資，強化勞動組織，力推合作社經濟
+    context: 政見「顧勞權不貧窮」的副標；同份政見「移民工保障足」主張「勞基法保障擴展至家事移工」。
+    timestamp: null
+- question: L01
+  value: -1
+  interpretation: 2021 年南投縣政府要求網路論壇刪文並交出發文者個資時，綠黨批評這是「箝制言論自由」、恐怕於法無據；綠黨也肯定台灣「不必下架就能戰勝假訊息」的公私協力模式，並呼籲民眾自行查證。整體傾向反對由政府要求平台下架內容；但沒有找到該黨針對假訊息下架立法（如《數位中介服務法》草案）的表態，且南投案涉及的是兒少保護而非假訊息，故判為不同意而非強烈不同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 【要求交出民眾個資？南投縣政府好大的官威！】
+    url: https://www.greenparty.org.tw/posts/news/20210323/
+    date: 2021-03-23
+    venue: 綠黨官網文章
+    quote: 綠黨呼籲南投縣政府謹守法治精神，尊重言論自由，這才是對當事人最好的處理方式。
+    context: 南投縣政府以違反《兒少權法》為由要求巴哈姆特等論壇刪文並提供作者個資，巴哈姆特拒絕後遭裁罰；綠黨文中寫道，南投縣政府「以箝制言論自由 的方式，強勢要求論壇刪文並交出發文者個資，恐怕於法無據」。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 【對抗數位威權！Taiwan Can Help！】
+    url: https://www.greenparty.org.tw/posts/news/20211211/
+    date: 2021-12-11
+    venue: 綠黨官網文章
+    quote: 台灣不必封城就能控制疫情，不必下架就能戰勝假訊息
+    context: 綠黨介紹唐鳳在美國民主峰會分享的「公民・政府・私部門」協力模式，並表示「綠黨也認為用科技打造更好的公民社會，持續深化民主，是我們捍衛自由的唯一正途」。
+    timestamp: null
+- question: L05
+  value: 1
+  interpretation: 2026 年中選會外洩候選人個資後，綠黨與台灣前進陣線批評中選會違反資料最小化原則，要求政府系統不得送出用不到的個資，並呼籲儘速通過個資會組織法、讓公務機關外洩個資有罰則與獨立監督。立場是加強對政府處理個資的限制；但沒有談到與治安、防疫效率之間的取捨（綠黨 2021 年也曾正面介紹簡訊實聯制），故判為同意而非強烈同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 中選會個資外洩事件 台灣前進籲朝野盡速通過個資會組織法
+    url: https://www.greenparty.org.tw/posts/news/election-leak-privacy/
+    date: 2026-10-29
+    venue: 綠黨官網文章（台灣綠黨、台灣前進陣線）
+    quote: 沒有獨立的個資會，政府外洩個資就只能自己調查自己，呼籲朝野立委盡快取得共識，在本會期內完成法案三讀。
+    context: 文中質疑中選會為何把「包含身分證字號在內」的資料交給委外廠商，指「這個流程已經違反資料最小化的基本要求」，並提到新版《個資法》對公務機關的把關機制尚未生效、「也沒有對公務機關的處罰規定」。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 台灣前進陣線揭發中選會個資外洩事件
+    url: https://www.greenparty.org.tw/posts/news/election-leak/
+    date: 2026-10-28
+    venue: 台灣前進陣線記者會
+    quote: 保護個資最基本的原則，就是用不到的資料，就不要拿出來。
+    context: 文中列於綠黨新莊市議員參選人甘崇緯的發言段落；綠黨並呼籲個資會籌備處「訂出明確的規定，要求政府系統不要把用不到的個資送出去」。
     timestamp: null

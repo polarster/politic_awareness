@@ -1,0 +1,170 @@
+entity: chiang-wanan
+stances:
+- question: N01
+  value: 1
+  interpretation: >-
+    蔣萬安多次表示承認九二共識的存在，並稱它是過去兩岸交流的基礎；但他一再強調自己認知的九二共識是「符合中華民國憲法」的版本，
+    並堅決反對一國兩制。接受九二共識作為基礎、但附加中華民國憲法的前提，判為同意而非非常同意。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 議員追問未來「蔣習會」? 蔣萬安反喊話賴清德要做這件事
+    url: https://udn.com/news/story/6656/9433847
+    date: 2026-04-10
+    venue: 台北市議會
+    quote: 他所認知的『九二共識』是符合中華民國憲法的九二共識，捍衛中華民國主權、恪遵中華民國憲法，以及守護台灣的民主自由法治。
+    context: 聯合報報導，國民黨主席鄭麗文與習近平會面後，台北市長蔣萬安在議會被問及兩岸立場時的說法；報導並稱他表示「反對台獨」一直是國民黨的立場。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 美團當面問92共識！ 蔣萬安：藍反對一國兩制
+    url: https://news.tvbs.com.tw/politics/1494197
+    date: 2021-04-16
+    venue: 與美國訪問團會面
+    quote: 九二共識不是一國兩制，我們堅決反對一國兩制，第二九二共識確實存在過，也是過去兩岸交流的基礎。
+    context: TVBS 報導，時任國民黨立委蔣萬安回應美方訪團詢問九二共識時的說法。
+    timestamp: null
+- question: S02
+  value: -2
+  interpretation: >-
+    蔣萬安表示「既然現在我國法律還有死刑，就應該依法執行」，並認為這是全民共識；2026 年競選期間，他的競選辦公室也以沈伯洋過去主張「不要有死刑」
+    作為攻擊點。主張執行死刑、並以反對廢死作為選戰訴求，判為非常不同意廢除死刑。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 台南殺警案再掀死刑存廢討論 蔣萬安定調：法律還有死刑就該依法執行
+    url: https://www.storm.mg/article/4491913
+    date: 2022-08-27
+    venue: 內湖後援會活動
+    quote: 既然現在我國法律還有死刑，就應該依法執行，還受害者公道，相信這是全民共識。
+    context: 風傳媒報導，2022 年台南殺警案後，時任國民黨台北市長參選人蔣萬安的回應。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 「毒駕可處死刑」沈伯洋未投票 蔣萬安競辦反問：不要有死刑？
+    url: https://udn.com/news/story/6656/9847367
+    date: 2026-10-30
+    venue: 蔣萬安競選辦公室
+    quote: 究竟是黨意凌駕民意，還是始終放不下過去「不要有死刑」的主張？
+    context: 聯合報報導，蔣萬安競選辦公室發言人楊沛緰批評民進黨台北市長參選人沈伯洋未參與「毒駕可處死刑」修法表決。這是競選辦公室的說法，不是蔣萬安本人的發言。
+    timestamp: null
+- question: G01
+  value: 2
+  interpretation: >-
+    2025 年核三延役公投前，蔣萬安公開表態支持核三延役，並與國民黨立委一同為同意票拉票，強調能源韌性與 AI 時代的電力需求。立場明確。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 蔣萬安與黃國昌會面 明確表態：支持核三延役
+    url: https://www.taiwannews.com.tw/zh/news/6161488
+    date: 2025-08-12
+    venue: 會見民眾黨主席黃國昌
+    quote: 我們需要能務實解決問題的能源韌性，不是擁抱意識形態的執政任性
+    context: 台灣英文新聞報導，核三延役公投（2025-08-23）前，蔣萬安會見黃國昌時表示他的立場是支持核三延役公投案；另說「電力即算力、算力即國力」。
+    timestamp: null
+- question: M08
+  value: 2
+  interpretation: >-
+    蔣萬安任內持續舉辦台北上海雙城論壇（2023 年赴上海、2024 年在台北主辦、2025 年再赴上海），面對反對聲音仍表示會「持續為了雙城論壇而努力堅持」，
+    並稱論壇是城市間行之多年的交流、不涉及政治。立場明確且有實際作為。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 蔣萬安雙城論壇致詞提「民國」 送上海市長「錫製盤子」寓意曝光
+    url: https://www.mirrormedia.mg/story/20251228edi024
+    date: 2025-12-28
+    venue: 2025 台北上海雙城論壇（上海）
+    quote: 在大環境跌宕起伏的此刻，我們持續為了雙城論壇而努力堅持。
+    context: 鏡週刊報導蔣萬安在 2025 年雙城論壇的致詞，致詞以「雙城好，兩岸好！」作結；報導稱雙城論壇是兩岸之間持續至今唯一的官方對話平台。
+    timestamp: null
+  - grade: C
+    kind: statement
+    title: 雙城論壇12/27、28上海登場 蔣萬安：聚焦科技與水治理
+    url: https://news.pts.org.tw/article/785483
+    date: 2025-12-11
+    venue: null
+    quote: 雙城論壇就是城市之間行之多年的交流會議，這非常清楚，不牽涉任何政治或是中央的職權，至於其他民意代表，一方面反對我們舉辦雙城論壇，一方面又要我們去雙城論壇、去反映小紅書的事情，前後立場矛盾、雙重標準。
+    context: 公視新聞報導，北市府宣布 2025 年雙城論壇在上海舉行時，蔣萬安回應議員的批評。
+    timestamp: null
+- question: M09
+  value: 2
+  interpretation: >-
+    蔣萬安公開支持新北市長參選人李四川的「雙北共治」主張，表示「雙北就是一體，共治本來就是必須」，立場明確，判為非常同意。
+    （2022 年選舉公報只提到「加強北北基桃交通合作平台」，屬於個案合作層次，與題目的「共治」不同，因此不列為證據。）
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 蘇巧慧酸李四川恐讓新北變細漢 蔣萬安：川伯看起來像我細漢？（ETtoday）
+    url: https://www.ettoday.net/news/20260517/3167254.htm
+    date: 2026-05-17
+    venue: 受訪
+    quote: 雙北就是一體，共治本來就是必須
+    context: ETtoday 報導轉述蔣萬安受訪內容；他前一晚在三重的活動中也說「川伯說雙北要共治，這是對的事情」。
+    timestamp: null
+- question: B_CASH
+  value: 1
+  interpretation: >-
+    2022 年市長選舉公報政見提出「新生兒生育獎勵加碼」，並提高托育、私幼學費補助，屬增加生育相關現金補助，判為增加。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 臺北市第8屆市長選舉公報（2022）：6 號蔣萬安政見
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/01%E5%B8%82%E9%95%B7/%E8%87%BA%E5%8C%97%E5%B8%82%E5%B8%82%E9%95%B7.pdf
+    date: 2022-11-26
+    venue: 中選會選舉公報
+    quote: + 安心孕生養：減低生養小孩經濟負擔，推出孕婦一年12次產檢愛心專車、新生兒生育獎勵加碼、提高補助托育、私幼學費費用，並提供兩成社會住宅給肯生第二胎的家庭優先入住，減輕年輕爸媽經濟負擔。
+    context: 公報第 1 頁，市長候選人 6 號蔣萬安政見欄「好好居住」第一項。
+    timestamp: null
+- question: B_URBAN_RENEWAL
+  value: 1
+  interpretation: >-
+    2022 年市長選舉公報政見「拼公辦都更」明確主張「增加預算與服務人力辦理擴大服務量能」，並推動危樓都更，判為增加都更相關支出。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 臺北市第8屆市長選舉公報（2022）：6 號蔣萬安政見
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/01%E5%B8%82%E9%95%B7/%E8%87%BA%E5%8C%97%E5%B8%82%E5%B8%82%E9%95%B7.pdf
+    date: 2022-11-26
+    venue: 中選會選舉公報
+    quote: + 拼公辦都更：下修參與公辦都更意願書門檻，讓政府提早介入來獲得民眾信任。針對有公安疑慮及特殊歷史的整宅，以專案方式檢討基準容積率，增加民眾參與誘因，增加預算與服務人力辦理擴大服務量能。
+    context: 公報第 1 頁，市長候選人 6 號蔣萬安政見欄「好好居住」第二項。
+    timestamp: null
+- question: B_TECH
+  value: 1
+  interpretation: >-
+    2022 年市長選舉公報政見「城市新創力」主張成立城市級投資公司、劃設沙盒專區、提供新創見習津貼並推動「2025 世界人才首都計畫」，
+    屬增加新創與產業發展投入，判為增加。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 臺北市第8屆市長選舉公報（2022）：6 號蔣萬安政見
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/01%E5%B8%82%E9%95%B7/%E8%87%BA%E5%8C%97%E5%B8%82%E5%B8%82%E9%95%B7.pdf
+    date: 2022-11-26
+    venue: 中選會選舉公報
+    quote: + 城市新創力：從資金、市場、人才三大面向出發，讓台北保持充沛新創動能：成立城市級投資公司、讓市民一起當新創公司股東，盤點市府資源擘劃沙盒專區，快速驗證新創商業模式。提供見習津貼讓北市青年到合格新創企業實習，推動「2025世界人才首都 計畫」吸引海外創業家無痛移居台北。
+    context: 公報第 1 頁，市長候選人 6 號蔣萬安政見欄「好好工作」第二項。
+    timestamp: null
+- question: B_HOUSING
+  value: 0
+  interpretation: >-
+    2022 年選舉公報政見沒有提出社宅興建戶數目標，只主張兩成社宅優先給生第二胎的家庭。2023 年議會社宅專案報告時，他表示「興建社宅腳步不會停下來」，
+    但也說社宅只是居住政策的一環，缺口改以租金補貼、包租代管等方式補足，並拒簽民眾黨團的興建社宅承諾書。持續興建但不擴大，判為維持。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: C
+    kind: statement
+    title: 民眾黨團要求簽「興建社宅承諾書」 蔣萬安因「這4字」拒簽
+    url: https://news.tvbs.com.tw/politics/2123795
+    date: 2023-05-15
+    venue: 台北市議會社會住宅專案報告
+    quote: 我們興建社宅腳步不會停下來，我們會持續努力朝興建社宅方向前進
+    context: TVBS 報導，民眾黨團批評市府以租金補貼、包租代管補足 22,468 戶社宅缺口；蔣萬安表示社宅是解決居住問題的一環但並非唯一，預估任內約可開工兩千多戶、完工七千多戶，對承諾書則說「先收下，再好好討論」。
+    timestamp: null

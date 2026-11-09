@@ -1,0 +1,15 @@
+id: miao-poya
+type: person
+name: 苗博雅
+party: sdp
+roles:
+  - title: 台北市議員
+    district: 第6選舉區（大安、文山）
+    since: 2018-12-25
+candidacy:
+  election: 2026-local
+  office: 台北市議員
+  district: 第6選舉區（大安、文山）
+  source: https://news.tvbs.com.tw/politics/4017756   # 2026-09-04 台北市議員登記名單：第6選區「苗博雅（社會民主黨）」
+inclusion_reason: 指定必收（requirements §2）；雙北現任議員、2026 年連任參選人
+links: {}

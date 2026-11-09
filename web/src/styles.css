@@ -89,7 +89,8 @@ a { color: var(--accent); }
   background: var(--surface); color: var(--text); border: 1px solid var(--border); text-align: left; padding: 12px 14px;
 }
 .option.compact { padding: 8px; }
-.option:hover { border-color: var(--accent); }
+@media (hover: hover) { .option:hover { border-color: var(--accent); } }
+.option:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .option.selected { background: var(--accent-soft); border-color: var(--accent); font-weight: 600; }
 .option-unknown { color: var(--muted); }
 
@@ -443,3 +444,40 @@ blockquote { margin: 4px 0; padding-left: 8px; border-left: 3px solid var(--bord
 
 .badge-tip-start { left: 0; transform: none; }
 .badge-tip-end { left: auto; right: 0; transform: none; }
+
+/* 完整版：第一直覺 */
+.pmap-first circle { fill: var(--surface); stroke: var(--muted); stroke-width: 2; stroke-dasharray: 3 2; }
+.pmap-first .pmap-label { fill: var(--muted); font-weight: 400; font-size: 12px; }
+.pmap-move { stroke: var(--muted); stroke-width: 2; stroke-dasharray: 4 3; }
+.reflect { border-left: 3px solid var(--accent); padding: 4px 0 4px 14px; margin: 12px 0; }
+.reflect-ask { font-weight: 600; margin: 14px 0 0; }
+.change-list { display: grid; gap: 6px; padding-left: 1.2em; }
+.match-delta { display: grid; grid-template-columns: auto 1fr auto; gap: 4px 10px; align-items: center; }
+.arguments-subtle { margin: 0 0 4px; }
+.arguments-subtle .link { color: var(--muted); text-decoration-color: var(--border); }
+.journey-cta { border: 2px solid var(--accent); }
+.terms { margin: 8px 0 0; display: grid; gap: 8px; }
+.terms dt { font-weight: 600; }
+.terms dd { margin: 2px 0 0; }
+.plain { background: var(--surface); border-radius: 8px; padding: 8px 10px; margin: 6px 0; }
+.share-opts { display: grid; gap: 8px; margin: 12px 0; }
+.share-opt { display: flex; gap: 8px; align-items: flex-start; }
+.share-preview { width: 100%; max-width: 420px; display: block; margin: 12px 0; border-radius: 12px; border: 1px solid var(--border); }
+
+/* 光譜整理：黨徽直接放在軌道上，圖例取代重疊的文字標籤 */
+.spec-area { margin: 30px 8px 0; }
+.spec-area .spec-track { margin: 0; }
+.spec-poles { margin: 18px 8px 2px; }
+.spec-nolabel span { display: none; }
+.spec-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center; margin: 14px 0 4px; }
+.spec-legend i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; }
+.lg-you { background: var(--text); }
+.lg-orig { background: var(--surface); border: 2px dashed var(--muted); box-sizing: border-box; }
+.spec-rank-toggle { display: inline-flex; gap: 6px; align-items: center; margin-left: auto; }
+.spec-row { padding: 10px 0 12px; border-top: 1px solid var(--border); }
+.spec-row .spec-nodata { margin: 2px 8px 0; }
+.overall-foot { margin: 10px 0 0; }
+.layer-tabs { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; padding: 3px; gap: 2px; margin: 8px 0 4px; }
+.layer-tabs button { border: none; background: transparent; color: var(--text); padding: 6px 14px; border-radius: 999px; font-weight: 600; }
+.layer-tabs button.on { background: var(--text); color: var(--surface); }
+.spec-move { position: absolute; top: 50%; height: 0; border-top: 2px dashed var(--text); opacity: .6; z-index: 1; }

@@ -1,0 +1,19 @@
+id: shen-boyang
+type: person
+name: 沈伯洋
+party: dpp
+roles:
+  - title: 立法委員（第 11 屆不分區，民主進步黨）
+    since: 2024-02-01
+    note: >
+      2026 年參選台北市長期間未辭立委（2026-10-10 中央社報導他表示「這無關是否辭職」）。
+      data/ly/votes.json 中他最後一筆記名表決為 2026-08-21；2026-10-16 院會的 8 筆記名表決沒有他的紀錄（未投票）。
+candidacy:
+  election: 2026-local
+  office: 台北市長
+  district: 台北市
+  note: 民進黨 2026-05-13 中執會通過徵召參選台北市長，對手為尋求連任的現任市長蔣萬安（國民黨）。
+inclusion_reason: 雙北市長候選人；requirements §2 指定必收
+sources:
+  - https://cna.com.tw/news/aloc/202610100085.aspx
+  - https://www.taiwannews.com.tw/zh/news/6361318

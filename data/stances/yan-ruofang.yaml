@@ -1,0 +1,52 @@
+entity: yan-ruofang
+stances:
+- question: B_CHILDCARE
+  value: 1
+  interpretation: 公報政見主張增設公立或公共化托育、幼兒園，判為增加。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: '母嬰友善 好孕城市
+
+      ▸提高公幼、準公幼及非營利幼兒園數量，監督品質達質量兼具'
+    context: 公報第6頁（PDF 第2頁），號次10 顏若芳（推薦政黨：民主進步黨）的政見欄。2022-11-26 為投票日。
+    timestamp: null
+- question: B_CASH
+  value: 1
+  interpretation: 公報政見主張增設或提高育兒、生育、新婚等現金補助，判為增加。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: '▸爭取高齡產婦產檢納入市府補助
+
+      ▸爭取月嫂補助，協助產後育兒、月子休養'
+    context: 公報第6頁（PDF 第2頁），號次10 顏若芳（推薦政黨：民主進步黨）的政見欄。2022-11-26 為投票日。
+    timestamp: null
+- question: B_PARKS
+  value: 1
+  interpretation: 公報政見主張增設、改善公園或人行道，判為增加。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: '公園友善 空間開放
+
+      ▸公園重設計，拆除圍牆、環境美化
+
+      ▸增加親子特色遊樂設施，共享公園的綠意與優點'
+    context: 公報第6頁（PDF 第2頁），號次10 顏若芳（推薦政黨：民主進步黨）的政見欄。2022-11-26 為投票日。
+    timestamp: null

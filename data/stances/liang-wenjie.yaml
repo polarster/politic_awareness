@@ -1,0 +1,44 @@
+entity: liang-wenjie
+stances:
+- question: B_CHILDCARE
+  value: 1
+  interpretation: 公報政見主張增設公立或公共化托育、幼兒園，判為增加。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: 6. 增加托育補助，並廣設公立托兒所及幼稚園，減輕家長負擔。
+    context: 公報第6頁（PDF 第2頁），號次12 梁文傑（推薦政黨：民主進步黨）的政見欄。2022-11-26 為投票日。
+    timestamp: null
+- question: B_ELDERCARE
+  value: 1
+  interpretation: 公報政見主張增設長照、日照據點或擴大長者照顧與補助，判為增加。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: 8. 每個社區至少設立一個日間照護中心，提供獨居老人定期送便當服務。
+    context: 公報第6頁（PDF 第2頁），號次12 梁文傑（推薦政黨：民主進步黨）的政見欄。2022-11-26 為投票日。
+    timestamp: null
+- question: B_TRANSIT
+  value: 1
+  interpretation: 公報政見主張推動或加速捷運路線、增設車站或擴充公車等大眾運輸，判為增加。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: 5. 全力爭取汐止―民生線捷運路線，便利東西向交通。
+    context: 公報第6頁（PDF 第2頁），號次12 梁文傑（推薦政黨：民主進步黨）的政見欄。2022-11-26 為投票日。
+    timestamp: null

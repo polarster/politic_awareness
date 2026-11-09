@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { VoteRecord, VoteSide } from "../lib/types";
+import { safeHref } from "../lib/url";
 
 const SIDES: VoteSide[] = ["贊成者", "反對者", "棄權者"];
 const PARTY_ORDER = ["中國國民黨", "民主進步黨", "台灣民眾黨", "時代力量", "台灣基進", "親民黨", "無黨籍", "無黨團結聯盟"];
@@ -28,6 +29,8 @@ export function voteDate(rec: VoteRecord): string {
 export function VoteBreakdown({ rec, compact = false }: { rec: VoteRecord; compact?: boolean }) {
   const [showNames, setShowNames] = useState(false);
   const ps = parties(rec);
+  // 公報連結來自第三方整理的資料，只接受 http(s)
+  const source = safeHref(rec.source_url);
   return (
     <div className="vote-breakdown">
       <table className="vote-table">
@@ -63,7 +66,7 @@ export function VoteBreakdown({ rec, compact = false }: { rec: VoteRecord; compa
         <button className="link" onClick={() => setShowNames((v) => !v)}>
           {showNames ? "收起逐人名單" : "看每位立委怎麼投"}
         </button>
-        <a href={rec.source_url} target="_blank" rel="noreferrer">立法院公報原文</a>
+        {source && <a href={source} target="_blank" rel="noreferrer">立法院公報原文</a>}
         {!compact && <span className="muted">出席 {rec.counts.出席} 人</span>}
       </div>
       {showNames && (

@@ -1,0 +1,48 @@
+entity: lin-zhenyu
+stances:
+- question: B_ELDERCARE
+  value: 1
+  interpretation: 公報政見主張增設長照、日照據點或擴大長者照顧與補助，判為增加。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: '全齡照護
+
+      ●推動幸福喘息、增設長照、日照、居家服務補助及時數。'
+    context: 公報第6頁（PDF 第2頁），號次13 林珍羽（推薦政黨：台灣民眾黨）的政見欄。2022-11-26 為投票日。
+    timestamp: null
+- question: B_CASH
+  value: 1
+  interpretation: 公報政見主張增設青年新婚獎勵（現金補助），判為增加。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: '減壓補助
+
+      ●增設北市青年新婚獎勵；推動社宅前二年租金半價優惠。'
+    context: 公報第6頁（PDF 第2頁），號次13 林珍羽（推薦政黨：台灣民眾黨）的政見欄。2022-11-26 為投票日。
+    timestamp: null
+- question: B_HOUSING
+  value: 1
+  interpretation: 公報政見主張社宅前二年租金半價優惠，等於市府要多補貼社會住宅，判為增加；但這一點只涉及租金，沒有提到增建社宅。選舉公報政見通常只列要增加的項目，不會說明經費來源或要減少哪些項目，因此只能判斷方向（+1），無法判斷取捨。
+  last_reviewed: 2026-11-07
+  evidence:
+  - grade: A
+    kind: bulletin
+    title: 111年地方公職人員選舉 臺北市議員選舉公報：第4選舉區（中山、大同）
+    url: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf
+    date: '2022-11-26'
+    venue: 中央選舉委員會選舉公報
+    quote: ●增設北市青年新婚獎勵；推動社宅前二年租金半價優惠。
+    context: 公報第6頁（PDF 第2頁），號次13 林珍羽（推薦政黨：台灣民眾黨）的政見欄。2022-11-26 為投票日。
+    timestamp: null

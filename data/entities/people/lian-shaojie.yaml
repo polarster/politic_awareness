@@ -1,0 +1,19 @@
+id: lian-shaojie
+type: person
+name: 連紹傑
+party: obasan
+roles: []
+candidacy: null
+past_candidacies:
+- election: 2022-local
+  office: 台北市議員
+  district: 臺北市第4選舉區（中山、大同）
+  number: 7
+  party_at_registration: 小民參政歐巴桑聯盟
+  votes: 1469
+  elected: false
+  source: https://zh.wikipedia.org/zh-tw/2022年臺北市議員選舉
+inclusion_reason: 2022 年臺北市議員第4選舉區（中山、大同）選舉公報候選人；2026 年未登記參選台北市議員
+note: 2026 年歐巴桑聯盟在本選區改由李惠暄登記參選。
+links:
+  bulletin_2022: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf

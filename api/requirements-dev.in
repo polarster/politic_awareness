@@ -1,0 +1,7 @@
+# 開發與測試用，包含執行期相依（requirements-dev.txt 可單獨安裝）：
+#   .venv/bin/pip install --require-hashes --no-deps -r requirements-dev.txt
+# pytest；TestClient 需要的 httpx；測試 scripts/build_data.py 需要的 PyYAML。
+-r requirements.in
+pytest==9.2.0
+httpx==0.28.1
+PyYAML==6.0.3

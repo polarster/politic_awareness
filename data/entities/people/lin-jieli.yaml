@@ -1,0 +1,19 @@
+id: lin-jieli
+type: person
+name: 林婕麗
+party: null
+roles: []
+candidacy: null
+past_candidacies:
+- election: 2022-local
+  office: 台北市議員
+  district: 臺北市第4選舉區（中山、大同）
+  number: 3
+  party_at_registration: 新黨
+  votes: 3137
+  elected: false
+  source: https://zh.wikipedia.org/zh-tw/2022年臺北市議員選舉
+inclusion_reason: 2022 年臺北市議員第4選舉區（中山、大同）選舉公報候選人；2026 年未登記參選台北市議員
+note: 2022 年由新黨推薦參選。新黨不在本 App 的政黨收錄名單中，因此 party 填 null。
+links:
+  bulletin_2022: https://eebulletin.cec.gov.tw/111/02%E8%87%BA%E5%8C%97%E5%B8%82/02%E5%B8%82%E8%AD%B0%E5%93%A1/%E8%87%BA%E5%8C%97%E5%B8%82%E7%AC%AC04%E9%81%B8%E8%88%89%E5%8D%80.pdf

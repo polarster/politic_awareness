@@ -1,5 +1,6 @@
 import { data } from "../data";
 import { IMPORTANT_WEIGHT } from "../lib/scoring";
+import { safeHref } from "../lib/url";
 
 export function Methodology({ onClose }: { onClose: () => void }) {
   return (
@@ -56,12 +57,16 @@ export function Methodology({ onClose }: { onClose: () => void }) {
         黨徽只用來在圖上辨識政黨，不代表任何政黨背書本網站。圖檔取自 Wikimedia Commons 或政黨官網：
       </p>
       <ul className="small">
-        {data.entities.filter((e) => e.logo).map((e) => (
-          <li key={e.id}>
-            {e.name}：{e.logo_source ? <><a href={e.logo_source} target="_blank" rel="noreferrer">{e.logo_source.includes("wikimedia") ? "Commons 檔案頁" : "來源"}</a>，</> : ""}
-            {e.logo_license}{e.logo_author ? `，作者／來源：${e.logo_author}` : ""}
-          </li>
-        ))}
+        {data.entities.filter((e) => e.logo).map((e) => {
+          // 圖檔來源只放行 http(s)；不合格時連結和後面的「，」一起省略
+          const source = safeHref(e.logo_source);
+          return (
+            <li key={e.id}>
+              {e.name}：{source ? <><a href={source} target="_blank" rel="noreferrer">{source.includes("wikimedia") ? "Commons 檔案頁" : "來源"}</a>，</> : ""}
+              {e.logo_license}{e.logo_author ? `，作者／來源：${e.logo_author}` : ""}
+            </li>
+          );
+        })}
       </ul>
       <p className="small muted">沒有可用黨徽圖檔的政黨，以代表色圓徽加一個字表示。</p>
 

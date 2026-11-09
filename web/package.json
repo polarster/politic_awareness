@@ -9,7 +9,8 @@
     "dev": "npm run data && vite",
     "build": "npm run data && tsc -b && vite build",
     "test": "vitest run",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "public": "npm run build && { vite build --watch --emptyOutDir=false & w=$!; PUBLIC_DEV=1 vite preview --host 127.0.0.1 --port 5173 --strictPort & p=$!; trap 'kill $w $p 2>/dev/null' INT TERM; wait $p; s=$?; kill $w 2>/dev/null; exit $s; }"
   },
   "dependencies": {
     "react": "^18.3.1",
